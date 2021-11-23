@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float speed = 10;
-    float maxDistanceToMove;
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-            
-        maxDistanceToMove = speed * Time.deltaTime;
-        Vector3 InputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 movementVector = InputVector * maxDistanceToMove;
-        Vector3 newPosition = transform.position + movementVector;
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
+        Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
+
+        transform.Translate(movement);
     }
 }
