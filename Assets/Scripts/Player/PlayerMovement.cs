@@ -21,6 +21,26 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movement);
 
+       /* if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+        */
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed = 0;
@@ -28,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            speed = 5;
+            speed = 25;
         }
     }
 
