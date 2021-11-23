@@ -20,5 +20,17 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
 
         transform.Translate(movement);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            speed = 0;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            speed = 5;
+        }
     }
+
+
 }
