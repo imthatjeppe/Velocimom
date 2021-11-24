@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UnityEngine.Tilemaps;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -6,7 +8,7 @@ using UnityEditor.SceneManagement;
 
 namespace UnityEngine.AI
 {
-    public enum CollectObjects
+    public enum CollectObjects2d
     {
         All = 0,
         Volume = 1,
@@ -15,17 +17,17 @@ namespace UnityEngine.AI
 
     [ExecuteAlways]
     [DefaultExecutionOrder(-102)]
-    [AddComponentMenu("Navigation/NavMeshSurface", 30)]
+    [AddComponentMenu("Navigation/NavMeshSurface2d", 30)]
     [HelpURL("https://github.com/Unity-Technologies/NavMeshComponents#documentation-draft")]
-    public class NavMeshSurface : MonoBehaviour
+    public class NavMeshSurface2d : MonoBehaviour
     {
         [SerializeField]
         int m_AgentTypeID;
         public int agentTypeID { get { return m_AgentTypeID; } set { m_AgentTypeID = value; } }
 
         [SerializeField]
-        CollectObjects m_CollectObjects = CollectObjects.All;
-        public CollectObjects collectObjects { get { return m_CollectObjects; } set { m_CollectObjects = value; } }
+        CollectObjects2d m_CollectObjects = CollectObjects2d.All;
+        public CollectObjects2d collectObjects { get { return m_CollectObjects; } set { m_CollectObjects = value; } }
 
         [SerializeField]
         Vector3 m_Size = new Vector3(10.0f, 10.0f, 10.0f);
@@ -42,6 +44,22 @@ namespace UnityEngine.AI
         [SerializeField]
         NavMeshCollectGeometry m_UseGeometry = NavMeshCollectGeometry.RenderMeshes;
         public NavMeshCollectGeometry useGeometry { get { return m_UseGeometry; } set { m_UseGeometry = value; } }
+
+        [SerializeField]
+        bool m_OverrideByGrid;
+        public bool overrideByGrid { get { return m_OverrideByGrid; } set { m_OverrideByGrid = value; } }
+
+        [SerializeField]
+        GameObject m_UseMeshPrefab;
+        public GameObject useMeshPrefab { get { return m_UseMeshPrefab; } set { m_UseMeshPrefab = value; } }
+
+        [SerializeField]
+        bool m_CompressBounds;
+        public bool compressBounds { get { return m_CompressBounds; } set { m_CompressBounds = value; } }
+
+        [SerializeField]
+        Vector3 m_OverrideVector = Vector3.one;
+        public Vector3 overrideVector { get { return m_OverrideVector; } set { m_OverrideVector = value; } }
 
         [SerializeField]
         int m_DefaultArea;
@@ -73,6 +91,10 @@ namespace UnityEngine.AI
         bool m_BuildHeightMesh;
         public bool buildHeightMesh { get { return m_BuildHeightMesh; } set { m_BuildHeightMesh = value; } }
 
+        [SerializeField]
+        bool m_HideEditorLogs;
+        public bool hideEditorLogs { get { return m_HideEditorLogs; } set { m_HideEditorLogs = value; } }
+
         // Reference to whole scene navmesh data asset.
         [UnityEngine.Serialization.FormerlySerializedAs("m_BakedNavMeshData")]
         [SerializeField]
@@ -84,9 +106,9 @@ namespace UnityEngine.AI
         Vector3 m_LastPosition = Vector3.zero;
         Quaternion m_LastRotation = Quaternion.identity;
 
-        static readonly List<NavMeshSurface> s_NavMeshSurfaces = new List<NavMeshSurface>();
+        static readonly List<NavMeshSurface2d> s_NavMeshSurfaces = new List<NavMeshSurface2d>();
 
-        public static List<NavMeshSurface> activeSurfaces
+        public static List<NavMeshSurface2d> activeSurfaces
         {
             get { return s_NavMeshSurfaces; }
         }
@@ -139,7 +161,7 @@ namespace UnityEngine.AI
             var buildSettings = NavMesh.GetSettingsByID(m_AgentTypeID);
             if (buildSettings.agentTypeID == -1)
             {
-                Debug.LogWarning("No build settings for agent type ID " + agentTypeID, this);
+                if (!m_HideEditorLogs) Debug.LogWarning("No build settings for agent type ID " + agentTypeID, this);
                 buildSettings.agentTypeID = m_AgentTypeID;
             }
 
@@ -163,7 +185,7 @@ namespace UnityEngine.AI
             // Use unscaled bounds - this differs in behaviour from e.g. collider components.
             // But is similar to reflection probe - and since navmesh data has no scaling support - it is the right choice here.
             var sourcesBounds = new Bounds(m_Center, Abs(m_Size));
-            if (m_CollectObjects == CollectObjects.All || m_CollectObjects == CollectObjects.Children)
+            if (m_CollectObjects != CollectObjects2d.Volume)
             {
                 sourcesBounds = CalculateWorldBounds(sources);
             }
@@ -181,6 +203,25 @@ namespace UnityEngine.AI
             }
         }
 
+        // Source: https://github.com/Unity-Technologies/NavMeshComponents/issues/97#issuecomment-528692289
+        public AsyncOperation BuildNavMeshAsync()
+        {
+            RemoveData();
+            m_NavMeshData = new NavMeshData(m_AgentTypeID)
+            {
+                name = gameObject.name,
+                position = transform.position,
+                rotation = transform.rotation
+            };
+
+            if (isActiveAndEnabled)
+            {
+                AddData();
+            }
+
+            return UpdateNavMesh(m_NavMeshData);
+        }
+
         public AsyncOperation UpdateNavMesh(NavMeshData data)
         {
             var sources = CollectSources();
@@ -188,13 +229,13 @@ namespace UnityEngine.AI
             // Use unscaled bounds - this differs in behaviour from e.g. collider components.
             // But is similar to reflection probe - and since navmesh data has no scaling support - it is the right choice here.
             var sourcesBounds = new Bounds(m_Center, Abs(m_Size));
-            if (m_CollectObjects == CollectObjects.All || m_CollectObjects == CollectObjects.Children)
+            if (m_CollectObjects != CollectObjects2d.Volume)
                 sourcesBounds = CalculateWorldBounds(sources);
 
             return NavMeshBuilder.UpdateNavMeshDataAsync(data, GetBuildSettings(), sources, sourcesBounds);
         }
 
-        static void Register(NavMeshSurface surface)
+        static void Register(NavMeshSurface2d surface)
         {
 #if UNITY_EDITOR
             var isInPreviewScene = EditorSceneManager.IsPreviewSceneObject(surface);
@@ -213,7 +254,7 @@ namespace UnityEngine.AI
                 s_NavMeshSurfaces.Add(surface);
         }
 
-        static void Unregister(NavMeshSurface surface)
+        static void Unregister(NavMeshSurface2d surface)
         {
             s_NavMeshSurfaces.Remove(surface);
 
@@ -236,7 +277,7 @@ namespace UnityEngine.AI
 #endif
             // Modifiers
             List<NavMeshModifierVolume> modifiers;
-            if (m_CollectObjects == CollectObjects.Children)
+            if (m_CollectObjects == CollectObjects2d.Children)
             {
                 modifiers = new List<NavMeshModifierVolume>(GetComponentsInChildren<NavMeshModifierVolume>());
                 modifiers.RemoveAll(x => !x.isActiveAndEnabled);
@@ -275,7 +316,7 @@ namespace UnityEngine.AI
             var markups = new List<NavMeshBuildMarkup>();
 
             List<NavMeshModifier> modifiers;
-            if (m_CollectObjects == CollectObjects.Children)
+            if (m_CollectObjects == CollectObjects2d.Children)
             {
                 modifiers = new List<NavMeshModifier>(GetComponentsInChildren<NavMeshModifier>());
                 modifiers.RemoveAll(x => !x.isActiveAndEnabled);
@@ -302,17 +343,17 @@ namespace UnityEngine.AI
 #if UNITY_EDITOR
             if (!EditorApplication.isPlaying)
             {
-                if (m_CollectObjects == CollectObjects.All)
+                if (m_CollectObjects == CollectObjects2d.All)
                 {
                     UnityEditor.AI.NavMeshBuilder.CollectSourcesInStage(
                         null, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, gameObject.scene, sources);
                 }
-                else if (m_CollectObjects == CollectObjects.Children)
+                else if (m_CollectObjects == CollectObjects2d.Children)
                 {
                     UnityEditor.AI.NavMeshBuilder.CollectSourcesInStage(
                         transform, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, gameObject.scene, sources);
                 }
-                else if (m_CollectObjects == CollectObjects.Volume)
+                else if (m_CollectObjects == CollectObjects2d.Volume)
                 {
                     Matrix4x4 localToWorld = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
                     var worldBounds = GetWorldBounds(localToWorld, new Bounds(m_Center, m_Size));
@@ -320,26 +361,56 @@ namespace UnityEngine.AI
                     UnityEditor.AI.NavMeshBuilder.CollectSourcesInStage(
                         worldBounds, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, gameObject.scene, sources);
                 }
+                if (!hideEditorLogs && !Mathf.Approximately(transform.eulerAngles.x, 270f))
+                    Debug.LogWarning("NavMeshSurface2d is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.");
+                var builder = new NavMeshBuilder2dWrapper();
+                builder.defaultArea = defaultArea;
+                builder.layerMask = layerMask;
+                builder.agentID = agentTypeID;
+                builder.useMeshPrefab = useMeshPrefab;
+                builder.overrideByGrid = overrideByGrid;
+                builder.compressBounds = compressBounds;
+                builder.overrideVector = overrideVector;
+                builder.CollectGeometry = useGeometry;
+                builder.CollectObjects = collectObjects;
+                builder.parent = gameObject;
+                builder.hideEditorLogs = hideEditorLogs;
+                NavMeshBuilder2d.CollectSources(sources, builder);
+
             }
             else
 #endif
             {
-                if (m_CollectObjects == CollectObjects.All)
+                if (m_CollectObjects == CollectObjects2d.All)
                 {
                     NavMeshBuilder.CollectSources(null, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, sources);
                 }
-                else if (m_CollectObjects == CollectObjects.Children)
+                else if (m_CollectObjects == CollectObjects2d.Children)
                 {
                     NavMeshBuilder.CollectSources(transform, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, sources);
                 }
-                else if (m_CollectObjects == CollectObjects.Volume)
+                else if (m_CollectObjects == CollectObjects2d.Volume)
                 {
                     Matrix4x4 localToWorld = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
                     var worldBounds = GetWorldBounds(localToWorld, new Bounds(m_Center, m_Size));
                     NavMeshBuilder.CollectSources(worldBounds, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, sources);
                 }
+                if (!hideEditorLogs && !Mathf.Approximately(transform.eulerAngles.x, 270f))
+                    Debug.LogWarning("NavMeshSurface2d is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.");
+                var builder = new NavMeshBuilder2dWrapper();
+                builder.defaultArea = defaultArea;
+                builder.layerMask = layerMask;
+                builder.agentID = agentTypeID;
+                builder.useMeshPrefab = useMeshPrefab;
+                builder.overrideByGrid = overrideByGrid;
+                builder.compressBounds = compressBounds;
+                builder.overrideVector = overrideVector;
+                builder.CollectGeometry = useGeometry;
+                builder.CollectObjects = collectObjects;
+                builder.parent = gameObject;
+                builder.hideEditorLogs = hideEditorLogs;
+                NavMeshBuilder2d.CollectSources(sources, builder);
             }
-
             if (m_IgnoreNavMeshAgent)
                 sources.RemoveAll((x) => (x.component != null && x.component.gameObject.GetComponent<NavMeshAgent>() != null));
 
@@ -356,7 +427,7 @@ namespace UnityEngine.AI
             return new Vector3(Mathf.Abs(v.x), Mathf.Abs(v.y), Mathf.Abs(v.z));
         }
 
-        static Bounds GetWorldBounds(Matrix4x4 mat, Bounds bounds)
+        public static Bounds GetWorldBounds(Matrix4x4 mat, Bounds bounds)
         {
             var absAxisX = Abs(mat.MultiplyVector(Vector3.right));
             var absAxisY = Abs(mat.MultiplyVector(Vector3.up));
@@ -371,25 +442,29 @@ namespace UnityEngine.AI
             // Use the unscaled matrix for the NavMeshSurface
             Matrix4x4 worldToLocal = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
             worldToLocal = worldToLocal.inverse;
-
             var result = new Bounds();
+            if (collectObjects != CollectObjects2d.Children)
+            {
+                result.Encapsulate(CalculateGridWorldBounds(worldToLocal));
+            }
+
             foreach (var src in sources)
             {
                 switch (src.shape)
                 {
                     case NavMeshBuildSourceShape.Mesh:
-                    {
-                        var m = src.sourceObject as Mesh;
-                        result.Encapsulate(GetWorldBounds(worldToLocal * src.transform, m.bounds));
-                        break;
-                    }
+                        {
+                            var m = src.sourceObject as Mesh;
+                            result.Encapsulate(GetWorldBounds(worldToLocal * src.transform, m.bounds));
+                            break;
+                        }
                     case NavMeshBuildSourceShape.Terrain:
-                    {
-                        // Terrain pivot is lower/left corner - shift bounds accordingly
-                        var t = src.sourceObject as TerrainData;
-                        result.Encapsulate(GetWorldBounds(worldToLocal * src.transform, new Bounds(0.5f * t.size, t.size)));
-                        break;
-                    }
+                        {
+                            // Terrain pivot is lower/left corner - shift bounds accordingly
+                            var t = src.sourceObject as TerrainData;
+                            result.Encapsulate(GetWorldBounds(worldToLocal * src.transform, new Bounds(0.5f * t.size, t.size)));
+                            break;
+                        }
                     case NavMeshBuildSourceShape.Box:
                     case NavMeshBuildSourceShape.Sphere:
                     case NavMeshBuildSourceShape.Capsule:
@@ -401,6 +476,27 @@ namespace UnityEngine.AI
             // Inflate the bounds a bit to avoid clipping co-planar sources
             result.Expand(0.1f);
             return result;
+        }
+
+        private static Bounds CalculateGridWorldBounds(Matrix4x4 worldToLocal)
+        {
+            var bounds = new Bounds();
+            var grid = FindObjectOfType<Grid>();
+            var tilemaps = grid.GetComponentsInChildren<Tilemap>();
+            if (tilemaps == null || tilemaps.Length < 1)
+            {
+
+                throw new NullReferenceException("Add at least one tilemap");
+            }
+            foreach (var tilemap in tilemaps)
+            {
+                //Debug.Log($"From Local Bounds [{tilemap.name}]: {tilemap.localBounds}");
+                var lbounds = GetWorldBounds(worldToLocal * tilemap.transform.localToWorldMatrix, tilemap.localBounds);
+                bounds.Encapsulate(lbounds);
+                //Debug.Log($"To World Bounds: {bounds}");
+            }
+            bounds.Expand(0.1f);
+            return bounds;
         }
 
         bool HasTransformChanged()
@@ -433,7 +529,7 @@ namespace UnityEngine.AI
                 return false;
 
             // An instance can share asset reference only with its prefab parent
-            var prefab = UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(this) as NavMeshSurface;
+            var prefab = UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(this) as NavMeshSurface2d;
             if (prefab != null && prefab.navMeshData == navMeshData)
                 return false;
 
@@ -453,7 +549,7 @@ namespace UnityEngine.AI
         {
             if (UnshareNavMeshAsset())
             {
-                Debug.LogWarning("Duplicating NavMeshSurface does not duplicate the referenced navmesh data", this);
+                if (!m_HideEditorLogs) Debug.LogWarning("Duplicating NavMeshSurface does not duplicate the referenced navmesh data", this);
                 m_NavMeshData = null;
             }
 

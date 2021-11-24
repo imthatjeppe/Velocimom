@@ -1,11 +1,7 @@
 #define NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
 
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.IMGUI.Controls;
-using UnityEditor.SceneManagement;
 using UnityEditorInternal;
 using UnityEngine.AI;
 using UnityEngine;
@@ -13,8 +9,8 @@ using UnityEngine;
 namespace UnityEditor.AI
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(NavMeshSurface))]
-    class NavMeshSurfaceEditor : Editor
+    [CustomEditor(typeof(NavMeshSurface2d))]
+    class NavMeshSurfaceEditor2d : Editor
     {
         SerializedProperty m_AgentTypeID;
         SerializedProperty m_BuildHeightMesh;
@@ -22,12 +18,20 @@ namespace UnityEditor.AI
         SerializedProperty m_CollectObjects;
         SerializedProperty m_DefaultArea;
         SerializedProperty m_LayerMask;
+
+        SerializedProperty m_OverrideByGrid;
+        SerializedProperty m_UseMeshPrefab;
+        SerializedProperty m_CompressBounds;
+        SerializedProperty m_OverrideVector;
+
         SerializedProperty m_OverrideTileSize;
         SerializedProperty m_OverrideVoxelSize;
         SerializedProperty m_Size;
         SerializedProperty m_TileSize;
         SerializedProperty m_UseGeometry;
         SerializedProperty m_VoxelSize;
+
+        SerializedProperty m_HideEditorLogs;
 
 #if NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
         SerializedProperty m_NavMeshData;
@@ -68,12 +72,20 @@ namespace UnityEditor.AI
             m_CollectObjects = serializedObject.FindProperty("m_CollectObjects");
             m_DefaultArea = serializedObject.FindProperty("m_DefaultArea");
             m_LayerMask = serializedObject.FindProperty("m_LayerMask");
+
+            m_OverrideByGrid = serializedObject.FindProperty("m_OverrideByGrid");
+            m_UseMeshPrefab = serializedObject.FindProperty("m_UseMeshPrefab");
+            m_CompressBounds = serializedObject.FindProperty("m_CompressBounds");
+            m_OverrideVector = serializedObject.FindProperty("m_OverrideVector");
+
             m_OverrideTileSize = serializedObject.FindProperty("m_OverrideTileSize");
             m_OverrideVoxelSize = serializedObject.FindProperty("m_OverrideVoxelSize");
             m_Size = serializedObject.FindProperty("m_Size");
             m_TileSize = serializedObject.FindProperty("m_TileSize");
             m_UseGeometry = serializedObject.FindProperty("m_UseGeometry");
             m_VoxelSize = serializedObject.FindProperty("m_VoxelSize");
+
+            m_HideEditorLogs = serializedObject.FindProperty("m_HideEditorLogs");
 
 #if NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
             m_NavMeshData = serializedObject.FindProperty("m_NavMeshData");
@@ -88,7 +100,7 @@ namespace UnityEditor.AI
 
         Bounds GetBounds()
         {
-            var navSurface = (NavMeshSurface)target;
+            var navSurface = (NavMeshSurface2d)target;
             return new Bounds(navSurface.transform.position, navSurface.size);
         }
 
@@ -112,6 +124,12 @@ namespace UnityEditor.AI
 
             EditorGUILayout.Space();
 
+            if ((CollectObjects)m_CollectObjects.enumValueIndex != CollectObjects.Children
+                && GameObject.FindObjectOfType<Grid>() == null)
+            {
+                EditorGUILayout.HelpBox($"{CollectObjects.All} or {CollectObjects.Volume} is not intended to be used without root Grid object in scene. Use {CollectObjects.Children} instead.", MessageType.Warning);
+            }
+
             EditorGUILayout.PropertyField(m_CollectObjects);
             if ((CollectObjects)m_CollectObjects.enumValueIndex == CollectObjects.Volume)
             {
@@ -132,6 +150,12 @@ namespace UnityEditor.AI
 
             EditorGUILayout.PropertyField(m_LayerMask, s_Styles.m_LayerMask);
             EditorGUILayout.PropertyField(m_UseGeometry);
+
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(m_OverrideByGrid);
+            EditorGUILayout.PropertyField(m_UseMeshPrefab);
+            EditorGUILayout.PropertyField(m_CompressBounds);
+            EditorGUILayout.PropertyField(m_OverrideVector);
 
             EditorGUILayout.Space();
 
@@ -182,7 +206,7 @@ namespace UnityEditor.AI
                     if (!m_OverrideTileSize.hasMultipleDifferentValues)
                     {
                         if (m_OverrideTileSize.boolValue)
-                            EditorGUILayout.HelpBox("Tile size controls the how local the changes to the world are (rebuild or carve). Small tile size allows more local changes, while potentially generating more data overall.", MessageType.None);
+                            EditorGUILayout.HelpBox("Tile size controls the how local the changes to the world are (rebuild or carve). Small tile size allows more local changes, while potentially generating more data in overal.", MessageType.None);
                     }
                     EditorGUI.indentLevel--;
                 }
@@ -200,17 +224,22 @@ namespace UnityEditor.AI
 
             EditorGUILayout.Space();
 
+            // Hide editor logs
+            EditorGUILayout.PropertyField(m_HideEditorLogs);
+
+            EditorGUILayout.Space();
+
             serializedObject.ApplyModifiedProperties();
 
             var hadError = false;
             var multipleTargets = targets.Length > 1;
-            foreach (NavMeshSurface navSurface in targets)
+            foreach (NavMeshSurface2d navSurface in targets)
             {
                 var settings = navSurface.GetBuildSettings();
                 // Calculating bounds is potentially expensive when unbounded - so here we just use the center/size.
                 // It means the validation is not checking vertical voxel limit correctly when the surface is set to something else than "in volume".
                 var bounds = new Bounds(Vector3.zero, Vector3.zero);
-                if (navSurface.collectObjects == CollectObjects.Volume)
+                if (navSurface.collectObjects == CollectObjects2d.Volume)
                 {
                     bounds = new Bounds(navSurface.center, navSurface.size);
                 }
@@ -256,20 +285,39 @@ namespace UnityEditor.AI
                 GUILayout.Space(EditorGUIUtility.labelWidth);
                 if (GUILayout.Button("Clear"))
                 {
-                    NavMeshAssetManager.instance.ClearSurfaces(targets);
+                    NavMeshAssetManager2d.instance.ClearSurfaces(targets);
                     SceneView.RepaintAll();
                 }
 
                 if (GUILayout.Button("Bake"))
                 {
-                    NavMeshAssetManager.instance.StartBakingSurfaces(targets);
+                    NavMeshAssetManager2d.instance.StartBakingSurfaces(targets);
                 }
 
                 GUILayout.EndHorizontal();
+
+                GUILayout.BeginHorizontal();
+                GUILayout.Space(EditorGUIUtility.labelWidth);
+                if (GUILayout.Button("Rotate Surface to XY"))
+                {
+                    foreach (var item in targets)
+                    {
+                        var o = item as NavMeshSurface2d;
+                        o.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+                    }
+                }
+                GUILayout.EndHorizontal();
+                foreach (NavMeshSurface2d navSurface in targets)
+                {
+                    if (!Mathf.Approximately(navSurface.transform.eulerAngles.x, 270f))
+                    {
+                        EditorGUILayout.HelpBox("NavMeshSurface2d is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.", MessageType.Warning);
+                    }
+                }
             }
 
             // Show progress for the selected targets
-            var bakeOperations = NavMeshAssetManager.instance.GetBakeOperations();
+            var bakeOperations = NavMeshAssetManager2d.instance.GetBakeOperations();
             for (int i = bakeOperations.Count - 1; i >= 0; --i)
             {
                 if (!targets.Contains(bakeOperations[i].surface))
@@ -304,13 +352,13 @@ namespace UnityEditor.AI
         }
 
         [DrawGizmo(GizmoType.Selected | GizmoType.Active | GizmoType.Pickable)]
-        static void RenderBoxGizmoSelected(NavMeshSurface navSurface, GizmoType gizmoType)
+        static void RenderBoxGizmoSelected(NavMeshSurface2d navSurface, GizmoType gizmoType)
         {
             RenderBoxGizmo(navSurface, gizmoType, true);
         }
 
         [DrawGizmo(GizmoType.NotInSelectionHierarchy | GizmoType.Pickable)]
-        static void RenderBoxGizmoNotSelected(NavMeshSurface navSurface, GizmoType gizmoType)
+        static void RenderBoxGizmoNotSelected(NavMeshSurface2d navSurface, GizmoType gizmoType)
         {
             if (NavMeshVisualizationSettings.showNavigation > 0)
                 RenderBoxGizmo(navSurface, gizmoType, false);
@@ -318,7 +366,7 @@ namespace UnityEditor.AI
                 Gizmos.DrawIcon(navSurface.transform.position, "NavMeshSurface Icon", true);
         }
 
-        static void RenderBoxGizmo(NavMeshSurface navSurface, GizmoType gizmoType, bool selected)
+        static void RenderBoxGizmo(NavMeshSurface2d navSurface, GizmoType gizmoType, bool selected)
         {
             var color = selected ? s_HandleColorSelected : s_HandleColor;
             if (!navSurface.enabled)
@@ -331,7 +379,7 @@ namespace UnityEditor.AI
             var localToWorld = Matrix4x4.TRS(navSurface.transform.position, navSurface.transform.rotation, Vector3.one);
             Gizmos.matrix = localToWorld;
 
-            if (navSurface.collectObjects == CollectObjects.Volume)
+            if (navSurface.collectObjects == CollectObjects2d.Volume)
             {
                 Gizmos.color = color;
                 Gizmos.DrawWireCube(navSurface.center, navSurface.size);
@@ -364,7 +412,7 @@ namespace UnityEditor.AI
             if (!editingCollider)
                 return;
 
-            var navSurface = (NavMeshSurface)target;
+            var navSurface = (NavMeshSurface2d)target;
             var color = navSurface.enabled ? s_HandleColor : s_HandleColorDisabled;
             var localToWorld = Matrix4x4.TRS(navSurface.transform.position, navSurface.transform.rotation, Vector3.one);
             using (new Handles.DrawingScope(color, localToWorld))
@@ -386,12 +434,12 @@ namespace UnityEditor.AI
             }
         }
 
-        [MenuItem("GameObject/AI/NavMesh Surface", false, 2000)]
+        [MenuItem("GameObject/AI/NavMesh Surface 2D", false, 2000)]
         public static void CreateNavMeshSurface(MenuCommand menuCommand)
         {
             var parent = menuCommand.context as GameObject;
             var go = NavMeshComponentsGUIUtility.CreateAndSelectGameObject("NavMesh Surface", parent);
-            go.AddComponent<NavMeshSurface>();
+            go.AddComponent<NavMeshSurface2d>();
             var view = SceneView.lastActiveSceneView;
             if (view != null)
                 view.MoveToView(go.transform);
