@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void PlayGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level1");
     }
     public void Quit()
     {
@@ -16,6 +16,12 @@ public class Menu : MonoBehaviour
 #else
          Application.Quit();
 #endif
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
 

@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5;
+    public float AbilityStamina = 100;
+    public Slider Staminabar;
+    public float currentstamina;
+    private float MinStamina = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,29 +27,54 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movement);
 
-       /* if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
-        }
+        /* if (Input.GetKey(KeyCode.W))
+         {
+             transform.Translate(Vector3.up * speed * Time.deltaTime);
+         }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
+         if (Input.GetKey(KeyCode.A))
+         {
+             transform.Translate(Vector3.left * speed * Time.deltaTime);
+         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
-        }
+         if (Input.GetKey(KeyCode.S))
+         {
+             transform.Translate(Vector3.down * speed * Time.deltaTime);
+         }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-        */
+         if (Input.GetKey(KeyCode.D))
+         {
+             transform.Translate(Vector3.right * speed * Time.deltaTime);
+         }
+         */
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed = 0;
+
+        }
+
+        else {
+            if (currentstamina >= 100)
+            {
+                currentstamina = 100;
+            }
+            else
+            {
+                GainStamina(3);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (currentstamina >= 0)
+            {
+                LoseStamina(15);
+            }
+            else
+            {
+                LoseStamina(0);
+                speed = 25;
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -51,6 +82,32 @@ public class PlayerMovement : MonoBehaviour
             speed = 25;
         }
     }
+
+    
+
+    public void SetMaxStamina(float stamina)
+        {
+
+            Staminabar.value = stamina;
+        }
+        public void SetStamina(float stamina)
+        {
+            Staminabar.value = stamina;
+        }
+
+        private void LoseStamina(float LoseStamina)
+         {
+            currentstamina -= LoseStamina * Time.deltaTime;
+
+            SetStamina(currentstamina);
+        }
+
+        private void GainStamina(float GainStamina)
+        {
+            currentstamina += GainStamina * Time.deltaTime;
+
+            SetStamina(currentstamina);
+        }
 
 
 }
