@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
