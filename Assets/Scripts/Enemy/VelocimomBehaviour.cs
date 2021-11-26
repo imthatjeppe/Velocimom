@@ -22,7 +22,7 @@ public class VelocimomBehaviour : MonoBehaviour
     private float staringTime;
 
     private PlayerMovement player;
-    //private Transform target;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class VelocimomBehaviour : MonoBehaviour
         patrol = true;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-       // target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         waitUntilNextPointTime = startWaitUntilNextPointTime;
         staringTime = startStaringTime;
@@ -45,13 +45,13 @@ public class VelocimomBehaviour : MonoBehaviour
     void Update()
     {
         Patrol();
-        //SearchForPlayer();
+        SearchForPlayer();
     }
 
     void Patrol()
     {
-        //if (patrol)
-        //{
+        if (patrol)
+        {
             if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
             {
                 if (waitUntilNextPointTime <= 0)
@@ -66,41 +66,41 @@ public class VelocimomBehaviour : MonoBehaviour
                     waitUntilNextPointTime -= Time.deltaTime;
                 }
             }
-        //}
+        }
+    }
+
+
+    void SearchForPlayer()
+    {
+        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, distance);
+        Debug.DrawRay(transform.position, transform.right, Color.green);
+
+        if (sightHit.collider.CompareTag("Player"))
+        {
+            patrol = false;
+
+            if (!player.hidden)
+            {
+                Chase();
+            }
+
+            if (staringTime <= 0)
+            {
+                patrol = true;
+            }
+
+            else if (staringTime > 0)
+            {
+                staringTime -= Time.deltaTime;
+            }
+        }
+
+    }
+    void Chase()
+    {
+        if (Vector2.Distance(transform.position, target.position) > 3)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, chasingSpeed * Time.deltaTime);
+        }
     }
 }
-
-//    void SearchForPlayer()
-//    {
-//        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, distance);
-//        Debug.DrawRay(transform.position, transform.right, Color.green);
-
-//        if (sightHit.collider.CompareTag("Player"))
-//        {
-//            patrol = false;
-
-//            if (!player.hidden)
-//            {
-//                Chase();
-//            }
-
-//            if (staringTime <= 0)
-//            {
-//                patrol = true;
-//            }
-
-//            else if (staringTime > 0)
-//            {
-//                staringTime -= Time.deltaTime;
-//            }
-//        }
-
-//    }
-//    void Chase()
-//    {
-//        if (Vector2.Distance(transform.position, target.position) > 3)
-//        {
-//            transform.position = Vector2.MoveTowards(transform.position, target.position, chasingSpeed * Time.deltaTime);
-//        }
-//    }
-//}
