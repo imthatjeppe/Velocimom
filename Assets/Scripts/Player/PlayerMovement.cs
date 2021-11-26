@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float AbilityStamina = 100;
     public Slider Staminabar;
     public float currentstamina;
+    public bool hidden;
     
 
     
@@ -74,11 +75,13 @@ public class PlayerMovement : MonoBehaviour
             if (currentstamina >= 0)
             {
                 LoseStamina(15);
+                hidden = true;
             }
             else
             {
                 LoseStamina(0);
                 speed = 25;
+                hidden = false;
             }
         }
 
