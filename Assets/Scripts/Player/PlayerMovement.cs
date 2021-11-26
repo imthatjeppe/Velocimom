@@ -58,32 +58,36 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
         float x = Input.GetAxisRaw("Horizontal");
-         float y = Input.GetAxisRaw("Vertical");
 
-         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
+         float y = Input.GetAxisRaw("Vertical") * 0.42f;
+
+        
+
+
+        Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
 
         transform.Translate(movement);
-         /*
-          if (Input.GetKey(KeyCode.W))
-          {
-              transform.Translate(Vector3.up / offset * speed * Time.deltaTime);
-          }
+        /*
+         if (Input.GetKey(KeyCode.W))
+         {
+             transform.Translate(Vector3.up / offset * speed * Time.deltaTime);
+         }
 
-          if (Input.GetKey(KeyCode.A))
-          {
-              transform.Translate(Vector3.left / offset * speed * Time.deltaTime);
-          }
+         if (Input.GetKey(KeyCode.A))
+         {
+             transform.Translate(Vector3.left / offset * speed * Time.deltaTime);
+         }
 
-          if (Input.GetKey(KeyCode.S))
-          {
-              transform.Translate(Vector3.down / offset * speed * Time.deltaTime);
-          }
+         if (Input.GetKey(KeyCode.S))
+         {
+             transform.Translate(Vector3.down / offset * speed * Time.deltaTime);
+         }
 
-          if (Input.GetKey(KeyCode.D))
-          {
-              transform.Translate(Vector3.right / offset * speed * Time.deltaTime);
-          }
-          */
+         if (Input.GetKey(KeyCode.D))
+         {
+             transform.Translate(Vector3.right / offset * speed * Time.deltaTime);
+         }
+         */
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -91,7 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        else {
+        else
+        {
             if (currentstamina >= 100)
             {
                 currentstamina = 100;
@@ -123,31 +128,31 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+
 
     public void SetMaxStamina(float stamina)
-        {
+    {
 
-            Staminabar.value = stamina;
-        }
-        public void SetStamina(float stamina)
-        {
-            Staminabar.value = stamina;
-        }
+        Staminabar.value = stamina;
+    }
+    public void SetStamina(float stamina)
+    {
+        Staminabar.value = stamina;
+    }
 
-        private void LoseStamina(float LoseStamina)
-         {
-            currentstamina -= LoseStamina * Time.deltaTime;
+    private void LoseStamina(float LoseStamina)
+    {
+        currentstamina -= LoseStamina * Time.deltaTime;
 
-            SetStamina(currentstamina);
-        }
+        SetStamina(currentstamina);
+    }
 
-        private void GainStamina(float GainStamina)
-        {
-            currentstamina += GainStamina * Time.deltaTime;
+    private void GainStamina(float GainStamina)
+    {
+        currentstamina += GainStamina * Time.deltaTime;
 
-            SetStamina(currentstamina);
-        }
+        SetStamina(currentstamina);
+    }
 
 
 }
