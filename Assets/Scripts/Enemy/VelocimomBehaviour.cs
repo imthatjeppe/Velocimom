@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
@@ -7,19 +7,33 @@ public class VelocimomBehaviour : MonoBehaviour
 {
     public int speed = 3;
 
-    public float startWaitTime;
-    public float distance = 0.2f;
+    public bool patrol;
 
+    public float startWaitUntilNextPointTime;
+    public float startStaringTime;
+    public float chasingSpeed;
+    public float distance = 0.2f;
     public Transform[] moveSpots;
     AIDestinationSetter setDestination;
+
     private int randomDestinationSpot;
 
-    private float waitTime;
+    private float waitUntilNextPointTime;
+    private float staringTime;
+
+    private PlayerMovement player;
+    //private Transform target;
 
     // Start is called before the first frame update
     void Start()
     {
-        waitTime = startWaitTime;
+        patrol = true;
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+       // target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        waitUntilNextPointTime = startWaitUntilNextPointTime;
+        staringTime = startStaringTime;
         randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
         setDestination = GetComponent<AIDestinationSetter>();
@@ -31,24 +45,62 @@ public class VelocimomBehaviour : MonoBehaviour
     void Update()
     {
         Patrol();
-        //TODO: Chase-script inkl. isHidden
+        //SearchForPlayer();
     }
 
     void Patrol()
     {
-        if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
-        {
-            if (waitTime <= 0)
+        //if (patrol)
+        //{
+            if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
             {
-                waitTime = startWaitTime;
-                randomDestinationSpot = Random.Range(0, moveSpots.Length);
-                setDestination.target = moveSpots[randomDestinationSpot];
-            }
+                if (waitUntilNextPointTime <= 0)
+                {
+                    waitUntilNextPointTime = startWaitUntilNextPointTime;
+                    randomDestinationSpot = Random.Range(0, moveSpots.Length);
+                    setDestination.target = moveSpots[randomDestinationSpot];
+                }
 
-            else
-            {
-                waitTime -= Time.deltaTime;
+                else
+                {
+                    waitUntilNextPointTime -= Time.deltaTime;
+                }
             }
-        }
+        //}
     }
 }
+
+//    void SearchForPlayer()
+//    {
+//        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, distance);
+//        Debug.DrawRay(transform.position, transform.right, Color.green);
+
+//        if (sightHit.collider.CompareTag("Player"))
+//        {
+//            patrol = false;
+
+//            if (!player.hidden)
+//            {
+//                Chase();
+//            }
+
+//            if (staringTime <= 0)
+//            {
+//                patrol = true;
+//            }
+
+//            else if (staringTime > 0)
+//            {
+//                staringTime -= Time.deltaTime;
+//            }
+//        }
+
+//    }
+//    void Chase()
+//    {
+//        if (Vector2.Distance(transform.position, target.position) > 3)
+//        {
+//            transform.position = Vector2.MoveTowards(transform.position, target.position, chasingSpeed * Time.deltaTime);
+//        }
+//    }
+//}
