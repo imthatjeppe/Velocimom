@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
         float x = Input.GetAxisRaw("Horizontal");
-         float y = Input.GetAxisRaw("Vertical");
+         float y = Input.GetAxisRaw("Vertical") * 0.42f;
 
          Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
 
