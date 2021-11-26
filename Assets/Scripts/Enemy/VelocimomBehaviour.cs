@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
@@ -7,26 +7,27 @@ public class VelocimomBehaviour : MonoBehaviour
 {
     public int speed = 3;
 
-    public bool patrol;
-
-    public float startWaitUntilNextPointTime;
-    public float startStaringTime;
-    public float chasingSpeed;
+    public float startWaitTime;
     public float distance = 0.2f;
+
     public Transform[] moveSpots;
     AIDestinationSetter setDestination;
-
     private int randomDestinationSpot;
 
+<<<<<<< HEAD
     private float waitUntilNextPointTime;
     private float staringTime;
 
     private PlayerMovement player;
     private Transform target;
+=======
+    private float waitTime;
+>>>>>>> parent of a391062 (welp)
 
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         patrol = true;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -34,6 +35,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
         waitUntilNextPointTime = startWaitUntilNextPointTime;
         staringTime = startStaringTime;
+=======
+        waitTime = startWaitTime;
+>>>>>>> parent of a391062 (welp)
         randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
         setDestination = GetComponent<AIDestinationSetter>();
@@ -45,29 +49,37 @@ public class VelocimomBehaviour : MonoBehaviour
     void Update()
     {
         Patrol();
+<<<<<<< HEAD
         SearchForPlayer();
+=======
+        //TODO: Chase-script inkl. isHidden
+>>>>>>> parent of a391062 (welp)
     }
 
     void Patrol()
     {
+<<<<<<< HEAD
         if (patrol)
         {
             if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
+=======
+        if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
+        {
+            if (waitTime <= 0)
+>>>>>>> parent of a391062 (welp)
             {
-                if (waitUntilNextPointTime <= 0)
-                {
-                    waitUntilNextPointTime = startWaitUntilNextPointTime;
-                    randomDestinationSpot = Random.Range(0, moveSpots.Length);
-                    setDestination.target = moveSpots[randomDestinationSpot];
-                }
+                waitTime = startWaitTime;
+                randomDestinationSpot = Random.Range(0, moveSpots.Length);
+                setDestination.target = moveSpots[randomDestinationSpot];
+            }
 
-                else
-                {
-                    waitUntilNextPointTime -= Time.deltaTime;
-                }
+            else
+            {
+                waitTime -= Time.deltaTime;
             }
         }
     }
+<<<<<<< HEAD
 
 
     void SearchForPlayer()
@@ -104,3 +116,6 @@ public class VelocimomBehaviour : MonoBehaviour
         }
     }
 }
+=======
+}
+>>>>>>> parent of a391062 (welp)
