@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +6,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
     public float AbilityStamina = 100;
     public Slider Staminabar;
+    public GameObject Heart, Heart2, Heart3;
+    public static int playerHealth;
     public float currentstamina;
     public bool hidden;
-    public float offset = 2;
-    private float angle = 360;
     
 
     
@@ -21,18 +18,51 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerHealth = 3;
+        Heart.gameObject.SetActive(true);
+        Heart2.gameObject.SetActive(true);
+        Heart3.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-         float x = Input.GetAxisRaw("Horizontal");
+
+        if (playerHealth > 3)
+            playerHealth = 3;
+
+        switch (playerHealth)
+        {
+            case 3:
+                Heart.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(true);
+                Heart3.gameObject.SetActive(true);
+                break;
+
+            case 2:
+                Heart.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(true);
+                Heart3.gameObject.SetActive(false);
+                break;
+
+            case 1:
+                Heart.gameObject.SetActive(true);
+                Heart2.gameObject.SetActive(false);
+                Heart3.gameObject.SetActive(false);
+                break;
+
+            case 0:
+                Heart.gameObject.SetActive(false);
+                Heart2.gameObject.SetActive(false);
+                Heart3.gameObject.SetActive(false);
+                break;
+        }
+        float x = Input.GetAxisRaw("Horizontal");
          float y = Input.GetAxisRaw("Vertical");
 
          Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
 
-        transform.Translate(movement); angle += offset;
+        transform.Translate(movement);
          /*
           if (Input.GetKey(KeyCode.W))
           {

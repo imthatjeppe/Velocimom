@@ -35,5 +35,15 @@ public class Score : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            PlayerMovement.playerHealth--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            PlayerMovement.playerHealth++;
+        }
+
     }
 }
