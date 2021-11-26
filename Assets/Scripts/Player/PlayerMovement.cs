@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public Slider Staminabar;
     public float currentstamina;
     public bool hidden;
+    public float offset = 2;
+    private float angle = 360;
     
 
     
@@ -30,26 +32,26 @@ public class PlayerMovement : MonoBehaviour
 
          Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
 
-         transform.Translate(movement);
-
-         /* if (Input.GetKey(KeyCode.W))
+        transform.Translate(movement); angle += offset;
+         /*
+          if (Input.GetKey(KeyCode.W))
           {
-              transform.Translate(Vector3.up * speed * Time.deltaTime);
+              transform.Translate(Vector3.up / offset * speed * Time.deltaTime);
           }
 
           if (Input.GetKey(KeyCode.A))
           {
-              transform.Translate(Vector3.left * speed * Time.deltaTime);
+              transform.Translate(Vector3.left / offset * speed * Time.deltaTime);
           }
 
           if (Input.GetKey(KeyCode.S))
           {
-              transform.Translate(Vector3.down * speed * Time.deltaTime);
+              transform.Translate(Vector3.down / offset * speed * Time.deltaTime);
           }
 
           if (Input.GetKey(KeyCode.D))
           {
-              transform.Translate(Vector3.right * speed * Time.deltaTime);
+              transform.Translate(Vector3.right / offset * speed * Time.deltaTime);
           }
           */
 

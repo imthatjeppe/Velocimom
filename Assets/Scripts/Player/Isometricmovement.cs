@@ -19,6 +19,9 @@ public class Isometricmovement : MonoBehaviour
         moveH = Input.GetAxis("Horizontal") * movespeed;
         moveY = Input.GetAxis("Vertical") * movespeed;
         rb.velocity = new Vector2(moveH, moveY);
+
+        Vector2 direction = new Vector2(moveH, moveY);
+        FindObjectOfType<PlayerAnimation>().setDirection(direction);
      }
 
     
