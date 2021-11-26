@@ -8,36 +8,36 @@ public class VelocimomBehaviour : MonoBehaviour
     public int speed = 3;
 
     public float startWaitTime;
+    public float startStaringTime;
     public float distance = 0.2f;
+    public float chasingSpeed;
 
     public Transform[] moveSpots;
     AIDestinationSetter setDestination;
-    private int randomDestinationSpot;
 
-<<<<<<< HEAD
-    private float waitUntilNextPointTime;
-    private float staringTime;
+    private int randomDestinationSpot;
 
     private PlayerMovement player;
     private Transform target;
-=======
+
+    private float staringTime;
     private float waitTime;
->>>>>>> parent of a391062 (welp)
+
+    private bool patrol;
+
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
+
         patrol = true;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        waitUntilNextPointTime = startWaitUntilNextPointTime;
         staringTime = startStaringTime;
-=======
         waitTime = startWaitTime;
->>>>>>> parent of a391062 (welp)
+
         randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
         setDestination = GetComponent<AIDestinationSetter>();
@@ -49,38 +49,33 @@ public class VelocimomBehaviour : MonoBehaviour
     void Update()
     {
         Patrol();
-<<<<<<< HEAD
         SearchForPlayer();
-=======
-        //TODO: Chase-script inkl. isHidden
->>>>>>> parent of a391062 (welp)
     }
 
     void Patrol()
     {
-<<<<<<< HEAD
+
         if (patrol)
         {
             if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
-=======
-        if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
-        {
-            if (waitTime <= 0)
->>>>>>> parent of a391062 (welp)
-            {
-                waitTime = startWaitTime;
-                randomDestinationSpot = Random.Range(0, moveSpots.Length);
-                setDestination.target = moveSpots[randomDestinationSpot];
-            }
 
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
+                if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
+                {
+                    if (waitTime <= 0)
+
+                    {
+                        waitTime = startWaitTime;
+                        randomDestinationSpot = Random.Range(0, moveSpots.Length);
+                        setDestination.target = moveSpots[randomDestinationSpot];
+                    }
+
+                    else
+                    {
+                        waitTime -= Time.deltaTime;
+                    }
+                }
         }
     }
-<<<<<<< HEAD
-
 
     void SearchForPlayer()
     {
@@ -108,6 +103,7 @@ public class VelocimomBehaviour : MonoBehaviour
         }
 
     }
+
     void Chase()
     {
         if (Vector2.Distance(transform.position, target.position) > 3)
@@ -115,7 +111,5 @@ public class VelocimomBehaviour : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, chasingSpeed * Time.deltaTime);
         }
     }
+
 }
-=======
-}
->>>>>>> parent of a391062 (welp)
