@@ -2036,6 +2036,9 @@ MonoBehaviour:
   speed: 5
   AbilityStamina: 100
   Staminabar: {fileID: 670295568}
+  Heart: {fileID: 0}
+  Heart2: {fileID: 0}
+  Heart3: {fileID: 0}
   currentstamina: 0
   hidden: 0
 --- !u!114 &1919524278
