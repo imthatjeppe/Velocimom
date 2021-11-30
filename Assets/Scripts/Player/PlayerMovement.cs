@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public float newSpeed;
     public float AbilityStamina = 100;
     public float currentstamina;
 
@@ -91,14 +92,14 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 LoseStamina(0);
-                speed = speed;
+                speed = newSpeed;
                 hidden = false;
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            speed = speed;
+            speed = newSpeed;
         }
     }
 
