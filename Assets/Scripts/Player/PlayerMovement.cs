@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float newSpeed;
     public float AbilityStamina = 100;
     public float currentstamina;
+    private float resetSpeed = 0;
 
     public static int playerHealth;
 
@@ -14,10 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Heart0, Heart1, Heart2;
 
     public bool hidden;
-
-    private float resetSpeed = 0;
-
-    // Start is called before the first frame update
+  
     void Start()
     {
         playerHealth = 3;
@@ -28,6 +26,45 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        Health();
+
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical") * 0.5f;
+
+        Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
+       
+
+
+        transform.Translate(movement);
+
+        SpaceAbility();
+    }
+
+    public void SetMaxStamina(float stamina)
+    {
+        Staminabar.value = stamina;
+    }
+    public void SetStamina(float stamina)
+    {
+        Staminabar.value = stamina;
+    }
+
+    private void LoseStamina(float LoseStamina)
+    {
+        currentstamina -= LoseStamina * Time.deltaTime;
+
+        SetStamina(currentstamina);
+    }
+
+    private void GainStamina(float GainStamina)
+    {
+        currentstamina += GainStamina * Time.deltaTime;
+
+        SetStamina(currentstamina);
+    }
+
+    public void Health()
     {
         if (playerHealth > 3)
             playerHealth = 3;
@@ -58,14 +95,10 @@ public class PlayerMovement : MonoBehaviour
                 Heart2.gameObject.SetActive(false);
                 break;
         }
+    }
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical") * 0.42f;
-
-        Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
-
-        transform.Translate(movement);
-
+   private void SpaceAbility()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed = resetSpeed;
@@ -102,27 +135,5 @@ public class PlayerMovement : MonoBehaviour
             speed = newSpeed;
         }
     }
-
-    public void SetMaxStamina(float stamina)
-    {
-        Staminabar.value = stamina;
-    }
-    public void SetStamina(float stamina)
-    {
-        Staminabar.value = stamina;
-    }
-
-    private void LoseStamina(float LoseStamina)
-    {
-        currentstamina -= LoseStamina * Time.deltaTime;
-
-        SetStamina(currentstamina);
-    }
-
-    private void GainStamina(float GainStamina)
-    {
-        currentstamina += GainStamina * Time.deltaTime;
-
-        SetStamina(currentstamina);
-    }
 }
+
