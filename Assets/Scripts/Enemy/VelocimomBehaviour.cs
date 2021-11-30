@@ -57,8 +57,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (patrol)
         {
-            if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
-
                 if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
                 {
                     if (waitTime <= 0)

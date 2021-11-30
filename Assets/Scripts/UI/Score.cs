@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
-    public Text foodScore;
     public float score;
+
+    public Text foodScore;
+    
     // Start is called before the first frame update
     void Start()
     {
