@@ -1229,6 +1229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4425156775435294288, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4425156775435294289, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: speed
       value: 5
@@ -1245,6 +1249,10 @@ PrefabInstance:
       propertyPath: Heart2
       value: 
       objectReference: {fileID: 1150576009}
+    - target: {fileID: 4425156775435294289, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
+      propertyPath: newSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4425156775435294289, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: Staminabar
       value: 
@@ -1545,11 +1553,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67c110626f507e4c86085dab196ea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 5
   startWaitTime: 2
-  startStaringTime: 2
-  distance: 10
-  chasingSpeed: 110
+  startStaringTime: 5
+  distance: 0.2
+  chasingSpeed: 5
   moveSpots:
   - {fileID: 396204802}
   - {fileID: 260207068}

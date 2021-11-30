@@ -19,12 +19,13 @@ public class VelocimomBehaviour : MonoBehaviour
 
     private PlayerMovement player;
     private Transform target;
+    private AIPath pathFinder;
 
     private float staringTime;
     private float waitTime;
 
     private bool patrol;
-
+    bool detected;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class VelocimomBehaviour : MonoBehaviour
         setDestination = GetComponent<AIDestinationSetter>();
 
         setDestination.target = moveSpots[randomDestinationSpot];
+        pathFinder = GetComponent<AIPath>();
     }
 
     // Update is called once per frame
@@ -50,64 +52,84 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         Patrol();
         SearchForPlayer();
+        ChasePlayer();
     }
 
     void Patrol()
     {
-
         if (patrol)
         {
-                if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
+            if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
+            {
+                if (waitTime <= 0)
                 {
-                    if (waitTime <= 0)
-
-                    {
-                        waitTime = startWaitTime;
-                        randomDestinationSpot = Random.Range(0, moveSpots.Length);
-                        setDestination.target = moveSpots[randomDestinationSpot];
-                    }
-
-                    else
-                    {
-                        waitTime -= Time.deltaTime;
-                    }
+                    waitTime = startWaitTime;
+                    randomDestinationSpot = Random.Range(0, moveSpots.Length);
+                    setDestination.target = moveSpots[randomDestinationSpot];
                 }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
+            }
         }
     }
 
     void SearchForPlayer()
     {
-        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, distance);
-        Debug.DrawRay(transform.position, transform.right, Color.green);
-
-        if (sightHit.collider.CompareTag("Player"))
+        if (!detected)
         {
-            patrol = false;
+            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, 10);
 
+            var dist = Vector3.Distance(sightHit.point, transform.position);
+            Debug.DrawRay(transform.position, transform.right * dist, Color.red);
+
+            if (sightHit)
+            {
+                Debug.Log(sightHit.collider.name);
+
+                if (sightHit.collider.CompareTag("Player"))
+                {
+                    detected = true;
+                    patrol = false;
+                    staringTime = startStaringTime;
+                }
+            }
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        if (detected)
+        {
             if (!player.hidden)
             {
-                Chase();
+                setDestination.target = player.transform;
+            }
+            else
+            {
+                staringTime -= Time.deltaTime;
+            }
+
+            if (Vector2.Distance(transform.position, player.transform.position) < 2)
+            {
+                pathFinder.maxSpeed = 0;
+                //Debug.Log("nära");
+            }
+            else
+            {
+                pathFinder.maxSpeed = 6;
             }
 
             if (staringTime <= 0)
             {
+                pathFinder.maxSpeed = 1;
+
                 patrol = true;
-            }
+                detected = false;
 
-            else if (staringTime > 0)
-            {
-                staringTime -= Time.deltaTime;
+                setDestination.target = moveSpots[randomDestinationSpot];
             }
         }
-
     }
-
-    void Chase()
-    {
-        if (Vector2.Distance(transform.position, target.position) > 3)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, chasingSpeed * Time.deltaTime);
-        }
-    }
-
 }
