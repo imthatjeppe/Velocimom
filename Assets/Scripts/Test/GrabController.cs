@@ -8,7 +8,6 @@ public class GrabController : MonoBehaviour
     public Transform boxHolder;
     public float rayDist;
 
-
     void Update()
     {
         RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale, rayDist);
@@ -21,7 +20,6 @@ public class GrabController : MonoBehaviour
                 grabCheck.collider.gameObject.transform.position = boxHolder.position;
                 grabCheck.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             }
-
             else
             {
                 grabCheck.collider.gameObject.transform.parent = null;
