@@ -86,7 +86,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
             if (sightHit)
             {
-                Debug.Log(sightHit.collider.name);
+                //Debug.Log(sightHit.collider.name);
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
