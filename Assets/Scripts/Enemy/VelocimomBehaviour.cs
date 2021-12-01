@@ -15,6 +15,8 @@ public class VelocimomBehaviour : MonoBehaviour
     public Transform[] moveSpots;
     AIDestinationSetter setDestination;
 
+    public bool patrol;
+    
     private int randomDestinationSpot;
 
     private PlayerMovement player;
@@ -24,13 +26,11 @@ public class VelocimomBehaviour : MonoBehaviour
     private float staringTime;
     private float waitTime;
 
-    private bool patrol;
     bool detected;
 
     // Start is called before the first frame update
     void Start()
     {
-
         patrol = true;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
