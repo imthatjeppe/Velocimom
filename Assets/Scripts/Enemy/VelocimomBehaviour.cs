@@ -93,7 +93,7 @@ public class VelocimomBehaviour : MonoBehaviour
                     detected = true;
                     patrol = false;
                     staringTime = startStaringTime;
-                }
+                }   
             }
         }
     }
