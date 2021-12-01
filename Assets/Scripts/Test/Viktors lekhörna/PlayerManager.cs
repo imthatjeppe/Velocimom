@@ -18,6 +18,11 @@ public class PlayerManager : MonoBehaviour
             }
             currentInterObj.SendMessage("DoInteraction");
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            inventory.DropItem();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
