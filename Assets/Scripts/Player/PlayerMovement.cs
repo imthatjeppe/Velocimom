@@ -124,12 +124,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 LoseStamina(0);
                 speed = newSpeed;
-                hidden = false;
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             speed = newSpeed;
+            hidden = false;
         }
     }
 
