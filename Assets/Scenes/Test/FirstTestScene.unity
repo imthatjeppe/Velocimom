@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 626742923}
   m_Layer: 0
   m_Name: EnemyBehaviour
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3264,6 +3264,7 @@ GameObject:
   - component: {fileID: 1437043164}
   - component: {fileID: 1437043163}
   - component: {fileID: 1437043162}
+  - component: {fileID: 1437043165}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3336,6 +3337,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437043165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437043161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c3fe58421ed72418d4c2c28ec59b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  foodScore: {fileID: 305971207}
+  food: {fileID: 0}
 --- !u!1 &1454439988
 GameObject:
   m_ObjectHideFlags: 0
