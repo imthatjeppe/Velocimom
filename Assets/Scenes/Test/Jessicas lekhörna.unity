@@ -1554,6 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  randomDestinationSpot: 0
   startWaitTime: 2
   startStaringTime: 5
   distance: 0.2
@@ -4713,6 +4714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44da631e9d0ae4b498b34935e22e31e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startShaderTimer: 0
 --- !u!1 &2069617927
 GameObject:
   m_ObjectHideFlags: 0
