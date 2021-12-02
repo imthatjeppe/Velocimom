@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class DropOffZone : MonoBehaviour
 {
-    public FoodItem food;
+    private Score score;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        food = GameObject.FindGameObjectWithTag("Food").GetComponent<FoodItem>();
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Food"))
+        if (collision.CompareTag("Food"))
         {
-            Debug.Log("food collided");
-            food.AddScore();
+            Debug.Log("food dropped off");
+            //score.AddScore();
         }
     }
-
 
 }
