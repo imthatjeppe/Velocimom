@@ -8,10 +8,11 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
+    public FoodItem food;
 
     void Update()
     {
-        //Debug.Log(score);
+        Debug.Log(score);
 
         foodScore.text = "Score: " + score;
 
@@ -41,5 +42,9 @@ public class Score : MonoBehaviour
             PlayerMovement.playerHealth++;
         }
 
+    }
+    public void AddScore()
+    {
+        score += food.points;
     }
 }
