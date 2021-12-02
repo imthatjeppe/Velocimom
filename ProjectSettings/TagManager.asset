@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Box
-  - Food
-<<<<<<< Updated upstream
-  - DarkRoom
-=======
-  - Enemy
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemy
-  - Obstacle
+  - 
+  - 
   - 
   - 
   - 
@@ -47,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Units
-    uniqueID: 3221283547
     locked: 0
