@@ -24,11 +24,5 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void GameOver()
-    {
-        if(PlayerMovement.playerHealth <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-    }
+   
 }
