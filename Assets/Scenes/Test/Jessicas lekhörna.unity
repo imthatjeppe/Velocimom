@@ -882,7 +882,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1073683749
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.7075472, g: 0.20959415, b: 0.20959415, a: 1}
@@ -1263,11 +1263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4425156775435294291, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4425156775435294291, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4425156775435294291, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4601,7 +4601,7 @@ GameObject:
   - component: {fileID: 2068750396}
   - component: {fileID: 2068750395}
   m_Layer: 0
-  m_Name: square1
+  m_Name: DarkRoom0
   m_TagString: DarkRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4714,7 +4714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44da631e9d0ae4b498b34935e22e31e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startShaderTimer: 0
 --- !u!1 &2069617927
 GameObject:
   m_ObjectHideFlags: 0
