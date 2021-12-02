@@ -20,6 +20,7 @@ public class FoodItem : MonoBehaviour
         {
             Debug.Log("food dropped off");
             GameObject.FindGameObjectWithTag("DropOff").GetComponent<Score>().AddScore(points);
+            Destroy(gameObject);
         }
     }
 }
