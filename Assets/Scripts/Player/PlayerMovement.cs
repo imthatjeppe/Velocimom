@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Health();
-
+        GameOver();
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
 
@@ -37,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(movement);
 
         SpaceAbility();
+    }
+
+    public void GameOver()
+    {
+        if (playerHealth <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void SetMaxStamina(float stamina)
@@ -66,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerHealth > 3)
             playerHealth = 3;
-
+        
         switch (playerHealth)
         {
             case 3:
@@ -124,12 +133,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 LoseStamina(0);
                 speed = newSpeed;
-                hidden = false;
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             speed = newSpeed;
+            hidden = false;
         }
     }
 

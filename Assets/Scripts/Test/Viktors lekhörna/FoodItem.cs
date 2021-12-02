@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
-    public string foodType;
     public int points;
     public float weight;
 
-    private void Update()
+    //public Score ScoreScript;
+
+    private void Start()
     {
-        
+        //ScoreScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Score>();
     }
+    public void AddScore()
+    {
+        //ScoreScript.score += points;
+    }          
 }
