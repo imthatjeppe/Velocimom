@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  maxSpeed: 0
+  maxSpeed: 5
   currentstamina: 100
   Staminabar: {fileID: 0}
   Heart0: {fileID: 0}
