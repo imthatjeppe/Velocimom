@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     {
         Debug.Log(score);
 
-        foodScore.text = "Score: " + score;
+        //foodScore.text = "Score: " + score;
 
         //Admin Commands
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -43,8 +43,9 @@ public class Score : MonoBehaviour
         }
 
     }
-    public void AddScore()
+    public void AddScore(float points)
     {
-        score += food.points;
+        Debug.Log("I got called");
+        score += points;
     }
 }
