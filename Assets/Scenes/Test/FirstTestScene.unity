@@ -875,7 +875,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 239811958603898395, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: m_Name
-      value: Viktors Player
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4509488755601930203, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: Heart0
@@ -892,7 +892,7 @@ PrefabInstance:
     - target: {fileID: 4509488755601930203, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: Staminabar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1283539764}
     - target: {fileID: 8160215732293555775, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: m_RootOrder
       value: 13
