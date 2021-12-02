@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public float newSpeed;
-    public float AbilityStamina = 100;
+    public float maxSpeed;
     public float currentstamina;
     private float resetSpeed = 0;
 
@@ -30,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Health();
         GameOver();
+
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
 
@@ -43,104 +43,61 @@ public class PlayerMovement : MonoBehaviour
     public void GameOver()
     {
         if (playerHealth <= 0)
-        {
             SceneManager.LoadScene("GameOver");
-        }
-    }
-
-    public void SetMaxStamina(float stamina)
-    {
-        Staminabar.value = stamina;
-    }
-    public void SetStamina(float stamina)
-    {
-        Staminabar.value = stamina;
     }
 
     private void LoseStamina(float LoseStamina)
     {
         currentstamina -= LoseStamina * Time.deltaTime;
-
-        SetStamina(currentstamina);
+        currentstamina = Mathf.Clamp(currentstamina, 0, 100);
+        Staminabar.value = currentstamina;
     }
 
     private void GainStamina(float GainStamina)
     {
-        currentstamina += GainStamina * Time.deltaTime;
-
-        SetStamina(currentstamina);
+        LoseStamina(-GainStamina);
     }
 
     public void Health()
     {
         if (playerHealth > 3)
             playerHealth = 3;
-        
-        switch (playerHealth)
-        {
-            case 3:
-                Heart0.gameObject.SetActive(true);
-                Heart1.gameObject.SetActive(true);
-                Heart2.gameObject.SetActive(true);
-                break;
 
-            case 2:
-                Heart0.gameObject.SetActive(true);
-                Heart1.gameObject.SetActive(true);
-                Heart2.gameObject.SetActive(false);
-                break;
+        Heart0.gameObject.SetActive(false);
+        Heart1.gameObject.SetActive(false);
+        Heart2.gameObject.SetActive(false);
 
-            case 1:
-                Heart0.gameObject.SetActive(true);
-                Heart1.gameObject.SetActive(false);
-                Heart2.gameObject.SetActive(false);
-                break;
-
-            case 0:
-                Heart0.gameObject.SetActive(false);
-                Heart1.gameObject.SetActive(false);
-                Heart2.gameObject.SetActive(false);
-                break;
-        }
+        if (playerHealth > 0)
+            Heart0.gameObject.SetActive(true);
+        if (playerHealth > 1)
+            Heart1.gameObject.SetActive(true);
+        if (playerHealth > 2)
+            Heart2.gameObject.SetActive(true);
     }
 
     private void SpaceAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             speed = resetSpeed;
-        }
         else
-        {
-            if (currentstamina >= 100)
-            {
-                currentstamina = 100;
-            }
-            else
-            {
-                GainStamina(3);
-            }
-        }
+            GainStamina(3);
+
 
         if (Input.GetKey(KeyCode.Space))
         {
+            LoseStamina(15);
+            
             if (currentstamina >= 0)
             {
-                LoseStamina(15);
                 hidden = true;
             }
-            else
-            {
-                LoseStamina(0);
-                speed = newSpeed;
-            }
         }
+
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            speed = newSpeed;
+            speed = maxSpeed;
             hidden = false;
         }
     }
-
 }
-

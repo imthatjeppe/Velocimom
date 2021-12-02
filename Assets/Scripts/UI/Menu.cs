@@ -24,5 +24,5 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-   
+    
 }
