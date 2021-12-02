@@ -20,6 +20,14 @@ public class DarkeningEffect : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (shaderTimer <= 0)
+            {
+
+            }
+            else
+            {
+
+            }
             myPicture.enabled = false;
         }
     }
