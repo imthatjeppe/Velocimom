@@ -7,18 +7,12 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     public float score;
-
     public Text foodScore;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
+        //Debug.Log(score);
+
         foodScore.text = "Score: " + score;
 
         //Admin Commands
