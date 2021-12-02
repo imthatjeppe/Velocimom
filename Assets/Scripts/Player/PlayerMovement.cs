@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   private void SpaceAbility()
+    private void SpaceAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -130,14 +130,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             speed = newSpeed;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "DarkRoom")
-        {
-            collision.gameObject.SetActive(false);
         }
     }
 

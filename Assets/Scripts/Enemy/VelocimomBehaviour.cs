@@ -6,6 +6,7 @@ using Pathfinding;
 public class VelocimomBehaviour : MonoBehaviour
 {
     public int speed = 3;
+    public int randomDestinationSpot;
 
     public float startWaitTime;
     public float startStaringTime;
@@ -16,8 +17,6 @@ public class VelocimomBehaviour : MonoBehaviour
     AIDestinationSetter setDestination;
 
     public bool patrol;
-    
-    private int randomDestinationSpot;
 
     private PlayerMovement player;
     private Transform target;
