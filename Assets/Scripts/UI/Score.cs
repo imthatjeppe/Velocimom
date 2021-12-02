@@ -8,7 +8,6 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
-    public FoodItem food;
 
     void Update()
     {
@@ -43,6 +42,7 @@ public class Score : MonoBehaviour
         }
 
     }
+
     public void AddScore(float points)
     {
         Debug.Log("I got called");
