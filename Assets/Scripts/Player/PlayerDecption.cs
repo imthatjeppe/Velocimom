@@ -5,14 +5,14 @@ using Pathfinding;
 
 public class PlayerDecption : MonoBehaviour
 {
-    public bool waterTap;
+    public bool enemyLure;
     public Transform[] moveSpotsDeception;
     private VelocimomBehaviour velocimom;
     private AIDestinationSetter setDestination;
     // Start is called before the first frame update
     void Start()
     {
-        waterTap = false;
+        enemyLure = false;
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
     }
@@ -20,27 +20,31 @@ public class PlayerDecption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (waterTap)
+        if (enemyLure)
         {
             velocimom.patrol = false;
             setDestination.target = moveSpotsDeception[0];
 
-           if(velocimom.transform.position == moveSpotsDeception[0].position)
+            if (Vector3.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 0.2f)
             {
-                waterTap = false;
-                velocimom.patrol = true;
-                setDestination.target = velocimom.moveSpots[velocimom.randomDestinationSpot];
+                Invoke(nameof(Resume), 1);
             }
         }
-        
     }
 
+    void Resume()
+    {
+        enemyLure = false;
+        velocimom.patrol = true;
+        setDestination.target = velocimom.moveSpots[velocimom.randomDestinationSpot];
+
+    }
 
     private void TurnOn()
     {
- 
-            Debug.Log("Hello");
-            
+
+        Debug.Log("Hello");
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -48,7 +52,7 @@ public class PlayerDecption : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TurnOn();
-            waterTap = true;
+            enemyLure = true;
         }
     }
 }

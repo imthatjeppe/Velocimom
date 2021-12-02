@@ -41,8 +41,8 @@ public class VelocimomBehaviour : MonoBehaviour
         randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
         setDestination = GetComponent<AIDestinationSetter>();
-
         setDestination.target = moveSpots[randomDestinationSpot];
+
         pathFinder = GetComponent<AIPath>();
     }
 
