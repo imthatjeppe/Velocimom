@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
-    private float resetSpeed = 0;
 
     public static int playerHealth;
 
@@ -16,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool hidden;
   
+    private float resetSpeed = 0;
     void Start()
     {
         playerHealth = 3;
@@ -29,30 +29,23 @@ public class PlayerMovement : MonoBehaviour
     {
         Health();
         GameOver();
-
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
-
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
-       
         transform.Translate(movement);
-
         SpaceAbility();
     }
-
     public void GameOver()
     {
         if (playerHealth <= 0)
             SceneManager.LoadScene("GameOver");
     }
-
     private void LoseStamina(float LoseStamina)
     {
         currentstamina -= LoseStamina * Time.deltaTime;
         currentstamina = Mathf.Clamp(currentstamina, 0, 100);
         Staminabar.value = currentstamina;
     }
-
     private void GainStamina(float GainStamina)
     {
         LoseStamina(-GainStamina);
@@ -74,14 +67,12 @@ public class PlayerMovement : MonoBehaviour
         if (playerHealth > 2)
             Heart2.gameObject.SetActive(true);
     }
-
     private void SpaceAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space))
             speed = resetSpeed;
         else
             GainStamina(3);
-
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -92,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
                 hidden = true;
             }
         }
-
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
