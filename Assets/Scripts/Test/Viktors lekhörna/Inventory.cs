@@ -6,10 +6,12 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Stack<GameObject> inventory;
+    public GameObject player;
 
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         inventory = new Stack<GameObject>();
     }
 
@@ -22,7 +24,12 @@ public class Inventory : MonoBehaviour
     public void DropItem()
     {
         if (inventory.Count == 0) return;
+
         GameObject objectToDrop = inventory.Pop();
+
+        objectToDrop.transform.position = player.transform.position;
+        objectToDrop.SetActive(true);
+
         Debug.Log("dropped" + objectToDrop.name);
     }
 
