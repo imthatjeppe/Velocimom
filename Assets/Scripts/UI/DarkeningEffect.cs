@@ -1,41 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class DarkeningEffect : MonoBehaviour
 {
-    public float startShaderTimer;
-
-    private float shaderTimer;
-
-    private SpriteRenderer myPicture;
-
-    private void Start()
-    {
-        myPicture = GetComponent<SpriteRenderer>();
-
-        shaderTimer = startShaderTimer;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (shaderTimer <= 0)
-            {
-
-            }
-            else
-            {
-
-            }
-            myPicture.enabled = false;
+            transform.DOMoveZ(-10, 1).SetEase(Ease.OutBounce);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            myPicture.enabled = true;
+            transform.DOMoveZ(0, 1);
         }
     }
 }
