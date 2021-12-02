@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Canvas
+  - DropOff
   layers:
   - Default
   - TransparentFX
