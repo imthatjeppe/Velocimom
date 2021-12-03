@@ -19,6 +19,10 @@ public class VelocimomBehaviour : MonoBehaviour
 
     public bool patrol;
 
+    public GameObject playerObject;
+    public GameObject playerDetection;
+    private DetectPlayerInRange detectPlayerInRange; 
+
     private PlayerMovement player;
     private Transform target;
     private AIPath pathFinder;
@@ -48,6 +52,8 @@ public class VelocimomBehaviour : MonoBehaviour
         setDestination.target = moveSpots[randomDestinationSpot];
 
         pathFinder = GetComponent<AIPath>();
+
+        detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
     }
 
     // Update is called once per frame
@@ -84,12 +90,12 @@ public class VelocimomBehaviour : MonoBehaviour
 
     void SearchForPlayer()
     {
-        if (!detected)
+        if (!detected && detectPlayerInRange.playerInRange)
         {
-            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, transform.right, 10);
+            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10);
 
-            var dist = Vector3.Distance(sightHit.point, transform.position);
-            Debug.DrawRay(transform.position, transform.right * dist, Color.red);
+            
+            Debug.DrawRay(transform.position, playerObject.transform.position - transform.position, Color.red);
 
             if (sightHit)
             {
