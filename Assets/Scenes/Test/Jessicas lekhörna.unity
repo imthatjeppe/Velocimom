@@ -839,7 +839,7 @@ Transform:
   m_GameObject: {fileID: 417323845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 626742928}
   m_RootOrder: 0
@@ -1250,6 +1250,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1150576009}
     - target: {fileID: 4425156775435294289, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425156775435294289, guid: 7648e768e51fba2419944f2d2b310440, type: 3}
       propertyPath: newSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -1557,6 +1561,7 @@ MonoBehaviour:
   randomDestinationSpot: 0
   startWaitTime: 2
   startStaringTime: 5
+  startInvincibleTime: 3
   distance: 0.2
   chasingSpeed: 5
   moveSpots:

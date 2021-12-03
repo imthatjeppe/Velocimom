@@ -10,6 +10,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
     public float startWaitTime;
     public float startStaringTime;
+    public float startInvincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
 
@@ -24,8 +25,10 @@ public class VelocimomBehaviour : MonoBehaviour
 
     private float staringTime;
     private float waitTime;
+    public float invincibleTime;
 
-    bool detected;
+    private bool detected;
+    private bool playerInvincible;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
         staringTime = startStaringTime;
         waitTime = startWaitTime;
+        invincibleTime = startInvincibleTime;
 
         randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
@@ -51,7 +55,11 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         Patrol();
         SearchForPlayer();
-        ChasePlayer();
+
+        if (!playerInvincible)
+        {
+            ChasePlayer();
+        }
     }
 
     void Patrol()
@@ -92,7 +100,20 @@ public class VelocimomBehaviour : MonoBehaviour
                     detected = true;
                     patrol = false;
                     staringTime = startStaringTime;
-                }   
+                }
+            }
+        }
+
+        if (playerInvincible)
+        {
+            if (invincibleTime <= 0)
+            {
+                invincibleTime = startInvincibleTime;
+                playerInvincible = false;
+            }
+            else
+            {
+                invincibleTime -= Time.deltaTime;
             }
         }
     }
@@ -107,13 +128,19 @@ public class VelocimomBehaviour : MonoBehaviour
             }
             else
             {
-                staringTime -= Time.deltaTime;
+                if (player.releasedStaminaKey)
+                {
+                    staringTime = startStaringTime;
+                }
+                else
+                {
+                    staringTime -= Time.deltaTime;
+                }
             }
 
             if (Vector2.Distance(transform.position, player.transform.position) < 2)
             {
                 pathFinder.maxSpeed = 0;
-                //Debug.Log("nära");
             }
             else
             {
@@ -125,10 +152,12 @@ public class VelocimomBehaviour : MonoBehaviour
                 pathFinder.maxSpeed = 1;
 
                 patrol = true;
+                playerInvincible = true;
                 detected = false;
 
                 setDestination.target = moveSpots[randomDestinationSpot];
             }
+
         }
     }
 }

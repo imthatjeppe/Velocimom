@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Heart0, Heart1, Heart2;
 
     public bool hidden;
+    public bool releasedStaminaKey;
 
     private float resetSpeed = 0;
     void Start()
@@ -67,20 +68,23 @@ public class PlayerMovement : MonoBehaviour
         if (playerHealth > 2)
             Heart2.gameObject.SetActive(true);
     }
+
     private void SpaceAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) { 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             speed = resetSpeed;
             currentstamina -= 10;
-
+            releasedStaminaKey = false; 
         }
-        else{
+        else
+        {
             GainStamina(2);
         }
         if (Input.GetKey(KeyCode.Space))
         {
             LoseStamina(10);
-            
+
             if (currentstamina >= 0)
             {
                 hidden = true;
@@ -89,14 +93,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-                speed = maxSpeed;
-                hidden = false;
+            speed = maxSpeed;
+            hidden = false;
+            releasedStaminaKey = true;
         }
 
-        if(currentstamina <= 0)
+        if (currentstamina <= 0)
         {
             hidden = false;
         }
-        
+
     }
 }
