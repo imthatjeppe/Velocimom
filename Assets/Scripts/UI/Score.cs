@@ -11,8 +11,6 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(score);
-
         foodScore.text = "Score: " + score;
 
         //Admin Commands
