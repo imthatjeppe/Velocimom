@@ -1756,7 +1756,6 @@ MonoBehaviour:
   randomDestinationSpot: 0
   startWaitTime: 2
   startStaringTime: 5
-  startInvincibleTime: 5
   distance: 0.2
   chasingSpeed: 5
   moveSpots:
@@ -1770,7 +1769,6 @@ MonoBehaviour:
   patrol: 0
   playerObject: {fileID: 1869756648}
   playerDetection: {fileID: 1504889346}
-  invincibleTime: 0
 --- !u!4 &626742928
 Transform:
   m_ObjectHideFlags: 0
@@ -3214,7 +3212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.49999, y: -130.2}
+  m_AnchoredPosition: {x: 0.49999, y: -329}
   m_SizeDelta: {x: 107.1276, y: 17.647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283539764
