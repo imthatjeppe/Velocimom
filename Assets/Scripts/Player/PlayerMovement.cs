@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) { 
             speed = resetSpeed;
-            LoseStamina(300);
+            currentstamina -= 10;
 
         }
         else{
