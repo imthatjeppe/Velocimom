@@ -89,9 +89,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            speed = maxSpeed;
-            hidden = false;
-            
+                speed = maxSpeed;
+                hidden = false;
         }
+
+        if(currentstamina <= 0)
+        {
+            hidden = false;
+        }
+        
     }
 }
