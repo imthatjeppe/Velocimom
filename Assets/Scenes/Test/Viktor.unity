@@ -1782,7 +1782,6 @@ MonoBehaviour:
   startInvincibleTime: 5
   distance: 0.2
   chasingSpeed: 5
-  invincibleTime: 0
   moveSpots:
   - {fileID: 396204802}
   - {fileID: 260207068}
@@ -1794,7 +1793,7 @@ MonoBehaviour:
   patrol: 0
   playerObject: {fileID: 1869756648}
   playerDetection: {fileID: 1504889346}
-  playerPathSpots: {fileID: 3691448685689933902, guid: 770069c31f4e789489e49a9b8bfa5abf, type: 3}
+  invincibleTime: 0
 --- !u!4 &626742928
 Transform:
   m_ObjectHideFlags: 0
@@ -3694,7 +3693,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 681119992}
-  stopEnemy: {fileID: 1359299590}
+  stopEnemy: {fileID: 0}
 --- !u!212 &1350201351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4251,7 +4250,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
-  stopEnemy: {fileID: 1359299590}
+  stopEnemy: {fileID: 0}
 --- !u!212 &1496527873
 SpriteRenderer:
   m_ObjectHideFlags: 0
