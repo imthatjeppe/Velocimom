@@ -29,11 +29,12 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log(isMoving);
-        while (rb.velocity == Vector2.zero)
-        {
-            isMoving = true;
-        }
+        //Debug.Log(rb.velocity);
+        //Debug.Log(isMoving);
+        //while (rb.velocity == Vector2.zero)
+        //{
+        //    isMoving = true;
+        //}
 
 
     }
