@@ -28,7 +28,6 @@ public class Inventory : MonoBehaviour
         {
             isMoving = true;
             movometer -= Time.deltaTime;
-
             Debug.Log("moving");
         }
         else
@@ -72,7 +71,6 @@ public class Inventory : MonoBehaviour
         else if (inventory.Count >= 4 && isMoving)
         {
             Invoke("DropItem", Random.Range(4f, 7f));
-               
         }
     }
 }

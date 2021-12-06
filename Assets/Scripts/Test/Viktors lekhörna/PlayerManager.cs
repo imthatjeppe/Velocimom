@@ -24,7 +24,6 @@ public class PlayerManager : MonoBehaviour
         {
             inventory.DropItem();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
