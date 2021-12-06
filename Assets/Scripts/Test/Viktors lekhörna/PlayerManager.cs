@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject currentInterObj = null;
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
+    
 
     private void Update()
     {
@@ -23,13 +24,13 @@ public class PlayerManager : MonoBehaviour
         {
             inventory.DropItem();
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Food"))
         {
-            Debug.Log(other.name);
             currentInterObj = other.gameObject;
             currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
         }

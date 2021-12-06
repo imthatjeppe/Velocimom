@@ -43,7 +43,6 @@ public class Score : MonoBehaviour
 
     public void AddScore(float points)
     {
-        Debug.Log("I got called");
         score += points;
     }
 }
