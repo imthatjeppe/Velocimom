@@ -90,12 +90,10 @@ public class VelocimomBehaviour : MonoBehaviour
 
     void SearchForPlayer()
     {
-        if (!detected && detectPlayerInRange.playerInRange)
+        Debug.DrawRay(transform.position, playerObject.transform.position - transform.position, Color.red);
+        if (!detected && detectPlayerInRange.playerInRange && !player.inSafeRoom)
         {
             RaycastHit2D sightHit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10);
-
-            
-            Debug.DrawRay(transform.position, playerObject.transform.position - transform.position, Color.red);
 
             if (sightHit)
             {
@@ -153,7 +151,7 @@ public class VelocimomBehaviour : MonoBehaviour
                 pathFinder.maxSpeed = 6;
             }
 
-            if (staringTime <= 0)
+            if (staringTime <= 0 || player.inSafeRoom)
             {
                 pathFinder.maxSpeed = 1;
 

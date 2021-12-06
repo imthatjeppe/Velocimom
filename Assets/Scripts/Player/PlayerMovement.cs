@@ -11,18 +11,23 @@ public class PlayerMovement : MonoBehaviour
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
 
     public bool hidden;
     public bool releasedStaminaKey;
+    public bool inSafeRoom = false;
 
     private float resetSpeed = 0;
+
+    PlayerDecption playerDeception;
     void Start()
     {
         playerHealth = 3;
         Heart0.gameObject.SetActive(true);
         Heart1.gameObject.SetActive(true);
         Heart2.gameObject.SetActive(true);
+
+        playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
     }
 
     // Update is called once per frame
@@ -77,10 +82,7 @@ public class PlayerMovement : MonoBehaviour
             currentstamina -= 10;
             releasedStaminaKey = false; 
         }
-        else
-        {
-            GainStamina(2);
-        }
+
         if (Input.GetKey(KeyCode.Space))
         {
             LoseStamina(10);
@@ -89,6 +91,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 hidden = true;
             }
+        }
+        else if (inSafeRoom)
+        {
+            GainStamina(20);
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -103,5 +109,20 @@ public class PlayerMovement : MonoBehaviour
             hidden = false;
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Saferoom"))
+        {
+            inSafeRoom = true;
+            playerDeception.Resume();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Saferoom"))
+        {
+            inSafeRoom = false;
+        }
     }
 }
