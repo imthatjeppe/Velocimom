@@ -13,6 +13,8 @@ public class VelocimomBehaviour : MonoBehaviour
     public float startInvincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
+    public float invincibleTime;
+
 
     public Transform[] moveSpots;
     AIDestinationSetter setDestination;
@@ -21,7 +23,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
     public GameObject playerObject;
     public GameObject playerDetection;
-    private DetectPlayerInRange detectPlayerInRange; 
+    public GameObject playerPathSpots;
+
+    private DetectPlayerInRange detectPlayerInRange;
 
     private PlayerMovement player;
     private Transform target;
@@ -29,10 +33,13 @@ public class VelocimomBehaviour : MonoBehaviour
 
     private float staringTime;
     private float waitTime;
-    public float invincibleTime;
+    int losPathAt = 0;
 
     private bool detected;
     private bool playerInvincible;
+    private bool lostLineOfSight;
+
+    private List<GameObject> playerSpotsToFollow;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +61,7 @@ public class VelocimomBehaviour : MonoBehaviour
         pathFinder = GetComponent<AIPath>();
 
         detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
+        playerSpotsToFollow = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -97,7 +105,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
             if (sightHit)
             {
-                //Debug.Log(sightHit.collider.name);
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
@@ -126,21 +133,22 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         if (detected)
         {
-            if (!player.hidden)
+
+            CheckPlayerLineOfSight();
+
+            if (!player.hidden && !lostLineOfSight)
             {
                 setDestination.target = player.transform;
-            }
-            else
+            } else if (lostLineOfSight)
             {
-                if (player.releasedStaminaKey)
+                setDestination.target = playerSpotsToFollow[losPathAt].transform;
+                if (Vector2.Distance(transform.position, playerSpotsToFollow[losPathAt].transform.position) < 0.2f && losPathAt < playerSpotsToFollow.Count)
                 {
-                    staringTime = startStaringTime;
-                }
-                else
-                {
-                    staringTime -= Time.deltaTime;
+                    losPathAt++;
                 }
             }
+
+            CheckPlayerHidden();
 
             if (Vector2.Distance(transform.position, player.transform.position) < 2)
             {
@@ -148,7 +156,7 @@ public class VelocimomBehaviour : MonoBehaviour
             }
             else
             {
-                pathFinder.maxSpeed = 6;
+                pathFinder.maxSpeed = 3;
             }
 
             if (staringTime <= 0 || player.inSafeRoom)
@@ -162,6 +170,57 @@ public class VelocimomBehaviour : MonoBehaviour
                 setDestination.target = moveSpots[randomDestinationSpot];
             }
 
+        }
+    }
+    void AddPlayerPathSpots()
+    {
+        GameObject instancedPath = Instantiate(playerPathSpots);
+        instancedPath.transform.position = playerObject.transform.position;
+        playerSpotsToFollow.Add(instancedPath);
+    }
+    void CheckPlayerLineOfSight()
+    {
+        //cast a ray to see if velocimom has line of sight to player
+        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10);
+
+        if (sightHit)
+        {
+
+            if (!sightHit.collider.CompareTag("Player"))
+            {
+                //if line of sigt is lost, the player will lay out paths for velocimom to follow in order, she is "guessing" where player went
+                lostLineOfSight = true;
+                if (!IsInvoking(nameof(AddPlayerPathSpots)))
+                {
+                    InvokeRepeating(nameof(AddPlayerPathSpots), 0, 0.5f);
+                }
+                //if line of sight returns, clear the temporary path list and stop adding more spots
+            }
+            else if (sightHit.collider.CompareTag("Player") && playerSpotsToFollow.Count > 0)
+            {
+                CancelInvoke(nameof(AddPlayerPathSpots));
+                lostLineOfSight = false;
+                losPathAt = 0;
+                foreach (GameObject spots in playerSpotsToFollow)
+                {
+                    Destroy(spots);
+                }
+                playerSpotsToFollow.Clear();
+            }
+        }
+    }
+    void CheckPlayerHidden()
+    {
+        if (player.hidden)
+        {
+            if (player.releasedStaminaKey)
+            {
+                staringTime = startStaringTime;
+            }
+            else
+            {
+                staringTime -= Time.deltaTime;
+            }
         }
     }
 }
