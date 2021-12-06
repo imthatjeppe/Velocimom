@@ -1732,6 +1732,7 @@ MonoBehaviour:
   startInvincibleTime: 5
   distance: 0.2
   chasingSpeed: 3
+  normalSpeed: 1
   invincibleTime: 0
   moveSpots:
   - {fileID: 396204802}
@@ -3377,6 +3378,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 681119992}
+  stopEnemy: {fileID: 0}
 --- !u!212 &1350201351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3868,6 +3870,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
+  stopEnemy: {fileID: 0}
 --- !u!212 &1496527873
 SpriteRenderer:
   m_ObjectHideFlags: 0
