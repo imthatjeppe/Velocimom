@@ -1731,18 +1731,19 @@ MonoBehaviour:
   startStaringTime: 5
   startInvincibleTime: 5
   distance: 0.2
-  chasingSpeed: 5
+  chasingSpeed: 3
+  invincibleTime: 0
   moveSpots:
   - {fileID: 396204802}
   - {fileID: 260207068}
   - {fileID: 124984056}
   - {fileID: 1031039854}
   - {fileID: 1704996210}
-  - {fileID: 1704996210}
+  - {fileID: 258851443}
   patrol: 0
   playerObject: {fileID: 1869756648}
   playerDetection: {fileID: 1504889346}
-  invincibleTime: 0
+  playerPathSpots: {fileID: 3691448685689933902, guid: 770069c31f4e789489e49a9b8bfa5abf, type: 3}
 --- !u!4 &626742928
 Transform:
   m_ObjectHideFlags: 0
@@ -4074,7 +4075,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.7}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 3.24
 --- !u!114 &1504889349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,7 +4314,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9aa0d23544ce76041ba833bce5520436, type: 2}
+  - {fileID: 2100000, guid: cbacd38b49f116f49ab25697e2089c04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4333,7 +4334,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 14.504806, y: 8.16, z: 0}
   m_MaxChunkCount: 16
