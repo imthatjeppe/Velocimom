@@ -13,9 +13,7 @@ public class VelocimomBehaviour : MonoBehaviour
     public float startInvincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
-    public float normalSpeed;
     public float invincibleTime;
-    
 
 
     public Transform[] moveSpots;
@@ -35,8 +33,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
     private float staringTime;
     private float waitTime;
-    private float normalSlowdownDistance;
-    int lineOfSightPathAt = 0;
+    int losPathAt = 0;
 
     private bool detected;
     private bool playerInvincible;
@@ -144,11 +141,10 @@ public class VelocimomBehaviour : MonoBehaviour
                 setDestination.target = player.transform;
             } else if (lostLineOfSight)
             {
-                pathFinder.slowdownDistance = 0;
-                setDestination.target = playerSpotsToFollow[lineOfSightPathAt].transform;
-                if (Vector2.Distance(transform.position, playerSpotsToFollow[lineOfSightPathAt].transform.position) < 0.2f && lineOfSightPathAt < playerSpotsToFollow.Count)
+                setDestination.target = playerSpotsToFollow[losPathAt].transform;
+                if (Vector2.Distance(transform.position, playerSpotsToFollow[losPathAt].transform.position) < 0.2f && losPathAt < playerSpotsToFollow.Count)
                 {
-                    lineOfSightPathAt++;
+                    losPathAt++;
                 }
             }
 
@@ -160,12 +156,12 @@ public class VelocimomBehaviour : MonoBehaviour
             }
             else
             {
-                pathFinder.maxSpeed = chasingSpeed;
+                pathFinder.maxSpeed = 3;
             }
 
             if (staringTime <= 0 || player.inSafeRoom)
             {
-                pathFinder.maxSpeed = normalSpeed;
+                pathFinder.maxSpeed = 1;
 
                 patrol = true;
                 playerInvincible = true;
@@ -204,8 +200,7 @@ public class VelocimomBehaviour : MonoBehaviour
             {
                 CancelInvoke(nameof(AddPlayerPathSpots));
                 lostLineOfSight = false;
-                lineOfSightPathAt = 0;
-                pathFinder.slowdownDistance = normalSlowdownDistance;
+                losPathAt = 0;
                 foreach (GameObject spots in playerSpotsToFollow)
                 {
                     Destroy(spots);
@@ -216,13 +211,16 @@ public class VelocimomBehaviour : MonoBehaviour
     }
     void CheckPlayerHidden()
     {
-        if (player.releasedStaminaKey)
-        {
-            staringTime = startStaringTime;
-        }
         if (player.hidden)
         {
+            if (player.releasedStaminaKey)
+            {
+                staringTime = startStaringTime;
+            }
+            else
+            {
                 staringTime -= Time.deltaTime;
+            }
         }
     }
 }
