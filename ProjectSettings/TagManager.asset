@@ -7,6 +7,9 @@ TagManager:
   - Food
   - Canvas
   - DropOff
+  - Enemy
+  - DarkRoom
+  - Saferoom
   layers:
   - Default
   - TransparentFX
