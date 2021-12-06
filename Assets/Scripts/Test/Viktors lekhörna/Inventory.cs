@@ -10,35 +10,39 @@ public class Inventory : MonoBehaviour
     public GameObject player;
 
     private Rigidbody2D rb;
-    private float dropInterval;
+    private float movometer;
+    private float startMovometer = 2f;
     private bool isMoving;
-
-
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
         inventory = new Stack<GameObject>();
-        dropInterval = Random.Range(4f, 7f);
-      
-        InvokeRepeating("UnstableStack", 5f, dropInterval);
-
+        movometer = startMovometer;
     }
 
     private void Update()
     {
+        if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
+        {
+            isMoving = true;
+            movometer -= Time.deltaTime;
 
-        //Debug.Log(rb.velocity);
-        //Debug.Log(isMoving);
-        //while (rb.velocity == Vector2.zero)
-        //{
-        //    isMoving = true;
-        //}
+            Debug.Log("moving");
+        }
+        else
+        {
+            isMoving = false;
+            Debug.Log("Not moving");
+        }
 
-
+        if (movometer <= 0)
+        {
+            UnstableStack();
+            movometer = startMovometer;
+        }
     }
-
 
     public void AddItem(GameObject item)
     {
@@ -56,6 +60,7 @@ public class Inventory : MonoBehaviour
         objectToDrop.SetActive(true);
 
         Debug.Log("dropped" + objectToDrop.name);
+        Debug.Log("Items in inventory: " + inventory.Count);
     }
 
     public void UnstableStack()
@@ -64,10 +69,10 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
-        else if (inventory.Count >= 4 && rb.velocity != Vector2.zero)
+        else if (inventory.Count >= 4 && isMoving)
         {
-            DropItem();
-            Debug.Log("Items in inventory: " + inventory.Count);
+            Invoke("DropItem", Random.Range(4f, 7f));
+               
         }
     }
 }
