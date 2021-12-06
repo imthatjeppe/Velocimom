@@ -30,8 +30,8 @@ public class PlayerDecption : MonoBehaviour
                 Invoke(nameof(Resume), 1);
             }
         }
+       
     }
-
     void Resume()
     {
         enemyLure = false;
@@ -49,10 +49,12 @@ public class PlayerDecption : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
         {
             TurnOn();
             enemyLure = true;
         }
+
+
     }
 }
