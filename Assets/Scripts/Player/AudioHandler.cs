@@ -36,14 +36,14 @@ public class AudioHandler : MonoBehaviour
     {
         audioSoruce.clip = audioClips[2];
         audioSoruce.volume = 0.03f;
-        audioSoruce.pitch = Random.Range(0.8f, 1.2f);
+        audioSoruce.pitch = Random.Range(0.9f, 1.1f);
         audioSoruce.Play();
     }
     public void PlayHugoExhaleSFX()
     {
         audioSoruce.clip = audioClips[3];
         audioSoruce.volume = 0.03f;
-        audioSoruce.pitch = Random.Range(0.8f, 1.2f);
+        audioSoruce.pitch = Random.Range(0.9f, 1.1f);
         audioSoruce.Play();
     }
 }
