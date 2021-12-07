@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 1537078031}
   - component: {fileID: 1537078030}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: BetweenLevels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

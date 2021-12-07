@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/MainMenu.unity
     guid: 6147b9adb199c4040969bfa6aa755e19
   - enabled: 1
+    path: "Assets/Scenes/Test/Jespers Lekh\xF6rna.unity"
+    guid: 7ea1cacc3b893f247b225a04ba6c65b6
+  - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Levels/InbetweenLevels.unity
-    guid: c7053f5b9d250714e95efbf5a4a1bc25
   - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity
     guid: a0fdf66ef69f04045b705705604fd1d0
