@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception, LoseSpeed;
+    
 
     public bool hidden;
     public bool releasedStaminaKey;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
+
+    private Inventory inventory;
     void Start()
     {
         playerHealth = 3;
@@ -28,11 +31,13 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
+        inventory = LoseSpeed.GetComponent<Inventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         Health();
         GameOver();
         float x = Input.GetAxisRaw("Horizontal");
@@ -55,6 +60,14 @@ public class PlayerMovement : MonoBehaviour
     private void GainStamina(float GainStamina)
     {
         LoseStamina(-GainStamina);
+    }
+
+    private void LoseSpeedCarryingFood()
+    {
+       if (Inventory.inventory.Count += 1)
+        { 
+           speed -= 0.5f;
+        }
     }
 
     public void Health()
