@@ -215,6 +215,8 @@ public class VelocimomBehaviour : MonoBehaviour
     }
     void CheckPlayerHidden()
     {
+        if (player.hidden)
+        {
             if (player.releasedStaminaKey)
             {
                 staringTime = startStaringTime;
