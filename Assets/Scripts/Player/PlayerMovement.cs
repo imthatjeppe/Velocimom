@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception, LoseSpeed;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
     
 
     public bool hidden;
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerDecption playerDeception;
     AudioHandler audioHandler;
+
+    private GameObject player;
     private Inventory inventoryScriptObject;
 
     void Start()
@@ -34,13 +36,13 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
-        inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
         audioHandler = GetComponent<AudioHandler>();
+        //player = GameObject.FindGameObjectWithTag("Player");
+        inventoryScriptObject = GetComponent<Inventory>();
     }
 
     void Update()
     {
-
         Health();
         GameOver();
         float x = Input.GetAxisRaw("Horizontal");
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
         HiddenAbility();
-       // LoseSpeedCarryingFood();
+      //  LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
@@ -66,15 +68,16 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-   /* private void LoseSpeedCarryingFood()
+    /*private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
         {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
-            
+           
         }
-    }*/
-
+    
+    }
+    */
     public void Health()
     {
         if (playerHealth > 3)
