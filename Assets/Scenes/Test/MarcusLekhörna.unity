@@ -3377,6 +3377,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 681119992}
+  stopEnemy: {fileID: 626742922}
 --- !u!212 &1350201351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3868,6 +3869,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
+  stopEnemy: {fileID: 626742922}
 --- !u!212 &1496527873
 SpriteRenderer:
   m_ObjectHideFlags: 0
