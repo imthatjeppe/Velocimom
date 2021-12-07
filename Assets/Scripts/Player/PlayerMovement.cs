@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
         HiddenAbility();
-        LoseSpeedCarryingFood();
+        //LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
