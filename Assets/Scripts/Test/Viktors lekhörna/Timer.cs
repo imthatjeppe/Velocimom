@@ -11,10 +11,12 @@ public class Timer : MonoBehaviour
  
     private float timer;
 
+    private NextLevelScript nextLevelScriptObj;
     private Score scoreRef;
 
     private void Start()
     {
+        nextLevelScriptObj = gameObject.GetComponent<NextLevelScript>();
         scoreRef = gameObject.GetComponent<Score>();
         timer = timeLeft;
     }
