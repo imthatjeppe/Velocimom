@@ -135,13 +135,13 @@ public class VelocimomBehaviour : MonoBehaviour
         if (detected && !player.hidden)
         {
             CheckPlayerLineOfSight();
-
+            
             if (!player.hidden && !lostLineOfSight)
             {
                 setDestination.target = player.transform;
             } else if (lostLineOfSight)
             {
-                if(playerSpotsToFollow.Count > 0)
+                if (playerSpotsToFollow.Count > 0)
                 {
                     setDestination.target = playerSpotsToFollow[losPathAt].transform;
                     if (Vector2.Distance(transform.position, playerSpotsToFollow[losPathAt].transform.position) < 0.2f && losPathAt < playerSpotsToFollow.Count)

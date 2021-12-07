@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public Stack<GameObject> inventory;
     public GameObject player;
-    public int inventoryCount;
+    public float inventoryCount;
 
     private float movometer;
     private float startMovometer = 2f;
