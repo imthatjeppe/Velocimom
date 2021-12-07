@@ -71,7 +71,7 @@ public class VelocimomBehaviour : MonoBehaviour
         Patrol();
         SearchForPlayer();
 
-        if (!playerInvincible && !player.hidden)
+        if (!playerInvincible)
         {
             ChasePlayer();
         }
