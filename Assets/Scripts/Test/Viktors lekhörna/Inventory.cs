@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Inventory : MonoBehaviour
 {
     //this one for you jeppe
     public Stack<GameObject> inventory;
     public GameObject player;
+    public int inventoryCount;
 
     private Rigidbody2D rb;
     private float movometer;
@@ -25,6 +23,9 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
+        inventoryCount = inventory.Count;
+
+
         if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
         {
             isMoving = true;
