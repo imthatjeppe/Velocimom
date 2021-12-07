@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
+    public float loseSpeedAmount = 0.5f;
+    public int foodUntilEncumbered = 1;
 
     public static int playerHealth;
 
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerDecption playerDeception;
 
-    private Inventory inventory;
+    private Inventory inventoryScriptObject;
     void Start()
     {
         playerHealth = 3;
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
-        inventory = LoseSpeed.GetComponent<Inventory>();
+        inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
         SpaceAbility();
+        LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
@@ -64,9 +67,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void LoseSpeedCarryingFood()
     {
-       if (Inventory.inventory.Count += 1)
-        { 
-           speed -= 0.5f;
+       if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
+        {
+           speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
+            
         }
     }
 
