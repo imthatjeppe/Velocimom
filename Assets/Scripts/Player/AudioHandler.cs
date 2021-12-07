@@ -8,6 +8,13 @@ public class AudioHandler : MonoBehaviour
     private AudioSource audioSoruce;
 
     public AudioClip[] audioClips;
+    /*
+     Audio clip list:
+        0. HugoFootstep2
+        1. HugoFootstep3
+        2. HugoInhale
+        3. HugoExhale
+     */
     void Start()
     {
 
@@ -23,6 +30,20 @@ public class AudioHandler : MonoBehaviour
         audioSoruce.clip = audioClips[Random.Range(0,2)];
         audioSoruce.volume = 0.1f;
         audioSoruce.pitch = Random.Range(0.8f,1.2f);
+        audioSoruce.Play();
+    }
+    public void PlayHugoInhaleSFX()
+    {
+        audioSoruce.clip = audioClips[2];
+        audioSoruce.volume = 0.03f;
+        audioSoruce.pitch = Random.Range(0.8f, 1.2f);
+        audioSoruce.Play();
+    }
+    public void PlayHugoExhaleSFX()
+    {
+        audioSoruce.clip = audioClips[3];
+        audioSoruce.volume = 0.03f;
+        audioSoruce.pitch = Random.Range(0.8f, 1.2f);
         audioSoruce.Play();
     }
 }

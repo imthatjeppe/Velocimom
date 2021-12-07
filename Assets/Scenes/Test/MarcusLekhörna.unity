@@ -1643,6 +1643,7 @@ MonoBehaviour:
   startInvincibleTime: 5
   distance: 0.2
   chasingSpeed: 3
+  patrolSpeed: 0
   invincibleTime: 0
   moveSpots:
   - {fileID: 396204802}
@@ -3288,7 +3289,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 681119992}
-  stopEnemy: {fileID: 626742922}
+  velocimomGameObject: {fileID: 626742922}
 --- !u!212 &1350201351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3780,7 +3781,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
-  stopEnemy: {fileID: 626742922}
+  velocimomGameObject: {fileID: 626742922}
 --- !u!212 &1496527873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5649,17 +5650,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 570797781, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_Name
+      value: PlayerGraphics
+      objectReference: {fileID: 0}
+    - target: {fileID: 570797781, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.31
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.22
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5706,6 +5715,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1150576009}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: LoseSpeed
+      value: 
+      objectReference: {fileID: 1884741648}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: Staminabar
       value: 
       objectReference: {fileID: 1283539764}
@@ -5713,6 +5726,22 @@ PrefabInstance:
       propertyPath: PlayerDeception
       value: 
       objectReference: {fileID: 1359299590}
+    - target: {fileID: 5415430338799622909, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_Size.x
+      value: 5.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415430338799622909, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_Size.y
+      value: 5.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415430338799622909, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415430338799622909, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_Name
       value: Player

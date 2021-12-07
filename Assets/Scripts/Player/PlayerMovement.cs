@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
-
+    AudioHandler audioHandler;
     private Inventory inventoryScriptObject;
 
     void Start()
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
+        audioHandler = GetComponent<AudioHandler>();
     }
 
     void Update()
@@ -46,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
-        SpaceAbility();
-        LoseSpeedCarryingFood();
+        HiddenAbility();
+       // LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
@@ -65,14 +66,14 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-    private void LoseSpeedCarryingFood()
+   /* private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
         {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
             
         }
-    }
+    }*/
 
     public void Health()
     {
@@ -91,13 +92,14 @@ public class PlayerMovement : MonoBehaviour
             Heart2.gameObject.SetActive(true);
     }
 
-    private void SpaceAbility()
+    private void HiddenAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed = resetSpeed;
             currentstamina -= 10;
-            releasedStaminaKey = false; 
+            releasedStaminaKey = false;
+            audioHandler.PlayHugoInhaleSFX();
         }
 
         if (Input.GetKey(KeyCode.Space))
@@ -119,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
             speed = maxSpeed;
             hidden = false;
             releasedStaminaKey = true;
+            audioHandler.PlayHugoExhaleSFX();
         }
 
         if (currentstamina <= 0)
