@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public Stack<GameObject> inventory;
     public GameObject player;
-    public float inventoryCount;
+    public int inventoryCount;
 
     private float movometer;
     private float startMovometer = 2f;
@@ -27,12 +27,10 @@ public class Inventory : MonoBehaviour
         {
             isMoving = true;
             movometer -= Time.deltaTime;
-            Debug.Log("moving");
         }
         else
         {
             isMoving = false;
-            Debug.Log("Not moving");
         }
 
         if (movometer <= 0)
