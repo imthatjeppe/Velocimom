@@ -27,12 +27,10 @@ public class Inventory : MonoBehaviour
         {
             isMoving = true;
             movometer -= Time.deltaTime;
-            Debug.Log("moving");
         }
         else
         {
             isMoving = false;
-            Debug.Log("Not moving");
         }
 
         if (movometer <= 0)

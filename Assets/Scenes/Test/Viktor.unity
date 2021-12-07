@@ -3245,9 +3245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399e9014d406e194284274b738a641ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropOffZone: {fileID: 1126858307}
   timerText: {fileID: 1072096088}
-  timeLeft: 90
+  timeLeft: 91
 --- !u!1 &1150576009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5875,7 +5874,6 @@ MonoBehaviour:
   Heart1: {fileID: 1419198077}
   Heart2: {fileID: 1150576009}
   PlayerDeception: {fileID: 1359299590}
-  LoseSpeed: {fileID: 0}
   hidden: 0
   releasedStaminaKey: 0
   inSafeRoom: 0

@@ -49,8 +49,6 @@ public class Score : MonoBehaviour
         {
             ContinueToNextLevel();
         }
-
-
     }
 
     void ContinueToNextLevel()
