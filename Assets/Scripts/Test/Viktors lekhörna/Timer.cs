@@ -8,8 +8,10 @@ public class Timer : MonoBehaviour
 {
     public Text timerText;
     public int timeLeft;
-
+    public Text timerText;
+ 
     private float timer;
+
     private Score scoreRef;
 
     private void Start()

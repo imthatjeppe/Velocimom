@@ -8,13 +8,7 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
-    public GameObject NextLevel;
 
-    public static bool NextLevelPaused;
-    private void Start()
-    {
-        NextLevel.SetActive(false);
-    }
     void Update()
     {
         foodScore.text = "Score: " + score;
