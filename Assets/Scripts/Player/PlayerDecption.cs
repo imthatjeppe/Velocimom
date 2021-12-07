@@ -7,7 +7,7 @@ public class PlayerDecption : MonoBehaviour
 {
     public bool enemyLure;
     public Transform[] moveSpotsDeception;
-    public GameObject stopEnemy;
+    public GameObject velocimomGameObject;
 
     private VelocimomBehaviour velocimom;
     private AIDestinationSetter setDestination;
@@ -18,7 +18,7 @@ public class PlayerDecption : MonoBehaviour
         enemyLure = false;
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
-        AIPath = stopEnemy.GetComponent<AIPath>();
+        AIPath = velocimomGameObject.GetComponent<AIPath>();
     }
 
     // Update is called once per frame
