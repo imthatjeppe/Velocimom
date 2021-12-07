@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Inventory : MonoBehaviour
 {
+    //this one for you jeppe
     public Stack<GameObject> inventory;
     public GameObject player;
 
