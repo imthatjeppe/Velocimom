@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
+    public float staminaDrain;
     public float loseSpeedAmount = 0.5f;
     public int foodUntilEncumbered = 1;
 
@@ -104,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            LoseStamina(10);
+            LoseStamina(staminaDrain);
 
             if (currentstamina >= 0)
             {
