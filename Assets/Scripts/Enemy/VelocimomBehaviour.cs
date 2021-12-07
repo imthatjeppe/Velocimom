@@ -27,6 +27,7 @@ public class VelocimomBehaviour : MonoBehaviour
     public GameObject playerPathSpots;
 
     private DetectPlayerInRange detectPlayerInRange;
+    private RigmorAudioHandler audioHandler;
 
     private PlayerMovement player;
     private Transform target;
@@ -63,6 +64,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
         detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
         playerSpotsToFollow = new List<GameObject>();
+        audioHandler = GetComponent<RigmorAudioHandler>();
     }
 
     // Update is called once per frame
@@ -109,6 +111,11 @@ public class VelocimomBehaviour : MonoBehaviour
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
+                    //Just to be sure to play this sound once when you are detected
+                    if (patrol && !playerInvincible)
+                    {
+                        audioHandler.PlayRigmorDetectionRoarSFX();
+                    }
                     detected = true;
                     patrol = false;
                     staringTime = startStaringTime;

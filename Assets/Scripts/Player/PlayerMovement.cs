@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
-    AudioHandler audioHandler;
+    PlayerAudioHandler audioHandler;
     private Inventory inventoryScriptObject;
 
     void Start()
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
-        audioHandler = GetComponent<AudioHandler>();
+        audioHandler = GetComponent<PlayerAudioHandler>();
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
         HiddenAbility();
-       // LoseSpeedCarryingFood();
+        LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
@@ -66,14 +66,14 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-   /* private void LoseSpeedCarryingFood()
+   private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
         {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
             
         }
-    }*/
+    }
 
     public void Health()
     {
