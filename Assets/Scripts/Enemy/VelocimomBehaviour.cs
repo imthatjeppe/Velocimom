@@ -226,4 +226,5 @@ public class VelocimomBehaviour : MonoBehaviour
                 staringTime -= Time.deltaTime;
             }
         }
+    }
 }
