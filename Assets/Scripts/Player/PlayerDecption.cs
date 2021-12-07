@@ -7,18 +7,18 @@ public class PlayerDecption : MonoBehaviour
 {
     public bool enemyLure;
     public Transform[] moveSpotsDeception;
-    public GameObject stopEnemy;
+    public GameObject velocimomGameObject;
 
     private VelocimomBehaviour velocimom;
     private AIDestinationSetter setDestination;
-    private AIPath AIPath;
+    private AIPath aIPath;
     // Start is called before the first frame update
     void Start()
     {
         enemyLure = false;
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
-        AIPath = stopEnemy.GetComponent<AIPath>();
+        aIPath = velocimomGameObject.GetComponent<AIPath>();
     }
 
     // Update is called once per frame
@@ -53,14 +53,14 @@ public class PlayerDecption : MonoBehaviour
         }
         else
         {
-            AIPath.maxSpeed = 0;
+            aIPath.maxSpeed = 0;
             Invoke(nameof(Luring), 3);
         }
     }
     void Luring()
     {
         setDestination.target = moveSpotsDeception[0];
-        AIPath.maxSpeed = 1;
+        aIPath.maxSpeed = 1;
     }
     private void TurnOn()
     {

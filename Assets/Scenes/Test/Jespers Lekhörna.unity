@@ -927,9 +927,17 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4509488755601930203, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
+      propertyPath: LoseSpeed
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509488755601930203, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: Staminabar
       value: 
       objectReference: {fileID: 1283539764}
+    - target: {fileID: 4509488755601930203, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
+      propertyPath: PlayerDeception
+      value: 
+      objectReference: {fileID: 1359299590}
     - target: {fileID: 8160215732293555775, guid: e277a5d4d46f4c94398e3bbb66d4be4e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3437,6 +3445,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 681119992}
+  velocimomGameObject: {fileID: 626742922}
 --- !u!212 &1350201351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3928,6 +3937,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
+  velocimomGameObject: {fileID: 626742922}
 --- !u!212 &1496527873
 SpriteRenderer:
   m_ObjectHideFlags: 0

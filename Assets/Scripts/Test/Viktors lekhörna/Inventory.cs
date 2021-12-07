@@ -1,15 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Inventory : MonoBehaviour
 {
     public Stack<GameObject> inventory;
     public GameObject player;
+    public int inventoryCount;
 
-    private Rigidbody2D rb;
     private float movometer;
     private float startMovometer = 2f;
     private bool isMoving;
@@ -17,13 +14,15 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        rb = player.GetComponent<Rigidbody2D>();
         inventory = new Stack<GameObject>();
         movometer = startMovometer;
     }
 
     private void Update()
     {
+        inventoryCount = inventory.Count;
+
+
         if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
         {
             isMoving = true;
