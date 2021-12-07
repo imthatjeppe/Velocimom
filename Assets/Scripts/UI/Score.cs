@@ -8,13 +8,7 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
-    public GameObject NextLevel;
 
-    public static bool NextLevelPaused;
-    private void Start()
-    {
-        NextLevel.SetActive(false);
-    }
     void Update()
     {
         foodScore.text = "Score: " + score;
@@ -45,26 +39,6 @@ public class Score : MonoBehaviour
             PlayerMovement.playerHealth++;
         }
 
-        if (score >= 1000)
-        {
-            ContinueToNextLevel();
-        }
-
-
-    }
-
-    void ContinueToNextLevel()
-    {
-        NextLevel.SetActive(true);
-        Time.timeScale = 0f;
-        NextLevelPaused = true;
-    }
-
-    void startNextLevel()
-    {
-        NextLevel.SetActive(false);
-        Time.timeScale = 1f;
-        NextLevelPaused = false;
     }
 
     public void AddScore(float points)

@@ -6,18 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-
-    public GameObject dropOffZone;
-    public Text timerText;
     public int timeLeft;
-
+    public Text timerText;
+ 
     private float timer;
-    private Score score;
 
     private void Start()
     {
-        score = dropOffZone.GetComponent<Score>();
-
         timer = timeLeft;
     }
 

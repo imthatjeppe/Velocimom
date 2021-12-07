@@ -139,8 +139,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
     private void ChasePlayer()
     {
-        if (detected && !player.hidden)
+        if (detected)
         {
+
             CheckPlayerLineOfSight();
             
             if (!player.hidden && !lostLineOfSight)

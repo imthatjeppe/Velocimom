@@ -7,14 +7,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
-    public float staminaDrain;
     public float loseSpeedAmount = 0.5f;
     public int foodUntilEncumbered = 1;
 
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception, LoseSpeed;
     
 
     public bool hidden;
@@ -24,13 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
-<<<<<<< HEAD
     PlayerAudioHandler audioHandler;
-=======
-    AudioHandler audioHandler;
-
-    private GameObject player;
->>>>>>> 45431ac78bcec9f53b5bcb3d6a613742b80c8b55
     private Inventory inventoryScriptObject;
 
     void Start()
@@ -41,18 +34,13 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
-<<<<<<< HEAD
         inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
         audioHandler = GetComponent<PlayerAudioHandler>();
-=======
-        audioHandler = GetComponent<AudioHandler>();
-        //player = GameObject.FindGameObjectWithTag("Player");
-        inventoryScriptObject = GetComponent<Inventory>();
->>>>>>> 45431ac78bcec9f53b5bcb3d6a613742b80c8b55
     }
 
     void Update()
     {
+
         Health();
         GameOver();
         float x = Input.GetAxisRaw("Horizontal");
@@ -60,11 +48,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
         HiddenAbility();
-<<<<<<< HEAD
         LoseSpeedCarryingFood();
-=======
-      //  LoseSpeedCarryingFood();
->>>>>>> 45431ac78bcec9f53b5bcb3d6a613742b80c8b55
     }
     public void GameOver()
     {
@@ -82,25 +66,15 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-<<<<<<< HEAD
    private void LoseSpeedCarryingFood()
-=======
-    /*private void LoseSpeedCarryingFood()
->>>>>>> 45431ac78bcec9f53b5bcb3d6a613742b80c8b55
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
         {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
-           
+            
         }
-<<<<<<< HEAD
     }
 
-=======
-    
-    }
-    */
->>>>>>> 45431ac78bcec9f53b5bcb3d6a613742b80c8b55
     public void Health()
     {
         if (playerHealth > 3)
@@ -130,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            LoseStamina(staminaDrain);
+            LoseStamina(10);
 
             if (currentstamina >= 0)
             {
