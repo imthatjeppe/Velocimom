@@ -6,28 +6,40 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public int timeLeft;
     public Text timerText;
+    public int timeLeft;
  
     private float timer;
 
+    private Score scoreRef;
+
     private void Start()
     {
+        scoreRef = gameObject.GetComponent<Score>();
         timer = timeLeft;
     }
 
     private void Update()
     {
         timer -= Time.deltaTime;
+        timerText.text = "Time left: " + (int)timer;
 
-        timerText.text = "Time left: " + timer;
+        TimeRunOut();
     }
 
-    public void TimeRunOut() 
+    public void TimeRunOut()
     {
         if (timer <= 0)
         {
-            
+            if (scoreRef.score >= 1000)
+            {
+                Debug.Log("Win");
+            }
+
+            if (scoreRef.score <= 1000)
+            {
+                Debug.Log("Lose");
+            }
         }
     }
 
