@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8942691265838724142
+--- !u!1 &570797781
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1042514175716146186}
-  - component: {fileID: 3364931686631929210}
-  - component: {fileID: 5415430338799622909}
-  - component: {fileID: 4746167037677706734}
-  - component: {fileID: 4405178565181954615}
-  - component: {fileID: 1893490672559561915}
-  - component: {fileID: 3213900604991310360}
-  - component: {fileID: 2517805346795267168}
-  - component: {fileID: 1670584151966373285}
-  - component: {fileID: 7383199094219891990}
-  - component: {fileID: 2296392270737396421}
+  - component: {fileID: 570797782}
+  - component: {fileID: 570797783}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: PlayerGrafics
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1042514175716146186
+--- !u!4 &570797782
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8942691265838724142}
+  m_GameObject: {fileID: 570797781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: -2.76, z: 0}
-  m_LocalScale: {x: 0.23073632, y: 0.23073632, z: 0.2884204}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1042514175716146186}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3364931686631929210
+--- !u!212 &570797783
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8942691265838724142}
+  m_GameObject: {fileID: 570797781}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -91,6 +82,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8942691265838724142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042514175716146186}
+  - component: {fileID: 5415430338799622909}
+  - component: {fileID: 4746167037677706734}
+  - component: {fileID: 4405178565181954615}
+  - component: {fileID: 1893490672559561915}
+  - component: {fileID: 3213900604991310360}
+  - component: {fileID: 2517805346795267168}
+  - component: {fileID: 1670584151966373285}
+  - component: {fileID: 7383199094219891990}
+  - component: {fileID: 2296392270737396421}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1042514175716146186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942691265838724142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8, y: -2.76, z: 0}
+  m_LocalScale: {x: 0.123331785, y: 0.123331785, z: 0.15416476}
+  m_Children:
+  - {fileID: 570797782}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5415430338799622909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,7 +135,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -2.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +146,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.59, y: 5.66}
   m_EdgeRadius: 0
 --- !u!114 &4746167037677706734
 MonoBehaviour:
@@ -132,11 +163,14 @@ MonoBehaviour:
   speed: 5
   maxSpeed: 5
   currentstamina: 100
+  loseSpeedAmount: 0.5
+  foodUntilEncumbered: 1
   Staminabar: {fileID: 0}
   Heart0: {fileID: 0}
   Heart1: {fileID: 0}
   Heart2: {fileID: 0}
   PlayerDeception: {fileID: 0}
+  LoseSpeed: {fileID: 0}
   hidden: 0
   releasedStaminaKey: 0
   inSafeRoom: 0
@@ -167,7 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe54254699e6e7488a101664aee1d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8942691265838724142}
+  inventoryCount: 0
 --- !u!50 &3213900604991310360
 Rigidbody2D:
   serializedVersion: 4
@@ -205,6 +240,8 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: d1b4b80bc354624429c26bbbc1dc7be0, type: 3}
   - {fileID: 8300000, guid: 0414a06155a6d4644938e49cfac71326, type: 3}
+  - {fileID: 8300000, guid: 4419f4b1dc069fd48b380f844f0520ad, type: 3}
+  - {fileID: 8300000, guid: b3a574290fc22d243b59cc6cc1feaf4d, type: 3}
 --- !u!82 &1670584151966373285
 AudioSource:
   m_ObjectHideFlags: 0

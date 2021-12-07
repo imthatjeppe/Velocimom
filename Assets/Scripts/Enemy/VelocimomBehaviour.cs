@@ -13,6 +13,7 @@ public class VelocimomBehaviour : MonoBehaviour
     public float startInvincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
+    public float patrolSpeed;
     public float invincibleTime;
 
 
@@ -159,12 +160,12 @@ public class VelocimomBehaviour : MonoBehaviour
             }
             else
             {
-                pathFinder.maxSpeed = 3;
+                pathFinder.maxSpeed = chasingSpeed;
             }
 
             if (staringTime <= 0 || player.inSafeRoom)
             {
-                pathFinder.maxSpeed = 1;
+                pathFinder.maxSpeed = patrolSpeed;
 
                 patrol = true;
                 playerInvincible = true;
@@ -214,8 +215,6 @@ public class VelocimomBehaviour : MonoBehaviour
     }
     void CheckPlayerHidden()
     {
-        if (player.hidden)
-        {
             if (player.releasedStaminaKey)
             {
                 staringTime = startStaringTime;
@@ -225,5 +224,4 @@ public class VelocimomBehaviour : MonoBehaviour
                 staringTime -= Time.deltaTime;
             }
         }
-    }
 }
