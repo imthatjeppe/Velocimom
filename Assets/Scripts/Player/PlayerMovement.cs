@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerDecption playerDeception;
 
     private Inventory inventoryScriptObject;
+
     void Start()
     {
         playerHealth = 3;
@@ -36,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 

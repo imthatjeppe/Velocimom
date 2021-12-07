@@ -8,7 +8,6 @@ public class PlayerManager : MonoBehaviour
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
     
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj)
