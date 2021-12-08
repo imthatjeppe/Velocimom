@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider Staminabar;
     public GameObject Heart0, Heart1, Heart2, PlayerDeception;
-    
 
     public bool hidden;
     public bool releasedStaminaKey;
@@ -57,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
         GameOver();
         HiddenAbility();
         LoseSpeedCarryingFood();
-       
     }
     public void GameOver()
     {
@@ -146,7 +144,6 @@ public class PlayerMovement : MonoBehaviour
         {
             hidden = false;
         }
-
     }
      public Vector2 GetPlayerVelcoity()
     {
