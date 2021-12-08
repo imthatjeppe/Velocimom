@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool releasedStaminaKey;
     public bool inSafeRoom = false;
 
+    Vector3 movement = new Vector3();
     private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = GetComponent<Inventory>();
-        audioHandler = GetComponent<PlayerAudioHandler>();
+        audioHandler = GetComponentInChildren<PlayerAudioHandler>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         speed *= speedMagnitude;
@@ -47,12 +48,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical") * 0.5f;
-        speed = Mathf.Clamp(speed, maxSpeed/10, maxSpeed);
-        Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
-        rigidBody.velocity = movement;
+            float x = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical") * 0.5f;
+            speed = Mathf.Clamp(speed, maxSpeed/10, maxSpeed);
 
+        if (!hidden)
+        {
+            movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
+        } else
+        {
+            movement = new Vector2(0, 0);
+        }
+
+
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movement *= 2;
+            inventoryScriptObject.isRunning = true;
+        }
+        else
+        {
+            inventoryScriptObject.isRunning = false;
+        }
+        
+        rigidBody.velocity = movement;
         Health();
         GameOver();
         HiddenAbility();
@@ -150,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Saferoom"))
+        if (collision.CompareTag("Saferoom") && !playerDeception.enemyLure)
         {
             inSafeRoom = true;
             playerDeception.Resume();

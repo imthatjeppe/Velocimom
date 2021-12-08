@@ -32,11 +32,11 @@ public class PlayerAnimationHandler : MonoBehaviour
     }
     void FlipSprite()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal")>0.01f)
         {
             sprite.flipX = true;
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetAxisRaw("Horizontal") < -0.01f)
         {
             sprite.flipX = false;
         }
