@@ -10,12 +10,13 @@ public class Inventory : MonoBehaviour
     private float movometer;
     private float startMovometer = 2f;
     private bool isMoving;
-
+    private PlayerMovement playerMovement;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = new Stack<GameObject>();
         movometer = startMovometer;
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -61,7 +62,10 @@ public class Inventory : MonoBehaviour
 
     public void UnstableStack()
     {
-        if (inventory.Count <= 3)
+        if (playerMovement.isRunning)
+        {
+            Invoke("DropItem", Random.Range(4f, 7f));
+        }else if (inventory.Count <= 3)
         {
             return;
         }

@@ -30,6 +30,7 @@ public class PlayerAnimationHandler : MonoBehaviour
         PlayerWalkingAnimation();
         CheckInventory();
         CheckHidden();
+        PlayerRunningAnimation();
     }
     void PlayerWalkingAnimation()
     {
@@ -57,13 +58,17 @@ public class PlayerAnimationHandler : MonoBehaviour
             animator.SetBool("Freeze", false);
         }
     }
+    void PlayerRunningAnimation()
+    {
+        animator.SetBool("IsRunning",playerMovement.isRunning);
+    }
     void FlipSprite()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal")>0.01f)
         {
             sprite.flipX = true;
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetAxisRaw("Horizontal") < -0.01f)
         {
             sprite.flipX = false;
         }
