@@ -30,6 +30,7 @@ public class PlayerAnimationHandler : MonoBehaviour
         PlayerWalkingAnimation();
         CheckInventory();
         CheckHidden();
+        PlayerRunningAnimation();
     }
     void PlayerWalkingAnimation()
     {
@@ -56,6 +57,10 @@ public class PlayerAnimationHandler : MonoBehaviour
         {
             animator.SetBool("Freeze", false);
         }
+    }
+    void PlayerRunningAnimation()
+    {
+        animator.SetBool("IsRunning",playerMovement.isRunning);
     }
     void FlipSprite()
     {
