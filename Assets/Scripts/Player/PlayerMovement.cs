@@ -7,13 +7,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
-    public float loseSpeedAmount = 0.5f;
-    public int foodUntilEncumbered = 1;
+    public float loseSpeedAmount = 0.3f;
+    public int foodUntilEncumbered = 2;
 
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception, LoseSpeed;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
     
 
     public bool hidden;
@@ -34,21 +34,23 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
-        inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
+        inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponent<PlayerAudioHandler>();
     }
 
     void Update()
     {
-
-        Health();
-        GameOver();
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
+        speed = Mathf.Clamp(speed, 0.5f, 5);
+
+        Health();
+        GameOver();
         HiddenAbility();
-        //LoseSpeedCarryingFood();
+        LoseSpeedCarryingFood();
+       
     }
     public void GameOver()
     {
@@ -66,15 +68,19 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-   private void LoseSpeedCarryingFood()
+    private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
-        {
+       {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
-            
+           foodUntilEncumbered += 1;
+       }
+       else if(inventoryScriptObject.inventoryCount < foodUntilEncumbered)
+       {
+            foodUntilEncumbered -= 1;
+            speed += 0.3f;
         }
     }
-
     public void Health()
     {
         if (playerHealth > 3)

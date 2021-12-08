@@ -3388,6 +3388,7 @@ MonoBehaviour:
   Heart1: {fileID: 1555735388}
   Heart2: {fileID: 189960065}
   PlayerDeception: {fileID: 941949423}
+  LoseSpeed: {fileID: 0}
   hidden: 0
   releasedStaminaKey: 0
   inSafeRoom: 0
@@ -3590,6 +3591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e4b29d7509fff45be3e9f026a00751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreForNextLevel: 2000
   NextLevel: {fileID: 320240866}
 --- !u!1001 &1094094595
 PrefabInstance:
