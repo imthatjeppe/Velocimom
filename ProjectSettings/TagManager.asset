@@ -10,11 +10,12 @@ TagManager:
   - Enemy
   - DarkRoom
   - Saferoom
+  - Tap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Deception
   - Water
   - UI
   - 

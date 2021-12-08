@@ -28,21 +28,21 @@ public class PlayerAudioHandler : MonoBehaviour
     public void PlayHugoFootstepSFX()
     {
         audioSoruce.clip = audioClips[Random.Range(0,2)];
-        audioSoruce.volume = 0.1f;
+        audioSoruce.volume = 0.7f;
         audioSoruce.pitch = Random.Range(0.8f,1.2f);
         audioSoruce.Play();
     }
     public void PlayHugoInhaleSFX()
     {
         audioSoruce.clip = audioClips[2];
-        audioSoruce.volume = 0.03f;
+        audioSoruce.volume = 0.2f;
         audioSoruce.pitch = Random.Range(0.9f, 1.1f);
         audioSoruce.Play();
     }
     public void PlayHugoExhaleSFX()
     {
         audioSoruce.clip = audioClips[3];
-        audioSoruce.volume = 0.03f;
+        audioSoruce.volume = 0.2f;
         audioSoruce.pitch = Random.Range(0.9f, 1.1f);
         audioSoruce.Play();
     }

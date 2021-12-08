@@ -12,6 +12,8 @@ public class PlayerDecption : MonoBehaviour
     private VelocimomBehaviour velocimom;
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
+    private PlayerAudioHandler audioHandler;
+    private bool inRange = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,18 @@ public class PlayerDecption : MonoBehaviour
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         aIPath = velocimomGameObject.GetComponent<AIPath>();
+        audioHandler = GetComponent<PlayerAudioHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckIfCloseToLure();
+
+        if (inRange)
+        {
+            TurnOn();
+        }
     }
     public void Resume()
     {
@@ -64,15 +72,23 @@ public class PlayerDecption : MonoBehaviour
     }
     private void TurnOn()
     {
-        Debug.Log("Hello");
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
         if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
         {
-            TurnOn();
             enemyLure = true;
             startLure();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inRange = true;
+        }
+    }private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inRange = false;
         }
     }
 }

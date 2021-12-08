@@ -10,7 +10,7 @@ public class RigmorAudioHandler : MonoBehaviour
     public AudioClip[] audioClips;
     /*
      Audio clip list:
-        0. RigmorDetectionRoar
+        0. RigmorVeloScream
      */
     void Start()
     {
