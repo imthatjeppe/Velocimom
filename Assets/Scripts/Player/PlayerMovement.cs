@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
-    public float loseSpeedAmount = 0.5f;
-    public int foodUntilEncumbered = 1;
+    public float loseSpeedAmount = 0.3f;
+    public int foodUntilEncumbered = 2;
 
     public static int playerHealth;
 
@@ -44,11 +44,13 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
+        speed = Mathf.Clamp(speed, 0.5f, 5);
 
         Health();
         GameOver();
         HiddenAbility();
-        //LoseSpeedCarryingFood();
+        LoseSpeedCarryingFood();
+       
     }
     public void GameOver()
     {
@@ -69,12 +71,16 @@ public class PlayerMovement : MonoBehaviour
     private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
-        {
+       {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
-            
+           foodUntilEncumbered += 1;
+       }
+       else if(inventoryScriptObject.inventoryCount < foodUntilEncumbered)
+       {
+            foodUntilEncumbered -= 1;
+            speed += 0.3f;
         }
     }
-
     public void Health()
     {
         if (playerHealth > 3)
