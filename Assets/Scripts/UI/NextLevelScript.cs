@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NextLevelScript : MonoBehaviour
 {
+    public float scoreForNextLevel;
     public GameObject NextLevel;
 
     public static bool NextLevelPaused;
@@ -12,6 +13,7 @@ public class NextLevelScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         NextLevel.SetActive(false);
         nextLevelScore = GetComponent<Score>();
     }
@@ -19,24 +21,29 @@ public class NextLevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nextLevelScore.score >= 1000)
+        if (nextLevelScore.score >= scoreForNextLevel)
         {
             ContinueToNextLevel();
         }
+
+        
+        
     }
 
     void ContinueToNextLevel()
     {
         NextLevel.SetActive(true);
-        Time.timeScale = 0f;
         NextLevelPaused = (true);
+        
+        
 
     }
     public void startNextLevel()
     {
         NextLevel.SetActive(false);
-        Time.timeScale = 1f;
         NextLevelPaused = (false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+
     }
 }
