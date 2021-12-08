@@ -5277,6 +5277,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7548094086527956622, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: playerObject
       value: 
@@ -5308,6 +5312,18 @@ PrefabInstance:
     - target: {fileID: 7548094088467196422, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: m_Name
       value: Rigmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196423, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196423, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196423, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196444, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: m_RootOrder

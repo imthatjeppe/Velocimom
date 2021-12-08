@@ -6,9 +6,12 @@ public class TapAudioHandler : MonoBehaviour
 {
     public AudioClip[] audioClips;
 
+
     [SerializeField]
     private AudioSource audioSource;
+    GameObject rigmor;
     private bool inTapRange = false;
+    private bool stopTapSoundCanBePlayed = false;
     /*
      Audio clip list:
         1. StartRunningTap
@@ -16,7 +19,7 @@ public class TapAudioHandler : MonoBehaviour
      */
     void Start()
     {
-        
+        rigmor = GetComponent<PlayerDecption>().velocimomGameObject;
     }
 
     // Update is called once per frame
@@ -25,19 +28,26 @@ public class TapAudioHandler : MonoBehaviour
         if(inTapRange && Input.GetKeyDown(KeyCode.E) && !audioSource.isPlaying)
         {
             PlayTapStartSFX();
+            stopTapSoundCanBePlayed = true;
+        }
+        //Turning of the tap when rigmor is in range of the tap
+        if(Vector2.Distance(rigmor.transform.position, transform.position) < 0.2 && stopTapSoundCanBePlayed)
+        {
+            PlayTapEndSFX();
+            stopTapSoundCanBePlayed = false;
         }
     }
     public void PlayTapStartSFX()
     {
         audioSource.clip = audioClips[0];
-        audioSource.volume = 1f;
+        audioSource.volume = 0.5f;
         audioSource.Play();
 
     }
     public void PlayTapEndSFX()
     {
         audioSource.clip = audioClips[1];
-        audioSource.volume = 1f;
+        audioSource.volume = 0.5f;
         audioSource.Play();
     }
     private void OnTriggerEnter2D(Collider2D collision)
