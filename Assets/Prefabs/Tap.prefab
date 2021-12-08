@@ -132,7 +132,7 @@ MonoBehaviour:
   enemyLure: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
-  velocimomGameObject: {fileID: 0}
+  velocimomGameObject: {fileID: 7548094088467196422, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
 --- !u!61 &5120432133837874088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d612b490ab7120b45863a888cdd21496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSoruce: {fileID: -14866358174578593}
   audioClips:
   - {fileID: 8300000, guid: 4939f25731f11084c880627588991cae, type: 3}
   - {fileID: 8300000, guid: 4cf139464e38f1f499b745a084832655, type: 3}
+  audioSource: {fileID: -14866358174578593}
