@@ -18,6 +18,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
 
     public Transform[] moveSpots;
+    public Transform spawnPoint;
     AIDestinationSetter setDestination;
 
     public bool patrol;
@@ -163,7 +164,13 @@ public class VelocimomBehaviour : MonoBehaviour
 
             if (Vector2.Distance(transform.position, player.transform.position) < 2)
             {
+                
                 pathFinder.maxSpeed = 0;
+                player.transform.position = spawnPoint.position;
+                PlayerMovement.playerHealth -= 1;
+                detected = false;
+                patrol = true;
+
             }
             else
             {

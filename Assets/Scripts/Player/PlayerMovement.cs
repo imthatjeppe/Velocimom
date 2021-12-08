@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LoseSpeedCarryingFood()
     {
+<<<<<<< Updated upstream
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
        {
            speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
@@ -86,6 +87,20 @@ public class PlayerMovement : MonoBehaviour
        {
             foodUntilEncumbered -= 1;
             speed += loseSpeedAmount;
+=======
+        if (inventoryScriptObject.inventoryCount >= 3)
+        {
+            if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
+            {
+                speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
+                foodUntilEncumbered += 1;
+            }
+            else if (inventoryScriptObject.inventoryCount < foodUntilEncumbered)
+            {
+                foodUntilEncumbered -= 1;
+                speed += 0.3f;
+            }
+>>>>>>> Stashed changes
         }
     }
     public void Health()

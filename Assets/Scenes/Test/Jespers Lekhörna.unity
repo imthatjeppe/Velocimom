@@ -1833,9 +1833,9 @@ MonoBehaviour:
   - {fileID: 1031039854}
   - {fileID: 1704996210}
   patrol: 0
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 999563211}
   playerDetection: {fileID: 1504889346}
-  playerPathSpots: {fileID: 0}
+  playerPathSpots: {fileID: 3691448685689933902, guid: 770069c31f4e789489e49a9b8bfa5abf, type: 3}
 --- !u!4 &626742928
 Transform:
   m_ObjectHideFlags: 0
@@ -2313,6 +2313,14 @@ PrefabInstance:
       propertyPath: PlayerDeception
       value: 
       objectReference: {fileID: 1359299590}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: loseSpeedAmount
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: foodUntilEncumbered
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2582,6 +2590,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &999563211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+  m_PrefabInstance: {fileID: 896152259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025556945
 GameObject:
   m_ObjectHideFlags: 0
