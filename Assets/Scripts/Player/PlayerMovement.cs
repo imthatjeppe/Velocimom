@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public static int playerHealth;
 
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception, LoseSpeed;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
     
 
     public bool hidden;
@@ -34,19 +34,19 @@ public class PlayerMovement : MonoBehaviour
         Heart2.gameObject.SetActive(true);
 
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
-        inventoryScriptObject = LoseSpeed.GetComponent<Inventory>();
+        inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponent<PlayerAudioHandler>();
     }
 
     void Update()
     {
-
-        Health();
-        GameOver();
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
         transform.Translate(movement);
+
+        Health();
+        GameOver();
         HiddenAbility();
         //LoseSpeedCarryingFood();
     }
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         LoseStamina(-GainStamina);
     }
 
-   private void LoseSpeedCarryingFood()
+    private void LoseSpeedCarryingFood()
     {
        if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
         {
