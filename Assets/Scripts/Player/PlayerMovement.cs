@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerDecption playerDeception;
     PlayerAudioHandler audioHandler;
     private Inventory inventoryScriptObject;
+    private Rigidbody2D rigidBody;
+    private float speedMagnitude = 100;
 
     void Start()
     {
@@ -36,15 +38,20 @@ public class PlayerMovement : MonoBehaviour
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponent<PlayerAudioHandler>();
+        rigidBody = GetComponent<Rigidbody2D>();
+
+        speed *= speedMagnitude;
+        maxSpeed *= speedMagnitude;
+        loseSpeedAmount *= speedMagnitude;
     }
 
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical") * 0.5f;
+        speed = Mathf.Clamp(speed, maxSpeed/10, maxSpeed);
         Vector3 movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
-        transform.Translate(movement);
-        speed = Mathf.Clamp(speed, 0.5f, 5);
+        rigidBody.velocity = movement;
 
         Health();
         GameOver();
@@ -78,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
        else if(inventoryScriptObject.inventoryCount < foodUntilEncumbered)
        {
             foodUntilEncumbered -= 1;
-            speed += 0.3f;
+            speed += loseSpeedAmount;
         }
     }
     public void Health()

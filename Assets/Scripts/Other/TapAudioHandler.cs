@@ -30,7 +30,7 @@ public class TapAudioHandler : MonoBehaviour
             PlayTapStartSFX();
             stopTapSoundCanBePlayed = true;
         }
-        //Turning of the tap when rigmor is in range of the tap
+        //Turning of the tap sfx when rigmor is in range of the tap
         if(Vector2.Distance(rigmor.transform.position, transform.position) < 0.2 && stopTapSoundCanBePlayed)
         {
             PlayTapEndSFX();
