@@ -143,6 +143,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+     public Vector2 GetPlayerVelcoity()
+    {
+        return rigidBody.velocity;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Saferoom"))
