@@ -1,0 +1,1572 @@
+fileFormatVersion: 2
+guid: 36603360baad5564e973a494c43ea216
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6029877006594743342
+    second: Food-Assets-Flat_0
+  - first:
+      213: 8817084791002295668
+    second: Food-Assets-Flat_1
+  - first:
+      213: -9002367376378570740
+    second: Food-Assets-Flat_2
+  - first:
+      213: 7807002706189097561
+    second: Food-Assets-Flat_3
+  - first:
+      213: -3802017556279622220
+    second: Food-Assets-Flat_4
+  - first:
+      213: 1580668682263369069
+    second: Food-Assets-Flat_5
+  - first:
+      213: -2330829014177682426
+    second: Food-Assets-Flat_6
+  - first:
+      213: -4292545838365392684
+    second: Food-Assets-Flat_7
+  - first:
+      213: -7355464938488579869
+    second: Food-Assets-Flat_8
+  - first:
+      213: -8776471736111566839
+    second: Food-Assets-Flat_9
+  - first:
+      213: 1254307912696771206
+    second: Food-Assets-Flat_10
+  - first:
+      213: -2280819832217098644
+    second: Food-Assets-Flat_11
+  - first:
+      213: -8232763821649696782
+    second: Food-Assets-Flat_12
+  - first:
+      213: 8807877853684368596
+    second: Food-Assets-Flat_13
+  - first:
+      213: -1701050553370501419
+    second: Food-Assets-Flat_14
+  - first:
+      213: 5637509270072847790
+    second: Food-Assets-Flat_15
+  - first:
+      213: 55321813732094206
+    second: Food-Assets-Flat_16
+  - first:
+      213: 114306770731508614
+    second: Food-Assets-Flat_17
+  - first:
+      213: -6184155726076314920
+    second: Food-Assets-Flat_18
+  - first:
+      213: 7595656782498652320
+    second: Food-Assets-Flat_19
+  - first:
+      213: 8255142008840172627
+    second: Food-Assets-Flat_20
+  - first:
+      213: 4423911183231881380
+    second: Food-Assets-Flat_21
+  - first:
+      213: -8804486014240262368
+    second: Food-Assets-Flat_22
+  - first:
+      213: 5469588277386887660
+    second: Food-Assets-Flat_23
+  - first:
+      213: -8055320493131631291
+    second: Food-Assets-Flat_24
+  - first:
+      213: -6874748912644465117
+    second: Food-Assets-Flat_25
+  - first:
+      213: 2261084404436742448
+    second: Food-Assets-Flat_26
+  - first:
+      213: 9068681890401680441
+    second: Food-Assets-Flat_27
+  - first:
+      213: 4291775070776479715
+    second: Food-Assets-Flat_28
+  - first:
+      213: 2148912853592651735
+    second: Food-Assets-Flat_29
+  - first:
+      213: -3337971975241883541
+    second: Food-Assets-Flat_30
+  - first:
+      213: -3976468712516516308
+    second: Food-Assets-Flat_31
+  - first:
+      213: -5385354558154923452
+    second: Food-Assets-Flat_32
+  - first:
+      213: -3244249770197627886
+    second: Food-Assets-Flat_33
+  - first:
+      213: -5544163589331534895
+    second: Food-Assets-Flat_34
+  - first:
+      213: 9167885724342618612
+    second: Food-Assets-Flat_35
+  - first:
+      213: 5340551997626294635
+    second: Food-Assets-Flat_36
+  - first:
+      213: 5867097861399556993
+    second: Food-Assets-Flat_37
+  - first:
+      213: 3181821561629509599
+    second: Food-Assets-Flat_38
+  - first:
+      213: 2404875457175695702
+    second: Food-Assets-Flat_39
+  - first:
+      213: -7805334527219566419
+    second: Food-Assets-Flat_40
+  - first:
+      213: -2137256247039474957
+    second: Food-Assets-Flat_41
+  - first:
+      213: -7824202140448337627
+    second: Food-Assets-Flat_42
+  - first:
+      213: 4986538310930652965
+    second: Food-Assets-Flat_43
+  - first:
+      213: -8031732300740264372
+    second: Food-Assets-Flat_44
+  - first:
+      213: -5760540680664416898
+    second: Food-Assets-Flat_45
+  - first:
+      213: 4979340166077082567
+    second: Food-Assets-Flat_46
+  - first:
+      213: 3689026863698042210
+    second: Food-Assets-Flat_47
+  - first:
+      213: -576382536766061696
+    second: Food-Assets-Flat_48
+  - first:
+      213: -5387683587959970108
+    second: Food-Assets-Flat_49
+  - first:
+      213: 5159138730920510613
+    second: Food-Assets-Flat_50
+  - first:
+      213: -988183102742737304
+    second: Food-Assets-Flat_51
+  - first:
+      213: 8267706230576661417
+    second: Food-Assets-Flat_52
+  - first:
+      213: 6947664732711349592
+    second: Food-Assets-Flat_53
+  - first:
+      213: -2749894712560976793
+    second: Food-Assets-Flat_54
+  - first:
+      213: -9022735893372314655
+    second: Food-Assets-Flat_55
+  - first:
+      213: 5025174379778225669
+    second: Food-Assets-Flat_56
+  - first:
+      213: -3493759869827035248
+    second: Food-Assets-Flat_57
+  - first:
+      213: 1157589107674747134
+    second: Food-Assets-Flat_58
+  - first:
+      213: 968043679624534963
+    second: Food-Assets-Flat_59
+  - first:
+      213: 5130698701839834084
+    second: Food-Assets-Flat_60
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Food-Assets-Flat_0
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2804
+        width: 242
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3ef966fc2915ca0800000000000000
+      internalID: -6029877006594743342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_1
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 2854
+        width: 409
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47de03a07e39c5a70800000000000000
+      internalID: 8817084791002295668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_2
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 2804
+        width: 258
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08d369519a211380800000000000000
+      internalID: -9002367376378570740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_3
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 2820
+        width: 234
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a1ae6199b085c60800000000000000
+      internalID: 7807002706189097561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_4
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 2854
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b587203d258c3bc0800000000000000
+      internalID: -3802017556279622220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_5
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 2787
+        width: 158
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6594e1bac9afe510800000000000000
+      internalID: 1580668682263369069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_6
+      rect:
+        serializedVersion: 2
+        x: 3370
+        y: 2750
+        width: 283
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ce3c16c5b37afd0800000000000000
+      internalID: -2330829014177682426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_7
+      rect:
+        serializedVersion: 2
+        x: 3875
+        y: 2812
+        width: 229
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0462a8d40dd64c0800000000000000
+      internalID: -4292545838365392684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_8
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 2829
+        width: 308
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e83c8ffb932ce990800000000000000
+      internalID: -7355464938488579869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_9
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 2304
+        width: 288
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90070dba475b33680800000000000000
+      internalID: -8776471736111566839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_10
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 2219
+        width: 426
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682b047a662386110800000000000000
+      internalID: 1254307912696771206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_11
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 2236
+        width: 472
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66a8086276e850e0800000000000000
+      internalID: -2280819832217098644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_12
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 2303
+        width: 242
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7e1ea5ce85fbd80800000000000000
+      internalID: -8232763821649696782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_13
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 2294
+        width: 388
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d403e5ed3edb3a70800000000000000
+      internalID: 8807877853684368596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_14
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 2294
+        width: 267
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de9e55c887a468e0800000000000000
+      internalID: -1701050553370501419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_15
+      rect:
+        serializedVersion: 2
+        x: 3407
+        y: 2349
+        width: 150
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eade9a4ffc47c3e40800000000000000
+      internalID: 5637509270072847790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_16
+      rect:
+        serializedVersion: 2
+        x: 3925
+        y: 2303
+        width: 158
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0f4df75ea84c000800000000000000
+      internalID: 55321813732094206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_17
+      rect:
+        serializedVersion: 2
+        x: 4421
+        y: 2395
+        width: 188
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683afd00769169100800000000000000
+      internalID: 114306770731508614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_18
+      rect:
+        serializedVersion: 2
+        x: 4922
+        y: 2278
+        width: 263
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8daf587d1277d2aa0800000000000000
+      internalID: -6184155726076314920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_19
+      rect:
+        serializedVersion: 2
+        x: 5452
+        y: 2336
+        width: 238
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a06e94a991396960800000000000000
+      internalID: 7595656782498652320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_20
+      rect:
+        serializedVersion: 2
+        x: 5869
+        y: 2274
+        width: 459
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354b25f5be7209270800000000000000
+      internalID: 8255142008840172627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_21
+      rect:
+        serializedVersion: 2
+        x: 6470
+        y: 2315
+        width: 234
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a01a6248c3e46d30800000000000000
+      internalID: 4423911183231881380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_22
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1747
+        width: 238
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02770534e9e20d580800000000000000
+      internalID: -8804486014240262368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_23
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1781
+        width: 429
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce149452f81e7eb40800000000000000
+      internalID: 5469588277386887660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_24
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1731
+        width: 380
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545f6feb0b0c53090800000000000000
+      internalID: -8055320493131631291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_25
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1806
+        width: 221
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ed2d5b94cf790a0800000000000000
+      internalID: -6874748912644465117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_26
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1747
+        width: 254
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031b0ad394cf06f10800000000000000
+      internalID: 2261084404436742448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_27
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 1786
+        width: 355
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93cf862a12e6add70800000000000000
+      internalID: 9068681890401680441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_28
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 1747
+        width: 521
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef428520b27f8b30800000000000000
+      internalID: 4291775070776479715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_29
+      rect:
+        serializedVersion: 2
+        x: 3837
+        y: 1739
+        width: 342
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d739abdad872dd10800000000000000
+      internalID: 2148912853592651735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_30
+      rect:
+        serializedVersion: 2
+        x: 4364
+        y: 1818
+        width: 266
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60af718c242da1d0800000000000000
+      internalID: -3337971975241883541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_31
+      rect:
+        serializedVersion: 2
+        x: 4877
+        y: 1768
+        width: 308
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c268ff136ceb0d8c0800000000000000
+      internalID: -3976468712516516308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_32
+      rect:
+        serializedVersion: 2
+        x: 5423
+        y: 1793
+        width: 267
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44225abef806345b0800000000000000
+      internalID: -5385354558154923452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_33
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 1810
+        width: 309
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c4ab4d50c1af2d0800000000000000
+      internalID: -3244249770197627886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_34
+      rect:
+        serializedVersion: 2
+        x: 6453
+        y: 1781
+        width: 267
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db3d39f69c2f03b0800000000000000
+      internalID: -5544163589331534895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_35
+      rect:
+        serializedVersion: 2
+        x: 6946
+        y: 1766
+        width: 325
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f901d42e7fda3f70800000000000000
+      internalID: 9167885724342618612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_36
+      rect:
+        serializedVersion: 2
+        x: 7497
+        y: 1777
+        width: 241
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61a4031fb37d1a40800000000000000
+      internalID: 5340551997626294635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_37
+      rect:
+        serializedVersion: 2
+        x: 8056
+        y: 1794
+        width: 217
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183bc237b6e1c6150800000000000000
+      internalID: 5867097861399556993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_38
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1267
+        width: 338
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd70b9f2ad9182c20800000000000000
+      internalID: 3181821561629509599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_39
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1221
+        width: 259
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651330a9c75df5120800000000000000
+      internalID: 2404875457175695702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_40
+      rect:
+        serializedVersion: 2
+        x: 8052
+        y: 1288
+        width: 258
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da87cf71a91eda390800000000000000
+      internalID: -7805334527219566419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_41
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 699
+        width: 313
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f24a3954c0f652e0800000000000000
+      internalID: -2137256247039474957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_42
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 733
+        width: 208
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521d9bf8b99da6390800000000000000
+      internalID: -7824202140448337627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_43
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 733
+        width: 179
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fd5e98c2eb33540800000000000000
+      internalID: 4986538310930652965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_44
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 791
+        width: 291
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e7853c60e898090800000000000000
+      internalID: -8031732300740264372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_45
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 198
+        width: 296
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d7fc685c27e00b0800000000000000
+      internalID: -5760540680664416898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_46
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 244
+        width: 246
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cbebd6df7b2a1540800000000000000
+      internalID: 4979340166077082567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_47
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 223
+        width: 284
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d5891236e023330800000000000000
+      internalID: 3689026863698042210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_48
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 186
+        width: 250
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0830259f2274008f0800000000000000
+      internalID: -576382536766061696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_49
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 153
+        width: 300
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6a179625a1b35b0800000000000000
+      internalID: -5387683587959970108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_50
+      rect:
+        serializedVersion: 2
+        x: 2810
+        y: 223
+        width: 309
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5940a7b6751f89740800000000000000
+      internalID: 5159138730920510613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_51
+      rect:
+        serializedVersion: 2
+        x: 3349
+        y: 244
+        width: 275
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ec9f324b44942f0800000000000000
+      internalID: -988183102742737304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_52
+      rect:
+        serializedVersion: 2
+        x: 3824
+        y: 186
+        width: 330
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a34ec4330bccb270800000000000000
+      internalID: 8267706230576661417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_53
+      rect:
+        serializedVersion: 2
+        x: 4360
+        y: 207
+        width: 316
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85de4cb93401b6060800000000000000
+      internalID: 6947664732711349592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_54
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 207
+        width: 305
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cf318145966d9d0800000000000000
+      internalID: -2749894712560976793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_55
+      rect:
+        serializedVersion: 2
+        x: 5410
+        y: 28
+        width: 250
+        height: 726
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb506d628dc8c280800000000000000
+      internalID: -9022735893372314655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_56
+      rect:
+        serializedVersion: 2
+        x: 5882
+        y: 157
+        width: 367
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506331159710db540800000000000000
+      internalID: 5025174379778225669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_57
+      rect:
+        serializedVersion: 2
+        x: 6449
+        y: 237
+        width: 288
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fc17cb8eba38fc0800000000000000
+      internalID: -3493759869827035248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_58
+      rect:
+        serializedVersion: 2
+        x: 6879
+        y: 215
+        width: 434
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef090d60925901010800000000000000
+      internalID: 1157589107674747134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_59
+      rect:
+        serializedVersion: 2
+        x: 7459
+        y: 123
+        width: 371
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb1513099e2f6d00800000000000000
+      internalID: 968043679624534963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food-Assets-Flat_60
+      rect:
+        serializedVersion: 2
+        x: 8056
+        y: 219
+        width: 253
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb98b42947e33740800000000000000
+      internalID: 5130698701839834084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
