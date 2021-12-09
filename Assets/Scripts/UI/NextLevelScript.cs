@@ -23,11 +23,6 @@ public class NextLevelScript : MonoBehaviour
     void Update()
     {
         scoreNeeded.text = "Score Needed for next level: " + scoreForNextLevel;
-
-        if (nextLevelScore.score >= scoreForNextLevel)
-        {
-            ContinueToNextLevel();
-        }
     }
 
     public void ContinueToNextLevel()
