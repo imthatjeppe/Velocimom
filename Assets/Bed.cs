@@ -6,7 +6,6 @@ public class Bed : MonoBehaviour
 {
     public GameObject dropOffZone;
 
-
     private Score scoreRef;
     private NextLevelScript nextLevelScript;
 
@@ -20,8 +19,6 @@ public class Bed : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //timer.isTimeTicking = false;
-
             if (scoreRef.score > nextLevelScript.scoreForNextLevel)
             {
                 //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
@@ -31,6 +28,7 @@ public class Bed : MonoBehaviour
             if (scoreRef.score < nextLevelScript.scoreForNextLevel)
             {
                 //Informera spelaren om att dom inte har tillr�ckligt med po�ng f�r att forts�tta
+                Debug.Log("Lose");
             }
         }
     }
