@@ -19,10 +19,10 @@ public class Bed : MonoBehaviour
     {
         if (Input.GetKey("D"))
         {
-            if (scoreRef.score > /*scoreRef.scoreNeededToWin*/)
-            {
-                //Ladda scen
-            }
+            //if (scoreRef.score > /*scoreRef.scoreNeededToWin*)
+            //{
+            //    //Ladda scen
+            //}
         }
     }
 }
