@@ -3084,6 +3084,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 787228455}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: foodUntilEncumbered
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: staminaEncumberedDrain
       value: 2
       objectReference: {fileID: 0}
