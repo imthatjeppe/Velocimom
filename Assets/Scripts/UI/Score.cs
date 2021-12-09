@@ -8,10 +8,6 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
-    public Text scoreNeeded;
-
-    
-
     void Start()
     {
         
@@ -21,7 +17,6 @@ public class Score : MonoBehaviour
     {
         foodScore.text = "Score: " + score;
         
-
         //Admin Commands
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

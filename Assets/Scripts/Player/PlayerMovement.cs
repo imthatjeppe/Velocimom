@@ -8,7 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed;
     public float currentstamina;
     public float loseSpeedAmount = 0.3f;
+    public float staminaEncumberedDrain;
+    public float staminaDrain;
+
     public int foodUntilEncumbered = 2;
+    
 
     public static int playerHealth;
 
@@ -103,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
                 foodUntilEncumbered += 1;
+                
             }
             else if (inventoryScriptObject.inventoryCount < foodUntilEncumbered)
             {
@@ -141,11 +146,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            LoseStamina(10);
+            LoseStamina(staminaDrain);
 
             if (currentstamina >= 0)
             {
                 hidden = true;
+            }
+
+            if(inventoryScriptObject.inventoryCount >= 3)
+            {
+                LoseStamina(staminaEncumberedDrain);
             }
         }
         else if (inSafeRoom)
