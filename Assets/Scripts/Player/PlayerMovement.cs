@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool hidden;
     public bool releasedStaminaKey;
     public bool inSafeRoom = false;
+    public bool isRunning = false;
 
     Vector3 movement = new Vector3();
     private float resetSpeed = 0;
@@ -64,11 +65,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             movement *= 2;
-            inventoryScriptObject.isRunning = true;
+            isRunning = true;
         }
         else
         {
-            inventoryScriptObject.isRunning = false;
+            isRunning = false;
         }
         
         rigidBody.velocity = movement;
