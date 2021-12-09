@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    public GameObject player;
     public Text timerText;
     public int timeLeft;
- 
-    private float timer;
+    public bool isTimeTicking = true;
 
+    private float timer;
+    private PlayerMovement playerMove;
     private NextLevelScript nextLevelScriptObj;
     private Score scoreRef;
 
     private void Start()
     {
+        playerMove = player.GetComponent<PlayerMovement>();
         nextLevelScriptObj = gameObject.GetComponent<NextLevelScript>();
         scoreRef = gameObject.GetComponent<Score>();
         timer = timeLeft;
@@ -23,9 +26,12 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        timerText.text = "Time left: " + (int)timer;
+        if (isTimeTicking)
+        {
+            timer -= Time.deltaTime;
+        }
 
+        timerText.text = "Time left: " + (int)timer;
         TimeRunOut();
     }
 
@@ -33,14 +39,14 @@ public class Timer : MonoBehaviour
     {
         if (timer <= 0)
         {
-            if (scoreRef.score >= 1000)
+            if (scoreRef.score >= nextLevelScriptObj.scoreForNextLevel)
             {
-                Debug.Log("Win");
+                nextLevelScriptObj.ContinueToNextLevel();
             }
 
-            if (scoreRef.score <= 1000)
+            if (scoreRef.score < nextLevelScriptObj.scoreForNextLevel)
             {
-                Debug.Log("Lose");
+                playerMove.GameOver();
             }
         }
     }

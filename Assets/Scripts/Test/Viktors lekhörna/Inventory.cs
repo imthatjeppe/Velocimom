@@ -65,7 +65,8 @@ public class Inventory : MonoBehaviour
         if (playerMovement.isRunning)
         {
             Invoke("DropItem", Random.Range(4f, 7f));
-        }else if (inventory.Count <= 3)
+        }
+        else if (inventory.Count <= 3)
         {
             return;
         }

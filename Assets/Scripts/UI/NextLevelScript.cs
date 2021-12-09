@@ -11,9 +11,8 @@ public class NextLevelScript : MonoBehaviour
 
     public static bool NextLevelPaused;
 
-
     private Score nextLevelScore;
-    // Start is called before the first frame update
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -21,7 +20,6 @@ public class NextLevelScript : MonoBehaviour
         nextLevelScore = GetComponent<Score>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         scoreNeeded.text = "Score Needed for next level: " + scoreForNextLevel;
@@ -30,19 +28,14 @@ public class NextLevelScript : MonoBehaviour
         {
             ContinueToNextLevel();
         }
-
-        
-        
     }
 
-    void ContinueToNextLevel()
+    public void ContinueToNextLevel()
     {
         NextLevel.SetActive(true);
         NextLevelPaused = (true);
-        
-        
-
     }
+
     public void startNextLevel()
     {
         NextLevel.SetActive(false);
@@ -51,6 +44,5 @@ public class NextLevelScript : MonoBehaviour
         //TODO: Change to next level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
-
     }
 }

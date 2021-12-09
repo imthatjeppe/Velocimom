@@ -77,14 +77,18 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rigidBody.velocity = movement;
+
+        if (playerHealth <= 0)
+        {
+            GameOver();
+        }
+
         Health();
-        GameOver();
         HiddenAbility();
         LoseSpeedCarryingFood();
     }
     public void GameOver()
     {
-        if (playerHealth <= 0)
             SceneManager.LoadScene("GameOver");
     }
     private void LoseStamina(float LoseStamina)

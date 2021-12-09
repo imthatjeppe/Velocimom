@@ -8,10 +8,7 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
-    void Start()
-    {
-        
-    }
+    public Text scoreNeeded;
 
     void Update()
     {

@@ -5,24 +5,33 @@ using UnityEngine;
 public class Bed : MonoBehaviour
 {
     public GameObject dropOffZone;
-    private Score scoreRef;
 
+
+    private Score scoreRef;
+    private NextLevelScript nextLevelScript;
 
     private void Start()
     {
-       scoreRef = dropOffZone.GetComponent<Score>();
-
-        //Hämta score component
+        scoreRef = dropOffZone.GetComponent<Score>();
+        nextLevelScript = dropOffZone.GetComponent<NextLevelScript>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey("D"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            //if (scoreRef.score > /*scoreRef.scoreNeededToWin*)
-            //{
-            //    //Ladda scen
-            //}
+            //timer.isTimeTicking = false;
+
+            if (scoreRef.score > nextLevelScript.scoreForNextLevel)
+            {
+                //ï¿½ppna meny med alternativ fï¿½r att fortsï¿½tta tills nï¿½sta nivï¿½ eller fortsï¿½tta spela pï¿½ nuvarande
+                nextLevelScript.ContinueToNextLevel();
+            }
+
+            if (scoreRef.score < nextLevelScript.scoreForNextLevel)
+            {
+                //Informera spelaren om att dom inte har tillrï¿½ckligt med poï¿½ng fï¿½r att fortsï¿½tta
+            }
         }
     }
 }
