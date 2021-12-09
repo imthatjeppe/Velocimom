@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     private float startMovometer = 2f;
     private bool isMoving;
     private PlayerMovement playerMovement;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
