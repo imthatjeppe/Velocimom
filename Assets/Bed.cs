@@ -24,13 +24,13 @@ public class Bed : MonoBehaviour
 
             if (scoreRef.score > nextLevelScript.scoreForNextLevel)
             {
-                //Öppna meny med alternativ för att fortsätta tills nästa nivå eller fortsätta spela på nuvarande
+                //ï¿½ppna meny med alternativ fï¿½r att fortsï¿½tta tills nï¿½sta nivï¿½ eller fortsï¿½tta spela pï¿½ nuvarande
                 nextLevelScript.ContinueToNextLevel();
             }
 
             if (scoreRef.score < nextLevelScript.scoreForNextLevel)
             {
-                //Informera spelaren om att dom inte har tillräckligt med poäng för att fortsätta
+                //Informera spelaren om att dom inte har tillrï¿½ckligt med poï¿½ng fï¿½r att fortsï¿½tta
             }
         }
     }
