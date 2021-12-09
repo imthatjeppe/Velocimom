@@ -21,33 +21,33 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 46a06ca67870744e0b5624645ed92c73, type: 3}
-    - time: 0.083333336
+    - time: 0.055555556
       value: {fileID: 21300000, guid: 2578166e5b37445e5a77727d11412dc3, type: 3}
-    - time: 0.16666667
+    - time: 0.11111111
       value: {fileID: 21300000, guid: dd8d5c6f437b14aeb953363703fcef93, type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: 21300000, guid: 1602b0f54c7174329ac55fa367b9046b, type: 3}
-    - time: 0.33333334
+    - time: 0.22222222
       value: {fileID: 21300000, guid: 535c5e5fc321a4301a323f8a31b86b91, type: 3}
-    - time: 0.41666666
+    - time: 0.2777778
       value: {fileID: 21300000, guid: 5aaa5e9c2af8c475b81b919741aa935b, type: 3}
-    - time: 0.5
+    - time: 0.33333334
       value: {fileID: 21300000, guid: 658200b7973eb490f971b7a0a466e5bf, type: 3}
-    - time: 0.5833333
+    - time: 0.3888889
       value: {fileID: 21300000, guid: de0c09715169c4d8fa9d89d76041e2f7, type: 3}
-    - time: 0.6666667
+    - time: 0.44444445
       value: {fileID: 21300000, guid: 23ad63684cb04497f82b20106ec48dab, type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: 21300000, guid: 33f916bb616a946629e25cd74399a9e6, type: 3}
-    - time: 0.8333333
+    - time: 0.5555556
       value: {fileID: 21300000, guid: 607d54c397fe740b1922f2907f47b961, type: 3}
-    - time: 0.9166667
+    - time: 0.6111111
       value: {fileID: 21300000, guid: 0e6b1c491acfe40639bdf546a1817727, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 18
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -79,7 +79,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.6666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -99,14 +99,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.083333336
+  - time: 0.055555556
     functionName: PlayHugoFootstepSFX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
+  - time: 0.3888889
     functionName: PlayHugoFootstepSFX
     data: 
     objectReferenceParameter: {fileID: 0}
