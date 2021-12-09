@@ -8,10 +8,19 @@ public class Score : MonoBehaviour
 {
     public float score;
     public Text foodScore;
+    public Text scoreNeeded;
+
+    
+
+    void Start()
+    {
+        
+    }
 
     void Update()
     {
         foodScore.text = "Score: " + score;
+        
 
         //Admin Commands
         if (Input.GetKeyDown(KeyCode.Alpha1))
