@@ -47,7 +47,9 @@ public class NextLevelScript : MonoBehaviour
     {
         NextLevel.SetActive(false);
         NextLevelPaused = (false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        //TODO: Change to next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
 
     }
