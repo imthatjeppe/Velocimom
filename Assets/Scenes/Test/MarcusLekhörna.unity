@@ -5857,7 +5857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454271802234897648, guid: a0d9cdb7fd73ee048a784a26d60e231a, type: 3}
       propertyPath: m_Name
-      value: DarkRoom2
+      value: DarkRoom
       objectReference: {fileID: 0}
     - target: {fileID: 8454271802234897652, guid: a0d9cdb7fd73ee048a784a26d60e231a, type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[0].position.x
