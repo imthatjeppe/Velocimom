@@ -28,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8454271802234897648}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.049895287, y: 0.23763394, z: 0}
-  m_LocalScale: {x: 0.86981, y: 0.86981, z: 0.86981}
+  m_LocalScale: {x: 0.48349255, y: 0.48349255, z: 0.48349255}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,13 +72,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41674975, y: -6.4760723}
-      - {x: -10.474578, y: -0.78215355}
-      - {x: -1.4950151, y: 4.4670987}
-      - {x: 8.614657, y: -1.3240281}
-      - {x: 0.022109747, y: -6.2257204}
-      - {x: -0.30168295, y: -6.410432}
-      - {x: -0.41674975, y: -6.4760723}
+    - - {x: 2.1462579, y: -8.807602}
+      - {x: -14.129313, y: 0.3147755}
+      - {x: -3.3789845, y: 6.498521}
+      - {x: 12.220405, y: -2.907785}
+      - {x: 2.26975, y: -8.735282}
+      - {x: 2.1462579, y: -8.807602}
 --- !u!1971053207 &8454271802234897643
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -89,7 +88,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -122,11 +121,20 @@ SpriteShapeRenderer:
   m_SortingOrder: 1
   m_Color: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 0.38431373}
   m_MaskInteraction: 0
-  m_ShapeTexture: {fileID: 0}
-  m_Sprites: []
+  m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
+  m_Sprites:
+  - {fileID: 21300000, guid: 0ae2b74b1edd14bb18dd7b65ae916a54, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -0.92996025, y: -1.004487, z: 0}
-    m_Extent: {x: 9.544618, y: 5.4715853, z: 0}
+    m_Center: {x: -0.8800173, y: -1.1805501, z: 0}
+    m_Extent: {x: 13.590905, y: 7.9696937, z: 0}
 --- !u!114 &8454271802234897652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +150,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -0.41674975, y: -6.4760723, z: -0.0000003882442}
+    - position: {x: 2.1462636, y: -8.808178, z: -0.00000012221244}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -152,7 +160,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -10.474578, y: -0.78215355, z: -0.0000003882442}
+    - position: {x: -14.129558, y: 0.31433952, z: -0.00000012221244}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -162,7 +170,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -1.4950151, y: 4.4670987, z: -0.0000003882442}
+    - position: {x: -3.378892, y: 6.499151, z: -0.00000012221244}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -172,7 +180,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 8.614657, y: -1.3240281, z: -0.0000003882442}
+    - position: {x: 12.22148, y: -2.9078484, z: -0.00000012221244}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -182,7 +190,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 0}
+  m_SpriteShape: {fileID: 11400000, guid: f24cddf7c09a6442abbce710a6fd7397, type: 2}
   m_FillPixelPerUnit: 100
   m_StretchTiling: 1
   m_SplineDetail: 16
