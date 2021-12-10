@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5658851827242346296}
   - component: {fileID: 6296754321746592347}
   - component: {fileID: 2676948963441802525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}

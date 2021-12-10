@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3599701602070566090}
   - component: {fileID: 793637228430351557}
   - component: {fileID: 3301532818916332463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_table_dining_retro
   m_TagString: Untagged
   m_Icon: {fileID: 0}

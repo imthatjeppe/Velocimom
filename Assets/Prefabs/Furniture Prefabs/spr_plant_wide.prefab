@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4164003691639673751}
   - component: {fileID: 804694207168010483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_plant_wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
