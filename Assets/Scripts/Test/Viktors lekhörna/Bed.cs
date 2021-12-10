@@ -6,6 +6,7 @@ public class Bed : MonoBehaviour
 {
     public GameObject dropOffZone;
 
+    private bool canUseBed;
     private Score scoreRef;
     private NextLevelScript nextLevelScript;
 
@@ -15,21 +16,33 @@ public class Bed : MonoBehaviour
         nextLevelScript = dropOffZone.GetComponent<NextLevelScript>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canUseBed)
         {
-            if (scoreRef.score > nextLevelScript.scoreForNextLevel)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
-                nextLevelScript.ContinueToNextLevel();
-            }
+                if (scoreRef.score > nextLevelScript.scoreForNextLevel)
+                {
+                    //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
+                    nextLevelScript.ContinueToNextLevel();
+                }
 
-            if (scoreRef.score < nextLevelScript.scoreForNextLevel)
-            {
-                //Informera spelaren om att dom inte har tillr�ckligt med po�ng f�r att forts�tta
-                Debug.Log("Lose");
+                if (scoreRef.score < nextLevelScript.scoreForNextLevel)
+                {
+                    //Informera spelaren om att dom inte har tillr�ckligt med po�ng f�r att forts�tta
+                    Debug.Log("Lose");
+                }
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        canUseBed = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canUseBed = false;
     }
 }
