@@ -22,7 +22,7 @@ public class Bed : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (scoreRef.score > nextLevelScript.scoreForNextLevel)
+                if (scoreRef.score >= nextLevelScript.scoreForNextLevel)
                 {
                     //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
                     nextLevelScript.ContinueToNextLevel();
@@ -39,10 +39,12 @@ public class Bed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Player"))
         canUseBed = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canUseBed = false;
+        if (collision.CompareTag("Player"))
+            canUseBed = false;
     }
 }
