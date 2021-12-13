@@ -40,7 +40,7 @@ public class TapAudioHandler : MonoBehaviour
     public void PlayTapStartSFX()
     {
         audioSource.clip = audioClips[0];
-        audioSource.volume = 0.05f;
+        audioSource.volume = 0.05f * Settings.volumeMagnitude;
         audioSource.Play();
 
 
@@ -48,7 +48,7 @@ public class TapAudioHandler : MonoBehaviour
     public void PlayTapEndSFX()
     {
         audioSource.clip = audioClips[1];
-        audioSource.volume = 0.05f;
+        audioSource.volume = 0.05f * Settings.volumeMagnitude;
         audioSource.Play();
     }
     private void OnTriggerEnter2D(Collider2D collision)
