@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: 1
+  player: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
 --- !u!61 &6864798889104110004
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,10 +7,10 @@ public class PlayerManager : MonoBehaviour
     public GameObject currentInterObj = null;
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
-    
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && currentInterObj)
+        if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
         {
             if(currentInterObjScript.Inventory)
             {

@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
     public Stack<GameObject> inventory;
     public GameObject player;
     public int inventoryCount;
+    public int inventoryMax;
+    public bool isInventoryFull;
 
     private float movometer;
     private float startMovometer = 2f;
@@ -24,6 +26,7 @@ public class Inventory : MonoBehaviour
     {
         inventoryCount = inventory.Count;
 
+        InventoryFullChecker();
 
         if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
         {
@@ -44,6 +47,8 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(GameObject item)
     {
+        if (isInventoryFull) return;
+        
         inventory.Push(item);
         Debug.Log("added" + item.name);
     }
@@ -59,6 +64,18 @@ public class Inventory : MonoBehaviour
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
+    }
+
+    public void InventoryFullChecker()
+    {
+        if (inventoryCount < inventoryMax)
+        {
+            isInventoryFull = false;
+        }
+        else if (inventoryCount >= inventoryMax)
+        {
+            isInventoryFull = true;
+        }
     }
 
     public void UnstableStack()
