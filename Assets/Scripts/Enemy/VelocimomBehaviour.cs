@@ -204,8 +204,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (sightHit)
         {
-
-            if (!sightHit.collider.CompareTag("Player"))
+            if (!sightHit.collider.CompareTag("Player") && !sightHit.collider.CompareTag("Furniture"))
             {
                 //if line of sigt is lost, the player will lay out paths for velocimom to follow in order, she is "guessing" where player went
                 lostLineOfSight = true;

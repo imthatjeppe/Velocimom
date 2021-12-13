@@ -60,7 +60,8 @@ public class PlayerAnimationHandler : MonoBehaviour
     }
     void PlayerRunningAnimation()
     {
-        animator.SetBool("IsRunning",playerMovement.isRunning);
+            animator.SetBool("IsRunning",playerMovement.isRunning);
+
     }
     void FlipSprite()
     {
