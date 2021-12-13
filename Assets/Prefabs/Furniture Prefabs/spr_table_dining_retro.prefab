@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3301532818916332463}
   m_Layer: 6
   m_Name: spr_table_dining_retro
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

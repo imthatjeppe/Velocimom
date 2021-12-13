@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1036855044551566472}
   m_Layer: 6
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

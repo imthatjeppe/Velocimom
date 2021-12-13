@@ -31,6 +31,7 @@ public class VelocimomBehaviour : MonoBehaviour
     private RigmorAudioHandler audioHandler;
 
     private PlayerMovement player;
+    private PlayerManager playerManager;
     private Transform target;
     private AIPath pathFinder;
 
@@ -50,6 +51,7 @@ public class VelocimomBehaviour : MonoBehaviour
         patrol = true;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerManager = playerObject.GetComponent<PlayerManager>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         staringTime = startStaringTime;
@@ -166,8 +168,13 @@ public class VelocimomBehaviour : MonoBehaviour
             {
                 
                 pathFinder.maxSpeed = patrolSpeed;
-                player.transform.position = spawnPoint.position;
-                PlayerMovement.playerHealth -= 1;
+
+                if (!playerManager.canNotDie)
+                {
+                    player.transform.position = spawnPoint.position;
+                    PlayerMovement.playerHealth -= 1;
+                }
+
                 detected = false;
                 patrol = true;
                 setDestination.target = moveSpots[randomDestinationSpot];
@@ -214,18 +221,15 @@ public class VelocimomBehaviour : MonoBehaviour
                 }
                 //if line of sight returns, clear the temporary path list and stop adding more spots
             }
-            else if (sightHit.collider.CompareTag("Player") && playerSpotsToFollow.Count > 0)
+            else if (sightHit.collider.CompareTag("Player") || sightHit.collider.CompareTag("Furniture") && playerSpotsToFollow.Count > 0)
             {
                 CancelInvoke(nameof(AddPlayerPathSpots));
                 lostLineOfSight = false;
-                losPathAt = 0;
-                foreach (GameObject spots in playerSpotsToFollow)
-                {
-                    Destroy(spots);
-                }
-                playerSpotsToFollow.Clear();
+
+                clearPlayerPathSpots();
             }
         }
+      
     }
     void CheckPlayerHidden()
     {
@@ -240,5 +244,14 @@ public class VelocimomBehaviour : MonoBehaviour
                 staringTime -= Time.deltaTime;
             }
         }
+    }
+    public void clearPlayerPathSpots()
+    {
+            losPathAt = 0;
+            foreach (GameObject spots in playerSpotsToFollow)
+        {
+            Destroy(spots);
+        }
+        playerSpotsToFollow.Clear();
     }
 }
