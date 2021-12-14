@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
 
         objectToDrop.transform.position = player.transform.position;
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
-        objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
+        //objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
