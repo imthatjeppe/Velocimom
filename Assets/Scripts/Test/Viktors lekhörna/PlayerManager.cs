@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public Inventory inventory;
     public bool canNotDie;
 
+    private bool inDropZone;
+
     private PlayerMovement playerMovement;
 
     private void Start()
@@ -16,7 +18,7 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    private bool inDropZone;
+    
 
     private void Update()
     {
