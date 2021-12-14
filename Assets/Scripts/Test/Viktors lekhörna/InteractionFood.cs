@@ -8,10 +8,10 @@ public class InteractionFood : MonoBehaviour
     public bool InventoryBool;
     public GameObject player;
 
-    public float yPos = -3f;
-    public float xPos = -9f;
+    //public float yPos = -3f;
+    //public float xPos = -9f;
 
-    private Vector3 offsetPosition;
+    //private Vector3 offsetPosition;
     private Inventory inventory;
 
     private void Start()
@@ -22,17 +22,17 @@ public class InteractionFood : MonoBehaviour
     private void Update()
     {
 
-        for (int i = 0; i < inventory.inventoryCount; i++)
-        {
-            yPos += 1f;
-        }
-
-        offsetPosition = new Vector3(xPos, yPos, 10);
-
-        if (itemInHands)
-        {
-            gameObject.transform.position = Camera.main.transform.position + offsetPosition;
-        }
+        //for (int i = 0; i < inventory.inventoryCount; i++)
+        //{
+        //    yPos += 1f;
+        //}
+        //
+        //offsetPosition = new Vector3(xPos, yPos, 10);
+        //
+        //if (itemInHands)
+        //{
+        //    gameObject.transform.position = Camera.main.transform.position + offsetPosition;
+        //}
     }
 
     public void DoInteraction()
