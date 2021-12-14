@@ -60,6 +60,11 @@ public class PlayerManager : MonoBehaviour
             currentInterObj = other.gameObject;
             currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
         }
+
+        if (other.CompareTag("DropOff"))
+        {
+            inDropZone = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
