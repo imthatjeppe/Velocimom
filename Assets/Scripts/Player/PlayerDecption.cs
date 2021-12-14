@@ -6,6 +6,8 @@ using Pathfinding;
 public class PlayerDecption : MonoBehaviour
 {
     public bool enemyLure;
+    public bool inRange;
+    
     public Transform[] moveSpotsDeception;
     public GameObject velocimomGameObject;
 
@@ -13,7 +15,6 @@ public class PlayerDecption : MonoBehaviour
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
     private PlayerAudioHandler audioHandler;
-    private bool inRange = false;
     // Start is called before the first frame update
     void Start()
     {
