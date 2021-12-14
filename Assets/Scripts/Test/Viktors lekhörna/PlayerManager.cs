@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public Inventory inventory;
     public bool canNotDie;
 
+    private bool inDropZone;
+
     private PlayerMovement playerMovement;
 
     private void Start()
@@ -16,7 +18,7 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    private bool inDropZone;
+    
 
     private void Update()
     {
@@ -32,6 +34,14 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             inventory.DropItem();
+            if (inDropZone)
+            {
+                dropAllItems();
+            }
+            else
+            {
+                inventory.DropItem();
+            }
         }
     }
     private void dropAllItems()
@@ -49,6 +59,11 @@ public class PlayerManager : MonoBehaviour
         {
             currentInterObj = other.gameObject;
             currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
+        }
+
+        if (other.CompareTag("DropOff"))
+        {
+            inDropZone = true;
         }
     }
 
