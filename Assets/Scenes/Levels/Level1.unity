@@ -3474,10 +3474,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1005433000}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
-      propertyPath: velocimom
-      value: 
-      objectReference: {fileID: 1166475905}
-    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: Staminabar
       value: 
       objectReference: {fileID: 531694404}
