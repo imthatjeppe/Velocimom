@@ -33,7 +33,6 @@ public class Inventory : MonoBehaviour
         
         inventory.Push(item);
         Debug.Log("added" + item.name);
-
     }
 
     public void DropItem()
@@ -43,7 +42,8 @@ public class Inventory : MonoBehaviour
         GameObject objectToDrop = inventory.Pop();
 
         objectToDrop.transform.position = player.transform.position;
-        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
+        objectToDrop.SetActive(true);
+        //objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
         //objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
 
         Debug.Log("dropped" + objectToDrop.name);
@@ -79,6 +79,5 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
-
     }
 }
