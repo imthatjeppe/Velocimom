@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical") * 0.5f;
-            speed = Mathf.Clamp(speed, maxSpeed/10, maxSpeed);
+            speed = Mathf.Clamp(speed, 0, maxSpeed);
 
         if (!hidden)
         {
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !hidden)
         {
             movement *= 2;
             isRunning = true;
@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HiddenAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && currentstamina > 0)
         {
             speed = resetSpeed;
             currentstamina -= 10;
@@ -150,14 +150,10 @@ public class PlayerMovement : MonoBehaviour
             audioHandler.PlayHugoInhaleSFX();
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && currentstamina > 0)
         {
             LoseStamina(staminaDrain);
-
-            if (currentstamina >= 0)
-            {
-                hidden = true;
-            }
+            hidden = true;
 
             if(inventoryScriptObject.inventoryCount >= 3)
             {
@@ -169,17 +165,12 @@ public class PlayerMovement : MonoBehaviour
             GainStamina(20);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && hidden || currentstamina == 0 && hidden)
         {
             speed = maxSpeed;
             hidden = false;
             releasedStaminaKey = true;
             audioHandler.PlayHugoExhaleSFX();
-        }
-
-        if (currentstamina <= 0)
-        {
-            hidden = false;
         }
     }
      public Vector2 GetPlayerVelcoity()

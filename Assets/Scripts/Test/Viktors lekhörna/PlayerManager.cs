@@ -8,7 +8,14 @@ public class PlayerManager : MonoBehaviour
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
     public bool canNotDie;
-    
+
+    private PlayerMovement playerMovement;
+
+    private void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj)
