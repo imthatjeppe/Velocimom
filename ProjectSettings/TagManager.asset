@@ -11,6 +11,7 @@ TagManager:
   - DarkRoom
   - Saferoom
   - Tap
+  - Furniture
   layers:
   - Default
   - TransparentFX

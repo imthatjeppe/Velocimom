@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
     
 
     public static int playerHealth;
-
+    
     public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception;
+    public GameObject Heart0, Heart1, Heart2, PlayerDeception, velocimom;
 
     public bool hidden;
     public bool releasedStaminaKey;
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerDecption playerDeception;
     PlayerAudioHandler audioHandler;
+    VelocimomBehaviour velociMomBehaviour;
     private Inventory inventoryScriptObject;
     private Rigidbody2D rigidBody;
     private float speedMagnitude = 100;
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         Heart1.gameObject.SetActive(true);
         Heart2.gameObject.SetActive(true);
 
+        velociMomBehaviour = velocimom.GetComponent<VelocimomBehaviour>();
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponentInChildren<PlayerAudioHandler>();
@@ -190,6 +192,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom") && !playerDeception.enemyLure)
         {
             inSafeRoom = true;
+            velociMomBehaviour.clearPlayerPathSpots();
             playerDeception.Resume();
         }
     }

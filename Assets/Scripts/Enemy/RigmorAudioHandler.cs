@@ -25,7 +25,7 @@ public class RigmorAudioHandler : MonoBehaviour
     public void PlayRigmorDetectionRoarSFX()
     {
         audioSoruce.clip = audioClips[0];
-        audioSoruce.volume = 1f;
+        audioSoruce.volume = 1f * Settings.volumeMagnitude;
         audioSoruce.pitch = Random.Range(0.8f, 1.2f);
         audioSoruce.Play();
 

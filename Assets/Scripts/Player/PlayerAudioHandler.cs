@@ -28,7 +28,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[Random.Range(0,2)];
-        instancedAudio.volume = 0.7f;
+        instancedAudio.volume = 0.7f * Settings.volumeMagnitude;
         instancedAudio.pitch = Random.Range(0.8f,1.2f);
         instancedAudio.Play();
     }
@@ -36,7 +36,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[2];
-        instancedAudio.volume = 0.2f;
+        instancedAudio.volume = 0.2f * Settings.volumeMagnitude;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
@@ -44,7 +44,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[3];
-        instancedAudio.volume = 0.2f;
+        instancedAudio.volume = 0.2f * Settings.volumeMagnitude;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }

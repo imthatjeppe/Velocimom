@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6708542710696962086}
   m_Layer: 6
   m_Name: spr_plant_tall
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

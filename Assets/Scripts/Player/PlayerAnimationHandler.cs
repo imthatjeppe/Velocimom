@@ -38,13 +38,13 @@ public class PlayerAnimationHandler : MonoBehaviour
     }
     void CheckInventory()
     {
-        if (playerInventory.inventoryCount != 0)
+        if (playerInventory.inventoryCount <= 0)
         {
-            animator.SetBool("HoldingFood", true);
+            animator.SetBool("HoldingFood", false);
         }
         else
         {
-            animator.SetBool("HoldingFood", false);
+            animator.SetBool("HoldingFood", true);
         }
     }
     void CheckHidden()
@@ -60,7 +60,8 @@ public class PlayerAnimationHandler : MonoBehaviour
     }
     void PlayerRunningAnimation()
     {
-        animator.SetBool("IsRunning",playerMovement.isRunning);
+            animator.SetBool("IsRunning",playerMovement.isRunning);
+
     }
     void FlipSprite()
     {
