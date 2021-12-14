@@ -18,8 +18,6 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
@@ -50,7 +48,6 @@ public class PlayerManager : MonoBehaviour
             {
                 inventory.DropItem();
             }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

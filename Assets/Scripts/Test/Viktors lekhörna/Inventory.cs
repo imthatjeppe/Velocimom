@@ -72,7 +72,7 @@ public class Inventory : MonoBehaviour
     {
         if (!playerMovement.isRunning) return;
         
-        if (playerMovement.isRunning && playerMovement.GetPlayerVelcoity().magnitude != 0)
+        if (playerMovement.isRunning && playerMovement.GetPlayerVelocity().magnitude != 0)
         {
             int diceRoll = Random.Range(1, 3);
 
