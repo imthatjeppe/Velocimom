@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
     public bool canNotDie;
+<<<<<<< HEAD
 
     private PlayerMovement playerMovement;
 
@@ -17,6 +18,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     private bool inDropZone;
+=======
+    
+>>>>>>> parent of b20a97f (Spelaren droppar allt på samma gång)
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
@@ -30,15 +34,9 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (inDropZone)
-            {
-                dropAllItems();
-            }
-            else
-            {
-                inventory.DropItem();
-            }
+            inventory.DropItem();
         }
+<<<<<<< HEAD
 
 
 
@@ -49,21 +47,19 @@ public class PlayerManager : MonoBehaviour
             {
                 inventory.DropItem();
             }
+=======
+>>>>>>> parent of b20a97f (Spelaren droppar allt på samma gång)
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Food"))
         {
-                currentInterObj = other.gameObject;
-                currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
-        }
-
-        if (other.CompareTag("DropOff"))
-        {
-            inDropZone = true;
+            currentInterObj = other.gameObject;
+            currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Food"))
@@ -73,10 +69,13 @@ public class PlayerManager : MonoBehaviour
                 currentInterObj = null;
             }
         }
+<<<<<<< HEAD
 
         if (other.CompareTag("DropOff"))
         {
             inDropZone = false;
         }
+=======
+>>>>>>> parent of b20a97f (Spelaren droppar allt på samma gång)
     }
 }
