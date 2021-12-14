@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     public float score;
-    public Text foodScore;
+    public Text totalScore;
     public Text scoreNeeded;
 
     void Update()
     {
-        foodScore.text = "Score: " + score;
+        totalScore.text = "Score: " + score;
         
         //Admin Commands
         if (Input.GetKeyDown(KeyCode.Alpha1))

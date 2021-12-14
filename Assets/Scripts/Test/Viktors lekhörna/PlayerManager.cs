@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
         {
-            if(currentInterObjScript/*.InventoryBool*/)
+            if(currentInterObjScript)
             {
                 inventory.AddItem(currentInterObj);
             }

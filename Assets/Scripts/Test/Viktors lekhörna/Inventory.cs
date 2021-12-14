@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public Stack<GameObject> inventory;
     public GameObject player;
+    public Text inventoryScoreText;
     public int inventoryCount;
     public int inventoryMax;
+    public float inventoryScore;
     public bool isInventoryFull;
 
     private PlayerMovement playerMovement;
@@ -24,6 +27,8 @@ public class Inventory : MonoBehaviour
     {
         inventoryCount = inventory.Count;
 
+        inventoryScoreText.text = "" + inventoryScore;
+
         InventoryFullChecker();
     }
 
@@ -31,9 +36,10 @@ public class Inventory : MonoBehaviour
     {
         if (isInventoryFull) return;
 
+        inventoryScore += item.GetComponent<FoodItem>().points;
+
         inventory.Push(item);
         Debug.Log("added" + item.name);
-
     }
 
     public void DropItem()
@@ -42,9 +48,9 @@ public class Inventory : MonoBehaviour
 
         GameObject objectToDrop = inventory.Pop();
 
+        inventoryScore -= objectToDrop.GetComponent<FoodItem>().points;
         objectToDrop.transform.position = player.transform.position;
-        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
-        //objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
+        objectToDrop.SetActive(true);
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
@@ -65,8 +71,8 @@ public class Inventory : MonoBehaviour
     public void UnstableStack()
     {
         if (!playerMovement.isRunning) return;
-
-        if (playerMovement.isRunning)
+        
+        if (playerMovement.isRunning && playerMovement.GetPlayerVelcoity().magnitude != 0)
         {
             int diceRoll = Random.Range(1, 3);
 
@@ -79,6 +85,5 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
-
     }
 }
