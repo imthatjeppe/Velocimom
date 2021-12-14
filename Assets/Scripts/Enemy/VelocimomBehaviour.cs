@@ -144,7 +144,6 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         if (detected)
         {
-
             CheckPlayerLineOfSight();
             
             if (!player.hidden && !lostLineOfSight)
