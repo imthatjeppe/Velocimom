@@ -9,13 +9,14 @@ public class PlayerManager : MonoBehaviour
     public Inventory inventory;
     public bool canNotDie;
 
-    private bool inDropZone;
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
-        inDropZone = false;
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
+    private bool inDropZone;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
@@ -38,6 +39,9 @@ public class PlayerManager : MonoBehaviour
                 inventory.DropItem();
             }
         }
+
+
+
     }
     private void dropAllItems()
     {
@@ -69,7 +73,7 @@ public class PlayerManager : MonoBehaviour
                 currentInterObj = null;
             }
         }
-        
+
         if (other.CompareTag("DropOff"))
         {
             inDropZone = false;
