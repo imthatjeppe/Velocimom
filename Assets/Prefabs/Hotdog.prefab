@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a751f1bcd6b9c7b4484786f808f8d97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: 1
+  InventoryBool: 0
+  offsetPosition: {x: 10, y: 10, z: 5}
   player: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
 --- !u!61 &9200545663719209338
 BoxCollider2D:

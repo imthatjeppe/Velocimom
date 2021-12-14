@@ -9,17 +9,15 @@ public class Inventory : MonoBehaviour
     public int inventoryMax;
     public bool isInventoryFull;
 
-    private float movometer;
-    private float startMovometer = 2f;
-    private bool isMoving;
     private PlayerMovement playerMovement;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = new Stack<GameObject>();
-        movometer = startMovometer;
         playerMovement = GetComponent<PlayerMovement>();
+
+        InvokeRepeating("UnstableStack",4f, 2f);
     }
 
     private void Update()
@@ -27,22 +25,6 @@ public class Inventory : MonoBehaviour
         inventoryCount = inventory.Count;
 
         InventoryFullChecker();
-
-        if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
-        {
-            isMoving = true;
-            movometer -= Time.deltaTime;
-        }
-        else
-        {
-            isMoving = false;
-        }
-
-        if (movometer <= 0)
-        {
-            UnstableStack();
-            movometer = startMovometer;
-        }
     }
 
     public void AddItem(GameObject item)
@@ -51,6 +33,7 @@ public class Inventory : MonoBehaviour
         
         inventory.Push(item);
         Debug.Log("added" + item.name);
+
     }
 
     public void DropItem()
@@ -60,7 +43,8 @@ public class Inventory : MonoBehaviour
         GameObject objectToDrop = inventory.Pop();
 
         objectToDrop.transform.position = player.transform.position;
-        objectToDrop.SetActive(true);
+        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
+        objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
@@ -80,17 +64,21 @@ public class Inventory : MonoBehaviour
 
     public void UnstableStack()
     {
+        if (!playerMovement.isRunning) return;
+        
         if (playerMovement.isRunning)
         {
-            Invoke("DropItem", Random.Range(4f, 7f));
+            int diceRoll = Random.Range(1, 3);
+
+            if (diceRoll == 1 || diceRoll == 2)
+            {
+                DropItem();
+            }
+            else
+            {
+                return;
+            }
         }
-        else if (inventory.Count <= 3)
-        {
-            return;
-        }
-        else if (inventory.Count >= 4 && isMoving)
-        {
-            Invoke("DropItem", Random.Range(4f, 7f));
-        }
+
     }
 }
