@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public Inventory inventory;
     public bool canNotDie;
 
+    private bool inDropZone;
+
     private PlayerMovement playerMovement;
 
     private void Start()
@@ -16,7 +18,8 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    private bool inDropZone;
+    
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
@@ -30,6 +33,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            inventory.DropItem();
             if (inDropZone)
             {
                 dropAllItems();
@@ -39,33 +43,25 @@ public class PlayerManager : MonoBehaviour
                 inventory.DropItem();
             }
         }
-
-
-
     }
-
-
     private void dropAllItems()
     {
             for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
             {
                 inventory.DropItem();
             }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Food"))
         {
-                currentInterObj = other.gameObject;
-                currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
-        }
-
-        if (other.CompareTag("DropOff"))
-        {
-            inDropZone = true;
+            currentInterObj = other.gameObject;
+            currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Food"))

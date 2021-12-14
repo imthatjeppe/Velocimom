@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(GameObject item)
     {
         if (isInventoryFull) return;
-        
+
         inventory.Push(item);
         Debug.Log("added" + item.name);
 
@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
 
         objectToDrop.transform.position = player.transform.position;
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
-       // objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
+        //objectToDrop.GetComponent<InteractionFood>().itemInHands = false;
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
     public void UnstableStack()
     {
         if (!playerMovement.isRunning) return;
-        
+
         if (playerMovement.isRunning)
         {
             int diceRoll = Random.Range(1, 3);
