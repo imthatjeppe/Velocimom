@@ -32,11 +32,15 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             inventory.DropItem();
+            if (inDropZone)
+            {
+                dropAllItems();
+            }
+            else
+            {
+                inventory.DropItem();
+            }
         }
-
-
-
-
     }
     private void dropAllItems()
     {
