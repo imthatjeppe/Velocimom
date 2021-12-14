@@ -34,7 +34,7 @@ public class PlayerAnimationHandler : MonoBehaviour
     }
     void PlayerWalkingAnimation()
     {
-        animator.SetFloat("Movement", playerMovement.GetPlayerVelcoity().magnitude);
+        animator.SetFloat("Movement", playerMovement.GetPlayerVelocity().magnitude);
     }
     void CheckInventory()
     {

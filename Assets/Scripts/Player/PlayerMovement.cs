@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
             audioHandler.PlayHugoExhaleSFX();
         }
     }
-     public Vector2 GetPlayerVelcoity()
+     public Vector2 GetPlayerVelocity()
     {
         return rigidBody.velocity;
     }
