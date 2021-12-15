@@ -20,9 +20,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
+        if (Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
         {
-            if(currentInterObjScript)
+            if (currentInterObjScript)
             {
                 inventory.AddItem(currentInterObj);
             }
@@ -44,15 +44,15 @@ public class PlayerManager : MonoBehaviour
     }
     private void dropAllItems()
     {
-            for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
-            {
-                inventory.DropItem();
-            }
+        for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
+        {
+            inventory.DropItem();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Food"))
+        if (other.CompareTag("Food"))
         {
             currentInterObj = other.gameObject;
             currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
@@ -66,9 +66,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Food"))
+        if (other.CompareTag("Food"))
         {
-            if(other.gameObject == currentInterObj)
+            if (other.gameObject == currentInterObj)
             {
                 currentInterObj = null;
             }

@@ -11,16 +11,6 @@ public class LightAudioHandler : MonoBehaviour
     Audio clip list:
        0. LightTurnOn
     */
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PlayLightTurnOnSFX()
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
