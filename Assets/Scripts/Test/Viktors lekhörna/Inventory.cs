@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public Stack<GameObject> inventory;
     public GameObject itemDropper;
     public GameObject foodItems;
@@ -15,13 +14,6 @@ public class Inventory : MonoBehaviour
     public float inventoryScore;
     public int inventoryCount;
     public int inventoryMax;
-=======
-    public float inventoryScore;
-
-    public int inventoryCount;
-    public int inventoryMax;
-
->>>>>>> Stashed changes
     public bool isInventoryFull;
 
     public Stack<GameObject> inventory;
