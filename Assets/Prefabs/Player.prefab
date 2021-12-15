@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4746167037677706734}
   - component: {fileID: 4405178565181954615}
   - component: {fileID: 1893490672559561915}
+  - component: {fileID: 8230855917541104047}
   - component: {fileID: 3213900604991310360}
   - component: {fileID: 1670584151966373285}
   m_Layer: 0
@@ -216,16 +217,16 @@ MonoBehaviour:
   staminaEncumberedDrain: 2
   staminaDrain: 10
   foodUntilEncumbered: 3
+  hidden: 0
+  releasedStaminaKey: 0
+  inSafeRoom: 0
+  isRunning: 0
   Staminabar: {fileID: 0}
   Heart0: {fileID: 0}
   Heart1: {fileID: 0}
   Heart2: {fileID: 0}
   PlayerDeception: {fileID: 0}
   velocimom: {fileID: 0}
-  hidden: 0
-  releasedStaminaKey: 0
-  inSafeRoom: 0
-  isRunning: 0
 --- !u!114 &4405178565181954615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,9 +256,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8942691265838724142}
+  inventoryScoreText: {fileID: 0}
   inventoryCount: 0
   inventoryMax: 0
+  inventoryScore: 0
   isInventoryFull: 0
+--- !u!114 &8230855917541104047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942691265838724142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa528f11aa011440838b36c71f221a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3213900604991310360
 Rigidbody2D:
   serializedVersion: 4

@@ -6,36 +6,55 @@ public class PlayerAnimationHandler : MonoBehaviour
 {
     PlayerMovement playerMovement;
     Inventory playerInventory;
+    PlayerAudioHandler audioHandler;
     Animator animator;
     SpriteRenderer sprite;
-    PlayerAudioHandler audioHandler;
 
     void Start()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
-        playerInventory= GetComponentInParent<Inventory>();
+        playerInventory = GetComponentInParent<Inventory>();
         audioHandler = GetComponentInParent<PlayerAudioHandler>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         AnimationSequencePlayer();
         FlipSprite();
     }
+
     void AnimationSequencePlayer()
     {
         PlayerWalkingAnimation();
+        PlayerRunningAnimation();
         CheckInventory();
         CheckHidden();
-        PlayerRunningAnimation();
     }
+
+    void FlipSprite()
+    {
+        if (Input.GetAxisRaw("Horizontal") > 0.01f)
+        {
+            sprite.flipX = true;
+        }
+        else if (Input.GetAxisRaw("Horizontal") < -0.01f)
+        {
+            sprite.flipX = false;
+        }
+    }
+
     void PlayerWalkingAnimation()
     {
         animator.SetFloat("Movement", playerMovement.GetPlayerVelocity().magnitude);
     }
+
+    void PlayerRunningAnimation()
+    {
+        animator.SetBool("IsRunning", playerMovement.isRunning);
+    }
+
     void CheckInventory()
     {
         if (playerInventory.inventoryCount <= 0)
@@ -47,6 +66,7 @@ public class PlayerAnimationHandler : MonoBehaviour
             animator.SetBool("HoldingFood", true);
         }
     }
+
     void CheckHidden()
     {
         if (playerMovement.hidden)
@@ -58,20 +78,5 @@ public class PlayerAnimationHandler : MonoBehaviour
             animator.SetBool("Freeze", false);
         }
     }
-    void PlayerRunningAnimation()
-    {
-            animator.SetBool("IsRunning",playerMovement.isRunning);
 
-    }
-    void FlipSprite()
-    {
-        if (Input.GetAxisRaw("Horizontal")>0.01f)
-        {
-            sprite.flipX = true;
-        }
-        else if(Input.GetAxisRaw("Horizontal") < -0.01f)
-        {
-            sprite.flipX = false;
-        }
-    }
 }

@@ -16,7 +16,6 @@ public class VelocimomBehaviour : MonoBehaviour
     public float patrolSpeed;
     public float invincibleTime;
 
-
     public Transform[] moveSpots;
     public Transform spawnPoint;
     AIDestinationSetter setDestination;
@@ -145,11 +144,12 @@ public class VelocimomBehaviour : MonoBehaviour
         if (detected)
         {
             CheckPlayerLineOfSight();
-            
+
             if (!player.hidden && !lostLineOfSight)
             {
                 setDestination.target = player.transform;
-            } else if (lostLineOfSight)
+            }
+            else if (lostLineOfSight)
             {
                 if (playerSpotsToFollow.Count > 0)
                 {
@@ -165,13 +165,13 @@ public class VelocimomBehaviour : MonoBehaviour
 
             if (Vector2.Distance(transform.position, player.transform.position) < 2)
             {
-                
+
                 pathFinder.maxSpeed = patrolSpeed;
 
                 if (!playerManager.canNotDie)
                 {
                     player.transform.position = spawnPoint.position;
-                    PlayerMovement.playerHealth -= 1;
+                    PlayerHealth.playerHealth -= 1;
                 }
 
                 detected = false;
@@ -228,7 +228,7 @@ public class VelocimomBehaviour : MonoBehaviour
                 clearPlayerPathSpots();
             }
         }
-      
+
     }
     void CheckPlayerHidden()
     {
@@ -246,8 +246,8 @@ public class VelocimomBehaviour : MonoBehaviour
     }
     public void clearPlayerPathSpots()
     {
-            losPathAt = 0;
-            foreach (GameObject spots in playerSpotsToFollow)
+        losPathAt = 0;
+        foreach (GameObject spots in playerSpotsToFollow)
         {
             Destroy(spots);
         }

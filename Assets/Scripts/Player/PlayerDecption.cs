@@ -15,10 +15,11 @@ public class PlayerDecption : MonoBehaviour
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
     private PlayerAudioHandler audioHandler;
-    // Start is called before the first frame update
+    
     void Start()
     {
         enemyLure = false;
+
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         aIPath = velocimomGameObject.GetComponent<AIPath>();
@@ -35,13 +36,6 @@ public class PlayerDecption : MonoBehaviour
             TurnOn();
         }
     }
-    public void Resume()
-    {
-        
-        enemyLure = false;
-        velocimom.patrol = true;
-        setDestination.target = velocimom.moveSpots[velocimom.randomDestinationSpot];
-    }
 
     void CheckIfCloseToLure()
     {
@@ -51,6 +45,38 @@ public class PlayerDecption : MonoBehaviour
             {
                 Invoke(nameof(Resume), 1);
             }
+        }
+    }
+
+    public void Resume()
+    {
+        enemyLure = false;
+        velocimom.patrol = true;
+        setDestination.target = velocimom.moveSpots[velocimom.randomDestinationSpot];
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inRange = false;
+        }
+    }
+
+    private void TurnOn()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
+        {
+            enemyLure = true;
+            startLure();
         }
     }
 
@@ -66,30 +92,11 @@ public class PlayerDecption : MonoBehaviour
             Invoke(nameof(Luring), 3);
         }
     }
+
     void Luring()
     {
         setDestination.target = moveSpotsDeception[0];
         aIPath.maxSpeed = 1;
     }
-    private void TurnOn()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
-        {
-            enemyLure = true;
-            startLure();
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inRange = true;
-        }
-    }private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inRange = false;
-        }
-    }
+
 }
