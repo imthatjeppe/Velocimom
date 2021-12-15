@@ -36,7 +36,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private int DirectionToIndex(Vector2 _direction)
     {
-
         Vector2 norDir = _direction.normalized;
 
         float step = 360 / 8;

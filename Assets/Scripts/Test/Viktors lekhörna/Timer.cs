@@ -12,13 +12,13 @@ public class Timer : MonoBehaviour
     public bool isTimeTicking = true;
 
     private float timer;
-    private PlayerMovement playerMove;
+    private PlayerHealth playerHealth;
     private NextLevelScript nextLevelScriptObj;
     private Score scoreRef;
 
     private void Start()
     {
-        playerMove = player.GetComponent<PlayerMovement>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         nextLevelScriptObj = gameObject.GetComponent<NextLevelScript>();
         scoreRef = gameObject.GetComponent<Score>();
         timer = timeLeft;
@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
 
             if (scoreRef.score < nextLevelScriptObj.scoreForNextLevel)
             {
-                playerMove.GameOver();
+                playerHealth.GameOver();
             }
         }
     }

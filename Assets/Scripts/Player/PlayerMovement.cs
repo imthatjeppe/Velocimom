@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Float Variables")]
     public float speed;
     public float maxSpeed;
     public float currentstamina;
@@ -11,37 +11,33 @@ public class PlayerMovement : MonoBehaviour
     public float staminaEncumberedDrain;
     public float staminaDrain;
 
+    [Header("Int Variables")]
     public int foodUntilEncumbered = 2;
-    
 
-    public static int playerHealth;
-    
-    public Slider Staminabar;
-    public GameObject Heart0, Heart1, Heart2, PlayerDeception, velocimom;
-
+    [Header("Bools")]
     public bool hidden;
     public bool releasedStaminaKey;
-    public bool inSafeRoom = false;
-    public bool isRunning = false;
+    public bool inSafeRoom;
+    public bool isRunning;
+
+    [Header("GameObjects")]
+    public Slider Staminabar;
+    public GameObject PlayerDeception;
+
+    private float speedMagnitude = 100;
+    private float resetSpeed = 0;
 
     Vector3 movement = new Vector3();
-    private float resetSpeed = 0;
 
     PlayerDecption playerDeception;
     PlayerAudioHandler audioHandler;
-    VelocimomBehaviour velociMomBehaviour;
-    private Inventory inventoryScriptObject;
-    private Rigidbody2D rigidBody;
-    private float speedMagnitude = 100;
+    VelocimomBehaviour velocimomBehaviour;
+    Inventory inventoryScriptObject;
+    Rigidbody2D rigidBody;
 
     void Start()
     {
-        playerHealth = 3;
-        Heart0.gameObject.SetActive(true);
-        Heart1.gameObject.SetActive(true);
-        Heart2.gameObject.SetActive(true);
-
-        velociMomBehaviour = velocimom.GetComponent<VelocimomBehaviour>();
+        velocimomBehaviour = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponentInChildren<PlayerAudioHandler>();
@@ -54,19 +50,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical") * 0.5f;
-            speed = Mathf.Clamp(speed, 0, maxSpeed);
+        Move();
+        HiddenAbility();
+    }
+
+    void Move()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical") * 0.5f;
+        speed = Mathf.Clamp(speed, 0, maxSpeed);
 
         if (!hidden)
         {
             movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
-        } else
+        }
+        else
         {
             movement = new Vector2(0, 0);
         }
-
-
 
         if (Input.GetKey(KeyCode.LeftShift) && !hidden)
         {
@@ -77,43 +78,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = false;
         }
-        
+
         rigidBody.velocity = movement;
 
-        if (playerHealth <= 0)
-        {
-            GameOver();
-        }
-
-        Health();
-        HiddenAbility();
-        LoseSpeedCarryingFood();
-    }
-    public void GameOver()
-    {
-            SceneManager.LoadScene("GameOver");
-    }
-    private void LoseStamina(float LoseStamina)
-    {
-        currentstamina -= LoseStamina * Time.deltaTime;
-        currentstamina = Mathf.Clamp(currentstamina, 0, 100);
-        Staminabar.value = currentstamina;
-    }
-    private void GainStamina(float GainStamina)
-    {
-        LoseStamina(-GainStamina);
-    }
-
-    private void LoseSpeedCarryingFood()
-    {
-
+        //Following code makes player lose speed depending on inventory count
         if (inventoryScriptObject.inventoryCount >= 3)
         {
             if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
             {
                 speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
                 foodUntilEncumbered += 1;
-                
             }
             else if (inventoryScriptObject.inventoryCount < foodUntilEncumbered)
             {
@@ -123,21 +97,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    public void Health()
+    public Vector2 GetPlayerVelocity()
     {
-        if (playerHealth > 3)
-            playerHealth = 3;
-
-        Heart0.gameObject.SetActive(false);
-        Heart1.gameObject.SetActive(false);
-        Heart2.gameObject.SetActive(false);
-
-        if (playerHealth > 0)
-            Heart0.gameObject.SetActive(true);
-        if (playerHealth > 1)
-            Heart1.gameObject.SetActive(true);
-        if (playerHealth > 2)
-            Heart2.gameObject.SetActive(true);
+        return rigidBody.velocity;
     }
 
     private void HiddenAbility()
@@ -155,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             LoseStamina(staminaDrain);
             hidden = true;
 
-            if(inventoryScriptObject.inventoryCount >= 3)
+            if (inventoryScriptObject.inventoryCount >= 3)
             {
                 LoseStamina(staminaEncumberedDrain);
             }
@@ -178,9 +140,17 @@ public class PlayerMovement : MonoBehaviour
             audioHandler.PlayHugoExhaleSFX();
         }
     }
-     public Vector2 GetPlayerVelocity()
+
+    private void LoseStamina(float LoseStamina)
     {
-        return rigidBody.velocity;
+        currentstamina -= LoseStamina * Time.deltaTime;
+        currentstamina = Mathf.Clamp(currentstamina, 0, 100);
+        Staminabar.value = currentstamina;
+    }
+
+    private void GainStamina(float GainStamina)
+    {
+        LoseStamina(-GainStamina);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -188,10 +158,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom") && !playerDeception.enemyLure)
         {
             inSafeRoom = true;
-            velociMomBehaviour.clearPlayerPathSpots();
+            velocimomBehaviour.clearPlayerPathSpots();
             playerDeception.Resume();
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Saferoom"))
@@ -199,4 +170,5 @@ public class PlayerMovement : MonoBehaviour
             inSafeRoom = false;
         }
     }
+
 }

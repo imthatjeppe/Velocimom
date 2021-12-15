@@ -18,17 +18,15 @@ public class PlayerManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    
-
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
+        if (Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
         {
-            if(currentInterObjScript/*.InventoryBool*/)
+            if (currentInterObjScript)
             {
                 inventory.AddItem(currentInterObj);
             }
-            currentInterObj.SendMessage("DoInteraction");
+            //currentInterObj.SendMessage("DoInteraction");
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -46,27 +44,31 @@ public class PlayerManager : MonoBehaviour
     }
     private void dropAllItems()
     {
-            for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
-            {
-                inventory.DropItem();
-            }
-
+        for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
+        {
+            inventory.DropItem();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Food"))
+        if (other.CompareTag("Food"))
         {
             currentInterObj = other.gameObject;
             currentInterObjScript = currentInterObj.GetComponent<InteractionFood>();
+        }
+
+        if (other.CompareTag("DropOff"))
+        {
+            inDropZone = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Food"))
+        if (other.CompareTag("Food"))
         {
-            if(other.gameObject == currentInterObj)
+            if (other.gameObject == currentInterObj)
             {
                 currentInterObj = null;
             }

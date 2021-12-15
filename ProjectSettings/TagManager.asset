@@ -12,6 +12,7 @@ TagManager:
   - Saferoom
   - Tap
   - Furniture
+  - BathroomButton
   layers:
   - Default
   - TransparentFX

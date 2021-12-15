@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class NextLevelScript : MonoBehaviour
 {
     public float scoreForNextLevel;
-    public GameObject NextLevel;
-    public Text scoreNeeded;
 
     public static bool NextLevelPaused;
+
+    public GameObject NextLevel;
+    public Text scoreNeeded;
 
     private Score nextLevelScore;
 

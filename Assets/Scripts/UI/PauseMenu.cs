@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
     
-    public static bool GameIsPaused = false;
+    public static bool GameIsPaused;
 
     private void Start()
     {
@@ -43,5 +43,4 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    
 }

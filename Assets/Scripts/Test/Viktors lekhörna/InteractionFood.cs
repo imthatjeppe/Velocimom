@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class InteractionFood : MonoBehaviour
 {
-    public bool Inventory;
+    public bool itemInHands;
+    public bool InventoryBool;
+    public GameObject player;
+
+    private Inventory inventory;
+
+    private void Start()
+    {
+        inventory = player.GetComponent<Inventory>();
+    }
 
     public void DoInteraction()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

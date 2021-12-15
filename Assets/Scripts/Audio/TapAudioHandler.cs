@@ -6,7 +6,6 @@ public class TapAudioHandler : MonoBehaviour
 {
     public AudioClip[] audioClips;
 
-
     [SerializeField]
     private AudioSource audioSource;
     GameObject rigmor;
@@ -42,8 +41,6 @@ public class TapAudioHandler : MonoBehaviour
         audioSource.clip = audioClips[0];
         audioSource.volume = 0.05f * Settings.volumeMagnitude;
         audioSource.Play();
-
-
     }
     public void PlayTapEndSFX()
     {

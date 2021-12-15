@@ -5,9 +5,11 @@ using Pathfinding;
 
 public class VelocimomBehaviour : MonoBehaviour
 {
+    [Header("Int Variables")]
     public int speed = 3;
     public int randomDestinationSpot;
 
+    [Header("Float Variables")]
     public float startWaitTime;
     public float startStaringTime;
     public float startInvincibleTime;
@@ -16,13 +18,14 @@ public class VelocimomBehaviour : MonoBehaviour
     public float patrolSpeed;
     public float invincibleTime;
 
-
+    [Header("Destinations")]
     public Transform[] moveSpots;
     public Transform spawnPoint;
-    AIDestinationSetter setDestination;
 
+    [Header("Bools")]
     public bool patrol;
 
+    [Header("GameObjects")]
     public GameObject playerObject;
     public GameObject playerDetection;
     public GameObject playerPathSpots;
@@ -34,10 +37,12 @@ public class VelocimomBehaviour : MonoBehaviour
     private PlayerManager playerManager;
     private Transform target;
     private AIPath pathFinder;
+    private AIDestinationSetter setDestination;
 
     private float staringTime;
     private float waitTime;
-    int losPathAt = 0;
+    
+    private int losPathAt = 0;
 
     private bool detected;
     private bool playerInvincible;
@@ -145,11 +150,12 @@ public class VelocimomBehaviour : MonoBehaviour
         if (detected)
         {
             CheckPlayerLineOfSight();
-            
+
             if (!player.hidden && !lostLineOfSight)
             {
                 setDestination.target = player.transform;
-            } else if (lostLineOfSight)
+            }
+            else if (lostLineOfSight)
             {
                 if (playerSpotsToFollow.Count > 0)
                 {
@@ -165,13 +171,13 @@ public class VelocimomBehaviour : MonoBehaviour
 
             if (Vector2.Distance(transform.position, player.transform.position) < 2)
             {
-                
+
                 pathFinder.maxSpeed = patrolSpeed;
 
                 if (!playerManager.canNotDie)
                 {
                     player.transform.position = spawnPoint.position;
-                    PlayerMovement.playerHealth -= 1;
+                    PlayerHealth.playerHealth -= 1;
                 }
 
                 detected = false;
@@ -197,12 +203,14 @@ public class VelocimomBehaviour : MonoBehaviour
 
         }
     }
+
     void AddPlayerPathSpots()
     {
         GameObject instancedPath = Instantiate(playerPathSpots);
         instancedPath.transform.position = playerObject.transform.position;
         playerSpotsToFollow.Add(instancedPath);
     }
+
     void CheckPlayerLineOfSight()
     {
         //cast a ray to see if velocimom has line of sight to player
@@ -228,8 +236,9 @@ public class VelocimomBehaviour : MonoBehaviour
                 clearPlayerPathSpots();
             }
         }
-      
+
     }
+
     void CheckPlayerHidden()
     {
         if (player.hidden)
@@ -244,13 +253,15 @@ public class VelocimomBehaviour : MonoBehaviour
             }
         }
     }
+
     public void clearPlayerPathSpots()
     {
-            losPathAt = 0;
-            foreach (GameObject spots in playerSpotsToFollow)
+        losPathAt = 0;
+        foreach (GameObject spots in playerSpotsToFollow)
         {
             Destroy(spots);
         }
         playerSpotsToFollow.Clear();
     }
+
 }
