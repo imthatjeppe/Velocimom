@@ -20,25 +20,24 @@ public class OptionPopup : MonoBehaviour
         {
             if (OptionIsOn)
             {
-                optionsPopupOff();
+                OptionsPopupOff();
             }
 
             else
             {
-                optionsPopupOn();
+                OptionsPopupOn();
             }
         }
     }
 
-    void optionsPopupOff()
+    void OptionsPopupOff()
     {
         optionsPopup.SetActive(false);
         Time.timeScale = 1f;
         OptionIsOn = false;
-
     }
 
-    void optionsPopupOn()
+    void OptionsPopupOn()
     {
         optionsPopup.SetActive(true);
         Time.timeScale = 0f;

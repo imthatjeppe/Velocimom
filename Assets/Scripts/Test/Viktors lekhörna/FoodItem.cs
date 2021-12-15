@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+    [Header("Float Variables")]
     public float points;
     public float weight;
 
+    [Header("Bools")]
     public bool normalQuality;
     public bool glitterQuality;
     public bool shinyRareQuality;
 
     private void Start()
     {
-
         if (normalQuality)
         {
             return;
@@ -26,9 +27,7 @@ public class FoodItem : MonoBehaviour
         {
             points *= 2f;
         }
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,4 +37,5 @@ public class FoodItem : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

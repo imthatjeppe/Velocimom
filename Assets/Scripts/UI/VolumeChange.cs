@@ -7,15 +7,7 @@ public class VolumeChange : MonoBehaviour
 {
     public Slider slider;
     public TMPro.TMP_Text volumeText;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     public void SetVolume()
     {
         Settings.volumeMagnitude = slider.value;
