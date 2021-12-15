@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
             {
                 inventory.AddItem(currentInterObj);
             }
-            currentInterObj.SendMessage("DoInteraction");
+            //currentInterObj.SendMessage("DoInteraction");
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
