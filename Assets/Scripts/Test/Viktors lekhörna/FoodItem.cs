@@ -7,6 +7,29 @@ public class FoodItem : MonoBehaviour
     public float points;
     public float weight;
 
+    public bool normalQuality;
+    public bool glitterQuality;
+    public bool shinyRareQuality;
+
+    private void Start()
+    {
+
+        if (normalQuality)
+        {
+            return;
+        }
+        else if (glitterQuality)
+        {
+            points *= 1.25f;
+        }
+        else if (shinyRareQuality)
+        {
+            points *= 2f;
+        }
+
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DropOff"))
