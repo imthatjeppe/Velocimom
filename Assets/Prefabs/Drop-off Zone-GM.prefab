@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2636592542056506382}
   - component: {fileID: 1539075263253267325}
   m_Layer: 0
-  m_Name: Drop-off zone
+  m_Name: Drop-off Zone-GM
   m_TagString: DropOff
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -148,4 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  foodScore: {fileID: 0}
+  totalScore: {fileID: 0}
+  scoreNeeded: {fileID: 0}

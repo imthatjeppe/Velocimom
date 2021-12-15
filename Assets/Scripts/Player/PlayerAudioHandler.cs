@@ -8,22 +8,13 @@ public class PlayerAudioHandler : MonoBehaviour
 
     public AudioClip[] audioClips;
     /*
-     Audio clip list:
+        Audio clip list:
         0. HugoFootstep2
         1. HugoFootstep3
         2. HugoInhale
         3. HugoExhale
      */
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PlayHugoFootstepSFX()
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
@@ -32,6 +23,7 @@ public class PlayerAudioHandler : MonoBehaviour
         instancedAudio.pitch = Random.Range(0.8f,1.2f);
         instancedAudio.Play();
     }
+
     public void PlayHugoInhaleSFX()
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
@@ -40,6 +32,7 @@ public class PlayerAudioHandler : MonoBehaviour
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
+
     public void PlayHugoExhaleSFX()
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
@@ -48,4 +41,5 @@ public class PlayerAudioHandler : MonoBehaviour
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
+
 }
