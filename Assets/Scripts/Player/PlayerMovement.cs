@@ -164,6 +164,11 @@ public class PlayerMovement : MonoBehaviour
         {
             GainStamina(20);
         }
+        else if(Input.GetKeyDown(KeyCode.Space) && currentstamina <= 0)
+        {
+            //TODO: add responsivnes when player stamina is empty
+            Debug.Log("No Stamina");
+        }
 
         if (Input.GetKeyUp(KeyCode.Space) && hidden || currentstamina == 0 && hidden)
         {
