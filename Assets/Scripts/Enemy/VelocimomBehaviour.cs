@@ -7,16 +7,14 @@ public class VelocimomBehaviour : MonoBehaviour
 {
     [Header("Int Variables")]
     public int speed = 3;
-    public int randomDestinationSpot;
 
     [Header("Float Variables")]
-    public float startWaitTime;
+    public float waitTime;
     public float startStaringTime;
-    public float startInvincibleTime;
+    public float invincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
     public float patrolSpeed;
-    public float invincibleTime;
 
     [Header("Destinations")]
     public Transform[] moveSpots;
@@ -26,7 +24,6 @@ public class VelocimomBehaviour : MonoBehaviour
     public bool patrol;
 
     [Header("GameObjects")]
-    public GameObject playerObject;
     public GameObject playerDetection;
     public GameObject playerPathSpots;
 
@@ -40,39 +37,49 @@ public class VelocimomBehaviour : MonoBehaviour
     private AIDestinationSetter setDestination;
 
     private float staringTime;
-    private float waitTime;
-    
+
+    private int randomDestinationSpot;
     private int losPathAt = 0;
 
     private bool detected;
-    private bool playerInvincible;
     private bool lostLineOfSight;
 
     private List<GameObject> playerSpotsToFollow;
 
-    // Start is called before the first frame update
     void Start()
     {
-        patrol = true;
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        playerManager = playerObject.GetComponent<PlayerManager>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerManager = player.GetComponent<PlayerManager>();
+        target = player.transform;
 
         staringTime = startStaringTime;
-        waitTime = startWaitTime;
-        invincibleTime = startInvincibleTime;
-
-        randomDestinationSpot = Random.Range(0, moveSpots.Length);
 
         setDestination = GetComponent<AIDestinationSetter>();
-        setDestination.target = moveSpots[randomDestinationSpot];
 
         pathFinder = GetComponent<AIPath>();
+        SelectNewDestination();
 
         detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
         playerSpotsToFollow = new List<GameObject>();
         audioHandler = GetComponent<RigmorAudioHandler>();
+    }
+
+    public void SelectNewDestination()
+    {
+        detected = false;
+
+        pathFinder.maxSpeed = patrolSpeed;
+        Debug.Log("New point selected");
+
+        //Select a new random point, avoid the one in use.
+        int newRandomDestination = Random.Range(0, moveSpots.Length);
+        while (randomDestinationSpot == newRandomDestination)
+        {
+            newRandomDestination = Random.Range(0, moveSpots.Length);
+        }
+        randomDestinationSpot = newRandomDestination;
+        setDestination.target = moveSpots[randomDestinationSpot];
+        patrol = true;
     }
 
     // Update is called once per frame
@@ -80,8 +87,9 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         Patrol();
         SearchForPlayer();
+        CheckPlayerHidden();
 
-        if (!playerInvincible)
+        if (detected)
         {
             ChasePlayer();
         }
@@ -93,128 +101,119 @@ public class VelocimomBehaviour : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
             {
-                if (waitTime <= 0)
-                {
-                    waitTime = startWaitTime;
-                    randomDestinationSpot = Random.Range(0, moveSpots.Length);
-                    setDestination.target = moveSpots[randomDestinationSpot];
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
-                }
+                Debug.Log("Waiting to select new point");
+                Invoke(nameof(SelectNewDestination), waitTime);
+                patrol = false;
             }
         }
     }
 
     void SearchForPlayer()
     {
-        Debug.DrawRay(transform.position, playerObject.transform.position - transform.position, Color.red);
-        if (!detected && detectPlayerInRange.playerInRange && !player.inSafeRoom)
+        Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        if (detectPlayerInRange.playerInRange && !detected && !player.inSafeRoom)
         {
-            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10);
+            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
 
             if (sightHit)
             {
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
+                    Debug.Log("Player detected");
                     //Just to be sure to play this sound once when you are detected
-                    if (patrol && !playerInvincible)
+                    if (patrol || IsInvoking(nameof(SelectNewDestination)))
                     {
+                        Debug.Log("Waiting for reaction time");
+                        CancelInvoke(nameof(SelectNewDestination));
+                        Invoke(nameof(ReactionTime), invincibleTime);
                         audioHandler.PlayRigmorDetectionRoarSFX();
                     }
-                    detected = true;
+
                     patrol = false;
-                    staringTime = startStaringTime;
                 }
             }
         }
+    }
 
-        if (playerInvincible)
+    void ReactionTime()
+    {
+        detected = true;
+    }
+
+    void CheckPlayerHidden()
+    {
+        if (player.hidden)
         {
-            if (invincibleTime <= 0)
+            if (player.releasedStaminaKey)
             {
-                invincibleTime = startInvincibleTime;
-                playerInvincible = false;
+                staringTime = startStaringTime;
             }
             else
             {
-                invincibleTime -= Time.deltaTime;
+                staringTime -= Time.deltaTime;
             }
         }
     }
 
     private void ChasePlayer()
     {
-        if (detected)
+        CheckPlayerLineOfSight();
+
+        if (!player.hidden && !lostLineOfSight)
         {
-            CheckPlayerLineOfSight();
-
-            if (!player.hidden && !lostLineOfSight)
+            setDestination.target = target;
+        }
+        else if (lostLineOfSight)
+        {
+            if (playerSpotsToFollow.Count > 0)
             {
-                setDestination.target = player.transform;
-            }
-            else if (lostLineOfSight)
-            {
-                if (playerSpotsToFollow.Count > 0)
+                setDestination.target = playerSpotsToFollow[losPathAt].transform;
+                if (Vector2.Distance(transform.position, playerSpotsToFollow[losPathAt].transform.position) < 0.2f && losPathAt < playerSpotsToFollow.Count)
                 {
-                    setDestination.target = playerSpotsToFollow[losPathAt].transform;
-                    if (Vector2.Distance(transform.position, playerSpotsToFollow[losPathAt].transform.position) < 0.2f && losPathAt < playerSpotsToFollow.Count)
-                    {
-                        losPathAt++;
-                    }
+                    losPathAt++;
                 }
             }
+        }
 
-            CheckPlayerHidden();
-
-            if (Vector2.Distance(transform.position, player.transform.position) < 2)
+        if (!playerManager.canNotDie)
+        {
+            if (detected && Vector2.Distance(transform.position, target.position) < 1)
             {
-
-                pathFinder.maxSpeed = patrolSpeed;
-
-                if (!playerManager.canNotDie)
-                {
-                    player.transform.position = spawnPoint.position;
-                    PlayerHealth.playerHealth -= 1;
-                }
-
+                //player has died
+                //TODO: remove player controls
+                //TODO: play death animation or such
+                Debug.Log("I dieded");
                 detected = false;
-                patrol = true;
-                setDestination.target = moveSpots[randomDestinationSpot];
-
+                //Invoke(nameof(Death), 0.5f);
             }
-            else
-            {
-                pathFinder.maxSpeed = chasingSpeed;
-            }
+        }
+        else
+        {
+            pathFinder.maxSpeed = chasingSpeed;
+        }
 
-            if (staringTime <= 0 || player.inSafeRoom)
-            {
-                pathFinder.maxSpeed = patrolSpeed;
+        if (staringTime <= 0 || player.inSafeRoom)
+        {
+            Debug.Log("Back to patrol");
 
-                patrol = true;
-                playerInvincible = true;
-                detected = false;
-
-                setDestination.target = moveSpots[randomDestinationSpot];
-            }
-
+            SelectNewDestination();
         }
     }
 
-    void AddPlayerPathSpots()
+    void Death()
     {
-        GameObject instancedPath = Instantiate(playerPathSpots);
-        instancedPath.transform.position = playerObject.transform.position;
-        playerSpotsToFollow.Add(instancedPath);
+        //TODO: turn on player controls again.
+        target.position = spawnPoint.position;
+        PlayerHealth.playerHealth -= 1;
+
+        SelectNewDestination();
     }
 
     void CheckPlayerLineOfSight()
     {
         //cast a ray to see if velocimom has line of sight to player
-        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10);
+        RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
 
         if (sightHit)
         {
@@ -233,28 +232,19 @@ public class VelocimomBehaviour : MonoBehaviour
                 CancelInvoke(nameof(AddPlayerPathSpots));
                 lostLineOfSight = false;
 
-                clearPlayerPathSpots();
+                ClearPlayerPathSpots();
             }
         }
-
     }
 
-    void CheckPlayerHidden()
+    void AddPlayerPathSpots()
     {
-        if (player.hidden)
-        {
-            if (player.releasedStaminaKey)
-            {
-                staringTime = startStaringTime;
-            }
-            else
-            {
-                staringTime -= Time.deltaTime;
-            }
-        }
+        GameObject instancedPath = Instantiate(playerPathSpots);
+        instancedPath.transform.position = target.position;
+        playerSpotsToFollow.Add(instancedPath);
     }
 
-    public void clearPlayerPathSpots()
+    public void ClearPlayerPathSpots()
     {
         losPathAt = 0;
         foreach (GameObject spots in playerSpotsToFollow)
@@ -263,5 +253,4 @@ public class VelocimomBehaviour : MonoBehaviour
         }
         playerSpotsToFollow.Clear();
     }
-
 }

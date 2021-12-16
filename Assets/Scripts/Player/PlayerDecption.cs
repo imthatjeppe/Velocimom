@@ -51,8 +51,8 @@ public class PlayerDecption : MonoBehaviour
     public void Resume()
     {
         enemyLure = false;
-        velocimom.patrol = true;
-        setDestination.target = velocimom.moveSpots[velocimom.randomDestinationSpot];
+
+        velocimom.SelectNewDestination();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,7 +84,7 @@ public class PlayerDecption : MonoBehaviour
     {
         if (!enemyLure)
         {
-            velocimom.patrol = true;
+            //velocimom.patrol = true;
         }
         else
         {
