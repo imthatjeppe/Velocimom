@@ -13,6 +13,8 @@ public class SearchFood : MonoBehaviour, IInteractable
 
     Animator[] rarityOverlayAnimators;
     Image[] foodItemImages;
+    Image[] overlayUIImages;
+    int[] rarityRankAtPos;
     //Gameojbects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
 
@@ -22,10 +24,14 @@ public class SearchFood : MonoBehaviour, IInteractable
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
         rarityOverlayAnimators = new Animator[bubbles.Length];
         foodItemImages = new Image[bubbles.Length];
+        overlayUIImages = new Image[bubbles.Length];
+        rarityRankAtPos = new int[bubbles.Length];
         for (int i = 0; i < bubbles.Length; i++)
         {
             foodItemImages[i] = bubbles[i].transform.GetChild(0).GetComponent<Image>();
             rarityOverlayAnimators[i] = bubbles[i].transform.GetChild(1).GetComponent<Animator>();
+            overlayUIImages[i] = bubbles[i].transform.GetChild(1).GetComponent<Image>();
+            rarityRankAtPos[i] = 1;
         }
     }
 
@@ -49,10 +55,29 @@ public class SearchFood : MonoBehaviour, IInteractable
         if(atBubblePosInList <= 7)
         {
             bubbles[atBubblePosInList].SetActive(true);
-            randomFoodItem = GetRandomFoodItem();
-            bubbleFoodDic.Add(bubbles[atBubblePosInList], randomFoodItem);
-            foodItemImages[atBubblePosInList].sprite = randomFoodItem.GetComponent<SpriteRenderer>().sprite;
-            CalculateRarityChance();
+            if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))
+            {
+                randomFoodItem = GetRandomFoodItem();
+                bubbleFoodDic.Add(bubbles[atBubblePosInList], randomFoodItem);
+                foodItemImages[atBubblePosInList].sprite = randomFoodItem.GetComponent<SpriteRenderer>().sprite;
+                CalculateRarityChance();
+            }
+            else
+            {
+                if(rarityRankAtPos[atBubblePosInList] == 2)
+                {
+                    CheckIfAnimatorIsActive(atBubblePosInList);
+                    SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
+                    Debug.Log("Sätter på IsGlitterRank2");
+                }
+                else if (rarityRankAtPos[atBubblePosInList] == 3)
+                {
+                    CheckIfAnimatorIsActive(atBubblePosInList);
+                    SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
+                    Debug.Log("Sätter på IsShinyRareRank3");
+
+                }
+            }
             atBubblePosInList++;
         }
         else
@@ -73,36 +98,45 @@ public class SearchFood : MonoBehaviour, IInteractable
         Debug.Log("Resetting search UI");
         searchingForFoodPanel.SetActive(false);
         atBubblePosInList = 0;
+        
     }
     void CalculateRarityChance()
     {
         int procentageCalc = Random.Range(1, 101);
-        Debug.Log("Procentage: " + procentageCalc);
         CheckIfAnimatorIsActive(atBubblePosInList);
 
             if (procentageCalc <= shinyRareRank3ChanceProcentage)
             {
-                Debug.Log("SHINYRARE!!");
                 SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
+                CorrectShinyRareRank3UIPosition(atBubblePosInList);
+                rarityRankAtPos[atBubblePosInList] = 3;
             }
             else if (procentageCalc <= glitterRank2ChanceProcentage)
             {
-                Debug.Log("GLITTER!!");
                 SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
-            }
+                rarityRankAtPos[atBubblePosInList] = 2;
+        }
     }
-    bool CheckIfAnimatorIsActive(int atPos)
+    void CheckIfAnimatorIsActive(int atPos)
     {
         if (!rarityOverlayAnimators[atPos].gameObject.activeSelf)
         {
             rarityOverlayAnimators[atPos].gameObject.SetActive(true);
         }
-        return true;
     }
     void SetRarityOverlayAnimation(string boolName, bool activeAnimation, int atPos)
     {
+       
         rarityOverlayAnimators[atPos].SetBool(boolName, activeAnimation);
+
+       
         Debug.Log(boolName);
+    }
+    void CorrectShinyRareRank3UIPosition(int atPos)
+    {
+        RectTransform thisRectTransform = bubbles[atPos].transform.GetChild(1).GetComponent<RectTransform>();
+        thisRectTransform.sizeDelta = new Vector2(1256f, 1276f);
+        thisRectTransform.position = new Vector3(thisRectTransform.position.x - 1f, thisRectTransform.position.y + 2.5f, 0);
     }
     GameObject GetRandomFoodItem()
     {
