@@ -15,7 +15,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     Image[] foodItemImages;
     Image[] overlayUIImages;
     int[] rarityRankAtPos;
-    //Gameojbects in Dictonary<bubble, fooditem>
+    //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
 
     private int atBubblePosInList = 0;
@@ -37,7 +37,7 @@ public class SearchFood : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && searchingForFoodPanel.activeSelf)
         {
             Debug.Log("Cancel search...");
             CancelInvoke(nameof(SearchingFridge));

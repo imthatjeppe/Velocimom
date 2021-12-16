@@ -28,10 +28,10 @@ public class PlayerInteractions : MonoBehaviour
                 canInteract = true;
                 interactable = collision.GetComponent<IInteractable>();
             }
-            else
-            {
-                canInteract = false;
-            }
         }
+    }
+    private void OnTriggerExit2D()
+    {
+        canInteract = false;
     }
 }
