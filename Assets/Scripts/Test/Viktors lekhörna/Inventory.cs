@@ -16,10 +16,6 @@ public class Inventory : MonoBehaviour
     public int inventoryMax;
     public bool isInventoryFull;
 
-    public Stack<GameObject> inventory;
-    public GameObject player;
-    public Text inventoryScoreText;
-
     private PlayerMovement playerMovement;
 
     private void Start()
