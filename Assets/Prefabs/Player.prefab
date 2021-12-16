@@ -100,7 +100,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f96a2ed54c9e0ac42bc80c8da5f890d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &790510860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70b4b5534ebeede4cb9bdd8938e431d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sfxAudioSource: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
   audioClips:
   - {fileID: 8300000, guid: d1b4b80bc354624429c26bbbc1dc7be0, type: 3}
@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de47e7b9cff61ce4aa7d68ec0c58f524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   speed: 5
   maxSpeed: 5
   currentstamina: 100
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f71d8591c2fe66a42ab3fcdde0c6c461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   currentInterObj: {fileID: 0}
   currentInterObjScript: {fileID: 0}
   inventory: {fileID: 1893490672559561915}
@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe54254699e6e7488a101664aee1d4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   itemDropper: {fileID: 0}
   foodItems: {fileID: 0}
   canvas: {fileID: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
   inventoryScoreText: {fileID: 0}
   inventoryScore: 0
   inventoryCount: 0
-  inventoryMax: 0
+  inventoryMax: 25
   isInventoryFull: 0
 --- !u!114 &8230855917541104047
 MonoBehaviour:
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aa528f11aa011440838b36c71f221a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Heart0: {fileID: 0}
   Heart1: {fileID: 0}
   Heart2: {fileID: 0}
@@ -403,5 +403,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e4a3fc3aae651d4181c0fa4d621e0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
