@@ -7,7 +7,7 @@ public class PlayerDecption : MonoBehaviour
 {
     public bool enemyLure;
     public bool inRange;
-    
+
     public Transform[] moveSpotsDeception;
     public GameObject velocimomGameObject;
 
@@ -15,7 +15,7 @@ public class PlayerDecption : MonoBehaviour
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
     private PlayerAudioHandler audioHandler;
-    
+
     void Start()
     {
         enemyLure = false;
@@ -29,27 +29,15 @@ public class PlayerDecption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIfCloseToLure();
-
         if (inRange)
         {
             TurnOn();
         }
     }
 
-    void CheckIfCloseToLure()
-    {
-        if (enemyLure)
-        {
-            if (Vector3.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 0.2f)
-            {
-                Invoke(nameof(Resume), 1);
-            }
-        }
-    }
-
     public void Resume()
     {
+        Debug.Log("Resuming");
         enemyLure = false;
 
         velocimom.SelectNewDestination();
@@ -76,27 +64,26 @@ public class PlayerDecption : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
         {
             enemyLure = true;
-            startLure();
+            StartLure();
         }
     }
 
-    void startLure()
+    void StartLure()
     {
-        if (!enemyLure)
-        {
-            //velocimom.patrol = true;
-        }
-        else
-        {
-            aIPath.maxSpeed = 0;
-            Invoke(nameof(Luring), 3);
-        }
+        aIPath.maxSpeed = 0;
+        Invoke(nameof(Luring), 3);
     }
 
     void Luring()
     {
         setDestination.target = moveSpotsDeception[0];
         aIPath.maxSpeed = 1;
+
+        if (Vector2.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 5f)
+        {
+            Debug.Log("Should be resuming");
+            Invoke(nameof(Resume), 2);
+        }
     }
 
 }

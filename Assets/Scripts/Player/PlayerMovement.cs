@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
         {
             inSafeRoom = true;
             velocimomBehaviour.ClearPlayerPathSpots();
-            playerDeception.Resume();
+            //playerDeception.Resume();
         }
     }
 

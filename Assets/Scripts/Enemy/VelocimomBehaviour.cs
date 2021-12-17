@@ -10,7 +10,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
     [Header("Float Variables")]
     public float waitTime;
-    public float startStaringTime;
+    public float staringTime;
     public float invincibleTime;
     public float distance = 0.2f;
     public float chasingSpeed;
@@ -36,7 +36,6 @@ public class VelocimomBehaviour : MonoBehaviour
     private AIPath pathFinder;
     private AIDestinationSetter setDestination;
 
-    private float staringTime;
 
     private int randomDestinationSpot;
     private int losPathAt = 0;
@@ -51,8 +50,6 @@ public class VelocimomBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerManager = player.GetComponent<PlayerManager>();
         target = player.transform;
-
-        staringTime = startStaringTime;
 
         setDestination = GetComponent<AIDestinationSetter>();
 
@@ -87,7 +84,6 @@ public class VelocimomBehaviour : MonoBehaviour
     {
         Patrol();
         SearchForPlayer();
-        CheckPlayerHidden();
 
         if (detected)
         {
@@ -121,7 +117,7 @@ public class VelocimomBehaviour : MonoBehaviour
                 if (sightHit.collider.CompareTag("Player"))
                 {
                     Debug.Log("Player detected");
-                    //Just to be sure to play this sound once when you are detected
+                  
                     if (patrol || IsInvoking(nameof(SelectNewDestination)))
                     {
                         Debug.Log("Waiting for reaction time");
@@ -141,24 +137,10 @@ public class VelocimomBehaviour : MonoBehaviour
         detected = true;
     }
 
-    void CheckPlayerHidden()
-    {
-        if (player.hidden)
-        {
-            if (player.releasedStaminaKey)
-            {
-                staringTime = startStaringTime;
-            }
-            else
-            {
-                staringTime -= Time.deltaTime;
-            }
-        }
-    }
-
     private void ChasePlayer()
     {
         CheckPlayerLineOfSight();
+        pathFinder.maxSpeed = chasingSpeed;
 
         if (!player.hidden && !lostLineOfSight)
         {
@@ -178,26 +160,27 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (!playerManager.canNotDie)
         {
-            if (detected && Vector2.Distance(transform.position, target.position) < 1)
+            if (detected && Vector2.Distance(transform.position, target.position) < 2)
             {
-                //player has died
                 //TODO: remove player controls
                 //TODO: play death animation or such
                 Debug.Log("I dieded");
                 detected = false;
-                //Invoke(nameof(Death), 0.5f);
+                Invoke(nameof(Death), 0.5f);
             }
         }
-        else
-        {
-            pathFinder.maxSpeed = chasingSpeed;
-        }
 
-        if (staringTime <= 0 || player.inSafeRoom)
+        if (player.inSafeRoom)
         {
             Debug.Log("Back to patrol");
 
             SelectNewDestination();
+        }
+
+        if (player.hidden)
+        {
+            pathFinder.maxSpeed = 0;
+            Invoke(nameof(SelectNewDestination), staringTime);
         }
     }
 

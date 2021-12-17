@@ -1427,6 +1427,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 261998445}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: staringTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 62270866}
@@ -1436,7 +1440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: startStaringTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: moveSpots.Array.data[0]
