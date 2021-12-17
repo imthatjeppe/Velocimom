@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 1367902290693206008}
   - component: {fileID: 3120281226961240201}
   - component: {fileID: -6043802129911317452}
-  m_Layer: 6
-  m_Name: 7
+  - component: {fileID: 386326186}
+  - component: {fileID: 51692860}
+  m_Layer: 7
+  m_Name: Fridge
   m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8977507128311959876}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.63, y: 2.36, z: 890.5657}
   m_LocalScale: {x: 1.9472489, y: 1.9472489, z: 1.9472489}
   m_Children: []
@@ -223,6 +225,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6651441e352f44198166ee2dd2d67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  searchingForFoodPanel: {fileID: 0}
+  foodItems:
+  - {fileID: 7949745787127229955, guid: 57499370f8ff6a344a83059a91ec155e, type: 3}
+  - {fileID: 6864798889104110000, guid: 98c0f857fdecabb40abff8104a0feffb, type: 3}
+  - {fileID: 1682374116697016090, guid: 4e17583a2e493f748814eb25d08db131, type: 3}
+  - {fileID: 1583924053141073447, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
+  - {fileID: 6456535036195936435, guid: 3ebcb0a3fda5070458dcc0e78578d11a, type: 3}
+  - {fileID: 724362238492794273, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
+  glitterRank2ChanceProcentage: 30
+  shinyRareRank3ChanceProcentage: 10
 --- !u!58 &-6043802129911317452
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +260,29 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.42
+--- !u!114 &386326186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977507128311959876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f5387c63dc58f4eaa241569ffea0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51692860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977507128311959876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ccff53cc93b8a429ecf75993a4bd79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 2100000, guid: a1c65512ac036784ca35d720e071891c, type: 2}
+  noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
