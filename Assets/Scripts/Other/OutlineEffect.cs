@@ -14,7 +14,7 @@ public class OutlineEffect : MonoBehaviour
     {
         spriteRenderer = new SpriteRenderer[2];
         spriteRenderer[0] = GetComponent<SpriteRenderer>();
-        if (transform.GetChild(0).GetComponentInChildren<SpriteRenderer>() != null)
+        if (transform.childCount == 1)
         {
             spriteRenderer[1] = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
         }
