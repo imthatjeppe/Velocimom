@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 3996372535287377067, guid: d2a3c6ba246326949ab6ff3c0d828ee1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
+      objectReference: {fileID: 2100000, guid: ddc0361dfc1f96a438ebf5b506ec3f3a, type: 2}
     - target: {fileID: 3996372535287377068, guid: d2a3c6ba246326949ab6ff3c0d828ee1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -455,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 7237775174384290567, guid: d2a3c6ba246326949ab6ff3c0d828ee1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
+      objectReference: {fileID: 2100000, guid: ddc0361dfc1f96a438ebf5b506ec3f3a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a3c6ba246326949ab6ff3c0d828ee1, type: 3}
 --- !u!1 &3996372535524692714 stripped
@@ -496,5 +496,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ccff53cc93b8a429ecf75993a4bd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outline: {fileID: 2100000, guid: a1c65512ac036784ca35d720e071891c, type: 2}
-  noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
+  outline: {fileID: 2100000, guid: c6d81e3a3f8a3814497d01af8a72cad9, type: 2}
+  noOutline: {fileID: 2100000, guid: ddc0361dfc1f96a438ebf5b506ec3f3a, type: 2}
