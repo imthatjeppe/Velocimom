@@ -29,7 +29,7 @@ public class PlayerDecption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange)
+        if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             TurnOn();
         }
@@ -61,8 +61,9 @@ public class PlayerDecption : MonoBehaviour
 
     private void TurnOn()
     {
-        if (Input.GetKeyDown(KeyCode.E) && velocimom.patrol)
+        if (velocimom.patrol)
         {
+            velocimom.patrol = false;
             enemyLure = true;
             StartLure();
         }
@@ -78,12 +79,18 @@ public class PlayerDecption : MonoBehaviour
     {
         setDestination.target = moveSpotsDeception[0];
         aIPath.maxSpeed = 1;
+        Debug.Log("Luring");
 
-        if (Vector2.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 5f)
+        InvokeRepeating(nameof(ReachedDeception), 0f, 0.5f);
+    }
+
+    void ReachedDeception()
+    {
+        if (Vector2.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 0.2f)
         {
             Debug.Log("Should be resuming");
             Invoke(nameof(Resume), 2);
+            CancelInvoke(nameof(ReachedDeception));
         }
     }
-
 }
