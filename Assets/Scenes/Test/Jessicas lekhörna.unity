@@ -5006,6 +5006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spr_table_dining_retro
       objectReference: {fileID: 0}
+    - target: {fileID: 793637228430351557, guid: af1d3add0e773974ba5e2abeb889920a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a19cf8f95b217d49890d8fffe4b91c0, type: 2}
     - target: {fileID: 3599701602070566090, guid: af1d3add0e773974ba5e2abeb889920a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -9234,6 +9238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spr_mirror
       objectReference: {fileID: 0}
+    - target: {fileID: 6296754321746592347, guid: b25b1a23d70900647b995fba325d6635, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1c65512ac036784ca35d720e071891c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25b1a23d70900647b995fba325d6635, type: 3}
 --- !u!4 &1964730394 stripped
