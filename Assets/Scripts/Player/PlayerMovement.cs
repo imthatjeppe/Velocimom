@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom") && !playerDeception.enemyLure)
         {
             inSafeRoom = true;
-            velocimomBehaviour.clearPlayerPathSpots();
+            velocimomBehaviour.ClearPlayerPathSpots();
             playerDeception.Resume();
         }
     }
