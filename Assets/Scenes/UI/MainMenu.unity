@@ -3045,6 +3045,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VolumeMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6046922631971262848, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6046922631971262863, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3129,9 +3133,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6046922632781482984, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046922632781482984, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046922632781482984, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6046922633423531889, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1979083090}
+    - target: {fileID: 6046922633900579953, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046922633900579953, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1787bd6d69525204685312b8d4964fd5, type: 3}
