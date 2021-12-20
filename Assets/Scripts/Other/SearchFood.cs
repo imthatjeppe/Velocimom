@@ -11,6 +11,8 @@ public class SearchFood : MonoBehaviour, IInteractable
     public int glitterRank2ChanceProcentage;
     public int shinyRareRank3ChanceProcentage;
 
+
+    PlayerMovement playerMovement;
     Animator[] rarityOverlayAnimators;
     Image[] foodItemImages;
     Image[] overlayUIImages;
@@ -21,6 +23,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     private int atBubblePosInList = 0;
     void Start()
     {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
         rarityOverlayAnimators = new Animator[bubbles.Length];
         foodItemImages = new Image[bubbles.Length];
@@ -40,6 +43,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         if (Input.GetKeyUp(KeyCode.E) && searchingForFoodPanel.activeSelf)
         {
             Debug.Log("Cancel search...");
+            playerMovement.speed = playerMovement.maxSpeed;
             CancelInvoke(nameof(SearchingFridge));
             ResetSearchUI();
         }
@@ -47,12 +51,13 @@ public class SearchFood : MonoBehaviour, IInteractable
     public void Interact()
     {
         searchingForFoodPanel.SetActive(true);
+        playerMovement.speed = 0;
         InvokeRepeating(nameof(SearchingFridge),0,1);
     }
     void SearchingFridge()
     {
         GameObject randomFoodItem;
-        if(atBubblePosInList <= 7)
+        if(atBubblePosInList <= bubbles.Length-1)
         {
             bubbles[atBubblePosInList].SetActive(true);
             if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))

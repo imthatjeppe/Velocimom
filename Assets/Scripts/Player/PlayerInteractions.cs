@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
+
+    PlayerMovement playerMovement;
     bool canInteract;
     IInteractable interactable;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
