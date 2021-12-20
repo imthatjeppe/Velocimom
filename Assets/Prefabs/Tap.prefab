@@ -230,7 +230,7 @@ MonoBehaviour:
   inRange: 0
   moveSpotsDeception:
   - {fileID: 1846336553}
-  velocimomGameObject: {fileID: 0}
+  velocimomGameObject: {fileID: 7548094088467196422, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
 --- !u!61 &5120432133837874088
 BoxCollider2D:
   m_ObjectHideFlags: 0

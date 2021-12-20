@@ -3218,6 +3218,11 @@ Transform:
   m_Father: {fileID: 3764216}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &888490727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7548094088467196422, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+  m_PrefabInstance: {fileID: 90622595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &914594380
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,6 +4179,14 @@ PrefabInstance:
     - target: {fileID: 6455338228576017129, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455338228576017129, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455338228576017129, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: 8429420616662303636, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
       propertyPath: m_Pivot.x
@@ -7591,6 +7604,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 787228456}
     m_Modifications:
+    - target: {fileID: 3996372535524692716, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
     - target: {fileID: 5120432133837874089, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7642,7 +7659,11 @@ PrefabInstance:
     - target: {fileID: 5120432133837874263, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
       propertyPath: velocimomGameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 888490727}
+    - target: {fileID: 7237775174105101632, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
 --- !u!4 &1799873439 stripped
