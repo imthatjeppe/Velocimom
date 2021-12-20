@@ -10,12 +10,17 @@ public class CameraFollowPlayer : MonoBehaviour
     
     void Update()
     {
+        FollowPlayerPosition(); 
+    }
+
+    public void FollowPlayerPosition()
+    {
         float interpolation = followSpeed * Time.deltaTime;
 
         Vector3 position = transform.position;
         position.y = Mathf.Lerp(transform.position.y, FollowPlayer.transform.position.y, interpolation);
         position.x = Mathf.Lerp(transform.position.x, FollowPlayer.transform.position.x, interpolation);
-        
+
         transform.position = position;
     }
 }
