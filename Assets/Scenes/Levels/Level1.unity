@@ -8180,6 +8180,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
+--- !u!1 &1848497146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3057698591180209303, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
+  m_PrefabInstance: {fileID: 1845465728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1848497151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3057698591180209307, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
+  m_PrefabInstance: {fileID: 1845465728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1848497152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848497146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5a46f45485a147a8206b1e535245b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 1848497151}
+  player: {fileID: 831934456}
+  velocimom: {fileID: 888490727}
 --- !u!4 &1850644033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2547789469141799128, guid: eef41bd62c1b6594991939046abb25eb, type: 3}
