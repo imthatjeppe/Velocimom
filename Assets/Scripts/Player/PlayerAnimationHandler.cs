@@ -29,6 +29,7 @@ public class PlayerAnimationHandler : MonoBehaviour
     {
         PlayerWalkingAnimation();
         PlayerRunningAnimation();
+        GoingUp();
         CheckInventory();
         CheckHidden();
     }
@@ -42,6 +43,18 @@ public class PlayerAnimationHandler : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") < -0.01f)
         {
             sprite.flipX = false;
+        }
+    }
+
+    void GoingUp()
+    {
+        if (Input.GetAxisRaw("Vertical") > 0.01f)
+        {
+            animator.SetBool("GoingUp", true);
+        }
+        else if (Input.GetAxisRaw("Vertical") < -0.01f)
+        {
+            animator.SetBool("GoingUp", false);
         }
     }
 
