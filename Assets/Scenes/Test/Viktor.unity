@@ -4965,6 +4965,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 433953929}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: maxSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: Staminabar
       value: 
       objectReference: {fileID: 165456107}
@@ -4972,6 +4980,10 @@ PrefabInstance:
       propertyPath: PlayerDeception
       value: 
       objectReference: {fileID: 787228455}
+    - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: loseSpeedAmount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8230855917541104047, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: Heart0
       value: 
