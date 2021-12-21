@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Timer : MonoBehaviour
 {
@@ -11,13 +12,19 @@ public class Timer : MonoBehaviour
     public int timeLeft;
     public bool isTimeTicking = true;
 
+    private bool timeToVFX;
     private float timer;
+    private Vector2 timerStartPos;
     private PlayerHealth playerHealth;
     private NextLevelScript nextLevelScriptObj;
     private Score scoreRef;
 
+    private Color32 greyColor = new Color32(50, 50, 50, 255);
+    private Color32 redColor = new Color32(255, 0, 0, 255);
+
     private void Start()
     {
+        timerStartPos = timerText.transform.position;
         playerHealth = player.GetComponent<PlayerHealth>();
         nextLevelScriptObj = gameObject.GetComponent<NextLevelScript>();
         scoreRef = gameObject.GetComponent<Score>();
@@ -32,7 +39,13 @@ public class Timer : MonoBehaviour
         }
 
         timerText.text = "Time left: " + (int)timer;
+        CheckIfTimeToVFX();
         TimeRunOut();
+
+        if (Input.GetKey(KeyCode.K))
+        {
+            TimerVFX();
+        }
     }
 
     public void TimeRunOut()
@@ -49,5 +62,31 @@ public class Timer : MonoBehaviour
                 playerHealth.GameOver();
             }
         }
+    }
+
+    private void CheckIfTimeToVFX()
+    {
+        if (timer > 30.5 && timer < 31 || timer <= timeLeft / 2 && timer >= (timeLeft / 2) - 0.5f)
+        {
+            timeToVFX = true;
+        }
+        if (timeToVFX)
+        {
+            TimerVFX();
+            timeToVFX = false;
+        }
+    }
+
+    private void TimerVFX()
+    {
+        timerText.DOColor(redColor, 1f);
+        timerText.transform.DOShakePosition(1f, 2.5f, 10, 45f, true, false);
+        Invoke(nameof(resetTimerVFX), 1.25f);
+    }
+
+    private void resetTimerVFX()
+    {
+        timerText.DOColor(greyColor, 1f);
+        timerText.transform.position = timerStartPos;
     }
 }
