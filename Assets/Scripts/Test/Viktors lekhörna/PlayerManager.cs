@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject currentInterObj = null;
     public InteractionFood currentInterObjScript = null;
     public Inventory inventory;
+    public Score score;
     public bool canNotDie;
 
     private bool inDropZone;
@@ -34,6 +35,7 @@ public class PlayerManager : MonoBehaviour
             if (inDropZone)
             {
                 dropAllItems();
+                score.ScoreBounce();
             }
             else
             {
