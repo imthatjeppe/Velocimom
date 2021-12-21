@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Inventory : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class Inventory : MonoBehaviour
     public int inventoryMax;
     public bool isInventoryFull;
 
+    public Vector3 unstableDropSpot;
+
+    private bool unstableDrop;
+    private Vector3 yAxisPlus = new Vector3(0, 0.5f, 0);
     private PlayerMovement playerMovement;
 
     private void Start()
@@ -24,7 +29,8 @@ public class Inventory : MonoBehaviour
         inventory = new Stack<GameObject>();
         playerMovement = GetComponent<PlayerMovement>();
 
-        InvokeRepeating("UnstableStack",4f, 2f);
+        InvokeRepeating(nameof(SavePlayerPosition), 3f, 0.75f);
+        InvokeRepeating(nameof(UnstableStack) , 3f, 2.5f);
     }
 
     private void Update()
@@ -71,7 +77,18 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
         objectToDrop.transform.parent = foodItems.transform;
-        objectToDrop.transform.position = player.transform.position;
+
+        if (unstableDrop)
+        {
+            objectToDrop.transform.position = player.transform.position + yAxisPlus;
+            objectToDrop.transform.DOJump(unstableDropSpot, 0.75f, 1, 1.5f, false);
+        }
+        else
+        {
+            objectToDrop.transform.position = player.transform.position;
+        }
+
+        unstableDrop = false;
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
@@ -99,6 +116,7 @@ public class Inventory : MonoBehaviour
 
             if (diceRoll == 1 || diceRoll == 2)
             {
+                unstableDrop = true;
                 DropItem();
             }
             else
@@ -106,5 +124,10 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void SavePlayerPosition()
+    {
+        unstableDropSpot = new Vector3(player.transform.position.x, player.transform.position.y);
     }
 }
