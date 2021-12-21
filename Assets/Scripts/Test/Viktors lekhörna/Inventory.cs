@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public GameObject foodItems;
     public GameObject canvas;
     public GameObject player;
+    public GameObject velocimom;
     public Text inventoryScoreText;
 
     public float inventoryScore;
@@ -19,15 +20,17 @@ public class Inventory : MonoBehaviour
 
     public Vector3 unstableDropSpot;
 
-    private bool unstableDrop;
     private Vector3 yAxisPlus = new Vector3(0, 0.5f, 0);
     private PlayerMovement playerMovement;
+    private VelocimomBehaviour velocimomBehaviour;
+    private bool unstableDrop;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = new Stack<GameObject>();
         playerMovement = GetComponent<PlayerMovement>();
+        velocimomBehaviour = velocimom.GetComponent<VelocimomBehaviour>();
 
         InvokeRepeating(nameof(SavePlayerPosition), 3f, 0.75f);
         InvokeRepeating(nameof(UnstableStack) , 3f, 2.5f);
@@ -86,6 +89,11 @@ public class Inventory : MonoBehaviour
         else
         {
             objectToDrop.transform.position = player.transform.position;
+        }
+
+        if (velocimomBehaviour.playerIsDead)
+        {
+            Destroy(objectToDrop);
         }
 
         unstableDrop = false;
