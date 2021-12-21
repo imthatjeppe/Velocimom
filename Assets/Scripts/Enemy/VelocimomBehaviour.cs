@@ -22,6 +22,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
     [Header("Bools")]
     public bool patrol;
+    public bool playerIsDead;
 
     [Header("GameObjects")]
     public GameObject playerDetection;
@@ -187,9 +188,11 @@ public class VelocimomBehaviour : MonoBehaviour
     void Death()
     {
         //TODO: turn on player controls again.
-        target.position = spawnPoint.position;
+        playerIsDead = true;
+        playerManager.dropAllItems();
         PlayerHealth.playerHealth -= 1;
-
+        target.position = spawnPoint.position;
+        playerIsDead = false;
         SelectNewDestination();
     }
 
