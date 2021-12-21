@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
-        objectToDrop.transform.SetParent(foodItems.transform);
+        objectToDrop.transform.SetParent(foodItems.transform, false);
 
         if (unstableDrop)
         {
@@ -91,12 +91,12 @@ public class Inventory : MonoBehaviour
             objectToDrop.transform.position = player.transform.position;
         }
 
+        unstableDrop = false;
+
         if (velocimomBehaviour.playerIsDead)
         {
             Destroy(objectToDrop);
         }
-
-        unstableDrop = false;
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
