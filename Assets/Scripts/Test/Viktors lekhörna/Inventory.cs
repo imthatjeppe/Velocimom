@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Inventory : MonoBehaviour
     public GameObject foodItems;
     public GameObject canvas;
     public GameObject player;
+    public GameObject velocimom;
     public Text inventoryScoreText;
 
     public float inventoryScore;
@@ -16,15 +18,22 @@ public class Inventory : MonoBehaviour
     public int inventoryMax;
     public bool isInventoryFull;
 
+    public Vector3 unstableDropSpot;
+
+    private Vector3 yAxisPlus = new Vector3(0, 0.5f, 0);
     private PlayerMovement playerMovement;
+    private VelocimomBehaviour velocimomBehaviour;
+    private bool unstableDrop;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = new Stack<GameObject>();
         playerMovement = GetComponent<PlayerMovement>();
+        velocimomBehaviour = velocimom.GetComponent<VelocimomBehaviour>();
 
-        InvokeRepeating("UnstableStack",4f, 2f);
+        InvokeRepeating(nameof(SavePlayerPosition), 3f, 0.75f);
+        InvokeRepeating(nameof(UnstableStack) , 3f, 2.5f);
     }
 
     private void Update()
@@ -42,8 +51,8 @@ public class Inventory : MonoBehaviour
         inventoryScore += item.GetComponent<FoodItem>().points;
 
         item.layer = 5;
+        item.transform.SetParent(canvas.transform, true);
         item.transform.position = itemDropper.transform.position;
-        item.transform.parent = canvas.transform;
         item.GetComponent<SpriteRenderer>().enabled = false;
         item.GetComponent<BoxCollider2D>().enabled = false;
         item.GetComponent<CircleCollider2D>().enabled = true;
@@ -70,8 +79,24 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
-        objectToDrop.transform.parent = foodItems.transform;
-        objectToDrop.transform.position = player.transform.position;
+        objectToDrop.transform.SetParent(foodItems.transform, true);
+
+        if (unstableDrop)
+        {
+            objectToDrop.transform.position = player.transform.position + yAxisPlus;
+            objectToDrop.transform.DOJump(unstableDropSpot, 0.75f, 1, 1.5f, false);
+        }
+        else
+        {
+            objectToDrop.transform.position = player.transform.position - yAxisPlus;
+        }
+
+        unstableDrop = false;
+
+        if (velocimomBehaviour.playerIsDead)
+        {
+            Destroy(objectToDrop);
+        }
 
         Debug.Log("dropped" + objectToDrop.name);
         Debug.Log("Items in inventory: " + inventory.Count);
@@ -99,6 +124,7 @@ public class Inventory : MonoBehaviour
 
             if (diceRoll == 1 || diceRoll == 2)
             {
+                unstableDrop = true;
                 DropItem();
             }
             else
@@ -106,5 +132,10 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void SavePlayerPosition()
+    {
+        unstableDropSpot = new Vector3(player.transform.position.x, player.transform.position.y);
     }
 }

@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
     public float currentstamina;
-    public float loseSpeedAmount = 0.3f;
+    public float loseSpeedAmount;
     public float staminaEncumberedDrain;
     public float staminaDrain;
 
     [Header("Int Variables")]
-    public int foodUntilEncumbered = 2;
+    public int foodUntilEncumbered;
 
     [Header("Bools")]
     public bool hidden;
@@ -24,8 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider Staminabar;
     public GameObject PlayerDeception;
 
-    private float speedMagnitude = 100;
-    private float resetSpeed = 0;
+    private float hiddenSpeed = 0;
 
     Vector3 movement = new Vector3();
 
@@ -42,16 +41,15 @@ public class PlayerMovement : MonoBehaviour
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponentInChildren<PlayerAudioHandler>();
         rigidBody = GetComponent<Rigidbody2D>();
-
-        speed *= speedMagnitude;
-        maxSpeed *= speedMagnitude;
-        loseSpeedAmount *= speedMagnitude;
     }
 
     void Update()
     {
-        Move();
         HiddenAbility();
+    }
+    void FixedUpdate()
+    {
+        Move();
     }
 
     void Move()
@@ -62,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (!hidden)
         {
-            movement = new Vector3(x, y).normalized * Time.deltaTime * speed;
+            movement = new Vector3(x, y).normalized * Time.fixedDeltaTime * (speed - (loseSpeedAmount * (inventoryScriptObject.inventoryCount - foodUntilEncumbered)));
         }
         else
         {
-            movement = new Vector2(0, 0);
+            movement = new Vector3(0, 0);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && !hidden)
@@ -80,22 +78,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rigidBody.velocity = movement;
-
-        //Following code makes player lose speed depending on inventory count
-        if (inventoryScriptObject.inventoryCount >= 3)
-        {
-            if (inventoryScriptObject.inventoryCount > foodUntilEncumbered)
-            {
-                speed -= (inventoryScriptObject.inventoryCount - foodUntilEncumbered) * loseSpeedAmount;
-                foodUntilEncumbered += 1;
-            }
-            else if (inventoryScriptObject.inventoryCount < foodUntilEncumbered)
-            {
-                foodUntilEncumbered -= 1;
-                speed += loseSpeedAmount;
-            }
-
-        }
     }
     public Vector2 GetPlayerVelocity()
     {
@@ -106,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && currentstamina > 0)
         {
-            speed = resetSpeed;
+            speed = hiddenSpeed;
             currentstamina -= 10;
             releasedStaminaKey = false;
             audioHandler.PlayHugoInhaleSFX();
