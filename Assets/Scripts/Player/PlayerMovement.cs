@@ -24,8 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider Staminabar;
     public GameObject PlayerDeception;
 
-    private float speedMagnitude = 100;
-    private float resetSpeed = 0;
+    private float hiddenSpeed = 0;
 
     Vector3 movement = new Vector3();
 
@@ -89,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && currentstamina > 0)
         {
-            speed = resetSpeed;
+            speed = hiddenSpeed;
             currentstamina -= 10;
             releasedStaminaKey = false;
             audioHandler.PlayHugoInhaleSFX();

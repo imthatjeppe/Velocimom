@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
 
         item.layer = 5;
         item.transform.position = itemDropper.transform.position;
-        item.transform.parent = canvas.transform;
+        item.transform.SetParent(canvas.transform, false);
         item.GetComponent<SpriteRenderer>().enabled = false;
         item.GetComponent<BoxCollider2D>().enabled = false;
         item.GetComponent<CircleCollider2D>().enabled = true;
@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
-        objectToDrop.transform.parent = foodItems.transform;
+        objectToDrop.transform.SetParent(foodItems.transform);
 
         if (unstableDrop)
         {

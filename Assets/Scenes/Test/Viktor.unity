@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 831934456}
   timerText: {fileID: 827705591}
-  timeLeft: 90
+  timeLeft: 35
   isTimeTicking: 1
 --- !u!114 &433953929 stripped
 MonoBehaviour:
@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.21568628, g: 0.21568628, b: 0.21568628, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
