@@ -51,8 +51,8 @@ public class Inventory : MonoBehaviour
         inventoryScore += item.GetComponent<FoodItem>().points;
 
         item.layer = 5;
+        item.transform.SetParent(canvas.transform, true);
         item.transform.position = itemDropper.transform.position;
-        item.transform.SetParent(canvas.transform, false);
         item.GetComponent<SpriteRenderer>().enabled = false;
         item.GetComponent<BoxCollider2D>().enabled = false;
         item.GetComponent<CircleCollider2D>().enabled = true;
@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
-        objectToDrop.transform.SetParent(foodItems.transform, false);
+        objectToDrop.transform.SetParent(foodItems.transform, true);
 
         if (unstableDrop)
         {
@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            objectToDrop.transform.position = player.transform.position;
+            objectToDrop.transform.position = player.transform.position - yAxisPlus;
         }
 
         unstableDrop = false;
