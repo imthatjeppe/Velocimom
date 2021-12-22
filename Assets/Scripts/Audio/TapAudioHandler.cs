@@ -18,7 +18,7 @@ public class TapAudioHandler : MonoBehaviour
      */
     void Start()
     {
-        rigmor = GetComponent<PlayerDecption>().velocimomGameObject;
+        rigmor = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class TapAudioHandler : MonoBehaviour
             stopTapSoundCanBePlayed = true;
         }
         //Turning of the tap sfx when rigmor is in range of the tap
-        if(Vector2.Distance(rigmor.transform.position, transform.position) < 0.2 && stopTapSoundCanBePlayed)
+        if(Vector2.Distance(rigmor.transform.position, transform.position) < 1 && stopTapSoundCanBePlayed)
         {
             PlayTapEndSFX();
             stopTapSoundCanBePlayed = false;

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3677572701569621024}
   - component: {fileID: 393066028555197736}
   - component: {fileID: 488900031531420869}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Pizza
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -40,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.425, y: 1.845}
-  m_SizeDelta: {x: 4.2925005, y: 3.1699998}
+  m_AnchoredPosition: {x: 39.506836, y: 211.02441}
+  m_SizeDelta: {x: 429.25006, y: 317}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &6864798889104110006
 SpriteRenderer:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 250
   weight: 1
-  normalQuality: 0
+  normalQuality: 1
   glitterQuality: 0
   shinyRareQuality: 0
 --- !u!114 &6864798889104110005
