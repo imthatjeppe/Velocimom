@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
             if (inDropZone)
             {
                 dropAllItems();
-                score.ScoreBounce();
+                score.ScoreVFX();
             }
             else
             {
