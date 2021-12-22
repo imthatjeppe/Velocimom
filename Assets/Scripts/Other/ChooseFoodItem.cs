@@ -10,8 +10,10 @@ public class ChooseFoodItem : MonoBehaviour
 
     SearchFood searchFood;
     Image[] bubbles;
+    Inventory inventory;
     int atBubblePos = 0;
-    int previousbubblePos = 0;
+    int previousBubblePos = 0;
+
     void Start()
     {
         searchFood = GetComponent<SearchFood>();
@@ -22,13 +24,18 @@ public class ChooseFoodItem : MonoBehaviour
             bubbles[i] = bubble.GetComponent<Image>();
             i++;
         }
-
         searchFood.bubbles[0].GetComponent<Image>().material = outline;
+
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     void Update()
     {
         GetInput();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
+        }
     }
     void GetInput()
     {
@@ -93,16 +100,16 @@ public class ChooseFoodItem : MonoBehaviour
                 }
                 break;
         }
-        CheckBubblePositonBoundries();
+        CheckBubblePositionBoundries();
         if (bubbles[atBubblePos].material != outline)
         {
             bubbles[atBubblePos].material = outline;
         }
 
-        if(previousbubblePos != atBubblePos)
+        if(previousBubblePos != atBubblePos)
         {
-            bubbles[previousbubblePos].material = noOutline;
-            previousbubblePos = atBubblePos;
+            bubbles[previousBubblePos].material = noOutline;
+            previousBubblePos = atBubblePos;
         }
 
 
@@ -114,7 +121,7 @@ public class ChooseFoodItem : MonoBehaviour
         Right,
         Down,
     }
-    void CheckBubblePositonBoundries()
+    void CheckBubblePositionBoundries()
     {
         if(atBubblePos < 0)
         {
@@ -124,12 +131,8 @@ public class ChooseFoodItem : MonoBehaviour
             atBubblePos = 0;
         }
     }
-    void SelectFoodItem()
+    void AddFoodItemToInventory(GameObject foodItem)
     {
-
-    }
-    void AddFoodItemToInventory()
-    {
-
+        inventory.AddItem(foodItem);
     }
 }

@@ -16,12 +16,13 @@ public class SearchFood : MonoBehaviour, IInteractable
     Animator[] rarityOverlayAnimators;
     Image[] foodItemImages;
     Image[] overlayUIImages;
-    int[] rarityRankAtPos;
+    private int[] rarityRankAtPos;
     //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
     ChooseFoodItem chooseFood;
     private int atBubblePosInList = 0;
-    int alreadyCheckedPos = 0;
+    private int alreadyCheckedPos = 0;
+    private bool interacting = false;
     void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -48,7 +49,9 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
         if (Input.GetKeyDown(KeyCode.Escape) && searchingForFoodPanel.activeSelf)
         {
-            Debug.Log("Cancel search...");
+            
+            // Setting interacting false in delay so that Pause menu doesnt pop up when clicking escape
+            Invoke(nameof(SetInteractingFalse), 0.5f);
             chooseFood.enabled = false;
             playerMovement.speed = playerMovement.maxSpeed;
             CancelInvoke(nameof(SearchingFridge));
@@ -57,6 +60,9 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
+        interacting = true;
+
+        //Only activte chooseFood script if you are searching for food
         chooseFood.enabled = true;
         searchingForFoodPanel.SetActive(true);
         playerMovement.speed = 0;
@@ -64,6 +70,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     void SearchingFridge()
     {
+        //if already searched and found items they appear immediately
         if (atBubblePosInList < alreadyCheckedPos)
         {
             for (int i = 0; i < alreadyCheckedPos; i++)
@@ -84,6 +91,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         }
 
         GameObject randomFoodItem;
+        //goes through all the UI and activates them and giving them a random food item
         if (atBubblePosInList <= bubbles.Length - 1)
         {
             bubbles[atBubblePosInList].SetActive(true);
@@ -92,6 +100,7 @@ public class SearchFood : MonoBehaviour, IInteractable
                 randomFoodItem = GetRandomFoodItem();
                 bubbleFoodDic.Add(bubbles[atBubblePosInList], randomFoodItem);
                 foodItemImages[atBubblePosInList].sprite = randomFoodItem.GetComponent<SpriteRenderer>().sprite;
+
                 CalculateRarityChance();
                 atBubblePosInList++;
             }
@@ -123,16 +132,19 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
         int procentageCalc = Random.Range(1, 101);
         CheckIfAnimatorIsActive(atBubblePosInList);
-
             if (procentageCalc <= shinyRareRank3ChanceProcentage)
             {
                 SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
                 CorrectShinyRareRank3UIPosition(atBubblePosInList);
+                bubbleFoodDic[bubbles[atBubblePosInList]].GetComponent<FoodItem>().shinyRareQuality = true;
+                bubbleFoodDic[bubbles[atBubblePosInList]].GetComponent<FoodItem>().normalQuality = false;
                 rarityRankAtPos[atBubblePosInList] = 3;
             }
             else if (procentageCalc <= glitterRank2ChanceProcentage)
             {
                 SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
+                bubbleFoodDic[bubbles[atBubblePosInList]].GetComponent<FoodItem>().glitterQuality = true;
+                bubbleFoodDic[bubbles[atBubblePosInList]].GetComponent<FoodItem>().normalQuality = false;
                 rarityRankAtPos[atBubblePosInList] = 2;
         }
     }
@@ -159,11 +171,28 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     GameObject GetRandomFoodItem()
     {
-        GameObject randomFoodItem = foodItems[Random.Range(0, foodItems.Length)];
-        Debug.Log(randomFoodItem.name);
+        GameObject randomFoodItem = Instantiate(foodItems[Random.Range(0, foodItems.Length)]);
         return randomFoodItem;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    public bool isInteracting()
     {
+        return interacting;
+    }
+    void SetInteractingFalse()
+    {
+        interacting = false;
+    }
+    //This is used when selecting food items to add them to the inventroy
+    public GameObject GetFoodItemsDictionaryAtPos(int atPos)
+    {
+        GameObject foodItem = bubbleFoodDic[bubbles[atPos]];
+        RemoveFoodItem(atPos);
+        return foodItem;
+    }
+    void RemoveFoodItem(int atPos)
+    {
+        foodItemImages[atPos].color = new Color(0, 0, 0, 0);
+        bubbleFoodDic.Remove(bubbleFoodDic[bubbles[atPos]]);
     }
 }

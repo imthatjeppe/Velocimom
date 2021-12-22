@@ -9,14 +9,16 @@ public class PauseMenu : MonoBehaviour
     
     public static bool GameIsPaused;
 
+    PlayerInteractions playerInteraction;
     private void Start()
     {
+        playerInteraction = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteractions>();
         PauseMenuUI.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !playerInteraction.GetInteracting())
         {
             if (GameIsPaused)
             {

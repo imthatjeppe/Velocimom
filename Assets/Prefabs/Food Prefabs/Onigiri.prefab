@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4873514577381335533}
   - component: {fileID: 8833272782375151897}
   - component: {fileID: 3419800356871717252}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Onigiri
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791709878476629802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.355992}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.06, y: -3.35}
-  m_SizeDelta: {x: 4.2925005, y: 3.1699998}
+  m_AnchoredPosition: {x: 39.506836, y: 211.02441}
+  m_SizeDelta: {x: 355.2069, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &5602242439501092612
 SpriteRenderer:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 250
   weight: 1
-  normalQuality: 0
+  normalQuality: 1
   glitterQuality: 0
   shinyRareQuality: 0
 --- !u!114 &2551019862771569875

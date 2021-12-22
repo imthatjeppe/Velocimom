@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 905618228357196637}
   - component: {fileID: 8902300066270612219}
   - component: {fileID: 7700626502577390212}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Donut
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5502277885583534054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.355992}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.06, y: -1.86}
-  m_SizeDelta: {x: 4.2925005, y: 3.1699998}
+  m_AnchoredPosition: {x: 39.506836, y: 211.02441}
+  m_SizeDelta: {x: 305.1778, y: 292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4314243831913413539
 SpriteRenderer:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 250
   weight: 1
-  normalQuality: 0
+  normalQuality: 1
   glitterQuality: 0
   shinyRareQuality: 0
 --- !u!114 &779492037125893754
