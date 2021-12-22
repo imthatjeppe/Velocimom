@@ -19,16 +19,22 @@ public class SearchFood : MonoBehaviour, IInteractable
     int[] rarityRankAtPos;
     //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
-
+    ChooseFoodItem chooseFood;
     private int atBubblePosInList = 0;
+    int alreadyCheckedPos = 0;
     void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
+
+        chooseFood = GetComponent<ChooseFoodItem>();
+        chooseFood.enabled = false;
+
         rarityOverlayAnimators = new Animator[bubbles.Length];
         foodItemImages = new Image[bubbles.Length];
         overlayUIImages = new Image[bubbles.Length];
         rarityRankAtPos = new int[bubbles.Length];
+
         for (int i = 0; i < bubbles.Length; i++)
         {
             foodItemImages[i] = bubbles[i].transform.GetChild(0).GetComponent<Image>();
@@ -40,9 +46,10 @@ public class SearchFood : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && searchingForFoodPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && searchingForFoodPanel.activeSelf)
         {
             Debug.Log("Cancel search...");
+            chooseFood.enabled = false;
             playerMovement.speed = playerMovement.maxSpeed;
             CancelInvoke(nameof(SearchingFridge));
             ResetSearchUI();
@@ -50,14 +57,34 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
+        chooseFood.enabled = true;
         searchingForFoodPanel.SetActive(true);
         playerMovement.speed = 0;
         InvokeRepeating(nameof(SearchingFridge),0,1);
     }
     void SearchingFridge()
     {
+        if (atBubblePosInList < alreadyCheckedPos)
+        {
+            for (int i = 0; i < alreadyCheckedPos; i++)
+            {
+                bubbles[atBubblePosInList].SetActive(true);
+                if (rarityRankAtPos[atBubblePosInList] == 2)
+                {
+                    CheckIfAnimatorIsActive(atBubblePosInList);
+                    SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
+                }
+                else if (rarityRankAtPos[atBubblePosInList] == 3)
+                {
+                    CheckIfAnimatorIsActive(atBubblePosInList);
+                    SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
+                }
+                atBubblePosInList++;
+            }
+        }
+
         GameObject randomFoodItem;
-        if(atBubblePosInList <= bubbles.Length-1)
+        if (atBubblePosInList <= bubbles.Length - 1)
         {
             bubbles[atBubblePosInList].SetActive(true);
             if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))
@@ -66,29 +93,16 @@ public class SearchFood : MonoBehaviour, IInteractable
                 bubbleFoodDic.Add(bubbles[atBubblePosInList], randomFoodItem);
                 foodItemImages[atBubblePosInList].sprite = randomFoodItem.GetComponent<SpriteRenderer>().sprite;
                 CalculateRarityChance();
+                atBubblePosInList++;
             }
             else
             {
-                if(rarityRankAtPos[atBubblePosInList] == 2)
-                {
-                    CheckIfAnimatorIsActive(atBubblePosInList);
-                    SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
-                    Debug.Log("Sätter på IsGlitterRank2");
-                }
-                else if (rarityRankAtPos[atBubblePosInList] == 3)
-                {
-                    CheckIfAnimatorIsActive(atBubblePosInList);
-                    SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
-                    Debug.Log("Sätter på IsShinyRareRank3");
-
-                }
+                CancelInvoke(nameof(SearchingFridge));
             }
-            atBubblePosInList++;
         }
-        else
-        {
-            CancelInvoke(nameof(SearchingFridge));
-        }
+
+        if (atBubblePosInList > alreadyCheckedPos)
+            alreadyCheckedPos = atBubblePosInList;
     }
     void ResetSearchUI()
     {
@@ -148,5 +162,8 @@ public class SearchFood : MonoBehaviour, IInteractable
         GameObject randomFoodItem = foodItems[Random.Range(0, foodItems.Length)];
         Debug.Log(randomFoodItem.name);
         return randomFoodItem;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
     }
 }

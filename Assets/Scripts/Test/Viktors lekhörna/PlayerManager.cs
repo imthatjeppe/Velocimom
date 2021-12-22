@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
             if (inDropZone)
             {
                 dropAllItems();
-                score.ScoreBounce();
+                score.ScoreVFX();
             }
             else
             {
@@ -43,7 +43,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
-    private void dropAllItems()
+    public void dropAllItems()
     {
         for (int i = 0; i < inventory.inventoryCount; inventory.inventoryCount--)
         {

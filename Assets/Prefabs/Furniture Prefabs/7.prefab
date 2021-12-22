@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f5387c63dc58f4eaa241569ffea0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outline: {fileID: 2100000, guid: 0b267eed678e1544fbe91f0b21913be5, type: 2}
+  noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
 --- !u!114 &6093937328704071816
 MonoBehaviour:
   m_ObjectHideFlags: 0
