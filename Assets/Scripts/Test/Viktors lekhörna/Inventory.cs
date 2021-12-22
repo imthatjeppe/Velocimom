@@ -12,13 +12,13 @@ public class Inventory : MonoBehaviour
     public GameObject player;
     public GameObject velocimom;
     public Text inventoryScoreText;
+    
+    public Vector3 unstableDropSpot;
 
     public float inventoryScore;
     public int inventoryCount;
     public int inventoryMax;
     public bool isInventoryFull;
-
-    public Vector3 unstableDropSpot;
 
     private Vector3 yAxisPlus = new Vector3(0, 0.5f, 0);
     private PlayerMovement playerMovement;
