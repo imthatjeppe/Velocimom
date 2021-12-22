@@ -33,7 +33,7 @@ public class Score : MonoBehaviour
         totalScore.DOColor(greenColor, 1f);
         totalScore.transform.DOShakePosition(1f, 2.5f, 10, 45f, true, false);
         totalScore.transform.DOPunchScale(new Vector3(0f, 0.3f, 0f), 1f, 10, 0f);
-        Invoke(nameof(resetScoreVFX), 1f);
+        Invoke(nameof(resetScoreVFX), 1.25f);
     }
 
     public void resetScoreVFX()
