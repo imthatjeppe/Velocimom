@@ -7,12 +7,13 @@ public class NextLevelScript : MonoBehaviour
 {
     public float scoreForNextLevel;
 
-    public static bool NextLevelPaused;
+    public bool NextLevelPaused;
 
     public GameObject NextLevel;
     public Text scoreNeeded;
 
     private Score nextLevelScore;
+    private StarSystem stars;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class NextLevelScript : MonoBehaviour
     {
         NextLevel.SetActive(true);
         NextLevelPaused = (true);
+       
     }
 
     public void startNextLevel()

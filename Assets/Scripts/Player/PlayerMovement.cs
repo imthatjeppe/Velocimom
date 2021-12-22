@@ -94,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
                 foodUntilEncumbered -= 1;
                 speed += loseSpeedAmount;
             }
-
         }
     }
     public Vector2 GetPlayerVelocity()
