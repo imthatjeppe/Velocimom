@@ -66,15 +66,14 @@ public class Timer : MonoBehaviour
 
     private void CheckIfTimeToVFX()
     {
-        if (timer > 30.75f && timer < 31 || timer <= timeLeft / 2 && timer >= (timeLeft / 2) - 0.25f)
+        if (timer > 30.5 && timer < 31 || timer <= timeLeft / 2 && timer >= (timeLeft / 2) - 0.5f)
         {
             timeToVFX = true;
-
-            if (timeToVFX)
-            {
-                TimerVFX();
-                timeToVFX = false;
-            }
+        }
+        if (timeToVFX)
+        {
+            TimerVFX();
+            timeToVFX = false;
         }
     }
 

@@ -9,7 +9,7 @@ public class Bed : MonoBehaviour
     private bool canUseBed;
     private Score scoreRef;
     private NextLevelScript nextLevelScript;
-    private StarSystem starsystem;
+
     private void Start()
     {
         scoreRef = dropOffZone.GetComponent<Score>();
@@ -26,7 +26,6 @@ public class Bed : MonoBehaviour
                 {
                     //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
                     nextLevelScript.ContinueToNextLevel();
-                    
                 }
 
                 if (scoreRef.score < nextLevelScript.scoreForNextLevel)

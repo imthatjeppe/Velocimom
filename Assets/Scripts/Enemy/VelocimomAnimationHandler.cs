@@ -5,31 +5,32 @@ using Pathfinding;
 
 public class VelocimomAnimationHandler : MonoBehaviour
 {
-    private float distance;
-
     private bool goingUp;
 
     private AIPath pathFinder;
     private SpriteRenderer sprite;
     private Animator animator;
+    private VelocimomBehaviour velocimom;
 
     Vector3 oldPosition;
 
     void Start()
     {
         pathFinder = GetComponentInParent<AIPath>();
+        velocimom = GetComponentInParent<VelocimomBehaviour>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        distance = 0.2f;
         oldPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        FlipSprite();
         AnimationSequencePlayer();
+        FlipSprite();
+
+        oldPosition = transform.position;
     }
 
     void AnimationSequencePlayer()
@@ -45,15 +46,13 @@ public class VelocimomAnimationHandler : MonoBehaviour
 
     void GoingUp()
     {
-        if (transform.position.y > oldPosition.y + distance)
+        if (transform.position.y > oldPosition.y)
         {
-            oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", true);
             goingUp = true;
         }
-        else if (transform.position.y < oldPosition.y - distance)
+        else if (transform.position.y < oldPosition.y)
         {
-            oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", false);
             goingUp = false;
         }
@@ -61,31 +60,14 @@ public class VelocimomAnimationHandler : MonoBehaviour
 
     void FlipSprite()
     {
-        if (!goingUp)
+        //TODO: Flip för goingUp skall vara tvärtom
+        if (transform.position.x > oldPosition.x)
         {
-            if (transform.position.x > oldPosition.x + distance)
-            {
-                oldPosition.x = transform.position.x;
-                sprite.flipX = true;
-            }
-            else if (transform.position.x < oldPosition.x - distance)
-            {
-                oldPosition.x = transform.position.x;
-                sprite.flipX = false;
-            }
+            sprite.flipX = true;
         }
-        else
+        else if (transform.position.x < oldPosition.x)
         {
-            if (transform.position.x > oldPosition.x + distance)
-            {
-                oldPosition.x = transform.position.x;
-                sprite.flipX = false;
-            }
-            else if (transform.position.x < oldPosition.x - distance)
-            {
-                oldPosition.x = transform.position.x;
-                sprite.flipX = true;
-            }
+            sprite.flipX = false;
         }
     }
 
