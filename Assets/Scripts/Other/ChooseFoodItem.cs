@@ -13,6 +13,7 @@ public class ChooseFoodItem : MonoBehaviour
     Inventory inventory;
     int atBubblePos = 0;
     int previousBubblePos = 0;
+    int shutDownBubblePos = 0;
 
     void Start()
     {
@@ -35,6 +36,8 @@ public class ChooseFoodItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
+            PlayBubblePopAnimation();
+            DeactivateRarityOverlayUI();
         }
     }
     void GetInput()
@@ -134,5 +137,13 @@ public class ChooseFoodItem : MonoBehaviour
     void AddFoodItemToInventory(GameObject foodItem)
     {
         inventory.AddItem(foodItem);
+    }
+    void PlayBubblePopAnimation()
+    {
+        searchFood.bubbles[atBubblePos].GetComponent<Animator>().SetBool("PopBubble", true);
+    }
+    void DeactivateRarityOverlayUI()
+    {
+        searchFood.bubbles[atBubblePos].transform.GetChild(1).GetComponent<Image>().color = new Color(0, 0, 0, 0);
     }
 }

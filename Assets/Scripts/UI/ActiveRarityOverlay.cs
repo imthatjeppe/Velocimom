@@ -23,4 +23,8 @@ public class ActiveRarityOverlay : MonoBehaviour
         transform.GetChild(1).GetComponent<Image>().enabled = true;
         transform.GetChild(1).GetComponent<Animator>().enabled = true;
     }
+    public void DeactivateRarityOverlayUI()
+    {
+        transform.GetChild(1).GetComponent<Image>().color = new Color(0, 0, 0, 0);
+    }
 }

@@ -90,7 +90,7 @@ AnimationClip:
   - time: 0.6666667
     functionName: ActivateRarityOverlayUI
     data: 
-    objectReferenceParameter: {fileID: 8977507128311959876, guid: 51f82e64550b45545b318dee10e85a85, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

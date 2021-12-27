@@ -66,30 +66,15 @@ public class SearchFood : MonoBehaviour, IInteractable
         chooseFood.enabled = true;
         searchingForFoodPanel.SetActive(true);
         playerMovement.speed = 0;
+
+            for (int i = 0; i < atBubblePosInList; i++)
+            {
+                bubbles[i].SetActive(true);
+            }
         InvokeRepeating(nameof(SearchingFridge),0,1);
     }
     void SearchingFridge()
     {
-        //if already searched and found items they appear immediately
-        if (atBubblePosInList < alreadyCheckedPos)
-        {
-            for (int i = 0; i < alreadyCheckedPos; i++)
-            {
-                bubbles[atBubblePosInList].SetActive(true);
-                if (rarityRankAtPos[atBubblePosInList] == 2)
-                {
-                    CheckIfAnimatorIsActive(atBubblePosInList);
-                    SetRarityOverlayAnimation("IsGlitterRank2", true, atBubblePosInList);
-                }
-                else if (rarityRankAtPos[atBubblePosInList] == 3)
-                {
-                    CheckIfAnimatorIsActive(atBubblePosInList);
-                    SetRarityOverlayAnimation("IsShinyRareRank3", true, atBubblePosInList);
-                }
-                atBubblePosInList++;
-            }
-        }
-
         GameObject randomFoodItem;
         //goes through all the UI and activates them and giving them a random food item
         if (atBubblePosInList <= bubbles.Length - 1)
@@ -117,15 +102,11 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
         foreach(GameObject bubble in bubbles)
         {
-            bubble.transform.GetChild(0).gameObject.SetActive(false);
-            bubble.transform.GetChild(1).GetComponent<Image>().enabled = false;
-            bubble.transform.GetChild(1).GetComponent<Animator>().enabled = false;
-            bubble.transform.GetChild(1).gameObject.SetActive(false);
             bubble.SetActive(false);
         }
         Debug.Log("Resetting search UI");
         searchingForFoodPanel.SetActive(false);
-        atBubblePosInList = 0;
+        //atBubblePosInList = 0;
         
     }
     void CalculateRarityChance()
