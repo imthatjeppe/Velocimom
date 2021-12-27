@@ -823,6 +823,31 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00048828125, y: 7.500122}
   m_SizeDelta: {x: 555.89, y: 385.90002}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &71926423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3057698591180209303, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
+  m_PrefabInstance: {fileID: 3057698592792270483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &71926428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3057698591180209307, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
+  m_PrefabInstance: {fileID: 3057698592792270483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &71926429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71926423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b5a46f45485a147a8206b1e535245b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 71926428}
+  player: {fileID: 856950618}
+  velocimom: {fileID: 1341277732}
 --- !u!1 &77465424
 GameObject:
   m_ObjectHideFlags: 0
