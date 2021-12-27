@@ -52,11 +52,10 @@ public class SearchFood : MonoBehaviour, IInteractable
             
             // Setting interacting false in delay so that Pause menu doesnt pop up when clicking escape
             Invoke(nameof(SetInteractingFalse), 0.5f);
-            chooseFood.enabled = false;
-            playerMovement.speed = playerMovement.maxSpeed;
             CancelInvoke(nameof(SearchingFridge));
             ResetSearchUI();
         }
+        ResetUIIfToFarAway();
     }
     public void Interact()
     {
@@ -106,8 +105,10 @@ public class SearchFood : MonoBehaviour, IInteractable
         }
         Debug.Log("Resetting search UI");
         searchingForFoodPanel.SetActive(false);
+        chooseFood.enabled = false;
+        playerMovement.speed = playerMovement.maxSpeed;
         //atBubblePosInList = 0;
-        
+
     }
     void CalculateRarityChance()
     {
@@ -175,5 +176,13 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
         foodItemImages[atPos].color = new Color(0, 0, 0, 0);
         bubbleFoodDic.Remove(bubbleFoodDic[bubbles[atPos]]);
+    }
+    void ResetUIIfToFarAway()
+    {
+        if(Vector2.Distance(transform.position, playerMovement.transform.position) > 5 && searchingForFoodPanel.activeSelf)
+        {
+            CancelInvoke(nameof(SearchingFridge));
+            ResetSearchUI();
+        }
     }
 }

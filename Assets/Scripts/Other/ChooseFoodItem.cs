@@ -13,7 +13,6 @@ public class ChooseFoodItem : MonoBehaviour
     Inventory inventory;
     int atBubblePos = 0;
     int previousBubblePos = 0;
-    int shutDownBubblePos = 0;
 
     void Start()
     {
@@ -136,7 +135,8 @@ public class ChooseFoodItem : MonoBehaviour
     }
     void AddFoodItemToInventory(GameObject foodItem)
     {
-        inventory.AddItem(foodItem);
+        if(foodItem != null)
+            inventory.AddItem(foodItem);
     }
     void PlayBubblePopAnimation()
     {
