@@ -16,6 +16,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     Animator[] rarityOverlayAnimators;
     Image[] foodItemImages;
     Image[] overlayUIImages;
+    FridgeAudioHandler fridgeSFX;
     private int[] rarityRankAtPos;
     //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
@@ -28,6 +29,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
 
+        fridgeSFX = GetComponent<FridgeAudioHandler>();
         chooseFood = GetComponent<ChooseFoodItem>();
         chooseFood.enabled = false;
 
@@ -70,6 +72,7 @@ public class SearchFood : MonoBehaviour, IInteractable
             {
                 bubbles[i].SetActive(true);
             }
+        fridgeSFX.PlayOpenFridgeSFX();
         InvokeRepeating(nameof(SearchingFridge),0,1);
     }
     void SearchingFridge()
@@ -107,7 +110,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         searchingForFoodPanel.SetActive(false);
         chooseFood.enabled = false;
         playerMovement.speed = playerMovement.maxSpeed;
-        //atBubblePosInList = 0;
+        fridgeSFX.PlayCloseFridgeSFX();
 
     }
     void CalculateRarityChance()

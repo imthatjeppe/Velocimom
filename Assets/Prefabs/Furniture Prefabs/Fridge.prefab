@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5833677208175459050}
   - component: {fileID: 2275105311226343900}
   - component: {fileID: 4539905563827227647}
+  - component: {fileID: 6082417915487582234}
   m_Layer: 7
   m_Name: Fridge
   m_TagString: Furniture
@@ -288,3 +289,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: a1c65512ac036784ca35d720e071891c, type: 2}
   noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
+--- !u!114 &6082417915487582234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135252142146416634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d908c8615478346a28c47829ada066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 21f1f9b0816d62141892a39b389393cd, type: 3}
+  - {fileID: 8300000, guid: ad39673e46c90b5478df78ebcf431841, type: 3}
+  audioSourcePreFab: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}

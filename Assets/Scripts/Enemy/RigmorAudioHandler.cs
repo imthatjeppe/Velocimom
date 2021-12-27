@@ -11,6 +11,7 @@ public class RigmorAudioHandler : MonoBehaviour
     /*
      Audio clip list:
         0. RigmorVeloScream
+        1. RigmorFootSteps
      */
     void Start()
     {
@@ -26,6 +27,14 @@ public class RigmorAudioHandler : MonoBehaviour
     {
         audioSoruce.clip = audioClips[0];
         audioSoruce.volume = 1f * Settings.volumeMagnitude;
+        audioSoruce.pitch = Random.Range(0.8f, 1.2f);
+        audioSoruce.Play();
+
+    }
+    public void PlayRigmorFootstepsSFX()
+    {
+        audioSoruce.clip = audioClips[1];
+        audioSoruce.volume = 0.2f * Settings.volumeMagnitude;
         audioSoruce.pitch = Random.Range(0.8f, 1.2f);
         audioSoruce.Play();
 
