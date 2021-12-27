@@ -26,6 +26,7 @@ public class Bed : MonoBehaviour
                 {
                     //�ppna meny med alternativ f�r att forts�tta tills n�sta niv� eller forts�tta spela p� nuvarande
                     nextLevelScript.ContinueToNextLevel();
+                    Debug.Log("you win");
                     
                 }
 
@@ -43,7 +44,7 @@ public class Bed : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             canUseBed = true;
-            Debug.Log(canUseBed);
+            Debug.Log("can use bed " + canUseBed);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -51,7 +52,7 @@ public class Bed : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             canUseBed = false;
-            Debug.Log(canUseBed);
+            Debug.Log("can use bed " + canUseBed);
         }
     }
 }

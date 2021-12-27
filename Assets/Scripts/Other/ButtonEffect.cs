@@ -13,7 +13,7 @@ public class ButtonEffect : MonoBehaviour
     void Start()
     {
         playerDeception = GameObject.FindGameObjectWithTag("Tap").GetComponent<PlayerDecption>();
-        darkeningEffect = GameObject.FindGameObjectWithTag("DarkRoom").GetComponent<DarkeningEffect>();
+        //darkeningEffect = GameObject.FindGameObjectWithTag("DarkRoom").GetComponent<DarkeningEffect>();
         spritePicture = GetComponent<SpriteRenderer>();
 
         transform.DOMoveY(0.4f, 1.5f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
@@ -22,13 +22,13 @@ public class ButtonEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!playerDeception.enemyLure && darkeningEffect.playerInRoom)
-        {
-            spritePicture.enabled = true;
-        }
-        else
-        {
-            spritePicture.enabled = false;
-        }
+        //if (!playerDeception.enemyLure && darkeningEffect.playerInRoom)
+        //{
+        //    spritePicture.enabled = true;
+        //}
+        //else
+        //{
+        //    spritePicture.enabled = false;
+        //}
     }
 }
