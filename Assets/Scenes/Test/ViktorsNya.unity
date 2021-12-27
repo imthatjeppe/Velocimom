@@ -572,11 +572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3480856637133007713, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.24
+      value: 4.66
       objectReference: {fileID: 0}
     - target: {fileID: 3480856637133007713, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.57
+      value: 0.1500001
       objectReference: {fileID: 0}
     - target: {fileID: 3480856637133007713, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6491,11 +6491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6738777924339545515, guid: 57499370f8ff6a344a83059a91ec155e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.35
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 6738777924339545515, guid: 57499370f8ff6a344a83059a91ec155e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.15
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6738777924339545515, guid: 57499370f8ff6a344a83059a91ec155e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6798,6 +6798,10 @@ PrefabInstance:
       propertyPath: inventoryScoreText
       value: 
       objectReference: {fileID: 85920157}
+    - target: {fileID: 3057698592352161106, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4405178565181954615, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: canNotDie
       value: 1
@@ -29200,11 +29204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3480856637133007713, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.49
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 3480856637133007713, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.07
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39976df7d875d414791a6fc3dd5c3693, type: 3}
