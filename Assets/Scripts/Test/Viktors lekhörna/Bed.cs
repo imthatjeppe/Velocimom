@@ -41,11 +41,17 @@ public class Bed : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
-        canUseBed = true;
+        {
+            canUseBed = true;
+            Debug.Log(canUseBed);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
             canUseBed = false;
+            Debug.Log(canUseBed);
+        }
     }
 }
