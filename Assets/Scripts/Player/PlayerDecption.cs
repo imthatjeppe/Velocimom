@@ -14,7 +14,6 @@ public class PlayerDecption : MonoBehaviour
     private VelocimomBehaviour velocimom;
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
-    private PlayerAudioHandler audioHandler;
 
     void Start()
     {
@@ -23,7 +22,6 @@ public class PlayerDecption : MonoBehaviour
         velocimom = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
         setDestination = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         aIPath = velocimomGameObject.GetComponent<AIPath>();
-        audioHandler = GetComponent<PlayerAudioHandler>();
     }
 
     // Update is called once per frame

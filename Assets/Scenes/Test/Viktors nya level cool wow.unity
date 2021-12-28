@@ -979,7 +979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39310999}
   - component: {fileID: 39311000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &68583618
 GameObject:
@@ -1699,7 +1699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83575922}
   - component: {fileID: 83575923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100508481}
   - component: {fileID: 100508482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entrance prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,7 +2426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142216092}
   - component: {fileID: 142216093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2525,7 +2525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 153660217}
   - component: {fileID: 153660218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hugo room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,7 +2608,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164325601
 GameObject:
@@ -3487,7 +3487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238864060}
   - component: {fileID: 238864061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,7 +3674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248600727}
   - component: {fileID: 248600728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entrance prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4137,6 +4137,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &276273314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913517714816100254, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
+      propertyPath: m_Name
+      value: MainMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
 --- !u!1 &296616851
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,13 +4337,36 @@ RectTransform:
   - {fileID: 1530740241}
   - {fileID: 1178094136}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &303609993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7229340040633552013, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+  m_PrefabInstance: {fileID: 1989462692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &303609994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303609993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d908c8615478346a28c47829ada066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 21f1f9b0816d62141892a39b389393cd, type: 3}
+  - {fileID: 8300000, guid: ad39673e46c90b5478df78ebcf431841, type: 3}
+  - {fileID: 8300000, guid: 36dd144780590bd4bb8c2234cd0f03b1, type: 3}
+  - {fileID: 8300000, guid: e9e32b3572ddd90418be24287ec67386, type: 3}
+  audioSourcePreFab: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
 --- !u!1 &310047055
 GameObject:
   m_ObjectHideFlags: 0
@@ -4707,7 +4787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333352422}
   - component: {fileID: 333352423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5074,7 +5154,7 @@ Transform:
   - {fileID: 263574792}
   - {fileID: 1252453675}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &345162142
 GameObject:
@@ -5536,7 +5616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369767904}
   - component: {fileID: 369767905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467531415}
   - component: {fileID: 467531416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hugo room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7077,7 +7157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 512050071}
   - component: {fileID: 512050072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8627,7 +8707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5120432133837874089, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5120432133837874089, guid: 9fd762137ead4a14b9d29523ad2fc7f6, type: 3}
       propertyPath: m_LocalScale.x
@@ -9559,7 +9639,7 @@ Transform:
   - {fileID: 1615871857}
   - {fileID: 1771332987}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656554872
 GameObject:
@@ -9680,7 +9760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659418370}
   - component: {fileID: 659418371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9750,7 +9830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 661207768}
   - component: {fileID: 661207769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hallway prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9855,7 +9935,7 @@ PrefabInstance:
       objectReference: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9931,7 +10011,7 @@ PrefabInstance:
       objectReference: {fileID: 1723095009}
     - target: {fileID: 4405178565181954615, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: canNotDie
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: speed
@@ -10250,7 +10330,7 @@ Transform:
   - {fileID: 1619692767}
   - {fileID: 2008003767}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &696366059
 PrefabInstance:
@@ -10269,7 +10349,7 @@ PrefabInstance:
       objectReference: {fileID: 667674435}
     - target: {fileID: 3057698591180209307, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3057698591180209307, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10418,7 +10498,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700808167
 GameObject:
@@ -10430,7 +10510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700808168}
   - component: {fileID: 700808169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11247,7 +11327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747533182}
   - component: {fileID: 747533183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11421,7 +11501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754224960}
   - component: {fileID: 754224961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23554,7 +23634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942847289}
   - component: {fileID: 942847290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23806,7 +23886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950477811}
   - component: {fileID: 950477812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24031,7 +24111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967423274}
   - component: {fileID: 967423275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24584,7 +24664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016686914}
   - component: {fileID: 1016686915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24816,7 +24896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801269713478614044, guid: 9bf1a073f3a70564587f4fddb90a2044, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5801269713478614044, guid: 9bf1a073f3a70564587f4fddb90a2044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27059,7 +27139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161322860}
   - component: {fileID: 1161322861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28278,7 +28358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226114982}
   - component: {fileID: 1226114983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28361,7 +28441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945041201284721309, guid: f67f6ebe78bcc734782ea0d79d3c0971, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4945041201284721309, guid: f67f6ebe78bcc734782ea0d79d3c0971, type: 3}
       propertyPath: m_LocalScale.x
@@ -28992,7 +29072,7 @@ Transform:
   - {fileID: 121272079}
   - {fileID: 1231519678}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280060940
 GameObject:
@@ -30307,7 +30387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196444, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7548094088467196444, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30714,7 +30794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390211068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Furniture colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31018,7 +31098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423637313}
   - component: {fileID: 1423637314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31501,7 +31581,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453136507
 GameObject:
@@ -31531,7 +31611,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458307227
 GameObject:
@@ -32491,7 +32571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544615705
 GameObject:
@@ -34412,7 +34492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682976561}
   - component: {fileID: 1682976562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34590,7 +34670,7 @@ Transform:
   - {fileID: 914084592}
   - {fileID: 241640356}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690703254
 GameObject:
@@ -34875,7 +34955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708631360}
   - component: {fileID: 1708631361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35177,7 +35257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1539075263253267322, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1539075263253267322, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35845,7 +35925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770833896}
   - component: {fileID: 1770833897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38804,6 +38884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 8358737541085254315, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7154087904192141579, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
@@ -39447,7 +39531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069228636}
   - component: {fileID: 2069228637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39493,15 +39577,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.18595743, y: -0.32295513}
-      - {x: -0.52856445, y: -0.3652494}
-      - {x: -0.74384695, y: -0.51450944}
-      - {x: -0.7327857, y: -0.58576846}
+    - - {x: -0.21975136, y: -0.4484768}
+      - {x: -0.48028708, y: -0.4762876}
+      - {x: -0.63280827, y: -0.6158922}
+      - {x: -0.5782976, y: -0.7450843}
       - {x: -0.5367794, y: -0.8521974}
-      - {x: -0.1700806, y: -1.0073396}
-      - {x: -0.085139155, y: -0.9933324}
-      - {x: 0.34648323, y: -0.7563243}
-      - {x: 0.3984971, y: -0.72703224}
+      - {x: -0.203875, y: -0.9542345}
+      - {x: -0.07548368, y: -0.94505477}
+      - {x: 0.15820122, y: -0.7901187}
+      - {x: 0.18124819, y: -0.68358237}
 --- !u!1 &2072273558
 GameObject:
   m_ObjectHideFlags: 0

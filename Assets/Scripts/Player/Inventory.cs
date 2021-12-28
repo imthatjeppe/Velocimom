@@ -24,10 +24,12 @@ public class Inventory : MonoBehaviour
     private PlayerMovement playerMovement;
     private VelocimomBehaviour velocimomBehaviour;
     private bool unstableDrop;
+    private PlayerAudioHandler audiohandler;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audiohandler = player.GetComponentInChildren<PlayerAudioHandler>();
         inventory = new Stack<GameObject>();
         playerMovement = GetComponent<PlayerMovement>();
         velocimomBehaviour = velocimom.GetComponent<VelocimomBehaviour>();
@@ -47,7 +49,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(GameObject item)
     {
         if (isInventoryFull) return;
-
+        
         inventoryScore += item.GetComponent<FoodItem>().points;
 
         item.layer = 5;
@@ -60,6 +62,7 @@ public class Inventory : MonoBehaviour
         item.GetComponent<Image>().SetNativeSize();
         item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
+        audiohandler.PlayFoodPickUpSFX();
         inventory.Push(item);
         Debug.Log("added" + item.name);
     }
@@ -118,13 +121,14 @@ public class Inventory : MonoBehaviour
     {
         if (!playerMovement.isRunning) return;
         
-        if (playerMovement.isRunning && playerMovement.GetPlayerVelocity().magnitude != 0)
+        if (inventory.Count > 0 && playerMovement.GetPlayerVelocity().magnitude != 0)
         {
             int diceRoll = Random.Range(1, 3);
 
             if (diceRoll == 1 || diceRoll == 2)
             {
                 unstableDrop = true;
+                audiohandler.PlayFoodSlipSFX();
                 DropItem();
             }
             else

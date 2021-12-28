@@ -304,4 +304,6 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 21f1f9b0816d62141892a39b389393cd, type: 3}
   - {fileID: 8300000, guid: ad39673e46c90b5478df78ebcf431841, type: 3}
+  - {fileID: 8300000, guid: 36dd144780590bd4bb8c2234cd0f03b1, type: 3}
+  - {fileID: 8300000, guid: e9e32b3572ddd90418be24287ec67386, type: 3}
   audioSourcePreFab: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
