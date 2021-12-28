@@ -28,7 +28,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMovement = player.GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
 
         fridgeSFX = GetComponent<FridgeAudioHandler>();
