@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 5638731441358737267}
   - component: {fileID: 8147067367116418417}
   - component: {fileID: 5440309263643445900}
+  - component: {fileID: 7979150329049794867}
   m_Layer: 0
   m_Name: EnemyGraphics
   m_TagString: Untagged
@@ -176,6 +177,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1611be5a0319c4b9677cf760712834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7979150329049794867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7548094087620241353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceeef515ecf2b124593c43b752cf20fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSoruce: {fileID: 1021211159462653601}
+  audioClips:
+  - {fileID: 8300000, guid: a8e0c1e659426c846947705c26d8bc6e, type: 3}
+  - {fileID: 8300000, guid: ef653223e1afc474c9b0397c7f4f83b2, type: 3}
 --- !u!1 &7548094088467196422
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +208,6 @@ GameObject:
   - component: {fileID: 7548094088467196416}
   - component: {fileID: 7548094088467196423}
   - component: {fileID: 1021211159462653601}
-  - component: {fileID: 8241892164839708631}
   m_Layer: 0
   m_Name: Rigmor
   m_TagString: Enemy
@@ -243,6 +259,7 @@ MonoBehaviour:
   - {fileID: 0}
   spawnPoint: {fileID: 0}
   patrol: 0
+  playerIsDead: 0
   playerDetection: {fileID: 7548094086527956622}
   playerPathSpots: {fileID: 3691448685689933902, guid: 770069c31f4e789489e49a9b8bfa5abf, type: 3}
 --- !u!114 &7548094088467196418
@@ -441,18 +458,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8241892164839708631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7548094088467196422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceeef515ecf2b124593c43b752cf20fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSoruce: {fileID: 1021211159462653601}
-  audioClips:
-  - {fileID: 8300000, guid: a8e0c1e659426c846947705c26d8bc6e, type: 3}
