@@ -21,11 +21,13 @@ public class SearchFood : MonoBehaviour, IInteractable
     //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
     ChooseFoodItem chooseFood;
+    private GameObject player;
     private int atBubblePosInList = 0;
     private int alreadyCheckedPos = 0;
     private bool interacting = false;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
 
@@ -82,6 +84,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         if (atBubblePosInList <= bubbles.Length - 1)
         {
             bubbles[atBubblePosInList].SetActive(true);
+            fridgeSFX.PlayBubbleIncreaseSFX();
             if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))
             {
                 randomFoodItem = GetRandomFoodItem();
@@ -182,7 +185,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     void ResetUIIfToFarAway()
     {
-        if(Vector2.Distance(transform.position, playerMovement.transform.position) > 5 && searchingForFoodPanel.activeSelf)
+        if(Vector2.Distance(transform.position, player.transform.position) > 5 && searchingForFoodPanel.activeSelf)
         {
             CancelInvoke(nameof(SearchingFridge));
             ResetSearchUI();

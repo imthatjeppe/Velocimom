@@ -11,11 +11,13 @@ public class ChooseFoodItem : MonoBehaviour
     SearchFood searchFood;
     Image[] bubbles;
     Inventory inventory;
+    FridgeAudioHandler audioHandler;
     int atBubblePos = 0;
     int previousBubblePos = 0;
 
     void Start()
     {
+        audioHandler = GetComponent<FridgeAudioHandler>();
         searchFood = GetComponent<SearchFood>();
         bubbles = new Image[searchFood.bubbles.Length];
         int i = 0;
@@ -36,6 +38,7 @@ public class ChooseFoodItem : MonoBehaviour
         {
             AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
             PlayBubblePopAnimation();
+            audioHandler.PlayBubblePopSFX();
             DeactivateRarityOverlayUI();
         }
     }
