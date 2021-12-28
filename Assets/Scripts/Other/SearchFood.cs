@@ -28,7 +28,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMovement = player.GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
 
         fridgeSFX = GetComponent<FridgeAudioHandler>();
@@ -84,6 +84,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         if (atBubblePosInList <= bubbles.Length - 1)
         {
             bubbles[atBubblePosInList].SetActive(true);
+            fridgeSFX.PlayBubbleIncreaseSFX();
             if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))
             {
                 randomFoodItem = GetRandomFoodItem();
@@ -108,7 +109,6 @@ public class SearchFood : MonoBehaviour, IInteractable
         {
             bubble.SetActive(false);
         }
-        Debug.Log("Resetting search UI");
         searchingForFoodPanel.SetActive(false);
         chooseFood.enabled = false;
         playerMovement.speed = playerMovement.maxSpeed;
