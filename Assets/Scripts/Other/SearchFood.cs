@@ -82,6 +82,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         if (atBubblePosInList <= bubbles.Length - 1)
         {
             bubbles[atBubblePosInList].SetActive(true);
+            fridgeSFX.PlayBubbleIncreaseSFX();
             if (!bubbleFoodDic.ContainsKey(bubbles[atBubblePosInList]))
             {
                 randomFoodItem = GetRandomFoodItem();

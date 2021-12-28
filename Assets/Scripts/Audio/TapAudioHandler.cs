@@ -38,15 +38,17 @@ public class TapAudioHandler : MonoBehaviour
     }
     public void PlayTapStartSFX()
     {
-        audioSource.clip = audioClips[0];
-        audioSource.volume = 0.05f * Settings.volumeMagnitude;
-        audioSource.Play();
+        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[0];
+        instancedAudio.volume = 0.05f;
+        instancedAudio.Play();
     }
     public void PlayTapEndSFX()
     {
-        audioSource.clip = audioClips[1];
-        audioSource.volume = 0.05f * Settings.volumeMagnitude;
-        audioSource.Play();
+        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[1];
+        instancedAudio.volume = 0.05f;
+        instancedAudio.Play();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

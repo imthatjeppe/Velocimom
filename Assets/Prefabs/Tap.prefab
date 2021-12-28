@@ -317,7 +317,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 4939f25731f11084c880627588991cae, type: 3}
   - {fileID: 8300000, guid: 4cf139464e38f1f499b745a084832655, type: 3}
-  audioSource: {fileID: -14866358174578593}
+  audioSource: {fileID: 2449218330542610188, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
 --- !u!58 &8275282262334035841
 CircleCollider2D:
   m_ObjectHideFlags: 0
