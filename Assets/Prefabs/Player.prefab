@@ -138,6 +138,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b3a574290fc22d243b59cc6cc1feaf4d, type: 3}
   - {fileID: 8300000, guid: b1063c2bcec4b2a46afef6bbb9f66a7f, type: 3}
   - {fileID: 8300000, guid: 7c03821e9b4589e4a9fa44a65ac31d30, type: 3}
+  - {fileID: 8300000, guid: 72e51aec9365114498a3e750359f524d, type: 3}
 --- !u!114 &8268295711107198366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de47e7b9cff61ce4aa7d68ec0c58f524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  maxSpeed: 100
+  speed: 50
+  maxSpeed: 50
   currentstamina: 100
   loseSpeedAmount: 0.5
   staminaEncumberedDrain: 2
@@ -287,7 +288,7 @@ MonoBehaviour:
   currentInterObjScript: {fileID: 0}
   inventory: {fileID: 1893490672559561915}
   score: {fileID: 0}
-  canNotDie: 1
+  canNotDie: 0
 --- !u!114 &1893490672559561915
 MonoBehaviour:
   m_ObjectHideFlags: 0

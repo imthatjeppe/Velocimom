@@ -13,10 +13,12 @@ public class PlayerManager : MonoBehaviour
     private bool inDropZone;
 
     private PlayerMovement playerMovement;
+    PlayerAudioHandler audioHandler;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        audioHandler = GetComponentInChildren<PlayerAudioHandler>();
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class PlayerManager : MonoBehaviour
             {
                 dropAllItems();
                 score.ScoreVFX();
+                audioHandler.PlayHugoAlrightSFX();
             }
             else
             {

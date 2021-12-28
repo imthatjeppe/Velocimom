@@ -15,6 +15,7 @@ public class PlayerAudioHandler : MonoBehaviour
         3. HugoExhale
         4. FoodPickUp
         5. FoodSlip
+        6. HugoAlright
      */
 
     public void PlayHugoFootstepSFX()
@@ -30,7 +31,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[2];
-        instancedAudio.volume = 0.2f;
+        instancedAudio.volume = 0.05f;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
@@ -39,7 +40,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[3];
-        instancedAudio.volume = 0.2f;
+        instancedAudio.volume = 0.05f;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
@@ -57,6 +58,13 @@ public class PlayerAudioHandler : MonoBehaviour
         instancedAudio.clip = audioClips[5];
         instancedAudio.volume = 0.1f;
         instancedAudio.pitch = Random.Range(0.8f, 1.2f);
+        instancedAudio.Play();
+    }
+    public void PlayHugoAlrightSFX()
+    {
+        AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[6];
+        instancedAudio.volume = 0.1f;
         instancedAudio.Play();
     }
 }

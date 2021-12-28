@@ -109,7 +109,6 @@ public class SearchFood : MonoBehaviour, IInteractable
         {
             bubble.SetActive(false);
         }
-        Debug.Log("Resetting search UI");
         searchingForFoodPanel.SetActive(false);
         chooseFood.enabled = false;
         playerMovement.speed = playerMovement.maxSpeed;
