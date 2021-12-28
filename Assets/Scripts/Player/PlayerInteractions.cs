@@ -18,6 +18,7 @@ public class PlayerInteractions : MonoBehaviour
         if(canInteract && Input.GetKeyDown(KeyCode.E) && !GetInteracting())
         {
             interactable.Interact();
+            interactable.PlayInteractingSFX();
         }
     }
     public bool GetInteracting()

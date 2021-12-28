@@ -74,8 +74,7 @@ public class SearchFood : MonoBehaviour, IInteractable
             {
                 bubbles[i].SetActive(true);
             }
-        fridgeSFX.PlayOpenFridgeSFX();
-        InvokeRepeating(nameof(SearchingFridge),0,1);
+        InvokeRepeating(nameof(SearchingFridge),1f,1);
     }
     void SearchingFridge()
     {
@@ -189,5 +188,10 @@ public class SearchFood : MonoBehaviour, IInteractable
             CancelInvoke(nameof(SearchingFridge));
             ResetSearchUI();
         }
+    }
+
+    public void PlayInteractingSFX()
+    {
+        fridgeSFX.PlayOpenFridgeSFX();
     }
 }
