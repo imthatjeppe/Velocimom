@@ -49,8 +49,8 @@ public class VelocimomBehaviour : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        playerManager = player.GetComponent<PlayerManager>();
-        target = player.transform;
+        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         setDestination = GetComponent<AIDestinationSetter>();
 
@@ -79,8 +79,7 @@ public class VelocimomBehaviour : MonoBehaviour
         setDestination.target = moveSpots[randomDestinationSpot];
         patrol = true;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         Patrol();
