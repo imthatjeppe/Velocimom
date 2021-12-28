@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/Test/Jespers Lekh\xF6rna.unity"
     guid: 7ea1cacc3b893f247b225a04ba6c65b6
   - enabled: 1
+    path: Assets/Scenes/Levels/Level1New.unity
+    guid: b85c6f49512115542b3c37c03436b70f
+  - enabled: 0
     path: Assets/Scenes/Levels/Level1.unity
     guid: cfe31e1a3a76b364bb48263305c7521c
   - enabled: 0

@@ -137,11 +137,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Saferoom") && !playerDeception.enemyLure)
+        if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = true;
+            Debug.Log("InSafeRoom" + inSafeRoom);
             velocimomBehaviour.ClearPlayerPathSpots();
-            //playerDeception.Resume();
         }
     }
 
@@ -150,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = false;
+            Debug.Log("InSafeRoom" + inSafeRoom);
         }
     }
 
