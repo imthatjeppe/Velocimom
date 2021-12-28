@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = true;
-            Debug.Log("InSafeRoom" + inSafeRoom);
+            Debug.Log("InSafeRoom " + inSafeRoom);
             velocimomBehaviour.ClearPlayerPathSpots();
         }
     }
@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = false;
-            Debug.Log("InSafeRoom" + inSafeRoom);
+            Debug.Log("InSafeRoom " + inSafeRoom);
         }
     }
 

@@ -11,6 +11,7 @@ public class DetectPlayerInRange : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            Debug.Log("playerInRange " + playerInRange);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -18,6 +19,7 @@ public class DetectPlayerInRange : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
+            Debug.Log("playerInRange " + playerInRange);
         }
     }
 }

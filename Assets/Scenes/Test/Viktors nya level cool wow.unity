@@ -979,7 +979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39310999}
   - component: {fileID: 39311000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1699,7 +1699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83575922}
   - component: {fileID: 83575923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100508481}
   - component: {fileID: 100508482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entrance prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,7 +2426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142216092}
   - component: {fileID: 142216093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2525,7 +2525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 153660217}
   - component: {fileID: 153660218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hugo room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238864060}
   - component: {fileID: 238864061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,7 +3674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248600727}
   - component: {fileID: 248600728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entrance prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4707,7 +4707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333352422}
   - component: {fileID: 333352423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5536,7 +5536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369767904}
   - component: {fileID: 369767905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467531415}
   - component: {fileID: 467531416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hugo room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7077,7 +7077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 512050071}
   - component: {fileID: 512050072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9680,7 +9680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659418370}
   - component: {fileID: 659418371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9750,7 +9750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 661207768}
   - component: {fileID: 661207769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hallway prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9931,7 +9931,7 @@ PrefabInstance:
       objectReference: {fileID: 1723095009}
     - target: {fileID: 4405178565181954615, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: canNotDie
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: speed
@@ -10430,7 +10430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700808168}
   - component: {fileID: 700808169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11247,7 +11247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747533182}
   - component: {fileID: 747533183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11421,7 +11421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754224960}
   - component: {fileID: 754224961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23554,7 +23554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942847289}
   - component: {fileID: 942847290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dining room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23806,7 +23806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950477811}
   - component: {fileID: 950477812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24031,7 +24031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967423274}
   - component: {fileID: 967423275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24584,7 +24584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016686914}
   - component: {fileID: 1016686915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27059,7 +27059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161322860}
   - component: {fileID: 1161322861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28278,7 +28278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226114982}
   - component: {fileID: 1226114983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rigmor room prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30714,7 +30714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390211068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Furniture colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31018,7 +31018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423637313}
   - component: {fileID: 1423637314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34412,7 +34412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682976561}
   - component: {fileID: 1682976562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34875,7 +34875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708631360}
   - component: {fileID: 1708631361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35845,7 +35845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770833896}
   - component: {fileID: 1770833897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38804,6 +38804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 8358737541085254315, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7154087904192141579, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
@@ -39447,7 +39451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069228636}
   - component: {fileID: 2069228637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Livingroom prop colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -62,6 +62,17 @@ public class VelocimomBehaviour : MonoBehaviour
         audioHandler = GameObject.Find("EnemyGraphics").GetComponent<RigmorAudioHandler>();
     }
 
+    void Update()
+    {
+        Patrol();
+        SearchForPlayer();
+
+        if (detected)
+        {
+            ChasePlayer();
+        }
+    }
+
     public void SelectNewDestination()
     {
         detected = false;
@@ -78,17 +89,6 @@ public class VelocimomBehaviour : MonoBehaviour
         randomDestinationSpot = newRandomDestination;
         setDestination.target = moveSpots[randomDestinationSpot];
         patrol = true;
-    }
-    
-    void Update()
-    {
-        Patrol();
-        SearchForPlayer();
-
-        if (detected)
-        {
-            ChasePlayer();
-        }
     }
 
     void Patrol()
@@ -117,7 +117,7 @@ public class VelocimomBehaviour : MonoBehaviour
                 if (sightHit.collider.CompareTag("Player"))
                 {
                     Debug.Log("Player detected");
-                  
+
                     if (patrol || IsInvoking(nameof(SelectNewDestination)))
                     {
                         Debug.Log("Waiting for reaction time");
