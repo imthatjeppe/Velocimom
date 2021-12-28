@@ -11,7 +11,7 @@ public class Sorting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();    
+        rend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
