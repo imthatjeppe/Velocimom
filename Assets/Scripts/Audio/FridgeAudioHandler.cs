@@ -28,14 +28,14 @@ public class FridgeAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
-        instancedAudio.volume = 1f;
+        instancedAudio.volume = 0.3f;
         instancedAudio.Play();
     }
     public void PlayCloseFridgeSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[1];
-        instancedAudio.volume = 1f;
+        instancedAudio.volume = 0.3f;
         instancedAudio.Play();
     }
     public void PlayBubbleIncreaseSFX()
@@ -43,14 +43,14 @@ public class FridgeAudioHandler : MonoBehaviour
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[2];
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
-        instancedAudio.volume = 0.7f;
+        instancedAudio.volume = 0.05f;
         instancedAudio.Play();
     }
     public void PlayBubblePopSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[3];
-        instancedAudio.volume = 0.7f;
+        instancedAudio.volume = 0.05f;
         instancedAudio.Play();
     }
 }
