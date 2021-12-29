@@ -86,6 +86,7 @@ public class Inventory : MonoBehaviour
 
         if (unstableDrop)
         {
+            objectToDrop.GetComponent<FoodItem>().hasBeenDropped = true;
             objectToDrop.transform.position = player.transform.position + yAxisPlus;
             objectToDrop.transform.DOJump(unstableDropSpot, 0.75f, 1, 1.5f, false);
         }

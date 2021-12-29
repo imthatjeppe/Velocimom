@@ -25,11 +25,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && currentInterObj && inventory.isInventoryFull == false)
         {
-            if (currentInterObjScript)
+            if (currentInterObjScript && currentInterObj.GetComponent<FoodItem>().isPickupable)
             {
                 inventory.AddItem(currentInterObj);
             }
-            //currentInterObj.SendMessage("DoInteraction");
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
