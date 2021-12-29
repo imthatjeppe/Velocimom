@@ -91,7 +91,7 @@ Material:
     - _Thickness: 10
     - _TileMode: 0
     - _UVSec: 0
-    - _Weight: 0.47
+    - _Weight: 0.476
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,7 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _GradientOutline1: {r: 1, g: 1, b: 1, a: 1}
     - _GradientOutline2: {r: 1, g: 1, b: 1, a: 1}
-    - _ImageOutline: {r: 1, g: 1, b: 1, a: 1}
+    - _ImageOutline: {r: 1, g: 1, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SolidOutline: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
