@@ -324,9 +324,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25, y: -0.66}
+  m_Offset: {x: -1.1049417, y: 0.02964184}
   serializedVersion: 2
-  m_Radius: 1.35
+  m_Radius: 2.071312
 --- !u!212 &81960674
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -395,4 +395,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4cf139464e38f1f499b745a084832655, type: 3}
   startVolume: 0.05
   endVolume: 0.05
-  audioSource: {fileID: 0}
