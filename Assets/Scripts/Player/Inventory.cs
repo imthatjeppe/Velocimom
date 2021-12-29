@@ -64,7 +64,6 @@ public class Inventory : MonoBehaviour
 
         audiohandler.PlayFoodPickUpSFX();
         inventory.Push(item);
-        Debug.Log("added" + item.name);
     }
 
     public void DropItem()
@@ -83,7 +82,6 @@ public class Inventory : MonoBehaviour
         objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
         objectToDrop.transform.SetParent(foodItems.transform, true);
-
         if (unstableDrop)
         {
             objectToDrop.transform.position = player.transform.position + yAxisPlus;
@@ -100,9 +98,6 @@ public class Inventory : MonoBehaviour
         {
             Destroy(objectToDrop);
         }
-
-        Debug.Log("dropped" + objectToDrop.name);
-        Debug.Log("Items in inventory: " + inventory.Count);
     }
 
     public void InventoryFullChecker()

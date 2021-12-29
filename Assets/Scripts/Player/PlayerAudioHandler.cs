@@ -16,6 +16,7 @@ public class PlayerAudioHandler : MonoBehaviour
         4. FoodPickUp
         5. FoodSlip
         6. HugoAlright
+        7. DropFood
      */
 
     public void PlayHugoFootstepSFX()
@@ -64,6 +65,13 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[6];
+        instancedAudio.volume = 0.1f;
+        instancedAudio.Play();
+    }
+    public void PlayDropFoodSFX()
+    {
+        AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[7];
         instancedAudio.volume = 0.1f;
         instancedAudio.Play();
     }

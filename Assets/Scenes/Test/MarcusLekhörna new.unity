@@ -10060,21 +10060,17 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 790510860, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
-      propertyPath: sfxAudioSource
-      value: 
-      objectReference: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: -11.87
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35343,18 +35339,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
-      propertyPath: m_Volume
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
-      propertyPath: m_audioClip
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: NextLevel
       value: 
-      objectReference: {fileID: 8300000, guid: 0afbeac6f3395784a998815eee26c638, type: 3}
-    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1178094135}
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: scoreNeeded
+      value: 
+      objectReference: {fileID: 1296929099}
     - target: {fileID: 1539075263253267320, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -1.0326396
@@ -35427,6 +35419,14 @@ PrefabInstance:
       propertyPath: totalScore
       value: 
       objectReference: {fileID: 2086186566}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 667674435}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 82671382}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
 --- !u!1 &1723095005 stripped
@@ -35434,50 +35434,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1539075263253267321, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
   m_PrefabInstance: {fileID: 1723095004}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1723095006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336931a98d07ec44982dc3e02c1bcacd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1723095007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399e9014d406e194284274b738a641ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 667674435}
-  timerText: {fileID: 82671382}
-  timeLeft: 500
-  isTimeTicking: 1
---- !u!114 &1723095008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e4b29d7509fff45be3e9f026a00751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreForNextLevel: 1000
-  NextLevelPaused: 0
-  NextLevel: {fileID: 1178094135}
-  scoreNeeded: {fileID: 1296929099}
 --- !u!114 &1723095009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1539075263253267325, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
@@ -38888,10 +38844,6 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fb689e241afcce143a14ece7797f6874, type: 3}
     - target: {fileID: 953703817144330289, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: m_SortingOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
-      propertyPath: bubbles.Array.size
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}

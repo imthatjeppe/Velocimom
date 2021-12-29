@@ -145,9 +145,6 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
        
         rarityOverlayAnimators[atPos].SetBool(boolName, activeAnimation);
-
-       
-        Debug.Log(boolName);
     }
     void CorrectShinyRareRank3UIPosition(int atPos)
     {

@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     VelocimomBehaviour velocimomBehaviour;
     Inventory inventoryScriptObject;
     Rigidbody2D rigidBody;
+    PlayerInteractions playerInteractions;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponentInChildren<PlayerAudioHandler>();
         rigidBody = GetComponent<Rigidbody2D>();
+        playerInteractions = GetComponent<PlayerInteractions>();
     }
 
     void Update()
@@ -49,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Move();
+        if(!playerInteractions.GetInteracting())
+            Move();
     }
 
     void Move()
@@ -140,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = true;
-            Debug.Log("InSafeRoom " + inSafeRoom);
             velocimomBehaviour.ClearPlayerPathSpots();
         }
     }
@@ -150,7 +152,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Saferoom"))
         {
             inSafeRoom = false;
-            Debug.Log("InSafeRoom " + inSafeRoom);
         }
     }
 

@@ -78,7 +78,6 @@ public class VelocimomBehaviour : MonoBehaviour
         detected = false;
 
         pathFinder.maxSpeed = patrolSpeed;
-        Debug.Log("New point selected");
 
         //Select a new random point, avoid the one in use.
         int newRandomDestination = Random.Range(0, moveSpots.Length);
@@ -97,7 +96,6 @@ public class VelocimomBehaviour : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, moveSpots[randomDestinationSpot].position) < distance)
             {
-                Debug.Log("Waiting to select new point");
                 Invoke(nameof(SelectNewDestination), waitTime);
                 patrol = false;
             }
@@ -116,11 +114,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
-                    Debug.Log("Player detected");
 
                     if (patrol || IsInvoking(nameof(SelectNewDestination)))
                     {
-                        Debug.Log("Waiting for reaction time");
                         CancelInvoke(nameof(SelectNewDestination));
                         Invoke(nameof(ReactionTime), invincibleTime);
                         audioHandler.PlayRigmorDetectionRoarSFX();
@@ -164,7 +160,6 @@ public class VelocimomBehaviour : MonoBehaviour
             {
                 //TODO: remove player controls
                 //TODO: play death animation or such
-                Debug.Log("I dieded");
                 detected = false;
                 Invoke(nameof(Death), 0.5f);
             }
@@ -172,7 +167,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (player.inSafeRoom)
         {
-            Debug.Log("Back to patrol");
 
             SelectNewDestination();
         }

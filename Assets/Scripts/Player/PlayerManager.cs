@@ -43,6 +43,10 @@ public class PlayerManager : MonoBehaviour
             else
             {
                 inventory.DropItem();
+                if(inventory.inventoryCount > 0)
+                {
+                    audioHandler.PlayDropFoodSFX();
+                }
             }
         }
     }

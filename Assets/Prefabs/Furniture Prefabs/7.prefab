@@ -108,7 +108,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  searchingForFoodPanel: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
+  searchingForFoodPanel: {fileID: 0}
   foodItems:
   - {fileID: 7949745787127229955, guid: 57499370f8ff6a344a83059a91ec155e, type: 3}
   - {fileID: 6864798889104110000, guid: 98c0f857fdecabb40abff8104a0feffb, type: 3}
