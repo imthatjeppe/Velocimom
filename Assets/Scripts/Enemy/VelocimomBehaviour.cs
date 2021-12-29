@@ -48,6 +48,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
     void Start()
     {
+        detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -57,7 +58,6 @@ public class VelocimomBehaviour : MonoBehaviour
         pathFinder = GetComponent<AIPath>();
         SelectNewDestination();
 
-        detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
         playerSpotsToFollow = new List<GameObject>();
         audioHandler = GameObject.Find("EnemyGraphics").GetComponent<RigmorAudioHandler>();
     }
