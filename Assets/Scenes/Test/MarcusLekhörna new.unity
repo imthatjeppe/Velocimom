@@ -1579,6 +1579,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &68410068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
+  m_PrefabInstance: {fileID: 1970633779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &68583618
 GameObject:
   m_ObjectHideFlags: 0
@@ -10065,11 +10070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 1042514175716146186, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35338,6 +35343,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: m_Volume
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0afbeac6f3395784a998815eee26c638, type: 3}
+    - target: {fileID: 769651804252277541, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1539075263253267320, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -1.0326396
@@ -38312,7 +38329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503003896683063202, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
       propertyPath: m_Pivot.x
@@ -38484,7 +38501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875712783452039590, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
@@ -38918,6 +38935,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1970633780}
     - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: searchingForFoodPanel
+      value: 
+      objectReference: {fileID: 68410068}
+    - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: bubbles.Array.data[10]
       value: 
       objectReference: {fileID: 1970633780}
@@ -39005,6 +39026,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.91042775
       objectReference: {fileID: 0}
+    - target: {fileID: 6093937328704071816, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e30c0b45c6f96e47891b87d23b6168b, type: 2}
     - target: {fileID: 7229340040633552013, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: m_Name
       value: Fridge
