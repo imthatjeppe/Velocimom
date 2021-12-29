@@ -12,6 +12,12 @@ public class FoodItem : MonoBehaviour
     public bool normalQuality;
     public bool glitterQuality;
     public bool shinyRareQuality;
+    public bool hasBeenDropped = false;
+    public bool isPickupable = true;
+
+
+    private float timerToPickupable;
+    private float timerReset = 1.75f;
 
     private void Start()
     {
@@ -26,6 +32,24 @@ public class FoodItem : MonoBehaviour
         else if (shinyRareQuality)
         {
             points *= 2f;
+        }
+
+        timerToPickupable = timerReset;
+    }
+
+    private void Update()
+    {
+        if (hasBeenDropped)
+        {
+            isPickupable = false;
+            timerToPickupable -= Time.deltaTime;
+
+            if (timerToPickupable <= 0)
+            {
+                isPickupable = true;
+                hasBeenDropped = false;
+                timerToPickupable = timerReset;
+            }
         }
     }
 

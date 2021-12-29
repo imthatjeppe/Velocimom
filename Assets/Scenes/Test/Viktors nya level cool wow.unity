@@ -7208,6 +7208,11 @@ PolygonCollider2D:
       - {x: -0.6172855, y: -1.9406539}
       - {x: 0.32841396, y: -1.3771393}
       - {x: 0.39887327, y: -0.094767034}
+--- !u!1 &514763326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
+  m_PrefabInstance: {fileID: 1970633779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &517111525
 GameObject:
   m_ObjectHideFlags: 0
@@ -8118,6 +8123,10 @@ PrefabInstance:
     - target: {fileID: 8268512020118607351, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
       propertyPath: m_Name
       value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268512020118607351, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8268512020118607351, guid: b26a8d03c863e2647baba91a49e3cc06, type: 3}
       propertyPath: m_IsActive
@@ -35235,6 +35244,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: NextLevel
+      value: 
+      objectReference: {fileID: 1377185357}
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: scoreNeeded
+      value: 
+      objectReference: {fileID: 1296929099}
     - target: {fileID: 1539075263253267320, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -1.0326396
@@ -35307,6 +35324,14 @@ PrefabInstance:
       propertyPath: totalScore
       value: 
       objectReference: {fileID: 2086186566}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 667674435}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 2086186566}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
 --- !u!1 &1723095005 stripped
@@ -35314,50 +35339,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1539075263253267321, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
   m_PrefabInstance: {fileID: 1723095004}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1723095006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336931a98d07ec44982dc3e02c1bcacd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1723095007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399e9014d406e194284274b738a641ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 667674435}
-  timerText: {fileID: 82671382}
-  timeLeft: 500
-  isTimeTicking: 1
---- !u!114 &1723095008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e4b29d7509fff45be3e9f026a00751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreForNextLevel: 1000
-  NextLevelPaused: 0
-  NextLevel: {fileID: 1178094135}
-  scoreNeeded: {fileID: 1296929099}
 --- !u!114 &1723095009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1539075263253267325, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
@@ -36631,6 +36612,10 @@ PrefabInstance:
       value: Pizza
       objectReference: {fileID: 0}
     - target: {fileID: 6864798889104110000, guid: 98c0f857fdecabb40abff8104a0feffb, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864798889104110000, guid: 98c0f857fdecabb40abff8104a0feffb, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -37299,6 +37284,10 @@ PrefabInstance:
     - target: {fileID: 5502277885583534054, guid: 3ebcb0a3fda5070458dcc0e78578d11a, type: 3}
       propertyPath: m_Name
       value: Donut
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502277885583534054, guid: 3ebcb0a3fda5070458dcc0e78578d11a, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5502277885583534054, guid: 3ebcb0a3fda5070458dcc0e78578d11a, type: 3}
       propertyPath: m_IsActive
@@ -38600,6 +38589,10 @@ PrefabInstance:
       propertyPath: bubbles.Array.data[9]
       value: 
       objectReference: {fileID: 1970633780}
+    - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: searchingForFoodPanel
+      value: 
+      objectReference: {fileID: 514763326}
     - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: bubbles.Array.data[10]
       value: 
