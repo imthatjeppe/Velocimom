@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Bools")]
     public bool hidden;
     public bool releasedStaminaKey;
-    public bool inSafeRoom;
+    public bool inSafeRoom = true;
     public bool isRunning;
 
     [Header("GameObjects")]

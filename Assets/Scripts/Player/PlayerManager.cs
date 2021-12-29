@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (inDropZone)
+            if (inDropZone && inventory.inventoryCount != 0)
             {
                 dropAllItems();
                 score.ScoreVFX();

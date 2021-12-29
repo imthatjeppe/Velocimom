@@ -12643,6 +12643,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 570797781, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 570797783, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -12729,7 +12733,7 @@ PrefabInstance:
       objectReference: {fileID: 1723095009}
     - target: {fileID: 4405178565181954615, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: canNotDie
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746167037677706734, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: speed
@@ -35625,6 +35629,10 @@ PrefabInstance:
       propertyPath: waitTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 667674435}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: spawnPoint
       value: 
