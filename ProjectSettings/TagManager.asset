@@ -13,6 +13,7 @@ TagManager:
   - Tap
   - Furniture
   - BathroomButton
+  - Bathroom
   layers:
   - Default
   - TransparentFX
