@@ -4991,6 +4991,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6317777672763049755, guid: 98c0f857fdecabb40abff8104a0feffb, type: 3}
   m_PrefabInstance: {fileID: 241640355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &244635712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
+  m_PrefabInstance: {fileID: 1970633779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &248600726
 GameObject:
   m_ObjectHideFlags: 0
@@ -41942,6 +41947,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: NextLevel
+      value: 
+      objectReference: {fileID: 1377185357}
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: scoreNeeded
+      value: 
+      objectReference: {fileID: 1296929099}
     - target: {fileID: 1539075263253267320, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -1.0326396
@@ -42014,6 +42027,14 @@ PrefabInstance:
       propertyPath: totalScore
       value: 
       objectReference: {fileID: 2086186566}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 667674435}
+    - target: {fileID: 3814880542940741392, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 82671382}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
 --- !u!1 &1723095005 stripped
@@ -42033,38 +42054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336931a98d07ec44982dc3e02c1bcacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1723095007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399e9014d406e194284274b738a641ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 667674435}
-  timerText: {fileID: 82671382}
-  timeLeft: 500
-  isTimeTicking: 1
---- !u!114 &1723095008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723095005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e4b29d7509fff45be3e9f026a00751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreForNextLevel: 1000
-  NextLevelPaused: 0
-  NextLevel: {fileID: 1178094135}
-  scoreNeeded: {fileID: 1296929099}
 --- !u!114 &1723095009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1539075263253267325, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
@@ -46327,6 +46316,10 @@ PrefabInstance:
       propertyPath: bubbles.Array.data[9]
       value: 
       objectReference: {fileID: 1970633780}
+    - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
+      propertyPath: searchingForFoodPanel
+      value: 
+      objectReference: {fileID: 244635712}
     - target: {fileID: 1296749200916581225, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: bubbles.Array.data[10]
       value: 
