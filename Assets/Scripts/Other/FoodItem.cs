@@ -33,6 +33,8 @@ public class FoodItem : MonoBehaviour
         {
             points *= 2f;
         }
+
+        timerToPickupable = timerReset;
     }
 
     private void Update()
@@ -40,13 +42,13 @@ public class FoodItem : MonoBehaviour
         if (hasBeenDropped)
         {
             isPickupable = false;
-            timerToPickupable = timerReset;
             timerToPickupable -= Time.deltaTime;
 
             if (timerToPickupable <= 0)
             {
                 isPickupable = true;
                 hasBeenDropped = false;
+                timerToPickupable = timerReset;
             }
         }
     }
