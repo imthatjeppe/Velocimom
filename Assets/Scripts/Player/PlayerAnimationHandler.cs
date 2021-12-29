@@ -6,7 +6,6 @@ public class PlayerAnimationHandler : MonoBehaviour
 {
     PlayerMovement playerMovement;
     Inventory playerInventory;
-    PlayerAudioHandler audioHandler;
     Animator animator;
     SpriteRenderer sprite;
 
@@ -14,7 +13,6 @@ public class PlayerAnimationHandler : MonoBehaviour
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
         playerInventory = GetComponentInParent<Inventory>();
-        audioHandler = GetComponentInParent<PlayerAudioHandler>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }

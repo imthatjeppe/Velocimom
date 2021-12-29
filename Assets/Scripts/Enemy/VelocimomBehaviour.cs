@@ -27,6 +27,7 @@ public class VelocimomBehaviour : MonoBehaviour
     [Header("GameObjects")]
     public GameObject playerDetection;
     public GameObject playerPathSpots;
+    public GameObject playerObj;
 
     private DetectPlayerInRange detectPlayerInRange;
     private RigmorAudioHandler audioHandler;
@@ -41,7 +42,7 @@ public class VelocimomBehaviour : MonoBehaviour
     private int randomDestinationSpot;
     private int losPathAt = 0;
 
-    private bool detected;
+    private bool detected = false;
     private bool lostLineOfSight;
 
     private List<GameObject> playerSpotsToFollow;
@@ -49,9 +50,9 @@ public class VelocimomBehaviour : MonoBehaviour
     void Start()
     {
         detectPlayerInRange = playerDetection.GetComponent<DetectPlayerInRange>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = playerObj.GetComponent<PlayerMovement>();
+        playerManager = playerObj.GetComponent<PlayerManager>();
+        target = playerObj.transform;
 
         setDestination = GetComponent<AIDestinationSetter>();
 
@@ -167,7 +168,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (player.inSafeRoom)
         {
-
             SelectNewDestination();
         }
 
@@ -184,6 +184,8 @@ public class VelocimomBehaviour : MonoBehaviour
         playerIsDead = true;
         playerManager.dropAllItems();
         PlayerHealth.playerHealth -= 1;
+        Debug.Log("target = " + target);
+        Debug.Log("spawnpoint = " + spawnPoint);
         target.position = spawnPoint.position;
         playerIsDead = false;
         SelectNewDestination();

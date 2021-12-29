@@ -53,7 +53,6 @@ public class SearchFood : MonoBehaviour, IInteractable
     {
         if (Input.GetKeyDown(KeyCode.Escape) && searchingForFoodPanel.activeSelf)
         {
-            
             // Setting interacting false in delay so that Pause menu doesnt pop up when clicking escape
             Invoke(nameof(SetInteractingFalse), 0.5f);
             CancelInvoke(nameof(SearchingFridge));
