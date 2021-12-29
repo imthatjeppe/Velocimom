@@ -8,6 +8,10 @@ public class DarkeningEffect : MonoBehaviour
 {
     public bool playerInRoom;
 
+    public Color darkenedColor;
+    public Color normalColor;
+
+    SpriteRenderer[] furniture;
     LightAudioHandler lightSFX;
     SpriteShapeRenderer darkRoomSprite;
 
@@ -15,6 +19,14 @@ public class DarkeningEffect : MonoBehaviour
     {
         lightSFX = GetComponent<LightAudioHandler>();
         darkRoomSprite = GetComponentInParent<SpriteShapeRenderer>();
+        furniture = GetComponentsInChildren<SpriteRenderer>();
+
+        darkenedColor = new Color(0.5f, 0.5f, 0.5f);
+        normalColor = new Color(1, 1, 1);
+    }
+    private void Update()
+    {
+        PutLightScaleOnFurniture();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,6 +43,23 @@ public class DarkeningEffect : MonoBehaviour
         {
             darkRoomSprite.transform.DOMoveZ(0, 1);
             playerInRoom = false;
+        }
+    }
+    private void PutLightScaleOnFurniture()
+    {
+        if (playerInRoom)
+        {
+            foreach (SpriteRenderer furniture in furniture)
+            {
+                furniture.color = normalColor;
+            }
+        }
+        else
+        {
+            foreach (SpriteRenderer furniture in furniture)
+            {
+                furniture.color = darkenedColor;
+            }
         }
     }
 }
