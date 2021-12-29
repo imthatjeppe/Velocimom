@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeceptionAudioHandler : MonoBehaviour
+public class DeceptionFXHandler : MonoBehaviour
 {
     public AudioClip[] audioClips;
     public float startVolume;
@@ -15,11 +15,19 @@ public class DeceptionAudioHandler : MonoBehaviour
     private bool inDeceptionRange = false;
     private bool stopDeceptionSoundCanBePlayed = false;
     GameObject deceptionMoveSpot;
+    DeceptionVFX deceptionVFX;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         rigmor = GameObject.FindGameObjectWithTag("Enemy");
         deceptionMoveSpot = transform.GetChild(0).gameObject;
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<DeceptionVFX>() != null)
+                deceptionVFX = transform.GetChild(i).GetComponent<DeceptionVFX>();
+        }
+
         oldVolume = audioSource.volume;
         audioSource.volume *= Settings.volumeMagnitude;
     }
@@ -32,6 +40,7 @@ public class DeceptionAudioHandler : MonoBehaviour
             PlayDeceptionStartSFX();
             stopDeceptionSoundCanBePlayed = true;
             oneDeceptionAlreadyActive = true;
+            TurnOnOffDeceptionVFX(true);
         }
         //Turning of the tap sfx when rigmor is in range of the tap
         if (Vector2.Distance(rigmor.transform.position, deceptionMoveSpot.transform.position) < 1 && stopDeceptionSoundCanBePlayed)
@@ -39,6 +48,7 @@ public class DeceptionAudioHandler : MonoBehaviour
             PlayDeceptionEndSFX();
             stopDeceptionSoundCanBePlayed = false;
             oneDeceptionAlreadyActive = false;
+            TurnOnOffDeceptionVFX(false);
         }
 
         if (oldVolume * Settings.volumeMagnitude != audioSource.volume)
@@ -57,6 +67,22 @@ public class DeceptionAudioHandler : MonoBehaviour
         audioSource.clip = audioClips[1];
         audioSource.volume = endVolume;
         audioSource.Play();
+    }
+    void TurnOnOffDeceptionVFX(bool trunOn)
+    {
+        if (deceptionVFX == null)
+        {
+            return;
+        }
+
+        if (trunOn)
+        {
+            deceptionVFX.ActivateEffect();
+        }
+        else
+        {
+            deceptionVFX.DeactivateEffect();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
