@@ -35,7 +35,6 @@ public class PlayerDecption : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("Resuming");
         enemyLure = false;
 
         velocimom.SelectNewDestination();
