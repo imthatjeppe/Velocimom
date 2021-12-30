@@ -28,7 +28,7 @@ public class FoodStackBehaviour : MonoBehaviour
     }
     void UpdateFoodStack()
     {
-        if(oldInventoryCount != inventory.inventoryCount)
+        if (oldInventoryCount != inventory.inventoryCount)
         {
             oldInventoryCount = inventory.inventoryCount;
             spriteRenderer.sprite = stackSprites[inventory.inventoryCount];
@@ -39,7 +39,7 @@ public class FoodStackBehaviour : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0.01f)
         {
             spriteRenderer.flipX = true;
-            
+
             if (!flipped)
             {
                 transform.localPosition = new Vector2(0.26f, transform.localPosition.y);
@@ -58,19 +58,32 @@ public class FoodStackBehaviour : MonoBehaviour
     }
     void ChangeOrderInLayerUpWards()
     {
-        if(Input.GetAxisRaw("Horizontal") != 0)
-            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + lastWalkedVertical;
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.5f, Vector2.down);
+        SpriteRenderer other = null;
+        if (hit.transform.gameObject.CompareTag("Furniture") && hit.transform.parent != null && hit.transform.parent.gameObject.GetComponent<SpriteRenderer>() != null)
+        {
+            other = hit.transform.parent.gameObject.GetComponent<SpriteRenderer>();
+            if ((other.sortingOrder - spriteRenderer.sortingOrder) * (other.sortingOrder - spriteRenderer.sortingOrder) == 1 || other.sortingOrder == spriteRenderer.sortingOrder)
+            {
+                spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder;
+            }
+            return;
+        }
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
+                spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + lastWalkedVertical;
 
         if (Input.GetAxisRaw("Vertical") > 0.01f)
         {
-            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder - 1;
             lastWalkedVertical = -1;
+            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder - 1;
         }
         else if (Input.GetAxisRaw("Vertical") < -0.01f)
         {
-            lastWalkedVertical = playerSpriteRenderer.sortingOrder + 1;
-            spriteRenderer.sortingOrder = 1;
-        }else if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
+            lastWalkedVertical = 1;
+            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + 1;
+        }
+        else if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
         {
             spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + 1;
         }
