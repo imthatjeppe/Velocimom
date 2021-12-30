@@ -8,12 +8,14 @@ public class FoodStackBehaviour : MonoBehaviour
 
     Inventory inventory;
     SpriteRenderer spriteRenderer;
+    SpriteRenderer playerSpriteRenderer;
     bool flipped = false;
     int lastWalkedVertical = 0;
     int oldInventoryCount = 0;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerSpriteRenderer = GameObject.Find("PlayerGraphics").GetComponent<SpriteRenderer>();
         inventory = transform.parent.GetComponent<Inventory>();
     }
 
@@ -57,20 +59,20 @@ public class FoodStackBehaviour : MonoBehaviour
     void ChangeOrderInLayerUpWards()
     {
         if(Input.GetAxisRaw("Horizontal") != 0)
-            spriteRenderer.sortingOrder = lastWalkedVertical;
+            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + lastWalkedVertical;
 
         if (Input.GetAxisRaw("Vertical") > 0.01f)
         {
-            spriteRenderer.sortingOrder = -1;
+            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder - 1;
             lastWalkedVertical = -1;
         }
         else if (Input.GetAxisRaw("Vertical") < -0.01f)
         {
-            lastWalkedVertical = 1;
+            lastWalkedVertical = playerSpriteRenderer.sortingOrder + 1;
             spriteRenderer.sortingOrder = 1;
         }else if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
         {
-            spriteRenderer.sortingOrder = 1;
+            spriteRenderer.sortingOrder = playerSpriteRenderer.sortingOrder + 1;
         }
     }
 }

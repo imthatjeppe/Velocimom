@@ -51,6 +51,7 @@ public class PlayerAudioHandler : MonoBehaviour
         instancedAudio.clip = audioClips[4];
         instancedAudio.volume = 0.2f;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
+        instancedAudio.spatialBlend = 0;
         instancedAudio.Play();
     }
     public void PlayFoodSlipSFX()
@@ -65,7 +66,8 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[6];
-        instancedAudio.volume = 0.1f;
+        instancedAudio.volume = 0.2f;
+        instancedAudio.spatialBlend = 0;
         instancedAudio.Play();
     }
     public void PlayDropFoodSFX()
@@ -73,6 +75,7 @@ public class PlayerAudioHandler : MonoBehaviour
         AudioSource instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[7];
         instancedAudio.volume = 0.1f;
+        instancedAudio.spatialBlend = 0;
         instancedAudio.Play();
     }
 }

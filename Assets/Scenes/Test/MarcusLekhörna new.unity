@@ -1670,6 +1670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &68410068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 503003896683063201, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
@@ -3727,6 +3729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &238864059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7622,6 +7626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &470814094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,6 +9365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &573220798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12241,6 +12249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &677499885
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12520,15 +12530,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3057698591180209300, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.047169805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3057698591180209300, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.045946058
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3057698591180209300, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.045167312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3057698591180209303, guid: f1d35c370c24eb2439d3ecabd942c7d3, type: 3}
       propertyPath: m_Name
@@ -26005,6 +26015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!60 &946657470
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -29068,6 +29080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1145460913
 GameObject:
   m_ObjectHideFlags: 0
@@ -33047,6 +33061,10 @@ PrefabInstance:
       propertyPath: waitTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 8942691265288721260}
     - target: {fileID: 7548094088467196419, guid: 7e11b28985879794e97f98df4773df8b, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -41656,6 +41674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRoom: 0
+  darkenedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1979507207
 GameObject:
   m_ObjectHideFlags: 0
@@ -44508,11 +44528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5090974881961929, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 5090974881961929, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5090974881961929, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44549,6 +44569,22 @@ PrefabInstance:
     - target: {fileID: 1037471857516561684, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037471857651434073, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037471857651434073, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
+      propertyPath: m_Size.y
+      value: 3.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037471857651434073, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5d13c44621363e4dbccadab02fd8dbb, type: 3}
+    - target: {fileID: 1037471857651434073, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1450951365967050616, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: canvas
