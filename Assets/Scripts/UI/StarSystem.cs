@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StarSystem : MonoBehaviour
 {
     public GameObject star, star2, star3;
+    public Slider starScoreSlider;
+
     public float star1Score, star2Score, star3Score;
 
     private Score scoreNeeded;
@@ -24,6 +27,7 @@ public class StarSystem : MonoBehaviour
     void Update()
     {
         starscore();
+        starSlider();
     }
 
     public void starscore()
@@ -40,5 +44,10 @@ public class StarSystem : MonoBehaviour
         {
             star3.gameObject.SetActive(true);
         }
+    }
+
+    public void starSlider()
+    {
+        starScoreSlider.value = scoreNeeded.score;
     }
 }
