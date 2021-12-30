@@ -184,8 +184,6 @@ public class VelocimomBehaviour : MonoBehaviour
         playerIsDead = true;
         playerManager.dropAllItems();
         PlayerHealth.playerHealth -= 1;
-        Debug.Log("target = " + target);
-        Debug.Log("spawnpoint = " + spawnPoint);
         target.position = spawnPoint.position;
         playerIsDead = false;
         SelectNewDestination();
