@@ -505,6 +505,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &32544434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 570797781, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+  m_PrefabInstance: {fileID: 1506955878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &32544436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32544434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe9974f11e111479b195bd7c2da456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingPoint: {fileID: 888533909}
 --- !u!1 &32969699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,8 +2266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &163858997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,8 +3196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 2052070819}
-  rend: {fileID: 0}
 --- !u!1 &195353333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,8 +4137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &214385801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,8 +6041,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 1778256758}
-  rend: {fileID: 0}
+--- !u!1 &352285100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352285101}
+  m_Layer: 0
+  m_Name: SofaSorting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &352285101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352285100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.11, y: -1.16, z: -64.13712}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1715922974}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &366909898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7906,8 +7946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &518349922
 GameObject:
   m_ObjectHideFlags: 0
@@ -9495,8 +9533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &639043607
 GameObject:
   m_ObjectHideFlags: 0
@@ -12718,8 +12754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 1761042337}
-  rend: {fileID: 0}
 --- !u!1 &855990480
 GameObject:
   m_ObjectHideFlags: 0
@@ -12941,6 +12975,11 @@ Transform:
   m_Father: {fileID: 1869271963}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &888533909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4556821558144491454, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+  m_PrefabInstance: {fileID: 1506955878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &900190891
 GameObject:
   m_ObjectHideFlags: 0
@@ -13736,8 +13775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &947217138
 GameObject:
   m_ObjectHideFlags: 0
@@ -16883,8 +16920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &1195914831
 GameObject:
   m_ObjectHideFlags: 0
@@ -20621,8 +20656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 681228054}
-  rend: {fileID: 0}
 --- !u!1 &1401703546
 GameObject:
   m_ObjectHideFlags: 0
@@ -20909,8 +20942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a664a16dd9844694abed9a6254b082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingPoint: {fileID: 0}
-  rend: {fileID: 0}
 --- !u!1 &1438712859
 GameObject:
   m_ObjectHideFlags: 0
@@ -25268,6 +25299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715922974}
   - component: {fileID: 1715922973}
+  - component: {fileID: 1715922975}
   m_Layer: 0
   m_Name: spr_sofa_merged
   m_TagString: Untagged
@@ -25336,10 +25368,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.04, y: -1.69, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 352285101}
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715922975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715922972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe9974f11e111479b195bd7c2da456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingPoint: {fileID: 0}
 --- !u!1 &1720036793
 GameObject:
   m_ObjectHideFlags: 0
