@@ -8,6 +8,7 @@ public class ChooseFoodItem : MonoBehaviour
 {
     public Material outline;
     public Material noOutline;
+    public TextMeshProUGUI text;
 
     SearchFood searchFood;
     Image[] bubbles;
@@ -16,11 +17,9 @@ public class ChooseFoodItem : MonoBehaviour
     List<int> alreadyPickedPos;
     int atBubblePos = 0;
     int previousBubblePos = 0;
-    public TextMeshProUGUI text;
 
     void Start()
     {
-       // text = GameObject.Find("SearchingText").GetComponent<TextMeshProUGUI>();
         text.text = "Searching...";
         alreadyPickedPos = new List<int>();
         audioHandler = GetComponent<FridgeAudioHandler>();

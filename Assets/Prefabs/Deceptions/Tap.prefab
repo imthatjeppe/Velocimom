@@ -55,13 +55,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716426071695484766}
-  m_LocalRotation: {x: 0, y: 0, z: 0.017888684, w: 0.99984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07, y: 1.26, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05272074}
   m_Children: []
   m_Father: {fileID: 1716426073140148352}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.05}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1716426071695484763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15000
   m_Sprite: {fileID: 21300000, guid: 612f69a9c7e9dd14f93fc8fc33340e32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,7 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a631e2d0aa9780d458ea72296f307d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPoint: 1.7
+  endPoint: -2
+  choosePlayerDeception: Tap
+  chooseRoom: Bathroom
 --- !u!1 &1716426072480133277
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +433,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4cf139464e38f1f499b745a084832655, type: 3}
   startVolume: 0.5
   endVolume: 0.5
+  sfxAudioSource: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
 --- !u!114 &1521690755704766008
 MonoBehaviour:
   m_ObjectHideFlags: 0

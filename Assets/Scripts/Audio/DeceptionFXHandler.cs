@@ -7,10 +7,13 @@ public class DeceptionFXHandler : MonoBehaviour
     public AudioClip[] audioClips;
     public float startVolume;
     public float endVolume;
+    public GameObject sfxAudioSource;
 
     static bool oneDeceptionAlreadyActive = false;
     float oldVolume;
+    bool audioIsPlaying = false;
     private AudioSource audioSource;
+    AudioSource instancedAudio;
     GameObject rigmor;
     private bool inDeceptionRange = false;
     private bool stopDeceptionSoundCanBePlayed = false;
@@ -27,15 +30,12 @@ public class DeceptionFXHandler : MonoBehaviour
             if (transform.GetChild(i).GetComponent<DeceptionVFX>() != null)
                 deceptionVFX = transform.GetChild(i).GetComponent<DeceptionVFX>();
         }
-
-        oldVolume = audioSource.volume;
-        audioSource.volume *= Settings.volumeMagnitude;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inDeceptionRange && Input.GetKeyDown(KeyCode.E) && !audioSource.isPlaying && !oneDeceptionAlreadyActive)
+        if (inDeceptionRange && Input.GetKeyDown(KeyCode.E) && !audioIsPlaying && !oneDeceptionAlreadyActive)
         {
             PlayDeceptionStartSFX();
             stopDeceptionSoundCanBePlayed = true;
@@ -58,17 +58,19 @@ public class DeceptionFXHandler : MonoBehaviour
     }
     public void PlayDeceptionStartSFX()
     {
-        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
         instancedAudio.volume = startVolume;
         instancedAudio.Play();
+        audioIsPlaying = true;
     }
     public void PlayDeceptionEndSFX()
     {
-        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+
         instancedAudio.clip = audioClips[1];
         instancedAudio.volume = endVolume;
         instancedAudio.Play();
+        audioIsPlaying = false;
     }
     void TurnOnOffDeceptionVFX(bool trunOn)
     {

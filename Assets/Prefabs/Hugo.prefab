@@ -366,7 +366,7 @@ MonoBehaviour:
   currentInterObjScript: {fileID: 0}
   inventory: {fileID: 1450951365967050616}
   score: {fileID: 0}
-  canNotDie: 1
+  canNotDie: 0
 --- !u!114 &1450951365967050616
 MonoBehaviour:
   m_ObjectHideFlags: 0
