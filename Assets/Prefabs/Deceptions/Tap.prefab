@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 1716426073140148359}
   - component: {fileID: 6826188246877456852}
   - component: {fileID: 1521690755704766008}
+  - component: {fileID: 3984774775679401155}
   m_Layer: 3
   m_Name: Tap
   m_TagString: Tap
@@ -186,7 +187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716426073140148353}
-  m_LocalRotation: {x: -1.1641531e-10, y: -0.0000000037252899, z: -0.000000002208253, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5712397, y: -1.3577766, z: 9.227367}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
@@ -359,9 +360,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1049417, y: 0.02964184}
+  m_Offset: {x: 0.08, y: 0.57}
   serializedVersion: 2
-  m_Radius: 2.071312
+  m_Radius: 1.67
 --- !u!212 &1716426073140148359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -443,6 +444,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingPoint: {fileID: 8911548531680751863}
+--- !u!114 &3984774775679401155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716426073140148353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ccff53cc93b8a429ecf75993a4bd79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 2100000, guid: 1e30c0b45c6f96e47891b87d23b6168b, type: 2}
+  noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
 --- !u!1 &4566034717912288619
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5515487695080480334}
   m_LocalRotation: {x: -0.64915466, y: -0.24496578, z: 0.19459644, w: 0.6933414}
-  m_LocalPosition: {x: 0.707, y: 0.832, z: -0.923}
+  m_LocalPosition: {x: 0.707, y: 0.832, z: 0}
   m_LocalScale: {x: 0.15928903, y: 0.11947748, z: 0.15902136}
   m_Children: []
   m_Father: {fileID: 1716426073140148352}
@@ -5287,7 +5302,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 15000
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
