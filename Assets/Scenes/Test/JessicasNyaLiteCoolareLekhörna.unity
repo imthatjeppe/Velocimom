@@ -843,7 +843,7 @@ Transform:
   - {fileID: 754079853}
   - {fileID: 1318026384}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &40351936
 GameObject:
@@ -2108,7 +2108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107130094
 GameObject:
@@ -4588,7 +4588,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204372033
 GameObject:
@@ -4805,7 +4805,7 @@ Transform:
   - {fileID: 24239997}
   - {fileID: 2097294730}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217309682
 GameObject:
@@ -10489,7 +10489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708830562
 GameObject:
@@ -13550,7 +13550,7 @@ Transform:
   - {fileID: 552799947}
   - {fileID: 1763188159}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905382499
 GameObject:
@@ -18753,7 +18753,7 @@ RectTransform:
   - {fileID: 198429059}
   - {fileID: 1186484526}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -24200,6 +24200,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 25784124}
     m_Modifications:
+    - target: {fileID: 1716426071695484760, guid: 77919fd823622df4480681440ab3d4a7, type: 3}
+      propertyPath: chooseRoom
+      value: Bathroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716426071695484760, guid: 77919fd823622df4480681440ab3d4a7, type: 3}
+      propertyPath: choosePlayerDeception
+      value: Tap
+      objectReference: {fileID: 0}
     - target: {fileID: 1716426073140148352, guid: 77919fd823622df4480681440ab3d4a7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -38234,7 +38242,7 @@ Transform:
   - {fileID: 98161968}
   - {fileID: 1889152580}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881954391
 GameObject:
@@ -38949,7 +38957,7 @@ Transform:
   - {fileID: 153906303}
   - {fileID: 1638840751}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942755007
 GameObject:
