@@ -28,14 +28,14 @@ public class FridgeAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
-        instancedAudio.volume = 0.3f;
+        instancedAudio.volume = 0.7f;
         instancedAudio.Play();
     }
     public void PlayCloseFridgeSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[1];
-        instancedAudio.volume = 0.3f;
+        instancedAudio.volume = 0.7f;
         instancedAudio.Play();
     }
     public void PlayBubbleIncreaseSFX()
