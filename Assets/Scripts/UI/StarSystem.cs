@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StarSystem : MonoBehaviour
 {
     public GameObject star, star2, star3;
+    public GameObject firstStar, secondStar, thirdStar;
     public Slider starScoreSlider;
 
     public float star1Score, star2Score, star3Score;
@@ -21,6 +22,7 @@ public class StarSystem : MonoBehaviour
         star.gameObject.SetActive(false);
         star2.gameObject.SetActive(false);
         star3.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -35,14 +37,17 @@ public class StarSystem : MonoBehaviour
         if (scoreNeeded.score >= star1Score)
         {
             star.gameObject.SetActive(true);
+            firstStar.gameObject.SetActive(true);
         }
         if (scoreNeeded.score >= star2Score)
         {
             star2.gameObject.SetActive(true);
+            secondStar.gameObject.SetActive(true);
         }
         if (scoreNeeded.score >= star3Score)
         {
             star3.gameObject.SetActive(true);
+            thirdStar.gameObject.SetActive(true);
         }
     }
 
