@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690596373662201524}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.06666692, y: -0.06666565, z: -1744.712}
+  m_LocalPosition: {x: 0.06666692, y: -0.06666565, z: -1}
   m_LocalScale: {x: 0.40000004, y: 0.70883644, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3601905411801611583}
@@ -4864,7 +4864,7 @@ Transform:
   m_GameObject: {fileID: 3601905411801611582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9655023, y: 8.334664, z: 0}
-  m_LocalScale: {x: 0.5625, y: 0.5625, z: 0.1791226}
+  m_LocalScale: {x: 0.72905624, y: 0.72905624, z: 0.2321608}
   m_Children:
   - {fileID: 4219722468280612321}
   - {fileID: 8520459569361832009}
@@ -4954,8 +4954,8 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 37cf7a622b5f6a54a952356c19129fbd, type: 3}
   - {fileID: 8300000, guid: df1db49ea8978af4bb9bbd7bf83bcc18, type: 3}
-  startVolume: 0.05
-  endVolume: 0.05
+  startVolume: 0.5
+  endVolume: 0.5
 --- !u!61 &2754812770956284453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5010,7 +5010,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.42
   m_Pitch: 1
   Loop: 0
   Mute: 0
