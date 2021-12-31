@@ -17,7 +17,6 @@ public class ChooseFoodItem : MonoBehaviour
     int atBubblePos = 0;
     int previousBubblePos = 0;
     public TextMeshProUGUI text;
-    bool isEmpty = false;
 
     void Start()
     {
@@ -43,7 +42,6 @@ public class ChooseFoodItem : MonoBehaviour
         GetInput();
         if (Input.GetKeyDown(KeyCode.E) && inventory.inventoryCount < inventory.inventoryMax)
         {
-            bool posPicked = false;
             AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
             PlayBubblePopAnimation();
             audioHandler.PlayBubblePopSFX();
@@ -53,7 +51,6 @@ public class ChooseFoodItem : MonoBehaviour
             ChangeOutlineMaterials();
             if(alreadyPickedPos.Count == 8)
             {
-                isEmpty = true;
                 text.text = "Empty";
             }
         }
