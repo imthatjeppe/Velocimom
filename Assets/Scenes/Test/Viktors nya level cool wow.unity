@@ -9348,6 +9348,10 @@ PrefabInstance:
       propertyPath: inventoryScoreText
       value: 
       objectReference: {fileID: 1963610594}
+    - target: {fileID: 1939920369328474697, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: sortingPoint
+      value: 
+      objectReference: {fileID: 1468434387}
     - target: {fileID: 3057698592352161106, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -31399,6 +31403,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467154791}
   m_CullTransparentMesh: 1
+--- !u!4 &1468434387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4556821558144491454, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+  m_PrefabInstance: {fileID: 667674434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477963569
 GameObject:
   m_ObjectHideFlags: 0
