@@ -43,14 +43,14 @@ public class FridgeAudioHandler : MonoBehaviour
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[2];
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
-        instancedAudio.volume = 0.05f;
+        instancedAudio.volume = 0.5f;
         instancedAudio.Play();
     }
     public void PlayBubblePopSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[3];
-        instancedAudio.volume = 0.05f;
+        instancedAudio.volume = 0.5f;
         instancedAudio.Play();
     }
 }

@@ -4956,6 +4956,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df1db49ea8978af4bb9bbd7bf83bcc18, type: 3}
   startVolume: 0.5
   endVolume: 0.5
+  sfxAudioSource: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
 --- !u!61 &2754812770956284453
 BoxCollider2D:
   m_ObjectHideFlags: 0

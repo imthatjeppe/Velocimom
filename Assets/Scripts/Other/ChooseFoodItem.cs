@@ -8,6 +8,7 @@ public class ChooseFoodItem : MonoBehaviour
 {
     public Material outline;
     public Material noOutline;
+    public TextMeshProUGUI text;
 
     GameObject player;
     SearchFood searchFood;
@@ -17,7 +18,6 @@ public class ChooseFoodItem : MonoBehaviour
     List<int> alreadyPickedPos;
     int atBubblePos = 0;
     int previousBubblePos = 0;
-    public TextMeshProUGUI text;
 
     void Start()
     {
@@ -49,6 +49,7 @@ public class ChooseFoodItem : MonoBehaviour
             DeactivateRarityOverlayUI();
             alreadyPickedPos.Add(atBubblePos);
             atBubblePos++;
+            CheckBubblePositionBoundries();
             ChangeOutlineMaterials();
             if(alreadyPickedPos.Count == 8)
             {
