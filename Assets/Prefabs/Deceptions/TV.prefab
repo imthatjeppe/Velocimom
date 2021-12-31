@@ -104,7 +104,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 4e3285386069f1b43ae9678934864dfe, type: 3}
   - {fileID: 8300000, guid: df1db49ea8978af4bb9bbd7bf83bcc18, type: 3}
-  startVolume: 0.2
+  startVolume: 0.5
   endVolume: 3
   sfxAudioSource: {fileID: 2449218330542610189, guid: d1a3c5f33eb2f674aaf5f28c38290992, type: 3}
 --- !u!114 &421492452319521731
@@ -307,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3542998980705481938
 Transform:
   m_ObjectHideFlags: 0
