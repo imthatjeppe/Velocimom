@@ -49,6 +49,7 @@ public class ChooseFoodItem : MonoBehaviour
             DeactivateRarityOverlayUI();
             alreadyPickedPos.Add(atBubblePos);
             atBubblePos++;
+            CheckBubblePositionBoundries();
             ChangeOutlineMaterials();
             if(alreadyPickedPos.Count == 8)
             {
