@@ -12,12 +12,14 @@ public class VelocimomAnimationHandler : MonoBehaviour
     private AIPath pathFinder;
     private SpriteRenderer sprite;
     private Animator animator;
+    private GameObject velocimom;
 
     Vector3 oldPosition;
 
     void Start()
     {
-        pathFinder = GetComponentInParent<AIPath>();
+        velocimom = GameObject.FindGameObjectWithTag("Enemy");
+        pathFinder = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIPath>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
@@ -30,8 +32,17 @@ public class VelocimomAnimationHandler : MonoBehaviour
     {
         FlipSprite();
         AnimationSequencePlayer();
+        KeepGraphicsOnVelocimom();
     }
 
+    void KeepGraphicsOnVelocimom()
+    {
+        Vector3 position = transform.position;
+        position.y = velocimom.transform.position.y;
+        position.x = velocimom.transform.position.x;
+
+        transform.position = position;
+    }
     void AnimationSequencePlayer()
     {
         GoingUp();
