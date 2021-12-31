@@ -58,15 +58,17 @@ public class DeceptionFXHandler : MonoBehaviour
     }
     public void PlayDeceptionStartSFX()
     {
-        audioSource.clip = audioClips[0];
-        audioSource.volume = startVolume;
-        audioSource.Play();
+        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[0];
+        instancedAudio.volume = startVolume;
+        instancedAudio.Play();
     }
     public void PlayDeceptionEndSFX()
     {
-        audioSource.clip = audioClips[1];
-        audioSource.volume = endVolume;
-        audioSource.Play();
+        AudioSource instancedAudio = Instantiate(audioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
+        instancedAudio.clip = audioClips[1];
+        instancedAudio.volume = endVolume;
+        instancedAudio.Play();
     }
     void TurnOnOffDeceptionVFX(bool trunOn)
     {

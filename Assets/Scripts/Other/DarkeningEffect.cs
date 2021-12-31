@@ -33,7 +33,7 @@ public class DarkeningEffect : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             lightSFX.PlayLightTurnOnSFX();
-            darkRoomSprite.transform.DOMoveZ(-10, 1).SetEase(Ease.OutBounce);
+            darkRoomSprite.transform.DOMoveZ(-10, 0.01f);
             playerInRoom = true;
         }
     }
@@ -41,7 +41,7 @@ public class DarkeningEffect : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            darkRoomSprite.transform.DOMoveZ(0, 1);
+            darkRoomSprite.transform.DOMoveZ(0, 0.01f);
             playerInRoom = false;
         }
     }
