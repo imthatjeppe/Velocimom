@@ -15,7 +15,7 @@ public class LightAudioHandler : MonoBehaviour
     {
         AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
-        instancedAudio.volume = 0.2f * Settings.volumeMagnitude;
+        instancedAudio.volume = 0.6f;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);
         instancedAudio.Play();
     }
