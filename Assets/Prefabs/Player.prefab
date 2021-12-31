@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 790510863}
   - component: {fileID: 790510862}
   - component: {fileID: 790510860}
+  - component: {fileID: 1939920369328474697}
   m_Layer: 0
   m_Name: PlayerGraphics
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +140,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7c03821e9b4589e4a9fa44a65ac31d30, type: 3}
   - {fileID: 8300000, guid: 72e51aec9365114498a3e750359f524d, type: 3}
   - {fileID: 8300000, guid: 85c88cb46f24c2f48af708a8bbcb510c, type: 3}
+--- !u!114 &1939920369328474697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570797781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbe9974f11e111479b195bd7c2da456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingPoint: {fileID: 4556821558144491454}
 --- !u!1 &7847294066304472425
 GameObject:
   m_ObjectHideFlags: 0

@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a631e2d0aa9780d458ea72296f307d24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   endPoint: -2
   choosePlayerDeception: Tap
   chooseRoom: Bathroom
@@ -197,7 +197,6 @@ Transform:
   - {fileID: 8003377193878740283}
   - {fileID: 8911548531680751863}
   - {fileID: 8796418026439159574}
-  - {fileID: 1716426071695484761}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,8 +210,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 598ebf9ac19053542af5bcb56da3a1b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   enemyLure: 0
   inRange: 0
   moveSpotsDeception:
@@ -426,8 +425,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f91c24c9fa8404889e621f961ea2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   audioClips:
   - {fileID: 8300000, guid: 4939f25731f11084c880627588991cae, type: 3}
   - {fileID: 8300000, guid: 4cf139464e38f1f499b745a084832655, type: 3}
@@ -444,8 +443,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecbe9974f11e111479b195bd7c2da456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sortingPoint: {fileID: 8911548531680751863}
 --- !u!114 &3984774775679401155
 MonoBehaviour:
@@ -457,8 +456,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53ccff53cc93b8a429ecf75993a4bd79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   outline: {fileID: 2100000, guid: 1e30c0b45c6f96e47891b87d23b6168b, type: 2}
   noOutline: {fileID: 2100000, guid: b749031e8efcf424fae7782ca8de9b82, type: 2}
 --- !u!1 &4566034717912288619
@@ -5341,5 +5340,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f1441a51001f434fab6815f46fcb55c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:

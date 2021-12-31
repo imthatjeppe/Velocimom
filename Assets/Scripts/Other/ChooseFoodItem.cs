@@ -10,6 +10,7 @@ public class ChooseFoodItem : MonoBehaviour
     public Material noOutline;
     public TextMeshProUGUI text;
 
+    GameObject player;
     SearchFood searchFood;
     Image[] bubbles;
     Inventory inventory;
@@ -33,7 +34,8 @@ public class ChooseFoodItem : MonoBehaviour
         }
         searchFood.bubbles[0].GetComponent<Image>().material = outline;
 
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        inventory = player.GetComponent<Inventory>();
     }
 
     void Update()
