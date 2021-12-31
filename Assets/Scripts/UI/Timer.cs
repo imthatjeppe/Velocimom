@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        timerText.text = "Time left: " + (int)timer;
+        timerText.text = "" + (int)timer;
         CheckIfTimeToVFX();
         TimeRunOut();
 
@@ -89,5 +89,10 @@ public class Timer : MonoBehaviour
     {
         timerText.DOColor(greyColor, 1f);
         timerText.transform.position = timerStartPos;
+    }
+
+    public float GetTimer()
+    {
+        return timer;
     }
 }

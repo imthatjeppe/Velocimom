@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ChooseFoodItem : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class ChooseFoodItem : MonoBehaviour
     Image[] bubbles;
     Inventory inventory;
     FridgeAudioHandler audioHandler;
+    List<int> alreadyPickedPos;
     int atBubblePos = 0;
     int previousBubblePos = 0;
+    public TextMeshProUGUI text;
+    bool isEmpty = false;
 
     void Start()
     {
+       // text = GameObject.Find("SearchingText").GetComponent<TextMeshProUGUI>();
+        text.text = "Searching...";
+        alreadyPickedPos = new List<int>();
         audioHandler = GetComponent<FridgeAudioHandler>();
         searchFood = GetComponent<SearchFood>();
         bubbles = new Image[searchFood.bubbles.Length];
@@ -34,12 +41,21 @@ public class ChooseFoodItem : MonoBehaviour
     void Update()
     {
         GetInput();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && inventory.inventoryCount < inventory.inventoryMax)
         {
+            bool posPicked = false;
             AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
             PlayBubblePopAnimation();
             audioHandler.PlayBubblePopSFX();
             DeactivateRarityOverlayUI();
+            alreadyPickedPos.Add(atBubblePos);
+            atBubblePos++;
+            ChangeOutlineMaterials();
+            if(alreadyPickedPos.Count == 8)
+            {
+                isEmpty = true;
+                text.text = "Empty";
+            }
         }
     }
     void GetInput()
@@ -66,9 +82,11 @@ public class ChooseFoodItem : MonoBehaviour
                 if(atBubblePos <= 3)
                 {
                     atBubblePos--;
+                    CheckAlreadyPickedPosLeft();
                 }
                 else if(atBubblePos >= 4){
                     atBubblePos++;
+                    CheckAlreadyPickedPosRight();
                 }
                 break;
             case SelectionInput.Up:
@@ -76,11 +94,12 @@ public class ChooseFoodItem : MonoBehaviour
                     if(atBubblePos >= 6 || atBubblePos <= 1)
                     {
                         atBubblePos++;
-                        
+                        CheckAlreadyPickedPosRight();
                     }
                     else
                     {
                         atBubblePos--;
+                        CheckAlreadyPickedPosLeft();
                     }
                 }
                 break;
@@ -88,34 +107,29 @@ public class ChooseFoodItem : MonoBehaviour
                 if (atBubblePos <= 3)
                 {
                     atBubblePos++;
+                    CheckAlreadyPickedPosRight();
                 }
                 else if (atBubblePos >= 4)
                 {
                     atBubblePos--;
+                    CheckAlreadyPickedPosLeft();
                 }
                 break;
             case SelectionInput.Down:
                 if (atBubblePos >= 6 || atBubblePos <= 1)
                 {
                     atBubblePos--;
+                    CheckAlreadyPickedPosLeft();
                 }
                 else
                 {
                     atBubblePos++;
+                    CheckAlreadyPickedPosRight();
                 }
                 break;
         }
         CheckBubblePositionBoundries();
-        if (bubbles[atBubblePos].material != outline)
-        {
-            bubbles[atBubblePos].material = outline;
-        }
-
-        if(previousBubblePos != atBubblePos)
-        {
-            bubbles[previousBubblePos].material = noOutline;
-            previousBubblePos = atBubblePos;
-        }
+        ChangeOutlineMaterials();
 
 
     }
@@ -148,5 +162,34 @@ public class ChooseFoodItem : MonoBehaviour
     void DeactivateRarityOverlayUI()
     {
         searchFood.bubbles[atBubblePos].transform.GetChild(1).GetComponent<Image>().color = new Color(0, 0, 0, 0);
+    }
+    void ChangeOutlineMaterials()
+    {
+        if (bubbles[atBubblePos].material != outline)
+        {
+            bubbles[atBubblePos].material = outline;
+        }
+
+        if (previousBubblePos != atBubblePos)
+        {
+            bubbles[previousBubblePos].material = noOutline;
+            previousBubblePos = atBubblePos;
+        }
+    }
+    void CheckAlreadyPickedPosLeft()
+    {
+        foreach (int pickedPos in alreadyPickedPos)
+        {
+            if (pickedPos == atBubblePos)
+                atBubblePos--;
+        }
+    }
+    void CheckAlreadyPickedPosRight()
+    {
+        foreach (int pickedPos in alreadyPickedPos)
+        {
+            if (pickedPos == atBubblePos)
+                atBubblePos++;
+        }
     }
 }
