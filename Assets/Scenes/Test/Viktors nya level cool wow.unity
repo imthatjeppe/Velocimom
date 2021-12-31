@@ -6711,7 +6711,7 @@ PrefabInstance:
     - target: {fileID: 8358737541085254315, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
       propertyPath: text
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2119890239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb45157904397b45bf9430051cdb2cf, type: 3}
 --- !u!1 &517111525
@@ -9324,10 +9324,6 @@ PrefabInstance:
     - target: {fileID: 140723870, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 570797781, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 570797783, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_SortingOrder
@@ -42065,6 +42061,17 @@ PolygonCollider2D:
       - {x: -0.39293903, y: 0.06779492}
       - {x: 0.9531237, y: -0.7765424}
       - {x: 2.0714273, y: -0.34859186}
+--- !u!114 &2119890239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4356162954561076956, guid: 0861ad991257420408a8c0a490fdb796, type: 3}
+  m_PrefabInstance: {fileID: 1970633779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126972292
 GameObject:
   m_ObjectHideFlags: 0
