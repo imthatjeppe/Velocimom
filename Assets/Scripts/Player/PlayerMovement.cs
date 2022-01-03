@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void IsPlayerDetectable()
     {
-        Debug.Log(extraHidden);
 
         if (inventoryScriptObject.inventoryCount <= 0 && rigidBody.velocity.sqrMagnitude == 0)
         {
