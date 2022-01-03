@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6528206454613347552}
   - component: {fileID: 1518333374932537071}
   - component: {fileID: 2888042571910955393}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: PizzaSlice
   m_TagString: Food
   m_Icon: {fileID: 0}

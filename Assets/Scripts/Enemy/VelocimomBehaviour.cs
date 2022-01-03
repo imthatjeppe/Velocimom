@@ -111,7 +111,7 @@ public class VelocimomBehaviour : MonoBehaviour
         {
             RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
 
-            if (sightHit)
+            if (sightHit && !(player.hidden || player.extraHidden))
             {
 
                 if (sightHit.collider.CompareTag("Player"))
@@ -140,7 +140,7 @@ public class VelocimomBehaviour : MonoBehaviour
         CheckPlayerLineOfSight();
         pathFinder.maxSpeed = chasingSpeed;
 
-        if (!player.hidden && !lostLineOfSight)
+        if (!(player.hidden || player.extraHidden) && !lostLineOfSight)
         {
             setDestination.target = target;
         }
@@ -172,7 +172,7 @@ public class VelocimomBehaviour : MonoBehaviour
             SelectNewDestination();
         }
 
-        if (player.hidden)
+        if (player.hidden || player.extraHidden)
         {
             pathFinder.maxSpeed = 0;
             Invoke(nameof(SelectNewDestination), staringTime);
@@ -232,5 +232,13 @@ public class VelocimomBehaviour : MonoBehaviour
             Destroy(spots);
         }
         playerSpotsToFollow.Clear();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Invoke(nameof(Death), 0.5f);
+        }
     }
 }

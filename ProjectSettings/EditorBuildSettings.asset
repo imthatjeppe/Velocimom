@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/MainMenu.unity
     guid: 6147b9adb199c4040969bfa6aa755e19
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test/Viktors nya level cool wow.unity
     guid: f96498c7a30dc0949ae059d27a2cc2fd
+  - enabled: 1
+    path: "Assets/Scenes/Test/JespersNyaLekh\xF6rna.unity"
+    guid: baab3144871d2f74ebaa93286c2564d0
   - enabled: 0
     path: Assets/Scenes/Levels/Level1New.unity
     guid: b85c6f49512115542b3c37c03436b70f

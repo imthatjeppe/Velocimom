@@ -9,6 +9,7 @@ public class NextLevelScript : MonoBehaviour
 
     public bool NextLevelPaused;
 
+    public GameObject hands1, hands2;
     public GameObject NextLevel;
     public Text scoreNeeded;
 
@@ -20,6 +21,8 @@ public class NextLevelScript : MonoBehaviour
         Time.timeScale = 1f;
         NextLevel.SetActive(false);
         nextLevelScore = GetComponent<Score>();
+        hands1.SetActive(true);
+        hands2.SetActive(true);
     }
 
     void Update()
@@ -31,6 +34,9 @@ public class NextLevelScript : MonoBehaviour
     {
         NextLevel.SetActive(true);
         NextLevelPaused = (true);
+        hands1.SetActive(false);
+        hands2.SetActive(false);
+        Time.timeScale = 0f;
        
     }
 

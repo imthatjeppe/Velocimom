@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5048380751090209233}
   - component: {fileID: 686128850487972830}
   - component: {fileID: 3784090007094402224}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Skewer
   m_TagString: Food
   m_Icon: {fileID: 0}

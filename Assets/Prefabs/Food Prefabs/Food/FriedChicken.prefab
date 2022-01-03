@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7666462863165775751}
   - component: {fileID: 2733212582011018632}
   - component: {fileID: 1794690080798479078}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: FriedChicken
   m_TagString: Food
   m_Icon: {fileID: 0}
