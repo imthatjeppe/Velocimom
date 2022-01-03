@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Bools")]
     public bool hidden;
-    public bool extraHidden; // hides player when empty inventory and standing still
     public bool releasedStaminaKey;
     public bool inSafeRoom = true;
     public bool isRunning;
@@ -26,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject PlayerDeception;
 
     private float hiddenSpeed = 0;
-    private float extraHiddenTimer = 1f;
-    
 
     Vector3 movement = new Vector3();
 
@@ -50,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        IsPlayerDetectable();
         HiddenAbility();
     }
     void FixedUpdate()
@@ -89,24 +85,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 GetPlayerVelocity()
     {
         return rigidBody.velocity;
-    }
-
-    private void IsPlayerDetectable()
-    {
-
-        if (inventoryScriptObject.inventoryCount <= 0 && rigidBody.velocity.sqrMagnitude == 0)
-        {
-            extraHiddenTimer -= Time.deltaTime;
-            if (extraHiddenTimer <= 0)
-            {
-                extraHidden = true;
-            }
-        }
-        else
-        {
-            extraHidden = false;
-            extraHiddenTimer = 1f;
-        }
     }
 
     private void HiddenAbility()

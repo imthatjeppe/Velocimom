@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8684848190281817146}
   - component: {fileID: 3966592016781696565}
   - component: {fileID: 723528328759234907}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: JellyRat
   m_TagString: Food
   m_Icon: {fileID: 0}

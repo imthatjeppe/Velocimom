@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 629171021759868270}
   - component: {fileID: 5130073537497411425}
   - component: {fileID: 8806782412641411087}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Strawberriy
   m_TagString: Food
   m_Icon: {fileID: 0}

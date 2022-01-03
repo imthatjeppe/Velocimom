@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6836391418711703515}
   - component: {fileID: 1248993257313779156}
   - component: {fileID: 3193904816074502842}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Honey
   m_TagString: Food
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2631756452707256210}
   - component: {fileID: 7714399575719019933}
   - component: {fileID: 6199586179300723443}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Lollipop
   m_TagString: Food
   m_Icon: {fileID: 0}
