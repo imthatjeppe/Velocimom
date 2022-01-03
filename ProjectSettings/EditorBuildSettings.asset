@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test/Viktors nya level cool wow.unity
     guid: f96498c7a30dc0949ae059d27a2cc2fd
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Test/JespersNyaLekh\xF6rna.unity"
     guid: baab3144871d2f74ebaa93286c2564d0
   - enabled: 0

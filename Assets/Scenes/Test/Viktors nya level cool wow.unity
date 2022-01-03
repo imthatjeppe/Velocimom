@@ -35731,6 +35731,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: hands1
+      value: 
+      objectReference: {fileID: 27931198}
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
+      propertyPath: hands2
+      value: 
+      objectReference: {fileID: 213940344}
+    - target: {fileID: 1203394531177008611, guid: 7dd1f65dd033502488c1956334ec69fa, type: 3}
       propertyPath: NextLevel
       value: 
       objectReference: {fileID: 1377185357}

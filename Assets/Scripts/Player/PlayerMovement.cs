@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         IsPlayerDetectable();
         HiddenAbility();
+        Debug.Log("Speed: " + speed);
     }
     void FixedUpdate()
     {
@@ -139,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("No Stamina");
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && hidden || currentstamina == 0 && hidden)
+        if ((Input.GetKeyUp(KeyCode.Space) || currentstamina == 0) && hidden)
         {
             speed = maxSpeed;
             hidden = false;
