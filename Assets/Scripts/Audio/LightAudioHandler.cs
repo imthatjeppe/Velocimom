@@ -13,7 +13,7 @@ public class LightAudioHandler : MonoBehaviour
     */
     public void PlayLightTurnOnSFX()
     {
-        AudioSource instancedAudio = Instantiate(sfxAudioSource).GetComponent<AudioSource>();
+        AudioSource instancedAudio = Instantiate(sfxAudioSource,transform.position,Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
         instancedAudio.volume = 0.6f;
         instancedAudio.pitch = Random.Range(0.9f, 1.1f);

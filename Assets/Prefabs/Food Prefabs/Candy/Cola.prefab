@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8703260503644846944}
   - component: {fileID: 3981987285690055023}
   - component: {fileID: 739869159531312641}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Cola
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ RectTransform:
   m_GameObject: {fileID: 7917246193588971337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

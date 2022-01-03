@@ -14,6 +14,11 @@ TagManager:
   - Furniture
   - BathroomButton
   - Bathroom
+  - TV
+  - Livingroom
+  - Momroom
+  - Radio
+  - Kitchen
   layers:
   - Default
   - TransparentFX

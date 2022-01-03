@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(GameObject item)
     {
         if (isInventoryFull) return;
-        
+ 
         inventoryScore += item.GetComponent<FoodItem>().points;
 
         item.layer = 5;

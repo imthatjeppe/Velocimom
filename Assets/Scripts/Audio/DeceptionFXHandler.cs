@@ -66,7 +66,6 @@ public class DeceptionFXHandler : MonoBehaviour
     }
     public void PlayDeceptionEndSFX()
     {
-
         instancedAudio.clip = audioClips[1];
         instancedAudio.volume = endVolume;
         instancedAudio.Play();

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1380715941992545885}
   - component: {fileID: 6675360299760122962}
   - component: {fileID: 7036297797661782844}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: FrenchHotdog
   m_TagString: Food
   m_Icon: {fileID: 0}

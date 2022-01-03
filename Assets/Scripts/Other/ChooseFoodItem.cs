@@ -14,16 +14,15 @@ public class ChooseFoodItem : MonoBehaviour
     SearchFood searchFood;
     Image[] bubbles;
     Inventory inventory;
-    FridgeAudioHandler audioHandler;
+    SearchFoodAudioHandler audioHandler;
     List<int> alreadyPickedPos;
     int atBubblePos = 0;
     int previousBubblePos = 0;
-
     void Start()
     {
         text.text = "Searching...";
         alreadyPickedPos = new List<int>();
-        audioHandler = GetComponent<FridgeAudioHandler>();
+        audioHandler = GetComponent<SearchFoodAudioHandler>();
         searchFood = GetComponent<SearchFood>();
         bubbles = new Image[searchFood.bubbles.Length];
         int i = 0;
@@ -43,15 +42,27 @@ public class ChooseFoodItem : MonoBehaviour
         GetInput();
         if (Input.GetKeyDown(KeyCode.E) && inventory.inventoryCount < inventory.inventoryMax)
         {
-            AddFoodItemToInventory(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos));
-            PlayBubblePopAnimation();
-            audioHandler.PlayBubblePopSFX();
-            DeactivateRarityOverlayUI();
-            alreadyPickedPos.Add(atBubblePos);
-            atBubblePos++;
-            CheckBubblePositionBoundries();
-            ChangeOutlineMaterials();
-            if(alreadyPickedPos.Count == 8)
+            bool canPickUp = true;
+            foreach (int pickedPos in alreadyPickedPos)
+            {
+                if(pickedPos == atBubblePos)
+                {
+                    canPickUp = false;
+                }
+            }
+
+            if (canPickUp)
+            {
+                inventory.AddItem(Instantiate(searchFood.GetFoodItemsDictionaryAtPos(atBubblePos)));
+                PlayBubblePopAnimation();
+                audioHandler.PlayBubblePopSFX();
+                DeactivateRarityOverlayUI();
+                alreadyPickedPos.Add(atBubblePos);
+                CheckBubblePositionBoundries();
+                ChangeOutlineMaterials();
+            }
+
+            if(alreadyPickedPos.Count == bubbles.Length)
             {
                 text.text = "Empty";
             }
@@ -151,7 +162,6 @@ public class ChooseFoodItem : MonoBehaviour
     }
     void AddFoodItemToInventory(GameObject foodItem)
     {
-        if(foodItem != null)
             inventory.AddItem(foodItem);
     }
     void PlayBubblePopAnimation()
