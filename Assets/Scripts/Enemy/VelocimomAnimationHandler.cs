@@ -13,6 +13,8 @@ public class VelocimomAnimationHandler : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator animator;
     private GameObject velocimom;
+    private float offsetGraphicsY = 0;
+    private float offsetGraphicsX = 0;
 
     Vector3 oldPosition;
 
@@ -38,8 +40,8 @@ public class VelocimomAnimationHandler : MonoBehaviour
     void KeepGraphicsOnVelocimom()
     {
         Vector3 position = transform.position;
-        position.y = velocimom.transform.position.y;
-        position.x = velocimom.transform.position.x;
+        position.y = velocimom.transform.position.y + offsetGraphicsY;
+        position.x = velocimom.transform.position.x + offsetGraphicsX;
 
         transform.position = position;
     }
@@ -61,12 +63,16 @@ public class VelocimomAnimationHandler : MonoBehaviour
             oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", true);
             goingUp = true;
+            offsetGraphicsY = 1.2f;
+            offsetGraphicsX = -0.2f;
         }
         else if (transform.position.y < oldPosition.y - distance)
         {
             oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", false);
             goingUp = false;
+            offsetGraphicsY = 0.5f;
+            offsetGraphicsX = -0.8f;
         }
     }
 
@@ -78,6 +84,7 @@ public class VelocimomAnimationHandler : MonoBehaviour
             {
                 oldPosition.x = transform.position.x;
                 sprite.flipX = true;
+                offsetGraphicsX = 1f;
             }
             else if (transform.position.x < oldPosition.x - distance)
             {

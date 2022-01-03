@@ -61,6 +61,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
         playerSpotsToFollow = new List<GameObject>();
         audioHandler = GameObject.Find("EnemyGraphics").GetComponent<RigmorAudioHandler>();
+        
     }
 
     void Update()
