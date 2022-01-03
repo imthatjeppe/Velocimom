@@ -8,7 +8,7 @@ public class CameraShake : MonoBehaviour
     public GameObject player;
     public GameObject velocimom;
 
-    private float ShakeFrequancy = 1;
+    private float ShakeFrequancy = 0.5f;
 
     private float ShakeTimeRemaining;
 
@@ -21,8 +21,8 @@ public class CameraShake : MonoBehaviour
        
         if (Vector2.Distance(velocimom.transform.position, player.transform.position) < 6)
         {
-            StartShake(0.5f, 0.01f);
-            ShakeFrequancy += 0.1f * Time.deltaTime;
+            StartShake(0.2f, 0.007f);
+            ShakeFrequancy += 0.01f * Time.deltaTime;
         }
     }
 
