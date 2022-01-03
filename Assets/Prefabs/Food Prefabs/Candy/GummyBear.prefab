@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6157988587766762127}
   - component: {fileID: 1945410972070054016}
   - component: {fileID: 2880381518066092014}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: GummyBear
   m_TagString: Food
   m_Icon: {fileID: 0}

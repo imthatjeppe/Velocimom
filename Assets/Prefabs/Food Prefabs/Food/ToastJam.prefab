@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 461294553871328073}
   - component: {fileID: 5326691788483715398}
   - component: {fileID: 8424654594105404968}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: ToastJam
   m_TagString: Food
   m_Icon: {fileID: 0}

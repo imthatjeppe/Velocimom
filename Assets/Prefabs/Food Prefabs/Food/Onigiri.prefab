@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3782707529833629878}
   - component: {fileID: 8931778746947504825}
   - component: {fileID: 5112247692407113175}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Onigiri
   m_TagString: Food
   m_Icon: {fileID: 0}

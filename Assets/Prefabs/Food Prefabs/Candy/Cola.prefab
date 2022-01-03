@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8703260503644846944}
   - component: {fileID: 3981987285690055023}
   - component: {fileID: 739869159531312641}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Cola
   m_TagString: Food
   m_Icon: {fileID: 0}

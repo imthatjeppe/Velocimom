@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4330406339063339715}
   - component: {fileID: 8327820475176917196}
   - component: {fileID: 5662163668442879906}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Noodles
   m_TagString: Food
   m_Icon: {fileID: 0}
