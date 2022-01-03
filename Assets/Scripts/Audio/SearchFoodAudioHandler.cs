@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FridgeAudioHandler : MonoBehaviour
+public class SearchFoodAudioHandler : MonoBehaviour
 {
     public AudioClip[] audioClips;
 
@@ -10,8 +10,8 @@ public class FridgeAudioHandler : MonoBehaviour
 
     /*
      * Audio Clips:
-     * 0. OpenFridge
-     * 1. CloseFridge
+     * 0. At interct start
+     * 1. at interact exit
      * 2. BubbleIncrease
      * 3. BubblePop
      */
@@ -24,14 +24,14 @@ public class FridgeAudioHandler : MonoBehaviour
     {
         
     }
-    public void PlayOpenFridgeSFX()
+    public void PlayStartInteractSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[0];
         instancedAudio.volume = 0.7f;
         instancedAudio.Play();
     }
-    public void PlayCloseFridgeSFX()
+    public void PlayStopInteractSFX()
     {
         AudioSource instancedAudio = Instantiate(audioSourcePreFab, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[1];

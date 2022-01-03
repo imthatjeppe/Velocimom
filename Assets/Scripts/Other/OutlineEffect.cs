@@ -56,7 +56,7 @@ public class OutlineEffect : MonoBehaviour
             if (spriteRenderer[1] != null)
                 spriteRenderer[1].material = noOutline;
         }
-        else if (Input.GetKeyUp(KeyCode.E) && inInteractiveRange)
+        else if (Input.GetKeyDown(KeyCode.Escape) && inInteractiveRange)
         {
             spriteRenderer[0].material = outline;
             if (spriteRenderer[1] != null)

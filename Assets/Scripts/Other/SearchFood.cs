@@ -16,7 +16,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     Animator[] rarityOverlayAnimators;
     Image[] foodItemImages;
     Image[] overlayUIImages;
-    FridgeAudioHandler fridgeSFX;
+    SearchFoodAudioHandler fridgeSFX;
     private int[] rarityRankAtPos;
     //Gameobjects in Dictonary<bubble, fooditem>
     Dictionary<GameObject,GameObject> bubbleFoodDic;
@@ -31,7 +31,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         playerMovement = player.GetComponent<PlayerMovement>();
         bubbleFoodDic = new Dictionary<GameObject, GameObject>();
 
-        fridgeSFX = GetComponent<FridgeAudioHandler>();
+        fridgeSFX = GetComponent<SearchFoodAudioHandler>();
         chooseFood = GetComponent<ChooseFoodItem>();
         chooseFood.enabled = false;
 
@@ -110,7 +110,7 @@ public class SearchFood : MonoBehaviour, IInteractable
         searchingForFoodPanel.SetActive(false);
         chooseFood.enabled = false;
         playerMovement.speed = playerMovement.maxSpeed;
-        fridgeSFX.PlayCloseFridgeSFX();
+        fridgeSFX.PlayStopInteractSFX();
 
     }
     void CalculateRarityChance()
@@ -153,7 +153,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     }
     GameObject GetRandomFoodItem()
     {
-        GameObject randomFoodItem = Instantiate(foodItems[Random.Range(0, foodItems.Length)]);
+        GameObject randomFoodItem = foodItems[Random.Range(0, foodItems.Length)];
         return randomFoodItem;
     }
 
@@ -168,7 +168,7 @@ public class SearchFood : MonoBehaviour, IInteractable
     //This is used when selecting food items to add them to the inventroy
     public GameObject GetFoodItemsDictionaryAtPos(int atPos)
     {
-        GameObject foodItem = bubbleFoodDic[bubbles[atPos]];
+       GameObject foodItem = bubbleFoodDic[bubbles[atPos]];
         RemoveFoodItem(atPos);
         return foodItem;
     }
@@ -188,6 +188,10 @@ public class SearchFood : MonoBehaviour, IInteractable
 
     public void PlayInteractingSFX()
     {
-        fridgeSFX.PlayOpenFridgeSFX();
+        fridgeSFX.PlayStartInteractSFX();
+    }
+    public Dictionary<GameObject,GameObject> GetDictionary()
+    {
+        return bubbleFoodDic;
     }
 }
