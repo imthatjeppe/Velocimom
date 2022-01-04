@@ -54,8 +54,14 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(!playerInteractions.GetInteracting())
+        if (!playerInteractions.GetInteracting())
+        {
             Move();
+        }
+        else
+        {
+            rigidBody.velocity = new Vector2(0, 0);
+        }
     }
 
     void Move()
