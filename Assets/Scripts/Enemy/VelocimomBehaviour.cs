@@ -43,6 +43,7 @@ public class VelocimomBehaviour : MonoBehaviour
     private int losPathAt = 0;
 
     private bool detected = false;
+    private bool enemyLure = false;
     private bool lostLineOfSight;
 
     private List<GameObject> playerSpotsToFollow;
@@ -61,7 +62,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
         playerSpotsToFollow = new List<GameObject>();
         audioHandler = GameObject.Find("EnemyGraphics").GetComponent<RigmorAudioHandler>();
-        
+
+
+
     }
 
     void Update()
@@ -107,20 +110,26 @@ public class VelocimomBehaviour : MonoBehaviour
     void SearchForPlayer()
     {
         Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        if (!detected && IsInvoking(nameof(AddPlayerPathSpots)))
+        {
+            CancelInvoke(nameof(AddPlayerPathSpots));
+        }
         if (detectPlayerInRange.playerInRange && !detected && !player.inSafeRoom)
         {
             RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
-
+            Debug.Log(sightHit.transform.name);
             if (sightHit)
             {
 
                 if (sightHit.collider.CompareTag("Player"))
                 {
-
-                    if (patrol || IsInvoking(nameof(SelectNewDestination)))
+                    Debug.Log("SEEEES YOU");
+                    if (patrol || IsInvoking(nameof(SelectNewDestination)) || enemyLure)
                     {
+                        Debug.Log("STARTING THE HUNT");
                         CancelInvoke(nameof(SelectNewDestination));
                         Invoke(nameof(ReactionTime), invincibleTime);
+                        enemyLure = false;
                         audioHandler.PlayRigmorDetectionRoarSFX();
                     }
 
@@ -197,6 +206,7 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (sightHit)
         {
+           
             if (!sightHit.collider.CompareTag("Player") && !sightHit.collider.CompareTag("Furniture"))
             {
                 //if line of sigt is lost, the player will lay out paths for velocimom to follow in order, she is "guessing" where player went
@@ -232,5 +242,13 @@ public class VelocimomBehaviour : MonoBehaviour
             Destroy(spots);
         }
         playerSpotsToFollow.Clear();
+    }
+    public void SetEnemyLure(bool enemyLure)
+    {
+        this.enemyLure = enemyLure;
+    }
+    public bool GetDetected()
+    {
+        return detected;
     }
 }
