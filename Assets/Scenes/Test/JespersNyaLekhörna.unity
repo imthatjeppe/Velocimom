@@ -11030,6 +11030,18 @@ PrefabInstance:
       propertyPath: Heart2
       value: 
       objectReference: {fileID: 634409495}
+    - target: {fileID: 8230855917541104047, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: firstDeath
+      value: 
+      objectReference: {fileID: 1898528671}
+    - target: {fileID: 8230855917541104047, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: secondDeath
+      value: 
+      objectReference: {fileID: 1286372358}
+    - target: {fileID: 8230855917541104047, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
+      propertyPath: gameOverDeath
+      value: 
+      objectReference: {fileID: 450673365}
     - target: {fileID: 8942691265838724142, guid: 65a36ca7f1a5353468448211eacd85a6, type: 3}
       propertyPath: m_Name
       value: Hugo
@@ -13913,7 +13925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 296616853}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
@@ -31406,6 +31418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1544615707, guid: f67f6ebe78bcc734782ea0d79d3c0971, type: 3}
+      propertyPath: dropOffZone
+      value: 
+      objectReference: {fileID: 1723095005}
     - target: {fileID: 4945041201284721307, guid: f67f6ebe78bcc734782ea0d79d3c0971, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -33590,7 +33606,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 296616853}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
