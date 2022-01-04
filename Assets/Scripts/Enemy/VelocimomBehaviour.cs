@@ -45,8 +45,11 @@ public class VelocimomBehaviour : MonoBehaviour
     private bool detected = false;
     private bool enemyLure = false;
     private bool lostLineOfSight;
+    private bool playerInSameRoom = false;
 
     private List<GameObject> playerSpotsToFollow;
+
+    private string inRoomName;
 
     void Start()
     {
@@ -116,17 +119,10 @@ public class VelocimomBehaviour : MonoBehaviour
         }
         if (detectPlayerInRange.playerInRange && !detected && !player.inSafeRoom)
         {
-            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
-            Debug.Log(sightHit.transform.name);
-            if (sightHit)
-            {
-
-                if (sightHit.collider.CompareTag("Player"))
+                if (playerInSameRoom)
                 {
-                    Debug.Log("SEEEES YOU");
                     if (patrol || IsInvoking(nameof(SelectNewDestination)) || enemyLure)
                     {
-                        Debug.Log("STARTING THE HUNT");
                         CancelInvoke(nameof(SelectNewDestination));
                         Invoke(nameof(ReactionTime), invincibleTime);
                         enemyLure = false;
@@ -135,7 +131,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
                     patrol = false;
                 }
-            }
         }
     }
 
@@ -250,5 +245,9 @@ public class VelocimomBehaviour : MonoBehaviour
     public bool GetDetected()
     {
         return detected;
+    }
+    public void SetPlayerInSameRoom(bool inRoom)
+    {
+        playerInSameRoom = inRoom;
     }
 }

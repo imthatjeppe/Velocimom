@@ -1176,6 +1176,7 @@ GameObject:
   - component: {fileID: 51315283}
   - component: {fileID: 51315282}
   - component: {fileID: 51315281}
+  - component: {fileID: 51315284}
   m_Layer: 0
   m_Name: DarkBathroomEffects
   m_TagString: Bathroom
@@ -1265,6 +1266,18 @@ PolygonCollider2D:
       - {x: -3.945729, y: -0.6260077}
       - {x: 0.32436287, y: -3.0273113}
       - {x: 3.7655172, y: -0.93877345}
+--- !u!114 &51315284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51315279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &57953008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +4087,7 @@ GameObject:
   - component: {fileID: 279147241}
   - component: {fileID: 279147240}
   - component: {fileID: 279147239}
+  - component: {fileID: 279147242}
   m_Layer: 0
   m_Name: DarkDiningRoomEffects
   m_TagString: Untagged
@@ -4170,6 +4184,18 @@ MonoBehaviour:
   playerInRoom: 0
   darkenedColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &279147242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279147237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &296616851
 GameObject:
   m_ObjectHideFlags: 0
@@ -10188,6 +10214,7 @@ GameObject:
   - component: {fileID: 657778705}
   - component: {fileID: 657778704}
   - component: {fileID: 657778703}
+  - component: {fileID: 657778706}
   m_Layer: 0
   m_Name: DarkHallwayEffects
   m_TagString: Untagged
@@ -10274,6 +10301,18 @@ MonoBehaviour:
   playerInRoom: 0
   darkenedColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &657778706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657778701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &665753847
 GameObject:
   m_ObjectHideFlags: 0
@@ -11148,6 +11187,7 @@ GameObject:
   - component: {fileID: 726693639}
   - component: {fileID: 726693638}
   - component: {fileID: 726693637}
+  - component: {fileID: 726693640}
   m_Layer: 0
   m_Name: DarkMomRoomEffects
   m_TagString: Momroom
@@ -11244,6 +11284,18 @@ MonoBehaviour:
   playerInRoom: 0
   darkenedColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &726693640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726693635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &731229248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30317,6 +30369,7 @@ GameObject:
   - component: {fileID: 1386487154}
   - component: {fileID: 1386487153}
   - component: {fileID: 1386487152}
+  - component: {fileID: 1386487155}
   m_Layer: 0
   m_Name: DarkLivingroomEffects
   m_TagString: Livingroom
@@ -30412,6 +30465,18 @@ PolygonCollider2D:
       - {x: -5.484362, y: -0.2585727}
       - {x: -0.6204475, y: -2.958847}
       - {x: 3.822929, y: -0.8469148}
+--- !u!114 &1386487155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386487150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386624357
 GameObject:
   m_ObjectHideFlags: 0
@@ -37422,6 +37487,7 @@ GameObject:
   - component: {fileID: 1881199135}
   - component: {fileID: 1881199134}
   - component: {fileID: 1881199133}
+  - component: {fileID: 1881199136}
   m_Layer: 0
   m_Name: DarkEntranceEffects
   m_TagString: Untagged
@@ -37512,6 +37578,18 @@ MonoBehaviour:
   playerInRoom: 0
   darkenedColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1881199136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881199131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1887974664
 GameObject:
   m_ObjectHideFlags: 0
@@ -38750,6 +38828,7 @@ GameObject:
   - component: {fileID: 1963167901}
   - component: {fileID: 1963167900}
   - component: {fileID: 1963167899}
+  - component: {fileID: 1963167902}
   m_Layer: 0
   m_Name: DarkKitchenEffects
   m_TagString: Kitchen
@@ -38850,6 +38929,18 @@ MonoBehaviour:
   playerInRoom: 0
   darkenedColor: {r: 0, g: 0, b: 0, a: 0}
   normalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1963167902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963167897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f6ba377a8e3b147a6193094b95e400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963610592
 GameObject:
   m_ObjectHideFlags: 0
@@ -41366,9 +41457,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0, y: 1}
       - {x: -0.803649, y: 0.5669801}
-      - {x: 3.6501822, y: -2.154111}
-      - {x: 7.4422374, y: -0.071979165}
-      - {x: 6.6446743, y: 0.4379987}
+      - {x: 3.521812, y: -2.0257409}
+      - {x: 4.7892556, y: -1.2914951}
+      - {x: 0.26895905, y: 1.1440341}
 --- !u!1 &2086186564
 GameObject:
   m_ObjectHideFlags: 0
@@ -42738,7 +42829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7548094087139161753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.99, y: -2.63, z: -1}
+  m_LocalPosition: {x: 10.99, y: -2.63, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 7548094087888267792}
@@ -42775,6 +42866,7 @@ GameObject:
   - component: {fileID: 7548094087139161758}
   - component: {fileID: 7548094087139161759}
   - component: {fileID: 7548094087139161752}
+  - component: {fileID: 7548094087139161754}
   m_Layer: 0
   m_Name: Rigmor
   m_TagString: Enemy
@@ -42782,6 +42874,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &7548094087139161754
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7548094087139161753}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &7548094087139161756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42886,7 +42999,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.5
-  endReachedDistance: 0.2
+  endReachedDistance: 0.5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
