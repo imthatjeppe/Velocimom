@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -364.7, y: -33.5}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 64, y: 43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911749566535996599
 MonoBehaviour:
@@ -83,9 +83,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.80545044, y: 0}
+  m_Offset: {x: 1.7210083, y: 0}
   serializedVersion: 2
-  m_Radius: 10.304047
+  m_Radius: 11.2196045
 --- !u!50 &1214679099759464851
 Rigidbody2D:
   serializedVersion: 4
