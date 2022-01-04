@@ -66,6 +66,8 @@ public class DeceptionFXHandler : MonoBehaviour
     }
     public void PlayDeceptionEndSFX()
     {
+        if(instancedAudio == null)
+            instancedAudio = Instantiate(sfxAudioSource, transform.position, Quaternion.identity).GetComponent<AudioSource>();
         instancedAudio.clip = audioClips[1];
         instancedAudio.volume = endVolume;
         instancedAudio.Play();

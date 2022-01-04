@@ -15,6 +15,8 @@ public class PlayerDecption : MonoBehaviour
     private AIDestinationSetter setDestination;
     private AIPath aIPath;
 
+    private bool alreadyTurnedOn = false;
+
     void Start()
     {
         enemyLure = false;
@@ -30,13 +32,16 @@ public class PlayerDecption : MonoBehaviour
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
             TurnOn();
+        }else if(!velocimom.GetDetected() && alreadyTurnedOn)
+        {
+            TurnOn();
         }
     }
 
     public void Resume()
     {
         enemyLure = false;
-
+        velocimom.SetEnemyLure(false);
         velocimom.SelectNewDestination();
     }
 
@@ -62,6 +67,8 @@ public class PlayerDecption : MonoBehaviour
         {
             velocimom.patrol = false;
             enemyLure = true;
+            velocimom.SetEnemyLure(true);
+            alreadyTurnedOn = true;
             StartLure();
         }
     }
@@ -74,11 +81,18 @@ public class PlayerDecption : MonoBehaviour
 
     void Luring()
     {
-        setDestination.target = moveSpotsDeception[0];
-        aIPath.maxSpeed = 1;
-        Debug.Log("Luring");
+        if (!velocimom.GetDetected())
+        {
+            setDestination.target = moveSpotsDeception[0];
+            aIPath.maxSpeed = 1;
+            Debug.Log("Luring");
+            InvokeRepeating(nameof(ReachedDeception), 0f, 0.5f);
+        }
+        else
+        {
+            CancelInvoke(nameof(ReachedDeception));
+        }
 
-        InvokeRepeating(nameof(ReachedDeception), 0f, 0.5f);
     }
 
     void ReachedDeception()
@@ -86,6 +100,7 @@ public class PlayerDecption : MonoBehaviour
         if (Vector2.Distance(velocimom.transform.position, moveSpotsDeception[0].position) < 0.2f)
         {
             Debug.Log("Should be resuming");
+            alreadyTurnedOn = false;
             Invoke(nameof(Resume), 2);
             CancelInvoke(nameof(ReachedDeception));
         }
