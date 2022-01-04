@@ -51,19 +51,12 @@ public class Inventory : MonoBehaviour
         if (isInventoryFull) return;
  
         inventoryScore += item.GetComponent<FoodItem>().points;
-
-        item.layer = 5;
-        item.transform.SetParent(canvas.transform, true);
-        item.transform.position = itemDropper.transform.position;
-        item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        item.GetComponent<SpriteRenderer>().enabled = false;
-        item.GetComponent<BoxCollider2D>().enabled = false;
-        item.GetComponent<CircleCollider2D>().enabled = true;
-        item.GetComponent<Image>().enabled = true;
-        item.GetComponent<Image>().SetNativeSize();
+        item.GetComponent<FoodItem>().itemToDestroy = Instantiate(item.GetComponent<FoodItem>().canvasFoodItem);
 
         audiohandler.PlayFoodPickUpSFX();
         inventory.Push(item);
+
+        item.GetComponent<FoodItem>().DeactivateItem();
     }
 
     public void DropItem()
@@ -72,28 +65,20 @@ public class Inventory : MonoBehaviour
 
         GameObject objectToDrop = inventory.Pop();
 
-        inventoryScore -= objectToDrop.GetComponent<FoodItem>().points;
-
-        objectToDrop.layer = 2;
-        objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
-        objectToDrop.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        objectToDrop.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        objectToDrop.GetComponent<SpriteRenderer>().enabled = true;
-        objectToDrop.GetComponent<Image>().enabled = false;
-        objectToDrop.transform.SetParent(foodItems.transform, true);
+        Destroy(objectToDrop.GetComponent<FoodItem>().itemToDestroy);
 
         if (unstableDrop)
         {
+            inventoryScore -= objectToDrop.GetComponent<FoodItem>().points;
             objectToDrop.GetComponent<FoodItem>().hasBeenDropped = true;
             objectToDrop.transform.position = player.transform.position + yAxisPlus;
             objectToDrop.transform.DOJump(unstableDropSpot, 0.75f, 1, 1.5f, false);
         }
         else
         {
+            inventoryScore -= objectToDrop.GetComponent<FoodItem>().points;
             objectToDrop.transform.position = player.transform.position - yAxisPlus;
         }
-
-        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
 
         unstableDrop = false;
 
@@ -101,6 +86,8 @@ public class Inventory : MonoBehaviour
         {
             Destroy(objectToDrop);
         }
+
+        objectToDrop.GetComponent<FoodItem>().ActivateItem();
     }
 
     public void InventoryFullChecker()

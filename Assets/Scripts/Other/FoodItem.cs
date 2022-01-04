@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+
     [Header("Float Variables")]
     public float points;
     public float weight;
@@ -15,6 +16,9 @@ public class FoodItem : MonoBehaviour
     public bool hasBeenDropped = false;
     public bool isPickupable = true;
 
+    [Header("GameObjects")]
+    public GameObject canvasFoodItem;
+    public GameObject itemToDestroy;
 
     private float timerToPickupable;
     private float timerReset = 1.75f;
@@ -51,6 +55,16 @@ public class FoodItem : MonoBehaviour
                 timerToPickupable = timerReset;
             }
         }
+    }
+
+    public void DeactivateItem()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ActivateItem()
+    {
+        gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -41,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 39.506836, y: 211.02441}
-  m_SizeDelta: {x: 305.1778, y: 292}
+  m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4314243831913413539
 SpriteRenderer:
@@ -113,6 +113,7 @@ MonoBehaviour:
   shinyRareQuality: 0
   hasBeenDropped: 0
   isPickupable: 1
+  canvasFoodItem: {fileID: 4325353696614133598, guid: e14bc83d0f1fd03449a945aa22cbe704, type: 3}
 --- !u!114 &779492037125893754
 MonoBehaviour:
   m_ObjectHideFlags: 0
