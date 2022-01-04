@@ -15,6 +15,7 @@ public class VelocimomBehaviour : MonoBehaviour
     public float distance = 0.2f;
     public float chasingSpeed;
     public float patrolSpeed;
+    public float distanceToKill;
 
     [Header("Destinations")]
     public Transform[] moveSpots;
@@ -45,8 +46,11 @@ public class VelocimomBehaviour : MonoBehaviour
     private bool detected = false;
     private bool enemyLure = false;
     private bool lostLineOfSight;
+    private bool playerInSameRoom = false;
 
     private List<GameObject> playerSpotsToFollow;
+
+    private string inRoomName;
 
     void Start()
     {
@@ -75,6 +79,15 @@ public class VelocimomBehaviour : MonoBehaviour
         if (detected)
         {
             ChasePlayer();
+        }
+
+        if (!playerManager.canNotDie)
+        {
+            if (Vector2.Distance(transform.position, target.position) < distanceToKill)
+            {
+                detected = false;
+                Invoke(nameof(Death), 0.5f);
+            }
         }
     }
 
@@ -116,17 +129,10 @@ public class VelocimomBehaviour : MonoBehaviour
         }
         if (detectPlayerInRange.playerInRange && !detected && !player.inSafeRoom)
         {
-            RaycastHit2D sightHit = Physics2D.Raycast(transform.position, target.position - transform.position, 10);
-            Debug.Log(sightHit.transform.name);
-            if (sightHit)
-            {
-
-                if (sightHit.collider.CompareTag("Player"))
+                if (playerInSameRoom)
                 {
-                    Debug.Log("SEEEES YOU");
                     if (patrol || IsInvoking(nameof(SelectNewDestination)) || enemyLure)
                     {
-                        Debug.Log("STARTING THE HUNT");
                         CancelInvoke(nameof(SelectNewDestination));
                         Invoke(nameof(ReactionTime), invincibleTime);
                         enemyLure = false;
@@ -135,7 +141,6 @@ public class VelocimomBehaviour : MonoBehaviour
 
                     patrol = false;
                 }
-            }
         }
     }
 
@@ -162,17 +167,6 @@ public class VelocimomBehaviour : MonoBehaviour
                 {
                     losPathAt++;
                 }
-            }
-        }
-
-        if (!playerManager.canNotDie)
-        {
-            if (detected && Vector2.Distance(transform.position, target.position) < 2)
-            {
-                //TODO: remove player controls
-                //TODO: play death animation or such
-                detected = false;
-                Invoke(nameof(Death), 0.5f);
             }
         }
 
@@ -250,5 +244,9 @@ public class VelocimomBehaviour : MonoBehaviour
     public bool GetDetected()
     {
         return detected;
+    }
+    public void SetPlayerInSameRoom(bool inRoom)
+    {
+        playerInSameRoom = inRoom;
     }
 }

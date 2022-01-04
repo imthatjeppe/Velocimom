@@ -20,7 +20,6 @@ public class DarkeningEffect : MonoBehaviour
         lightSFX = GetComponent<LightAudioHandler>();
         darkRoomSprite = GetComponentInParent<SpriteShapeRenderer>();
         furniture = GetComponentsInChildren<SpriteRenderer>();
-
         darkenedColor = new Color(0.5f, 0.5f, 0.5f);
         normalColor = new Color(1, 1, 1);
     }
