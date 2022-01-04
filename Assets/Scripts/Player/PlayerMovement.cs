@@ -50,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
     {
         IsPlayerDetectable();
         HiddenAbility();
-        Debug.Log("Speed: " + speed);
     }
     void FixedUpdate()
     {
