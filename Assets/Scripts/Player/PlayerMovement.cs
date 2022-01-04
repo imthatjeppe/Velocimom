@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 movement = new Vector3();
 
-    PlayerDecption playerDeception;
     PlayerAudioHandler audioHandler;
     VelocimomBehaviour velocimomBehaviour;
     Inventory inventoryScriptObject;
@@ -41,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         velocimomBehaviour = GameObject.FindGameObjectWithTag("Enemy").GetComponent<VelocimomBehaviour>();
-        playerDeception = PlayerDeception.GetComponentInChildren<PlayerDecption>();
         inventoryScriptObject = GetComponent<Inventory>();
         audioHandler = GetComponentInChildren<PlayerAudioHandler>();
         rigidBody = GetComponent<Rigidbody2D>();

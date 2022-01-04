@@ -2659,36 +2659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingPoint: {fileID: 1551175339}
---- !u!1 &162733356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 162733357}
-  m_Layer: 0
-  m_Name: PlayerDeceptions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &162733357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162733356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1577926, y: 0.6818367, z: -345.12656}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &163858997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,7 +3900,7 @@ Transform:
   - {fileID: 1509837537}
   - {fileID: 1949980215}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257388897
 GameObject:
@@ -7492,7 +7462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1913517714816100252, guid: 9d2dea17b60bef9499eb82359712257c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10727,7 +10697,7 @@ Transform:
   - {fileID: 1619692767}
   - {fileID: 2008003767}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &696366059
 PrefabInstance:
@@ -11317,7 +11287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12489,7 +12459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13307,7 +13277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23885,7 +23855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 3533941356772995494, guid: 7a4bdd9e11a02f04f8e6f21da440c912, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28334,7 +28304,7 @@ Transform:
   - {fileID: 1835597727}
   - {fileID: 1288626048}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1220316513
 MonoBehaviour:
@@ -28828,7 +28798,7 @@ Transform:
   - {fileID: 121272079}
   - {fileID: 1231519678}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280060940
 GameObject:
@@ -35031,7 +35001,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686979390
 GameObject:
@@ -42538,7 +42508,7 @@ PrefabInstance:
     - target: {fileID: 5744362139142485549, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: PlayerDeception
       value: 
-      objectReference: {fileID: 162733356}
+      objectReference: {fileID: 0}
     - target: {fileID: 8250319068573655021, guid: 49d5f9a6efeda7d4498738d3c08fdbca, type: 3}
       propertyPath: m_Name
       value: Hugo
@@ -42846,7 +42816,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -42914,6 +42884,7 @@ MonoBehaviour:
   distance: 0.2
   chasingSpeed: 3
   patrolSpeed: 1
+  distanceToKill: 2
   moveSpots:
   - {fileID: 501259224}
   - {fileID: 766404656}
@@ -43045,7 +43016,7 @@ GameObject:
   - component: {fileID: 7548094087888267798}
   m_Layer: 0
   m_Name: PlayerDetection
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

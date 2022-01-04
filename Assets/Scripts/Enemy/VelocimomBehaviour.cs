@@ -15,6 +15,7 @@ public class VelocimomBehaviour : MonoBehaviour
     public float distance = 0.2f;
     public float chasingSpeed;
     public float patrolSpeed;
+    public float distanceToKill;
 
     [Header("Destinations")]
     public Transform[] moveSpots;
@@ -78,6 +79,15 @@ public class VelocimomBehaviour : MonoBehaviour
         if (detected)
         {
             ChasePlayer();
+        }
+
+        if (!playerManager.canNotDie)
+        {
+            if (Vector2.Distance(transform.position, target.position) < distanceToKill)
+            {
+                detected = false;
+                Invoke(nameof(Death), 0.5f);
+            }
         }
     }
 
@@ -157,17 +167,6 @@ public class VelocimomBehaviour : MonoBehaviour
                 {
                     losPathAt++;
                 }
-            }
-        }
-
-        if (!playerManager.canNotDie)
-        {
-            if (detected && Vector2.Distance(transform.position, target.position) < 2)
-            {
-                //TODO: remove player controls
-                //TODO: play death animation or such
-                detected = false;
-                Invoke(nameof(Death), 0.5f);
             }
         }
 

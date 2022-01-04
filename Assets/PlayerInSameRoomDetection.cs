@@ -22,7 +22,6 @@ public class PlayerInSameRoomDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("in "+gameObject.name);
             InvokeRepeating(nameof(UpdatePlayerInRoom),0,0.5f);
         }
     }
