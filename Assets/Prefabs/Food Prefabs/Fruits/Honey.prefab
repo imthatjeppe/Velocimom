@@ -33,7 +33,7 @@ RectTransform:
   m_GameObject: {fileID: 5460678188907226098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,6 +113,8 @@ MonoBehaviour:
   shinyRareQuality: 0
   hasBeenDropped: 0
   isPickupable: 1
+  canvasFoodItem: {fileID: 3600747065451577699, guid: 57656d4ee91ffb84a9cba858f630e65d, type: 3}
+  itemToDestroy: {fileID: 0}
 --- !u!114 &2114005704188651875
 MonoBehaviour:
   m_ObjectHideFlags: 0
