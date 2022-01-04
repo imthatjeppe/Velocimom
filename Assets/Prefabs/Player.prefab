@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingPoint: {fileID: 4556821558144491454}
---- !u!1 &7847294066304472425
+--- !u!1 &2642629069446379315
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,37 +161,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2600193447471123915}
-  - component: {fileID: 3053940144704450265}
-  - component: {fileID: 1946942946444150325}
+  - component: {fileID: 7824257755060802307}
+  - component: {fileID: 8726754065480948201}
+  - component: {fileID: 6171296971682197210}
   m_Layer: 0
-  m_Name: FoodStack
+  m_Name: FoodStack (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2600193447471123915
+--- !u!4 &7824257755060802307
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847294066304472425}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -1.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 2642629069446379315}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.97, y: 3.76, z: 4}
+  m_LocalScale: {x: 4, y: 4, z: 5.5359826}
   m_Children: []
   m_Father: {fileID: 1042514175716146186}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3053940144704450265
+--- !u!212 &8726754065480948201
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847294066304472425}
+  m_GameObject: {fileID: 2642629069446379315}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -230,34 +230,35 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 3.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1946942946444150325
+--- !u!114 &6171296971682197210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847294066304472425}
+  m_GameObject: {fileID: 2642629069446379315}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d10f3f15f459e814cbeac894cfd6693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stackSprites:
-  - {fileID: 21300000, guid: 06743b780df27e840b6c0c6b329a4b07, type: 3}
-  - {fileID: 21300000, guid: a9cad8c81f59f1f4a9cc25a0234b0955, type: 3}
-  - {fileID: 21300000, guid: 1443f55a090ad494495d524c52e5f444, type: 3}
-  - {fileID: 21300000, guid: ef2fa0b1337b37541941812e798e287d, type: 3}
-  - {fileID: 21300000, guid: b0edb805bb1314c469efe70e1111ddf3, type: 3}
-  - {fileID: 21300000, guid: 48fba24d8dcbf1548a64831d6af8a679, type: 3}
-  - {fileID: 21300000, guid: 49324b5985e13fd4eadd4943433282e5, type: 3}
-  - {fileID: 21300000, guid: ce904aa9930938a44b2618fb13109906, type: 3}
-  - {fileID: 21300000, guid: 433597682f9922142960ddb8f6e40e2a, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 122dcf815bc18ec459a1143fc73aaae8, type: 3}
+  - {fileID: 21300000, guid: 2e4f7b947ea934b419815e1b343a7854, type: 3}
+  - {fileID: 21300000, guid: 6b8676479c167d145b7c2af4c16e15d8, type: 3}
+  - {fileID: 21300000, guid: 54e9e930908f43d4f99ad839660554e0, type: 3}
+  - {fileID: 21300000, guid: 94ca221d479f48c4294f7dccade8ba05, type: 3}
+  - {fileID: 21300000, guid: d75753d135339d845b999f5761142388, type: 3}
+  - {fileID: 21300000, guid: e6b94219616772b4abbafaca6be5d1b6, type: 3}
+  - {fileID: 21300000, guid: 62827070148452d4799fdf7a83897686, type: 3}
+  - {fileID: 21300000, guid: c5d13c44621363e4dbccadab02fd8dbb, type: 3}
 --- !u!1 &8554299363066335360
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +325,7 @@ Transform:
   m_LocalScale: {x: 0.14450909, y: 0.14450909, z: 0.18063639}
   m_Children:
   - {fileID: 570797782}
-  - {fileID: 2600193447471123915}
+  - {fileID: 7824257755060802307}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +375,7 @@ MonoBehaviour:
   staminaDrain: 10
   foodUntilEncumbered: 3
   hidden: 0
+  extraHidden: 0
   releasedStaminaKey: 0
   inSafeRoom: 0
   isRunning: 0
@@ -434,6 +436,9 @@ MonoBehaviour:
   Heart0: {fileID: 0}
   Heart1: {fileID: 0}
   Heart2: {fileID: 0}
+  Death1: {fileID: 0}
+  Death2: {fileID: 0}
+  Death3: {fileID: 0}
 --- !u!50 &3213900604991310360
 Rigidbody2D:
   serializedVersion: 4
