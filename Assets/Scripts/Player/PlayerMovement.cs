@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("GameObjects")]
     public Slider Staminabar;
-    public GameObject PlayerDeception;
 
     private float hiddenSpeed = 0;
     private float extraHiddenTimer = 1f;

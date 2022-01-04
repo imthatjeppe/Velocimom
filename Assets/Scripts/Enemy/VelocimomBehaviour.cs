@@ -83,8 +83,9 @@ public class VelocimomBehaviour : MonoBehaviour
 
         if (!playerManager.canNotDie)
         {
-            if (Vector2.Distance(transform.position, target.position) < distanceToKill)
+            if (Vector2.Distance(transform.position, target.position) < distanceToKill && !IsInvoking(nameof(Death)))
             {
+                player.enabled = false;
                 detected = false;
                 Invoke(nameof(Death), 0.5f);
             }
@@ -185,6 +186,7 @@ public class VelocimomBehaviour : MonoBehaviour
     void Death()
     {
         //TODO: turn on player controls again.
+        player.enabled = true;
         playerIsDead = true;
         playerManager.dropAllItems();
         PlayerHealth.playerHealth -= 1;

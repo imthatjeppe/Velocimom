@@ -15,6 +15,7 @@ public class playerUI : MonoBehaviour
     void Start()
     {
         timer = GameObject.FindGameObjectWithTag("DropOff").GetComponent<Timer>();
+        clockSlider.maxValue = timer.timeLeft;
     }
 
     // Update is called once per frame
