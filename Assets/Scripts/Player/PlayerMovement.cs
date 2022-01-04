@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Bools")]
     public bool hidden;
+    public bool extraHidden; // hides player when empty inventory and standing still
     public bool releasedStaminaKey;
     public bool inSafeRoom = true;
     public bool isRunning;
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject PlayerDeception;
 
     private float hiddenSpeed = 0;
+    private float extraHiddenTimer = 1f;
+    
 
     Vector3 movement = new Vector3();
 
@@ -47,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        IsPlayerDetectable();
         HiddenAbility();
         Debug.Log("Speed: " + speed);
     }
@@ -88,6 +92,24 @@ public class PlayerMovement : MonoBehaviour
         return rigidBody.velocity;
     }
 
+    private void IsPlayerDetectable()
+    {
+
+        if (inventoryScriptObject.inventoryCount <= 0 && rigidBody.velocity.sqrMagnitude == 0)
+        {
+            extraHiddenTimer -= Time.deltaTime;
+            if (extraHiddenTimer <= 0)
+            {
+                extraHidden = true;
+            }
+        }
+        else
+        {
+            extraHidden = false;
+            extraHiddenTimer = 1f;
+        }
+    }
+
     private void HiddenAbility()
     {
         if (Input.GetKeyDown(KeyCode.Space) && currentstamina > 0)
@@ -117,8 +139,12 @@ public class PlayerMovement : MonoBehaviour
             //TODO: add responsivnes when player stamina is empty
             Debug.Log("No Stamina");
         }
+        else
+        {
+            speed = maxSpeed;
+        }
 
-        if ((Input.GetKeyUp(KeyCode.Space) || currentstamina == 0) && hidden)
+        if (Input.GetKeyUp(KeyCode.Space) && hidden || currentstamina == 0 && hidden)
         {
             speed = maxSpeed;
             hidden = false;

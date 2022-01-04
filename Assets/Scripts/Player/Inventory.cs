@@ -55,12 +55,12 @@ public class Inventory : MonoBehaviour
         item.layer = 5;
         item.transform.SetParent(canvas.transform, true);
         item.transform.position = itemDropper.transform.position;
+        item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         item.GetComponent<SpriteRenderer>().enabled = false;
         item.GetComponent<BoxCollider2D>().enabled = false;
         item.GetComponent<CircleCollider2D>().enabled = true;
         item.GetComponent<Image>().enabled = true;
         item.GetComponent<Image>().SetNativeSize();
-        item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
         audiohandler.PlayFoodPickUpSFX();
         inventory.Push(item);
@@ -75,13 +75,13 @@ public class Inventory : MonoBehaviour
         inventoryScore -= objectToDrop.GetComponent<FoodItem>().points;
 
         objectToDrop.layer = 2;
+        objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         objectToDrop.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         objectToDrop.GetComponent<SpriteRenderer>().enabled = true;
-        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
-        objectToDrop.GetComponent<CircleCollider2D>().enabled = false;
         objectToDrop.GetComponent<Image>().enabled = false;
         objectToDrop.transform.SetParent(foodItems.transform, true);
+
         if (unstableDrop)
         {
             objectToDrop.GetComponent<FoodItem>().hasBeenDropped = true;
@@ -92,6 +92,8 @@ public class Inventory : MonoBehaviour
         {
             objectToDrop.transform.position = player.transform.position - yAxisPlus;
         }
+
+        objectToDrop.GetComponent<BoxCollider2D>().enabled = true;
 
         unstableDrop = false;
 
