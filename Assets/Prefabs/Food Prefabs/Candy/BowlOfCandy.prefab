@@ -113,6 +113,8 @@ MonoBehaviour:
   shinyRareQuality: 0
   hasBeenDropped: 0
   isPickupable: 1
+  canvasFoodItem: {fileID: 1617981933024394794, guid: 8ec952718a330d54d8ec022b23fbdf90, type: 3}
+  itemToDestroy: {fileID: 0}
 --- !u!114 &1547824333381952255
 MonoBehaviour:
   m_ObjectHideFlags: 0

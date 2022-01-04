@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 1684116323599573718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.8149966}
-  m_LocalScale: {x: 1, y: 1, z: 0.41666666}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.41666666}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -364.7, y: -33.5}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 64, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931952265943819603
 MonoBehaviour:
@@ -83,9 +83,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.1415653, y: -6.3128204}
+  m_Offset: {x: -3.2725017, y: -11.644267}
   serializedVersion: 2
-  m_Radius: 11.578894
+  m_Radius: 19.17216
 --- !u!50 &1194213625721266295
 Rigidbody2D:
   serializedVersion: 4
