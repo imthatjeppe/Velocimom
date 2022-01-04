@@ -25,7 +25,7 @@ public class VelocimomAnimationHandler : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        distance = 0.2f;
+        distance = 0.4f;
         oldPosition = transform.position;
     }
 
@@ -44,6 +44,7 @@ public class VelocimomAnimationHandler : MonoBehaviour
         position.x = velocimom.transform.position.x + offsetGraphicsX;
 
         transform.position = position;
+        UpdateGraphicOffset();
     }
     void AnimationSequencePlayer()
     {
@@ -63,16 +64,14 @@ public class VelocimomAnimationHandler : MonoBehaviour
             oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", true);
             goingUp = true;
-            offsetGraphicsY = 1.2f;
-            offsetGraphicsX = -0.2f;
+            
         }
         else if (transform.position.y < oldPosition.y - distance)
         {
             oldPosition.y = transform.position.y;
             animator.SetBool("GoingUp", false);
             goingUp = false;
-            offsetGraphicsY = 0.5f;
-            offsetGraphicsX = -0.8f;
+
         }
     }
 
@@ -84,7 +83,7 @@ public class VelocimomAnimationHandler : MonoBehaviour
             {
                 oldPosition.x = transform.position.x;
                 sprite.flipX = true;
-                offsetGraphicsX = 1f;
+                offsetGraphicsX = 0f;
             }
             else if (transform.position.x < oldPosition.x - distance)
             {
@@ -106,5 +105,20 @@ public class VelocimomAnimationHandler : MonoBehaviour
             }
         }
     }
-
+    void UpdateGraphicOffset()
+    {
+        if (goingUp && sprite.flipX) 
+        {
+            offsetGraphicsY = 1.2f;
+            offsetGraphicsX = 0.2f;
+        }else if(goingUp && !sprite.flipX)
+        {
+            offsetGraphicsY = 1.2f;
+            offsetGraphicsX = -0.2f;
+        }else if (!goingUp)
+        {
+            offsetGraphicsY = 1.2f;
+            offsetGraphicsX = -0.8f;
+        }
+    }
 }
