@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public static int playerHealth;
-    public bool Death1Bool, Death2Bool;
+    private bool Death1Bool, Death2Bool;
 
     public GameObject Heart0, Heart1, Heart2;
     public GameObject Death1, Death2, Death3;
