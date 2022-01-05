@@ -36,6 +36,8 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        GameObject.Find("Finger1").SetActive(true);
+        GameObject.Find("Finger2").SetActive(true);
     }
 
     void Pause()
@@ -43,6 +45,9 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        GameObject.Find("Finger1").SetActive(false);
+        GameObject.Find("Finger2").SetActive(false);
     }
 
 }

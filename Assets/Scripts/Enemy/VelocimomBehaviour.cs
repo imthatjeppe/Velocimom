@@ -130,7 +130,7 @@ public class VelocimomBehaviour : MonoBehaviour
         }
         if (detectPlayerInRange.playerInRange && !detected && !player.inSafeRoom)
         {
-                if (playerInSameRoom)
+                if (playerInSameRoom && !(player.hidden || player.extraHidden))
                 {
                     if (patrol || IsInvoking(nameof(SelectNewDestination)) || enemyLure)
                     {

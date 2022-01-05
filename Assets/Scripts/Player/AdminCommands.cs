@@ -18,7 +18,7 @@ public class AdminCommands : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            scoreHandler.score += 10000;
+            scoreHandler.score += 500;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))

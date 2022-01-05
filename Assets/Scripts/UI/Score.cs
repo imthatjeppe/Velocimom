@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
     public Text totalScore;
 
     private Vector2 scoreStartPos;
-    private Color32 greyColor = new Color32(50, 50, 50, 255);
+    private Color32 greyColor = new Color32(178, 178, 178, 255);
     private Color32 greenColor = new Color32(0, 255, 0, 255);
     AudioSource audioSource;
 

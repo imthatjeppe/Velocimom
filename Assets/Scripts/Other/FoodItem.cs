@@ -71,7 +71,6 @@ public class FoodItem : MonoBehaviour
     {
         if (collision.CompareTag("DropOff"))
         {
-            Debug.Log("I got destroyed by dropoffzone!");
             GameObject.FindGameObjectWithTag("DropOff").GetComponent<Score>().AddScore(points);
             Destroy(gameObject);
         }

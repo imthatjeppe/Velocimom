@@ -31,13 +31,17 @@ public class NextLevelScript : MonoBehaviour
     {
         NextLevel.SetActive(true);
         NextLevelPaused = (true);
-       
+        GameObject.Find("Finger1").SetActive(false);
+        GameObject.Find("Finger2").SetActive(false);
+
     }
 
     public void startNextLevel()
     {
         NextLevel.SetActive(false);
         NextLevelPaused = (false);
+        GameObject.Find("Finger1").SetActive(true);
+        GameObject.Find("Finger2").SetActive(true);
 
         //TODO: Change to next level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

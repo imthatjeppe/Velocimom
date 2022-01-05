@@ -8,7 +8,7 @@ using DG.Tweening;
 public class Timer : MonoBehaviour
 {
     public GameObject player;
-    public Text timerText;
+    //public Text timerText;
     public int timeLeft;
     public bool isTimeTicking = true;
 
@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        timerStartPos = timerText.transform.position;
+        //timerStartPos = timerText.transform.position;
         playerHealth = player.GetComponent<PlayerHealth>();
         nextLevelScriptObj = gameObject.GetComponent<NextLevelScript>();
         scoreRef = gameObject.GetComponent<Score>();
@@ -38,14 +38,14 @@ public class Timer : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        timerText.text = "" + (int)timer;
-        CheckIfTimeToVFX();
+        //timerText.text = "" + (int)timer;
+        //CheckIfTimeToVFX();
         TimeRunOut();
 
-        if (Input.GetKey(KeyCode.K))
-        {
-            TimerVFX();
-        }
+        //if (Input.GetKey(KeyCode.K))
+        //{
+        //    TimerVFX();
+        //}
     }
 
     public void TimeRunOut()
@@ -69,7 +69,7 @@ public class Timer : MonoBehaviour
         if (timer > 30.75f && timer < 31 || timer <= timeLeft / 2 && timer >= (timeLeft / 2) - 0.25f)
         {
             timeToVFX = true;
-
+    
             if (timeToVFX)
             {
                 TimerVFX();
@@ -77,18 +77,18 @@ public class Timer : MonoBehaviour
             }
         }
     }
-
+    
     private void TimerVFX()
     {
-        timerText.DOColor(redColor, 1f);
-        timerText.transform.DOShakePosition(1f, 2.5f, 10, 45f, true, false);
+        //timerText.DOColor(redColor, 1f);
+        //timerText.transform.DOShakePosition(1f, 2.5f, 10, 45f, true, false);
         Invoke(nameof(resetTimerVFX), 1.25f);
     }
 
     private void resetTimerVFX()
     {
-        timerText.DOColor(greyColor, 1f);
-        timerText.transform.position = timerStartPos;
+        //timerText.DOColor(greyColor, 1f);
+        //timerText.transform.position = timerStartPos;
     }
 
     public float GetTimer()
